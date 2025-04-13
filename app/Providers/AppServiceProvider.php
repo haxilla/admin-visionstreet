@@ -21,8 +21,21 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         
-        if (env('FORCE_HTTPS', false)) {
-            URL::forceScheme('https');
+        if (
+            (env('FORCE_HTTPS') === true || env('FORCE_HTTPS') === 'true') &&
+            app()->environment('production')
+        ) {
+            $proto = request()->header('x-forwarded-proto');
+
+            if ($proto === 'https') {
+                URL::forceScheme('https');
+            } else {
+                Log::warning('FORCE_HTTPS is enabled, but request is not marked secure.', [
+                    'url' => request()->fullUrl(),
+                    'ip' => request()->ip(),
+                    'proto_header' => $proto,
+                ]);
+            }
         }
 
     }
