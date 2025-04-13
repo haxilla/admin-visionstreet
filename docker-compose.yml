@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: admin_visionstreet_app
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    restart: unless-stopped
+    depends_on:
+      - db
+    networks:
+      - admin_net
+
+  db:
+    image: postgres:latest
+    container_name: admin_visionstreet_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: adminvision
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - adminvision_pgdata:/var/lib/postgresql/data
+    networks:
+      - admin_net
+
+  nginx:
+    image: nginx:latest
+    container_name: admin_visionstreet_nginx
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:80"
+    depends_on:
+      - app
+    networks:
+      - admin_net
+
+volumes:
+  adminvision_pgdata:
+
+networks:
+  admin_net:
+    driver: bridge
