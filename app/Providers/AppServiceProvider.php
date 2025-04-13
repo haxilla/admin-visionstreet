@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        
+
         if (
             (env('FORCE_HTTPS') === true || env('FORCE_HTTPS') === 'true') &&
             app()->environment('production')
@@ -35,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
                     'ip' => request()->ip(),
                     'proto_header' => $proto,
                 ]);
+                abort(403, 'Secure connection required.');
             }
         }
 
