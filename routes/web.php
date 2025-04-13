@@ -8,3 +8,6 @@ Route::get('/', function () {
 Route::get('/php-version', function () {
     return phpversion();
 });
+Route::get('/tailwind-test', function () {
+    return view('tailwind-test');
+});
