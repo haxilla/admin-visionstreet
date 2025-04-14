@@ -14,25 +14,26 @@
 
 
     {{-- Nav links (push them away from logo) --}}
-    <div class="flex items-center space-x-5 pr-6">
+    <div class="flex items-center gap-6 pr-6 text-sm uppercase tracking-wider">
         <a href="/super/dashboard"
-           class="text-sm uppercase tracking-wide text-sky-200 hover:text-white hover:underline transition">
+           class="text-sky-200 hover:text-white transition duration-150">
             Dashboard
         </a>
 
         <a href="/super/settings"
-           class="text-sm uppercase tracking-wide text-sky-200 hover:text-white hover:underline transition">
+           class="text-sky-200 hover:text-white transition duration-150">
             Settings
         </a>
 
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit"
-                    class="text-sm uppercase tracking-wide text-red-400 hover:text-white hover:underline transition bg-transparent border-none p-0 cursor-pointer">
+                    class="text-red-400 hover:text-white transition duration-150 bg-transparent border-none p-0 cursor-pointer">
                 Logout
             </button>
         </form>
     </div>
+
 
 </nav>
 
