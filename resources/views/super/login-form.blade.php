@@ -32,7 +32,7 @@
   <div class="w-full max-w-md mx-auto p-8 rounded-2xl backdrop-glow shadow-2xl border border-white/20">
     <h1 class="font-russo text-4xl font-bold text-center mb-8 uppercase text-white drop-shadow-[0_0_8px_#ff6a00] tracking-[0.20em]">Vision Street</h1>
     
-    <form method="post" action="{{route(login.submit)}}" class="space-y-6">
+    <form method="post" action="{{route('login.submit')}}" class="space-y-6">
       @csrf
       <div>
         <label for="email" class="block text-sm font-semibold mb-2">Username</label>
