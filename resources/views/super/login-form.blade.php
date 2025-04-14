@@ -83,9 +83,6 @@
     <p class="text-center mt-6 text-sm text-white/50">
       © 2025 Vision Street. All rights reserved.
     </p>
-
-  </div>
-  <div>
     <p class="text-xs text-gray-500 text-center mt-4">
       This site is protected by reCAPTCHA and the Google
       <a href="https://policies.google.com/privacy" class="underline" target="_blank">Privacy Policy</a> and
