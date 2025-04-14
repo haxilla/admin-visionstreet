@@ -27,7 +27,7 @@
             bg-gradient-to-r from-[#AD1A14] to-black px-0">
 
     {{-- Logo with no padding and full height --}}
-    <img src="{{ asset('images/vision-street-90s.png') }}" 
+    <img src="{{ asset('images/visionstreet-90s.png') }}" 
          alt="Vision Street Logo"
          class="h-full w-auto object-cover" />
 
