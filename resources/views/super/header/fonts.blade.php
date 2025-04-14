@@ -10,7 +10,7 @@
 
 	@font-face {
 	  font-family: 'Orbitron';
-	  src: url('/fonts/Orbitron.ttf') format('truetype');
+	  src: url('/fonts/Orbitron-VariableFont_wght') format('truetype');
 	  font-weight: 100 900;
 	  font-display: swap;
 	}
