@@ -1,16 +1,14 @@
 <nav class="fixed top-0 left-0 w-full h-16 bg-white/5 backdrop-blur-lg border-b border-white/10 shadow-md z-50 flex items-center justify-between px-6">
-    <a href="/super/dashboard" class="relative inline-flex items-center gap-2 group">
-        {{-- Glowing orb icon --}}
-        <span class="inline-block h-3 w-3 rounded-full bg-yellow-400 shadow-[0_0_12px_2px_rgba(255,166,0,0.5)] animate-pulse"></span>
+<a href="/super/dashboard" class="flex items-center gap-3 group pl-1 pr-4 py-1 rounded-md bg-gradient-to-br from-yellow-500 to-orange-600 shadow-[0_0_25px_rgba(255,170,0,0.4)] hover:shadow-[0_0_35px_rgba(255,170,0,0.7)] transition-all duration-300 scale-95 hover:scale-100">
+    {{-- Left neon block mark --}}
+    <div class="w-6 h-6 bg-yellow-300 rounded-sm shadow-[0_0_10px_rgba(255,200,0,0.9)]"></div>
 
-        {{-- Vision Street text --}}
-        <span class="font-russo text-sm uppercase tracking-widest text-[#ffa600] group-hover:text-yellow-300 transition duration-200">
-            VISION STREET
-        </span>
+    {{-- Vision Street text --}}
+    <span class="font-russo text-xl uppercase tracking-[0.1em] text-black drop-shadow-[0_1px_1px_rgba(255,255,255,0.3)]">
+        Vision Street
+    </span>
+</a>
 
-        {{-- Fancy backdrop glow (optional flair) --}}
-        <span class="absolute -inset-2 -z-10 rounded-md bg-white/5 backdrop-blur-sm border border-yellow-400/10 opacity-0 group-hover:opacity-100 transition"></span>
-    </a>
 
 
     <div class="flex items-center space-x-6">
