@@ -27,3 +27,24 @@ Route::get('/member/dashboard', [MemberDashboard::class, 'index'])->name('member
 //useful somewhere at some point
 Route::get('/php-version', function () {
     return phpversion();});
+
+//logouts (per role)
+Route::post('/logout', function () {
+    $role = Auth::user()->role ?? 'guest';
+
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+
+    // Redirect based on role
+    switch ($role) {
+        case 'super':
+            return redirect('/super/login');
+        case 'admin':
+            return redirect('/admin/login');
+        case 'member':
+            return redirect('/member/login');
+        default:
+            return redirect('/login');
+    }
+})->name('logout');
