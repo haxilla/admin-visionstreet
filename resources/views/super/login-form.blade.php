@@ -61,12 +61,13 @@
             @endif
         </div>
     </div>
-    
+
     {{-- RECAPTCHA --}}
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfOlRgrAAAAA…"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
+
     <script>
         grecaptcha.ready(function () {
-            grecaptcha.execute('6LfOlRgrAAAAA…', {action: 'super_login'}).then(function (token) {
+            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {action: 'super_login'}).then(function (token) {
                 document.getElementById('recaptchaToken').value = token;
             });
         });
