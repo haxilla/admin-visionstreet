@@ -20,7 +20,7 @@ class GuestController extends Controller
 
             // Otherwise, just show the super login — no logout here
             Session::put('url.intended', url('/super/dashboard'));
-            return view('super.login');}
+            return view('super.login-form');}
 
         return view('guest.home');}
 
