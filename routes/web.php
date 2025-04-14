@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Super\DashboardController as SuperDashboard;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Member\DashboardController as MemberDashboard;
-use App\Http\Controllers\Guest\PublicController as Guest;
+use App\Http\Controllers\Guest\GuestController as Guest;
 
 /* ---------------- Public ---------------- */
 Route::get('/', [Guest::class, 'home'])->name('home');
