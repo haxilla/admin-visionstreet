@@ -10,7 +10,7 @@ use App\Http\Controllers\Guest\GuestController as Guest;
 Route::get('/', [Guest::class, 'home'])->name('home');
 Route::get('/about', [Guest::class, 'about'])->name('about');
 Route::get('/contact', [Guest::class, 'contact'])->name('contact');
-Route::post('/login', [GuestController::class, 'login'])->name('login.submit');
+Route::post('/login', [Guest::class, 'login'])->name('login.submit');
 
 /* ---------------- Super ---------------- */
 Route::get('/super/dashboard', [SuperDashboard::class, 'index'])->name('super.dashboard');
