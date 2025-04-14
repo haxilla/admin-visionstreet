@@ -26,9 +26,11 @@
 <nav class="fixed top-0 left-0 w-full h-20 z-50 flex items-center justify-between px-0">
 
     {{-- Logo with no padding and full height --}}
-    <img src="{{ asset('images/visionstreet-90s.png') }}" 
-         alt="Vision Street Logo"
-         class="h-full w-auto object-cover" />
+    <div class="flex items-center px-4 py-3">
+        <img src="{{ asset('images/vision-street-nav-logo-1.jpg') }}"
+             alt="Vision Street Logo"
+             class="h-full object-contain" />
+    </div>
 
     {{-- Nav links (push them away from logo) --}}
     <div class="flex items-center space-x-6 pr-6">
