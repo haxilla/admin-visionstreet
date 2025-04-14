@@ -80,16 +80,15 @@
     </script>
     <p class="text-xs text-gray-500 text-center mt-4">
     </p>
-    <p class="text-xs text-gray-500 text-center mt-4">
-      This site is protected by reCAPTCHA and the Google
-      <a href="https://policies.google.com/privacy" class="underline" target="_blank">Privacy Policy</a> and
-      <a href="https://policies.google.com/terms" class="underline" target="_blank">Terms of Service</a> apply.
-    </p>
     <p class="text-center mt-6 text-sm text-white/50">
       © 2025 Vision Street. All rights reserved.
     </p>
 
   </div>
-
+<p class="text-xs text-gray-500 text-center mt-4">
+  This site is protected by reCAPTCHA and the Google
+  <a href="https://policies.google.com/privacy" class="underline" target="_blank">Privacy Policy</a> and
+  <a href="https://policies.google.com/terms" class="underline" target="_blank">Terms of Service</a> apply.
+</p>
 </body>
 </html>
