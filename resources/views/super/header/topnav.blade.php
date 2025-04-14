@@ -16,7 +16,7 @@
     {{-- Nav links (push them away from logo) --}}
     <div class="flex items-center gap-6 pr-6 text-sm uppercase tracking-wider font-russo">
         <a href="/super/dashboard"
-           class="text-sky-200 hover:text-white transition duration-150">
+           class="text-sky-100 hover:text-white">
             Dashboard
         </a>
 
