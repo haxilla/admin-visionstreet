@@ -25,7 +25,7 @@
 -->
 <nav class="fixed top-0 left-0 w-full h-20 z-50 px-6 flex items-center justify-between 
             bg-gradient-to-r from-[#1a0e2a] via-[#2b0a2e] to-[#5c1f1f] 
-            border-b border-orange-500 shadow-md">
+            shadow-md">
 
     {{-- Logo on the left --}}
     <div class="flex items-center space-x-3">
