@@ -3,7 +3,7 @@
     {{-- Logo with no padding and full height --}}
     <div class="flex items-center px-6 py-2 h-full">
         <a href="/super/dashboard"
-           class="logo-lightning text-2xl uppercase font-russo text-yellow-400 relative select-none">
+           class="logo-lightning text-2xl uppercase font-russo text-yellow-400 relative select-none tracking-wide">
             Vision Street
         </a>
     </div>
