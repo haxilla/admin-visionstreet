@@ -15,6 +15,6 @@
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     {{-- Optional: fonts --}}
-    @include('fonts')
-    @include('styles')
+    @include('super.header.fonts')
+    @include('super.header.styles')
 </head>
