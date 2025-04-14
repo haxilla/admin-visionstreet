@@ -10,3 +10,4 @@
     </button>
 </form>
 </body>
+@include('super.footer.main')

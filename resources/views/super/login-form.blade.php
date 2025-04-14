@@ -72,4 +72,4 @@
     </p>
   </div>
 </body>
-</html>
+@include('super.footer.main')
