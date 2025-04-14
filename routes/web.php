@@ -8,32 +8,13 @@ Route::get('/', function () {
 Route::get('/php-version', function () {
     return phpversion();
 });
-Route::get('/tailwind-test', function () {
-    return view('tailwind-test');
-});
 
-Route::domain('admin.visionstreet.co')->group(function () {
-    Route::get('/super', [\App\Http\Controllers\Super\DashboardController::class, 'index']);
-});
+/* ---------------- Super ---------------- */
+Route::get('/super/dashboard', [SuperDashboard::class, 'index'])->name('super.dashboard');
+Route::get('/super/reports', [SuperDashboard::class, 'reports'])->name('super.reports');
 
-Route::get('/login', function () {
-    if (auth()->check()) {
-        $user = auth()->user();
+/* ---------------- Admin ---------------- */
+Route::get('/admin/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
 
-        if ($user->isSuper()) {
-            return redirect('/super');
-        }
-
-        if ($user->isAdmin()) {
-            return redirect('/admin');
-        }
-
-        if ($user->isMember()) {
-            return redirect('/member');
-        }
-
-        abort(403); // fallback if role is unknown
-    }
-
-    return view('auth.login');
-});
+/* ---------------- Member ---------------- */
+Route::get('/member/dashboard', [MemberDashboard::class, 'index'])->name('member.dashboard');
