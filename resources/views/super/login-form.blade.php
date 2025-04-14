@@ -1,3 +1,4 @@
+@include(super.header.doctype)
 <style>
 	body {
 	  background-image: url('/images/admin_visionstreet_login.jpg');
@@ -10,7 +11,6 @@
 	  -webkit-backdrop-filter: blur(16px) saturate(180%);
 	  background-color: rgba(17, 25, 40, 0.65);}
 </style>
-</head>
 <body class="h-screen w-screen flex items-center justify-center text-white">
 
   <div class="w-full max-w-md mx-auto p-8 rounded-2xl backdrop-glow shadow-2xl border border-white/20">
