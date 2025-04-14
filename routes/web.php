@@ -11,3 +11,7 @@ Route::get('/php-version', function () {
 Route::get('/tailwind-test', function () {
     return view('tailwind-test');
 });
+
+Route::domain('admin.visionstreet.co')->group(function () {
+    Route::get('/super', [\App\Http\Controllers\Super\DashboardController::class, 'index']);
+});
