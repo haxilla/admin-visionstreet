@@ -14,24 +14,15 @@ class GuestController extends Controller
         $host = $request->getHost();
 
         if ($host === 'admin.visionstreet.co') {
-            if (!Auth::check()) {
-                Session::put('url.intended', url('/super/dashboard'));
-                return view('auth.super-login');
-            }
+            // If logged in as super, go to super dashboard
+            if (Auth::check() && Auth::user()->role === 'super') {
+                return redirect('/super/dashboard');}
 
-            if (Auth::user()->role !== 'super') {
-                // Logout and redirect back to login with error message
-                Auth::logout();
-                return redirect('/super/login')
-                    ->withErrors(['role' => 'This section is for super users only.'])
-                    ->withInput(); // keeps email field filled
-            }
+            // Otherwise, just show the super login — no logout here
+            Session::put('url.intended', url('/super/dashboard'));
+            return view('super.login');}
 
-            return redirect('/super/dashboard');
-        }
-
-        return view('guest.home');
-    }
+        return view('guest.home');}
 
     public function about()
     {
