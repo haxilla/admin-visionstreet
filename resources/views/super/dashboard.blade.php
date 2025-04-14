@@ -16,7 +16,7 @@
         <div class="w-full max-w-2xl mx-auto px-6 py-12 bg-white/5 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/10">
 
             <div class="text-center mb-8">
-                <h2 class="text-2xl text-sky-100 font-russo">QUICK ACTIONS</h2>
+                <h2 class="text-2xl text-sky-100 font-russo tracking-wide">QUICK ACTIONS</h2>
                 <p class="text-sm text-white/60">Choose where to go next</p>
             </div>
 
