@@ -1,13 +1,14 @@
 <nav class="fixed top-0 left-0 w-full h-16 bg-white/5 backdrop-blur-lg border-b border-white/10 shadow-md z-50 flex items-center justify-between px-6">
-<a href="/super/dashboard" class="flex items-center gap-3 group pl-1 pr-4 py-1 rounded-md bg-gradient-to-br from-yellow-500 to-orange-600 shadow-[0_0_25px_rgba(255,170,0,0.4)] hover:shadow-[0_0_35px_rgba(255,170,0,0.7)] transition-all duration-300 scale-95 hover:scale-100">
-    {{-- Left neon block mark --}}
-    <div class="w-6 h-6 bg-yellow-300 rounded-sm shadow-[0_0_10px_rgba(255,200,0,0.9)]"></div>
+<a href="/super/dashboard" class="flex items-center gap-3 px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 transition group">
+    {{-- Neon square logo block --}}
+    <div class="w-6 h-6 bg-yellow-400 rounded-sm shadow-[0_0_10px_rgba(255,200,0,0.8)] group-hover:scale-105 transition-transform"></div>
 
-    {{-- Vision Street text --}}
-    <span class="font-russo text-xl uppercase tracking-[0.1em] text-black drop-shadow-[0_1px_1px_rgba(255,255,255,0.3)]">
-        Vision Street
+    {{-- Bold glowing text --}}
+    <span class="font-russo text-xl uppercase tracking-widest text-yellow-300 drop-shadow-[0_0_6px_rgba(255,200,0,0.6)] group-hover:text-yellow-200 transition">
+        VISION STREET
     </span>
 </a>
+
 
 
 
