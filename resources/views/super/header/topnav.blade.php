@@ -27,13 +27,9 @@
             bg-gradient-to-r from-[#ff5d2e] to-black px-0">
 
     {{-- Logo with no padding and full height --}}
-    <div class="relative h-full">
-        <img src="{{ asset('images/vision-street-nav-logo-1.jpg') }}"
-             alt="Vision Street Logo"
-             class="h-full w-auto object-cover block" />
-
-        <div class="absolute top-0 right-0 h-full w-16 bg-gradient-to-r from-transparent to-[#ff5d2e] pointer-events-none"></div>
-    </div>
+    <img src="{{ asset('images/vision-street-nav-logo-1.jpg') }}" 
+         alt="Vision Street Logo"
+         class="h-full w-auto object-cover" />
 
     {{-- Nav links (push them away from logo) --}}
     <div class="flex items-center space-x-6 pr-6">
