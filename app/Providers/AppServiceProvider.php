@@ -23,7 +23,8 @@ class AppServiceProvider extends ServiceProvider
 
         if (
             (env('FORCE_HTTPS') === true || env('FORCE_HTTPS') === 'true') &&
-            app()->environment('production')
+            app()->environment('production')&&
+            !app()->runningInConsole()
         ) {
             $proto = request()->header('x-forwarded-proto');
 
