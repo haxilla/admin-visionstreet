@@ -4,12 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Super\DashboardController as SuperDashboard;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Member\DashboardController as MemberDashboard;
-use App\Http\Controllers\Visitor\PublicController as Visitor;
+use App\Http\Controllers\Guest\PublicController as Guest;
 
 /* ---------------- Public ---------------- */
-Route::get('/', [Visitor::class, 'home'])->name('home');
-Route::get('/about', [Visitor::class, 'about'])->name('about');
-Route::get('/contact', [Visitor::class, 'contact'])->name('contact');
+Route::get('/', [Guest::class, 'home'])->name('home');
+Route::get('/about', [Guest::class, 'about'])->name('about');
+Route::get('/contact', [Guest::class, 'contact'])->name('contact');
 
 /* ---------------- Super ---------------- */
 Route::get('/super/dashboard', [SuperDashboard::class, 'index'])->name('super.dashboard');
