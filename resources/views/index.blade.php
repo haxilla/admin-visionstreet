@@ -5,24 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login | Vision Street</title>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
-  <style>
-    body {
-      background-image: url('/images/admin_visionstreet_login.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    .backdrop-glow {
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
-      background-color: rgba(17, 25, 40, 0.65);
-    }
-  </style>
+	<style>
+		body {
+		  background-image: url('/images/admin_visionstreet_login.jpg');
+		  background-size: cover;
+		  background-position: center;
+		  background-repeat: no-repeat;}
+
+		.backdrop-glow {
+		  backdrop-filter: blur(16px) saturate(180%);
+		  -webkit-backdrop-filter: blur(16px) saturate(180%);
+		  background-color: rgba(17, 25, 40, 0.65);}
+
+		@font-face {
+			font-family: 'Russo One';
+			src: url('resources/fonts/RussoOne-Regular.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;}
+
+		.font-russo {
+			font-family: 'Russo One', sans-serif;}
+	</style>
 </head>
 <body class="h-screen w-screen flex items-center justify-center text-white">
 
   <div class="w-full max-w-md mx-auto p-8 rounded-2xl backdrop-glow shadow-2xl border border-white/20">
-    <h1 class="text-3xl font-bold tracking-wide text-center mb-8 uppercase text-white drop-shadow-lg">Vision Street</h1>
+    <h1 class="font-russo text-3xl font-bold tracking-wide text-center mb-8 uppercase text-white drop-shadow-lg">Vision Street</h1>
     
     <form action="/login" method="POST" class="space-y-6">
       <div>
