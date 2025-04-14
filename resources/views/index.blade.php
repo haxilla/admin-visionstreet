@@ -19,7 +19,7 @@
 
 		@font-face {
 			font-family: 'Russo One';
-			src: url('resources/fonts/RussoOne-Regular.ttf') format('truetype');
+			src: url('/fonts/RussoOne-Regular.ttf') format('truetype');
 			font-weight: normal;
 			font-style: normal;}
 
