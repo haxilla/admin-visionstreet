@@ -61,13 +61,13 @@
     </form>
 
     @if ($errors->any())
-      <div class="mb-4 rounded-md bg-red-100 p-4 text-sm text-red-700">
-          <ul class="list-disc pl-5 space-y-1">
-              @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-              @endforeach
-          </ul>
-      </div>
+        <div class="mb-6 rounded-lg border-l-4 border-red-500 bg-red-100 p-4 text-sm text-red-800 shadow">
+            <ul class="list-disc space-y-1 pl-5">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
     @endif
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LfOlRgrAAAAAJbB66zZfSDe5oyeRTqf0BhD7RBh"></script>
