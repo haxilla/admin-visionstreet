@@ -1,4 +1,4 @@
-@include(super.header.doctype)
+@include('super.header.doctype')
 <style>
 	body {
 	  background-image: url('/images/admin_visionstreet_login.jpg');
