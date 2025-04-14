@@ -9,3 +9,46 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+@keyframes lightning-flicker {
+  0%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #ffd700,
+      0 0 20px #ff7300,
+      0 0 40px #ff7300;
+  }
+  45% {
+    opacity: 0.7;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 6px #ffd700;
+  }
+  50% {
+    opacity: 0.2;
+    text-shadow: none;
+  }
+  55% {
+    opacity: 0.9;
+    text-shadow:
+      0 0 4px #fff,
+      0 0 12px #ffd700;
+  }
+  70% {
+    opacity: 0.8;
+    text-shadow:
+      0 0 6px #fff,
+      0 0 14px #ff7300;
+  }
+}
+
+@keyframes jitter {
+  0%, 100% { transform: translateX(0); }
+  48% { transform: translateX(-0.5px); }
+  52% { transform: translateX(0.5px); }
+}
+
+.logo-lightning {
+  animation: lightning-flicker 1.8s infinite ease-in-out, jitter 0.3s infinite;
+}
