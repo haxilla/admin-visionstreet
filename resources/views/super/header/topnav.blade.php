@@ -23,28 +23,26 @@
     </div>
 </nav>
 -->
-<nav class="fixed top-0 left-0 w-full h-20 z-50 px-6 flex items-center justify-between 
-            bg-gradient-to-r from-[#1a0e2a] via-[#2b0a2e] to-[#5c1f1f] 
-            shadow-md">
+<nav class="fixed top-0 left-0 w-full h-20 z-50 flex items-center justify-between
+            bg-gradient-to-r from-[#ff5d2e] to-black px-0">
 
-    {{-- Logo on the left --}}
-    <div class="flex items-center space-x-3">
-        <img src="{{ asset('images/vision-street-nav-logo-1.jpg') }}" 
-             alt="Vision Street Logo" 
-             class="h-12 w-auto object-contain select-none" />
-    </div>
+    {{-- Logo with no padding and full height --}}
+    <img src="{{ asset('images/vision-street-nav-logo-1.jpg') }}" 
+         alt="Vision Street Logo"
+         class="h-full w-auto object-cover" />
 
-    {{-- Navigation links on the right --}}
-    <div class="flex items-center space-x-6">
+    {{-- Nav links (push them away from logo) --}}
+    <div class="flex items-center space-x-6 pr-6">
         <a href="/super/dashboard" class="text-sm text-white/80 hover:text-white transition">Dashboard</a>
         <a href="/super/settings" class="text-sm text-white/80 hover:text-white transition">Settings</a>
 
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit"
-                class="text-sm text-red-400 underline hover:text-red-300 bg-transparent border-none p-0 cursor-pointer">
+                    class="text-sm text-red-400 underline hover:text-red-300 bg-transparent border-none p-0 cursor-pointer">
                 Logout
             </button>
         </form>
     </div>
 </nav>
+
