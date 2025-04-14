@@ -22,7 +22,6 @@ Route::get('/admin/dashboard', [AdminDashboard::class, 'index'])->name('admin.da
 Route::get('/member/dashboard', [MemberDashboard::class, 'index'])->name('member.dashboard');
 
 
-
 /********************************************/
 //useful somewhere at some point
 Route::get('/php-version', function () {

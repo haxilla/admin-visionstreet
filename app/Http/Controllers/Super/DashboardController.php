@@ -10,13 +10,18 @@ class DashboardController extends Controller
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-            if (!Auth::check() || Auth::user()->role !== 'super') {
-                return redirect('/login')->with('error', 'Super user access required.');
+            if (!Auth::check()) {
+                return redirect('/super/login');
+            }
+
+            if (Auth::user()->role !== 'super') {
+                abort(403, 'Access denied');
             }
 
             return $next($request);
         });
     }
+
 
     public function index()
     {

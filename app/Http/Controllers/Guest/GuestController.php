@@ -7,16 +7,16 @@ class GuestController extends Controller
 {
     public function home()
     {
-        return view('public.home');
+        return view('guest.home');
     }
 
     public function about()
     {
-        return view('public.about');
+        return view('guest.about');
     }
 
     public function contact()
     {
-        return view('public.contact');
+        return view('guest.contact');
     }
 }
