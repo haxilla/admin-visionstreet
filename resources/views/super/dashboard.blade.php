@@ -1,4 +1,5 @@
 @include('super.header.doctype')
+@include('super.header.topnav')
 
 <body class="min-h-screen bg-black text-white flex flex-col">
 
@@ -32,14 +33,12 @@
                     <h3 class="text-xl font-bold mb-2">Settings</h3>
                     <p class="text-sm text-white/70">System configuration</p>
                 </a>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <div class="p-6 rounded-xl bg-gradient-to-br from-red-500 to-rose-700 hover:from-rose-700 hover:to-red-500 transition text-center shadow-lg hover:shadow-xl">
-                        <button type="submit" class="text-xl font-bold text-white">Logout</button>
-                        <p class="mt-1 text-sm text-white/70">Sign out of this session</p>
-                    </div>
-                </form>
+                <a href="/super/logs" class="block p-6 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 hover:from-orange-500 hover:to-yellow-400 transition text-center shadow-lg hover:shadow-xl">
+                    <h3 class="text-xl font-bold mb-2">System Logs</h3>
+                    <p class="text-sm text-white/70">View error and activity logs</p>
+                </a>
             </div>
+
         </div>
     </main>
 
