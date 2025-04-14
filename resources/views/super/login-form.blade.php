@@ -17,6 +17,10 @@
 		  -webkit-backdrop-filter: blur(16px) saturate(180%);
 		  background-color: rgba(17, 25, 40, 0.65);}
 
+    .grecaptcha-badge {
+      visibility: hidden;
+    }
+
 		@font-face {
 			font-family: 'Russo One';
 			src: url('/fonts/RussoOne-Regular.ttf') format('truetype');
@@ -25,6 +29,7 @@
 
 		.font-russo {
 			font-family: 'Russo One', sans-serif;}
+
 	</style>
 </head>
 <body class="h-screen w-screen flex items-center justify-center text-white">
@@ -73,10 +78,17 @@
             });
         });
     </script>
-
+    <p class="text-xs text-gray-500 text-center mt-4">
+    </p>
+    <p class="text-xs text-gray-500 text-center mt-4">
+      This site is protected by reCAPTCHA and the Google
+      <a href="https://policies.google.com/privacy" class="underline" target="_blank">Privacy Policy</a> and
+      <a href="https://policies.google.com/terms" class="underline" target="_blank">Terms of Service</a> apply.
+    </p>
     <p class="text-center mt-6 text-sm text-white/50">
       © 2025 Vision Street. All rights reserved.
     </p>
+
   </div>
 
 </body>
