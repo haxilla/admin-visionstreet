@@ -26,11 +26,13 @@
 <nav class="fixed top-0 left-0 w-full h-20 z-50 flex items-center justify-between px-0">
 
     {{-- Logo with no padding and full height --}}
-    <div class="h-full flex items-center px-4">
-        <img src="{{ asset('images/vision-street-nav-logo-1.jpg') }}"
-             alt="Vision Street Logo"
-             class="max-h-full max-w-none object-contain block" />
+    <div class="flex items-center px-6 py-2 h-full">
+        <a href="/super/dashboard"
+           class="text-2xl uppercase tracking-widest font-orbitron text-yellow-400 hover:text-orange-300 transition transform hover:skew-x-3 hover:scale-105 select-none">
+            VISION STREET
+        </a>
     </div>
+
 
     {{-- Nav links (push them away from logo) --}}
     <div class="flex items-center space-x-6 pr-6">
