@@ -1,36 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login | Vision Street</title>
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-	<style>
-		body {
-		  background-image: url('/images/admin_visionstreet_login.jpg');
-		  background-size: cover;
-		  background-position: center;
-		  background-repeat: no-repeat;}
+<style>
+	body {
+	  background-image: url('/images/admin_visionstreet_login.jpg');
+	  background-size: cover;
+	  background-position: center;
+	  background-repeat: no-repeat;}
 
-		.backdrop-glow {
-		  backdrop-filter: blur(16px) saturate(180%);
-		  -webkit-backdrop-filter: blur(16px) saturate(180%);
-		  background-color: rgba(17, 25, 40, 0.65);}
-
-    .grecaptcha-badge {
-      visibility: hidden;
-    }
-
-		@font-face {
-			font-family: 'Russo One';
-			src: url('/fonts/RussoOne-Regular.ttf') format('truetype');
-			font-weight: normal;
-			font-style: normal;}
-
-		.font-russo {
-			font-family: 'Russo One', sans-serif;}
-
-	</style>
+	.backdrop-glow {
+	  backdrop-filter: blur(16px) saturate(180%);
+	  -webkit-backdrop-filter: blur(16px) saturate(180%);
+	  background-color: rgba(17, 25, 40, 0.65);}
+</style>
 </head>
 <body class="h-screen w-screen flex items-center justify-center text-white">
 
