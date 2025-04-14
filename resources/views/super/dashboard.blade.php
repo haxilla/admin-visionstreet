@@ -1,7 +1,7 @@
 @include('super.header.doctype')
 @include('super.header.topnav')
 
-<body class="min-h-screen bg-black text-white flex flex-col">
+<body class="min-h-screen bg-black text-white flex flex-col pt-20">
 
     {{-- Header --}}
     <header class="text-center py-10 backdrop-blur-xl bg-white/5 border-b border-white/10 shadow-inner">
@@ -12,7 +12,7 @@
     </header>
 
     {{-- Main content --}}
-    <main class="flex-grow flex items-center justify-center pt-20">
+    <main class="flex-grow flex items-center justify-center">
         <div class="w-full max-w-2xl mx-auto px-6 py-12 bg-white/5 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/10">
 
             <div class="text-center mb-8">
