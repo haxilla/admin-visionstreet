@@ -35,7 +35,7 @@
     <form action="/login" method="POST" class="space-y-6">
       <div>
         <label for="username" class="block text-sm font-semibold mb-2">Username</label>
-        <input type="email" name="email" required
+        <input type="email" id="email" name="email" value="{{old('email')}}" required
           class="w-full px-4 py-3 bg-white/10 text-white placeholder-white/40 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"/>
       </div>
 
@@ -53,6 +53,17 @@
       <input type="hidden" name="recaptcha_token" id="recaptchaToken">
 
     </form>
+
+    @if ($errors->any())
+      <div class="mb-4 rounded-md bg-red-100 p-4 text-sm text-red-700">
+          <ul class="list-disc pl-5 space-y-1">
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+    @endif
+
     <script src="https://www.google.com/recaptcha/api.js?render=6LfOlRgrAAAAAJbB66zZfSDe5oyeRTqf0BhD7RBh"></script>
     <script>
         grecaptcha.ready(function () {
