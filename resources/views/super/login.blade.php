@@ -35,13 +35,13 @@
     <form action="/login" method="POST" class="space-y-6">
       <div>
         <label for="username" class="block text-sm font-semibold mb-2">Username</label>
-        <input type="text" id="username" name="username" required
+        <input type="email" name="email" required
           class="w-full px-4 py-3 bg-white/10 text-white placeholder-white/40 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"/>
       </div>
 
       <div>
         <label for="password" class="block text-sm font-semibold mb-2">Password</label>
-        <input type="password" id="password" name="password" required
+        <input type="password" name="password" required
           class="w-full px-4 py-3 bg-white/10 text-white placeholder-white/40 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"/>
       </div>
 
@@ -49,7 +49,18 @@
         class="w-full py-3 rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 text-black font-bold text-lg hover:from-pink-500 hover:to-orange-400 transition-all shadow-lg hover:shadow-xl">
         Log In
       </button>
+
+      <input type="hidden" name="recaptcha_token" id="recaptchaToken">
+
     </form>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfOlRgrAAAAAJbB66zZfSDe5oyeRTqf0BhD7RBh"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LfOlRgrAAAAAJbB66zZfSDe5oyeRTqf0BhD7RBh', {action: 'super_login'}).then(function (token) {
+                document.getElementById('recaptchaToken').value = token;
+            });
+        });
+    </script>
 
     <p class="text-center mt-6 text-sm text-white/50">
       © 2025 Vision Street. All rights reserved.
