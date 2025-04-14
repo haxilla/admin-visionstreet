@@ -20,7 +20,7 @@
     {{-- Centered login container --}}
     <div class="flex-grow flex items-center justify-center">
         <div class="w-full max-w-md mx-auto p-8 rounded-2xl background-glow shadow-2xl">
-          <h1 class="text-4xl font-russo text-center mb-6 text-[#ffa600] tracking-[0.20em]">Vision Street</h1>
+          <h1 class="text-4xl font-russo text-center mb-6 text-[#ffa600] tracking-[0.20em]">VISION STREET</h1>
             <form method="post" action="{{ route('login.submit') }}" class="space-y-6">
                 @csrf
 
