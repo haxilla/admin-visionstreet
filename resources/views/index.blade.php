@@ -30,7 +30,7 @@
 <body class="h-screen w-screen flex items-center justify-center text-white">
 
   <div class="w-full max-w-md mx-auto p-8 rounded-2xl backdrop-glow shadow-2xl border border-white/20">
-    <h1 class="font-russo text-4xl font-bold text-center mb-8 uppercase text-white drop-shadow-[0_0_8px_#ff6a00] tracking-[0.35em]">Vision Street</h1>
+    <h1 class="font-russo text-4xl font-bold text-center mb-8 uppercase text-white drop-shadow-[0_0_8px_#ff6a00] tracking-[0.25em]">Vision Street</h1>
     
     <form action="/login" method="POST" class="space-y-6">
       <div>
