@@ -5,7 +5,7 @@
 
     {{-- Header --}}
     <header class="text-center py-10 backdrop-blur-xl bg-white/5 border-b border-white/10 shadow-inner">
-        <h1 class="text-4xl md:text-5xl font-orbitron uppercase text-orange-300 drop-shadow-md">
+        <h1 class="text-4xl md:text-5xl font-orbitron uppercase text-yellow-400 drop-shadow-md">
             Super Dashboard
         </h1>
         <p class="mt-2 text-white/80 text-sm">Welcome, <span class="font-semibold">{{ auth()->user()->email }}</span></p>
