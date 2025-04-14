@@ -1,5 +1,5 @@
 @include('super.header.doctype')
-
+<body>
 <h1 class="text-2xl font-bold">Super Dashboard</h1>
 <p>Welcome, {{ auth()->user()->email }}</p>
 
@@ -9,3 +9,4 @@
         Logout
     </button>
 </form>
+</body>
