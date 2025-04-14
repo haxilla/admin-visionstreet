@@ -13,8 +13,6 @@
 	</div>
 </footer>
 
-
-
 {{-- Closes the html tag in header --}}
 </html>
 

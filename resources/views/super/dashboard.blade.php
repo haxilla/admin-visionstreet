@@ -34,7 +34,7 @@
                 </a>
                 <form method="POST" action="{{ route('logout') }}" class="block p-6 rounded-xl bg-gradient-to-br from-red-500 to-rose-700 hover:from-rose-700 hover:to-red-500 transition text-center shadow-lg hover:shadow-xl">
                     @csrf
-                    <button type="submit" class="text-xl font-bold text-white w-full h-full">Logout</button>
+                    <button type="submit" class="text-xl font-bold text-white w-full">Logout</button>
                     <p class="mt-1 text-sm text-white/70">Sign out of this session</p>
                 </form>
             </div>
