@@ -42,9 +42,7 @@
     </main>
 
     {{-- Footer --}}
-    <footer class="text-center text-xs text-white/40 py-6">
-        <p>© {{ now()->year }} Vision Street. All rights reserved.</p>
-    </footer>
+
 
     @include('super.footer.main')
 </body>
