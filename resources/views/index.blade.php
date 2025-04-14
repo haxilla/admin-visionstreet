@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
   <style>
     body {
-      background-image: url('/public/images/admin_visionstreet_login.jpg');
+      background-image: url('/images/admin_visionstreet_login.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
