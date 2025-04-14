@@ -61,14 +61,22 @@
     </form>
 
     @if ($errors->any())
-        <div class="mb-6 rounded-lg border-l-4 border-red-500 bg-red-100 p-4 text-sm text-red-800 shadow">
-            <ul class="list-disc space-y-1 pl-5">
+        <div class="mb-6 flex items-start rounded-md border-l-4 border-orange-400 bg-gradient-to-r from-red-600 to-pink-600 p-4 text-sm text-white shadow-lg">
+            <!-- Icon -->
+            <svg class="h-5 w-5 mr-3 mt-0.5 flex-shrink-0 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 9v2m0 4h.01M4.93 4.93l14.14 14.14M12 2a10 10 0 100 20 10 10 0 000-20z" />
+            </svg>
+
+            <!-- Error Messages -->
+            <ul class="list-disc space-y-1 pl-1">
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
     @endif
+
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LfOlRgrAAAAAJbB66zZfSDe5oyeRTqf0BhD7RBh"></script>
     <script>
