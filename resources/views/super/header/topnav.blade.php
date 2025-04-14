@@ -28,7 +28,7 @@
     {{-- Logo with no padding and full height --}}
     <div class="flex items-center px-6 py-2 h-full">
         <a href="/super/dashboard"
-           class="text-2xl uppercase tracking-widest font-orbitron text-yellow-400 hover:text-orange-300 transition transform hover:skew-x-3 hover:scale-105 select-none">
+           class="text-2xl uppercase tracking-widest font-russo text-yellow-400 hover:text-orange-300 transition transform hover:skew-x-3 hover:scale-105 select-none">
             VISION STREET
         </a>
     </div>
