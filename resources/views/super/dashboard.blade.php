@@ -12,7 +12,7 @@
     </header>
 
     {{-- Main content --}}
-    <main class="flex-grow flex items-center justify-center">
+    <main class="flex-grow flex items-center justify-center pt-20">
         <div class="w-full max-w-2xl mx-auto px-6 py-12 bg-white/5 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/10">
 
             <div class="text-center mb-8">
