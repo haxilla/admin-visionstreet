@@ -41,9 +41,9 @@ Route::post('/logout', function () {
         case 'super':
             return redirect('/super/dashboard');
         case 'admin':
-            return redirect('/admin/login');
+            return redirect('/admin/dashboard');
         case 'member':
-            return redirect('/member/login');
+            return redirect('/member/dashboard');
         default:
             return redirect('/login');
     }
