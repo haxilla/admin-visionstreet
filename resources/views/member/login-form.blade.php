@@ -1,27 +1,14 @@
 @include('member.header.doctype')
-<!DOCTYPE html>
-<html lang="en" class="h-full bg-black text-white">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vision Street – Member Login</title>
 
-    <!-- Tailwind CSS v4 -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<style>
+  body {
+    background-image: url('/images/vision-street-member-login-1.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+</style>
 
-    <!-- Modern, bold font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
-
-    <style>
-      body {
-        background-image: url('/images/vision-street-member-login-1.jpg');
-        background-size: cover;
-        background-position: center;
-      }
-    </style>
-  </head>
-
-  <body class="h-full w-full flex flex-col items-center justify-center px-4 relative">
+<body class="h-full w-full flex flex-col items-center justify-center px-4 relative">
 
     <!-- Login Panel -->
     <main class="z-10 w-full max-w-md bg-white/90 text-black backdrop-blur-md border-2 border-black shadow-xl px-10 py-12 uppercase tracking-wide text-sm font-semibold">
