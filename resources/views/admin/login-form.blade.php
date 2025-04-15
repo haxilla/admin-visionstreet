@@ -1,58 +1,36 @@
 @include('admin.header.doctype')
 
-<!DOCTYPE html>
-<html lang="en" class="bg-black text-white">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin Login – Vision Street</title>
+<body class="h-full w-full flex items-center justify-center px-4">
+<div class="bg-black/60 backdrop-blur-sm border border-white/20 p-8 md:p-10 rounded-md w-full max-w-sm shadow-xl">
+  <h1 class="text-center text-white text-sm tracking-widest mb-6 border-b border-white/20 pb-2">ADMIN ACCESS</h1>
 
-  <!-- Orbitron font -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <form method="POST" action="/admin/login" class="space-y-5">
+    <div>
+      <label for="username" class="text-xs text-white/70 uppercase">Username</label>
+      <input type="text" id="username" name="username"
+             class="w-full mt-1 px-3 py-2 bg-black/70 text-white border border-white/30 rounded-sm outline-none focus:ring-2 focus:ring-white transition" required />
+    </div>
 
-  <!-- Tailwind CSS v4 (assumed already integrated in your Laravel project) -->
-  <style>
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: url('/images/vision-street-admin-black-1.png') center center / cover no-repeat;
-    }
-  </style>
-</head>
-<body class="min-h-screen flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm">
+    <div>
+      <label for="password" class="text-xs text-white/70 uppercase">Password</label>
+      <input type="password" id="password" name="password"
+             class="w-full mt-1 px-3 py-2 bg-black/70 text-white border border-white/30 rounded-sm outline-none focus:ring-2 focus:ring-white transition" required />
+    </div>
 
-  <div class="w-full max-w-md px-6 py-8 bg-gradient-to-b from-zinc-900 via-zinc-800 to-black shadow-2xl rounded-xl border border-zinc-700/50">
-    
-    <h2 class="text-3xl font-bold text-white tracking-wide text-center mb-6 border-b border-white/10 pb-4">
-      ADMIN ACCESS
-    </h2>
+    <button type="submit"
+            class="w-full mt-4 text-center py-2 tracking-widest text-sm uppercase font-bold bg-gradient-to-r from-white to-gray-300 text-black hover:from-gray-100 hover:to-white transition border border-white/30 rounded-sm">
+      Enter
+    </button>
+  </form>
 
-    <form method="POST" action="/admin/login" class="space-y-6">
-      @csrf
+  <!-- Disclaimer below -->
+  <p class="mt-6 text-[0.65rem] text-center text-white/40 border-t border-white/10 pt-4">
+    🔐 Authorized personnel only
+  </p>
+</div>
 
-      <div>
-        <label for="email" class="block text-sm text-gray-400 uppercase tracking-wider">Username</label>
-        <input id="email" name="email" type="email" required
-          class="w-full px-4 py-2 mt-1 bg-zinc-950 text-white border border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-inner">
-      </div>
 
-      <div>
-        <label for="password" class="block text-sm text-gray-400 uppercase tracking-wider">Password</label>
-        <input id="password" name="password" type="password" required
-          class="w-full px-4 py-2 mt-1 bg-zinc-950 text-white border border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-inner">
-      </div>
-
-      <button type="submit"
-        class="w-full py-2 text-black font-bold tracking-wide uppercase bg-gradient-to-r from-white to-cyan-400 hover:from-cyan-300 hover:to-white focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 rounded-md transition-all">
-        Enter
-      </button>
-
-      <p class="text-xs text-center text-gray-500 pt-4 border-t border-zinc-800/50 mt-6">
-        ⚠ Authorized personnel only
-      </p>
-    </form>
-  </div>
-
-  {{-- RECAPTCHA --}}
+    {{-- RECAPTCHA --}}
     <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
 
     <script>
