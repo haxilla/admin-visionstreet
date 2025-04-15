@@ -1,5 +1,3 @@
-
-
 <footer class="text-center text-xs text-white/40 py-6">
 	<div>
 		<p class="text-xs text-gray-500 text-center mt-4">
@@ -12,7 +10,3 @@
     	<p>© {{ now()->year }} Vision Street. All rights reserved.</p>
 	</div>
 </footer>
-
-{{-- Closes the html tag in header --}}
-</html>
-
