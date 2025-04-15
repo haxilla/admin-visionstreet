@@ -8,7 +8,6 @@
         <h1 class="text-4xl md:text-5xl font-orbitron uppercase text-sky-400 drop-shadow-md">
             Super Dashboard
         </h1>
-        <p class="mt-2 text-white/80 text-sm">Welcome, <span class="font-semibold">{{ auth()->user()->email }}</span></p>
     </header>
 
     {{-- Main content --}}
