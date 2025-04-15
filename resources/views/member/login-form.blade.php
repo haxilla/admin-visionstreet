@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vision Street Login</title>
 
-    <!-- Tailwind CSS v4 -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-
     <!-- Optional font (Sleek, confident, futuristic) -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet" />
 
     <style>
       body {
-        background-image: url('/images/vision-street-login-patterned.png');
+        background-image: url('/images/member-login-1.jpg');
         background-size: cover;
         background-position: center;
         font-family: 'Rajdhani', sans-serif;
