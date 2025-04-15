@@ -26,8 +26,8 @@
                     <p class="font-orbitron text-sm text-white/70">Check system metrics and reports</p>
                 </a>
                 <a href="/super/users" class="block p-6 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 hover:from-rose-500 hover:to-pink-500 transition text-center shadow-lg hover:shadow-xl">
-                    <h3 class="text-xl font-bold mb-2">Manage Users</h3>
-                    <p class="text-sm text-white/70">Administer user accounts</p>
+                    <h3 class="text-xl font-orbitron mb-2">Manage Users</h3>
+                    <p class="text-sm text-white/70 font-russo">Administer user accounts</p>
                 </a>
                 <a href="/super/settings" class="block p-6 rounded-xl bg-gradient-to-br from-green-500 to-teal-500 hover:from-teal-500 hover:to-green-500 transition text-center shadow-lg hover:shadow-xl">
                     <h3 class="text-xl font-bold mb-2">Settings</h3>
