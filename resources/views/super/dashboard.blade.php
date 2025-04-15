@@ -22,8 +22,8 @@
 
             <div class="grid gap-6 md:grid-cols-2">
                 <a href="/super/stats" class="block p-6 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 hover:from-indigo-600 hover:to-purple-600 transition text-center shadow-lg hover:shadow-xl">
-                    <h3 class="text-xl font-bold mb-2">View Stats</h3>
-                    <p class="text-sm text-white/70">Check system metrics and reports</p>
+                    <h3 class="text-xl font-russo mb-2">View Stats</h3>
+                    <p class="font-orbitron text-sm text-white/70">Check system metrics and reports</p>
                 </a>
                 <a href="/super/users" class="block p-6 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 hover:from-rose-500 hover:to-pink-500 transition text-center shadow-lg hover:shadow-xl">
                     <h3 class="text-xl font-bold mb-2">Manage Users</h3>
@@ -43,7 +43,6 @@
     </main>
 
     {{-- Footer --}}
-
-
     @include('super.footer.main')
+
 </body>
