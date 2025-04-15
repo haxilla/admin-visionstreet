@@ -11,7 +11,7 @@
 
     <style>
       body {
-        background-image: url('/images/member-login-1.jpg');
+        background-image: url('/images/vision-street-member-login-1.jpg');
         background-size: cover;
         background-position: center;
         font-family: 'Rajdhani', sans-serif;
