@@ -1,65 +1,69 @@
-@include('super.header.doctype')
+@include('member.header.doctype')
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-black text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vision Street Login</title>
 
-<style>
-    body {
-        background-image: url('/images/admin_visionstreet_login.jpg');
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+    <!-- Optional font (Sleek, confident, futuristic) -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet" />
+
+    <style>
+      body {
+        background-image: url('/images/vision-street-login-patterned.png');
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
-    }
+        font-family: 'Rajdhani', sans-serif;
+      }
+    </style>
+  </head>
 
-    .background-glow {
-        backdrop-filter: blur(8px) saturate(160%);
-        -webkit-backdrop-filter: blur(8px) saturate(160%);
-        background-color: rgba(17, 25, 40, 0.65);
-    }
-</style>
+  <body class="h-full flex items-center justify-center px-6">
+    <div class="w-full max-w-md bg-black/70 backdrop-blur-sm border border-white/20 shadow-2xl rounded-md p-8 md:p-10">
+      <h1 class="text-center text-2xl font-bold tracking-wide text-amber-400 mb-6">Member Login</h1>
 
-<body class="h-screen w-screen flex flex-col justify-between text-white">
-
-    {{-- Centered login container --}}
-    <div class="flex-grow flex items-center justify-center">
-        <div class="w-full max-w-md mx-auto p-8 rounded-2xl background-glow shadow-2xl">
-          <h1 class="text-4xl font-russo text-center mb-6 text-[#ffa600]">VISION STREET</h1>
-            <form method="post" action="{{ route('login.submit') }}" class="space-y-6">
-                @csrf
-
-                <div>
-                    <label for="email" class="block text-sm font-semibold mb-2">Username</label>
-                    <input type="email" name="email" required
-                           class="w-full px-4 py-3 bg-white/10 text-white placeholder-white/40 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"/>
-                </div>
-
-                <div>
-                    <label for="password" class="block text-sm font-semibold mb-2">Password</label>
-                    <input type="password" name="password" required
-                           class="w-full px-4 py-3 bg-white/10 text-white placeholder-white/40 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"/>
-                </div>
-
-                <button type="submit"
-                        class="w-full py-3 rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 text-black font-bold text-lg hover:from-pink-500 hover:to-orange-400 transition-all shadow-lg hover:shadow-xl">
-                    Log In
-                </button>
-
-                <input type="hidden" name="recaptcha_token" id="recaptchaToken">
-            </form>
-
-            @if ($errors->any())
-                <div class="mt-6 flex items-start rounded-md border-l-4 border-orange-400 bg-gradient-to-r from-red-600 to-pink-600 p-4 text-sm text-white shadow-lg">
-                    <svg class="h-5 w-5 mr-3 mt-0.5 flex-shrink-0 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                         viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 9v2m0 4h.01M4.93 4.93l14.14 14.14M12 2a10 10 0 100 20 10 10 0 000-20z"/>
-                    </svg>
-                    <ul class="list-disc space-y-1 pl-1">
-                        @foreach ($errors->all() as $error)
-                            @if ($error) <li>{{ $error }}</li> @endif
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+      <form action="/member/login" method="POST" class="space-y-5">
+        <div>
+          <label for="email" class="block text-sm uppercase tracking-wider text-white/70">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="mt-1 w-full bg-black/60 text-white px-3 py-2 border border-white/30 rounded-md focus:ring-2 focus:ring-amber-400 outline-none transition"
+          />
         </div>
+
+        <div>
+          <label for="password" class="block text-sm uppercase tracking-wider text-white/70">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            class="mt-1 w-full bg-black/60 text-white px-3 py-2 border border-white/30 rounded-md focus:ring-2 focus:ring-amber-400 outline-none transition"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full mt-4 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-black text-sm font-bold tracking-widest uppercase py-2 rounded-md shadow-md transition"
+        >
+          Sign In
+        </button>
+      </form>
+
+      <p class="mt-6 text-xs text-center text-white/40 border-t border-white/10 pt-4">
+        🔒 Secure access only. Unauthorized use is prohibited.
+      </p>
     </div>
+  </body>
+</html>
+
 
     {{-- RECAPTCHA --}}
     <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
