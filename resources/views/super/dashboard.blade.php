@@ -3,17 +3,6 @@
 
 <body class="min-h-screen bg-black text-white flex flex-col pt-20">
 
-    <div x-data="{ open: false }" class="mt-4 text-center">
-    <button @click="open = !open" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-        Toggle
-    </button>
-
-    <div x-show="open" class="mt-2 text-sky-400 transition-all duration-300">
-        🔥 Alpine is working!
-    </div>
-</div>
-
-
     {{-- Header --}}
     <header class="text-center py-10 backdrop-blur-xl bg-white/5 border-b border-white/10 shadow-inner">
         <h1 class="text-4xl md:text-5xl font-orbitron uppercase text-sky-400 drop-shadow-md">
