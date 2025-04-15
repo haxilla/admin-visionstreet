@@ -25,7 +25,7 @@
 
     <!-- Login Panel -->
     <main class="z-10 w-full max-w-md bg-white/90 text-black backdrop-blur-md border-2 border-black shadow-xl px-10 py-12 uppercase tracking-wide text-sm font-semibold">
-      <h1 class="text-4xl text-center mb-8 text-black font-bold tracking-widest font-zendots">Vision Street</h1>
+      <h1 class="text-4xl text-center mb-8 text-black font-bold tracking-widest font-dmserif">Vision Street</h1>
 
       <form action="/member/login" method="POST" class="space-y-6">
         <div>
