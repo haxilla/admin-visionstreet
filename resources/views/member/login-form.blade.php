@@ -17,7 +17,6 @@
         background-image: url('/images/vision-street-member-login-1.jpg');
         background-size: cover;
         background-position: center;
-        font-family: 'Inter', sans-serif;
       }
     </style>
   </head>
