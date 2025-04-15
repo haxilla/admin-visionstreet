@@ -29,6 +29,7 @@
 
           <div
             x-show="open"
+            x-cloak
             x-transition
             class="absolute right-0 mt-2 w-40 bg-black border border-sky-600 shadow-lg rounded-lg py-2 z-50 text-sm"
           >
