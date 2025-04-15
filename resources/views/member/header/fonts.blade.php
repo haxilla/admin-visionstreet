@@ -26,8 +26,19 @@
 	  font-display: normal;
 	}
 
-	.font-orbitron {
-	  font-family: 'zendots', sans-serif;
+	.font-zendots {
+	  font-family: 'Zen Dots', sans-serif;
+	}
+
+	@font-face {
+	  font-family: 'DM Serif Display';
+	  src: url('/fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+	  font-weight: normal;
+	  font-display: normal;
+	}
+
+	.font-dmserif {
+	  font-family: 'DM Serif Display', sans-serif;
 	}
 
 
