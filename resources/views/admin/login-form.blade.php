@@ -1,26 +1,4 @@
 @include('admin.header.doctype')
-<!DOCTYPE html>
-<html lang="en" class="bg-black text-white h-full">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vision Street Admin</title>
-
-    <!-- Tailwind CSS v4 CDN -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-
-    <!-- Avant-Garde Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600..900&display=swap" rel="stylesheet" />
-
-    <style>
-      body {
-        background-image: url('/images/vision-street-admin-black-1.png');
-        background-size: cover;
-        background-position: center;
-        font-family: 'Orbitron', sans-serif;
-      }
-    </style>
-  </head>
 
   <body class="h-full w-full flex flex-col items-center justify-center px-4 relative">
     <!-- Login Panel -->
