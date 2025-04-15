@@ -12,38 +12,31 @@
 
     <!-- Login Panel -->
     <main class="z-10 w-full max-w-md bg-white/90 text-black backdrop-blur-md border-2 border-black shadow-xl px-10 py-12 uppercase tracking-wide text-sm font-semibold">
-      <h1 class="text-4xl text-center mb-8 text-black font-bold tracking-widest font-orbitron">Vision Street</h1>
+<div class="max-w-md w-full px-6 py-10 rounded-[60px] backdrop-blur-md bg-white/20 border border-white/10 text-white shadow-xl transition-all duration-500">
+  <h1 class="text-center text-2xl tracking-widest font-bold mb-8 text-white/90">VISION STREET</h1>
 
-      <form action="/member/login" method="POST" class="space-y-6">
-        <div>
-          <label for="email" class="block text-xs mb-1 text-gray-800">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            class="w-full px-4 py-2 bg-white border-2 border-black text-black text-sm focus:outline-none focus:ring-2 focus:ring-black"
-          />
-        </div>
+  <form method="POST" action="/login" class="space-y-5">
+    <div>
+      <label for="email" class="text-xs uppercase text-white/70">Email</label>
+      <input type="email" id="email" name="email"
+             class="w-full mt-1 px-4 py-2 rounded-full bg-white/10 text-white placeholder-white/60 border border-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+    </div>
 
-        <div>
-          <label for="password" class="block text-xs mb-1 text-gray-800">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            class="w-full px-4 py-2 bg-white border-2 border-black text-black text-sm focus:outline-none focus:ring-2 focus:ring-black"
-          />
-        </div>
+    <div>
+      <label for="password" class="text-xs uppercase text-white/70">Password</label>
+      <input type="password" id="password" name="password"
+             class="w-full mt-1 px-4 py-2 rounded-full bg-white/10 text-white placeholder-white/60 border border-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+    </div>
 
-        <button
-          type="submit"
-          class="w-full py-2 bg-black text-white font-bold tracking-wide hover:bg-neutral-800 transition uppercase"
-        >
-          Sign In
-        </button>
-      </form>
+    <button type="submit"
+            class="w-full py-2 mt-4 rounded-full bg-gradient-to-r from-yellow-400 via-orange-300 to-yellow-400 text-black font-semibold uppercase tracking-widest hover:from-yellow-300 hover:to-orange-400 transition">
+      Sign In
+    </button>
+  </form>
+</div>
+
+      
+
     </main>
 
     {{-- RECAPTCHA --}}
