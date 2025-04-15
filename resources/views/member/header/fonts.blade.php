@@ -18,4 +18,17 @@
 	.font-orbitron {
 	  font-family: 'Orbitron', sans-serif;
 	}
+
+	@font-face {
+	  font-family: 'Zen Dots';
+	  src: url('/fonts/ZenDots-Regular.ttf') format('truetype');
+	  font-weight: normal;
+	  font-display: normal;
+	}
+
+	.font-orbitron {
+	  font-family: 'zendots', sans-serif;
+	}
+
+
 </style>
