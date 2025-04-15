@@ -47,3 +47,5 @@
     @include('super.footer.js')
 
 </body>
+
+</html>
