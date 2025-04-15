@@ -1,67 +1,58 @@
-@include('super.header.doctype')
+@include('admin.header.doctype')
 
-<style>
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Login – Vision Street</title>
+
+  <!-- Orbitron font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 (assumed already integrated in your Laravel project) -->
+  <style>
     body {
-        background-image: url('/images/admin_visionstreet_login.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+      font-family: 'Orbitron', sans-serif;
+      background: url('/images/vision-street-admin-black-1.png') center center / cover no-repeat;
     }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm">
 
-    .background-glow {
-        backdrop-filter: blur(8px) saturate(160%);
-        -webkit-backdrop-filter: blur(8px) saturate(160%);
-        background-color: rgba(17, 25, 40, 0.65);
-    }
-</style>
+  <div class="w-full max-w-md px-6 py-8 bg-gradient-to-b from-zinc-900 via-zinc-800 to-black shadow-2xl rounded-xl border border-zinc-700/50">
+    
+    <h2 class="text-3xl font-bold text-white tracking-wide text-center mb-6 border-b border-white/10 pb-4">
+      ADMIN ACCESS
+    </h2>
 
-<body class="h-screen w-screen flex flex-col justify-between text-white">
+    <form method="POST" action="/admin/login" class="space-y-6">
+      @csrf
 
-    {{-- Centered login container --}}
-    <div class="flex-grow flex items-center justify-center">
-        <div class="w-full max-w-md mx-auto p-8 rounded-2xl background-glow shadow-2xl">
-          <h1 class="text-4xl font-russo text-center mb-6 text-[#ffa600]">VISION STREET</h1>
-            <form method="post" action="{{ route('login.submit') }}" class="space-y-6">
-                @csrf
+      <div>
+        <label for="email" class="block text-sm text-gray-400 uppercase tracking-wider">Username</label>
+        <input id="email" name="email" type="email" required
+          class="w-full px-4 py-2 mt-1 bg-zinc-950 text-white border border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-inner">
+      </div>
 
-                <div>
-                    <label for="email" class="block text-sm font-semibold mb-2">Username</label>
-                    <input type="email" name="email" required
-                           class="w-full px-4 py-3 bg-white/10 text-white placeholder-white/40 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"/>
-                </div>
+      <div>
+        <label for="password" class="block text-sm text-gray-400 uppercase tracking-wider">Password</label>
+        <input id="password" name="password" type="password" required
+          class="w-full px-4 py-2 mt-1 bg-zinc-950 text-white border border-zinc-600 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-inner">
+      </div>
 
-                <div>
-                    <label for="password" class="block text-sm font-semibold mb-2">Password</label>
-                    <input type="password" name="password" required
-                           class="w-full px-4 py-3 bg-white/10 text-white placeholder-white/40 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"/>
-                </div>
+      <button type="submit"
+        class="w-full py-2 text-black font-bold tracking-wide uppercase bg-gradient-to-r from-white to-cyan-400 hover:from-cyan-300 hover:to-white focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 rounded-md transition-all">
+        Enter
+      </button>
 
-                <button type="submit"
-                        class="w-full py-3 rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 text-black font-bold text-lg hover:from-pink-500 hover:to-orange-400 transition-all shadow-lg hover:shadow-xl">
-                    Log In
-                </button>
+      <p class="text-xs text-center text-gray-500 pt-4 border-t border-zinc-800/50 mt-6">
+        ⚠ Authorized personnel only
+      </p>
+    </form>
+  </div>
 
-                <input type="hidden" name="recaptcha_token" id="recaptchaToken">
-            </form>
-
-            @if ($errors->any())
-                <div class="mt-6 flex items-start rounded-md border-l-4 border-orange-400 bg-gradient-to-r from-red-600 to-pink-600 p-4 text-sm text-white shadow-lg">
-                    <svg class="h-5 w-5 mr-3 mt-0.5 flex-shrink-0 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                         viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 9v2m0 4h.01M4.93 4.93l14.14 14.14M12 2a10 10 0 100 20 10 10 0 000-20z"/>
-                    </svg>
-                    <ul class="list-disc space-y-1 pl-1">
-                        @foreach ($errors->all() as $error)
-                            @if ($error) <li>{{ $error }}</li> @endif
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-        </div>
-    </div>
-
-    {{-- RECAPTCHA --}}
+  {{-- RECAPTCHA --}}
     <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
 
     <script>
@@ -75,3 +66,4 @@
     {{-- footer --}}
     @include('super.footer.main')
 </body>
+</html>

@@ -75,3 +75,4 @@
     {{-- footer --}}
     @include('super.footer.main')
 </body>
+</html>
