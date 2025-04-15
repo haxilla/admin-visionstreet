@@ -36,12 +36,11 @@
             <a href="/profile" class="block px-4 py-2 hover:bg-sky-800 text-sky-300 hover:text-white transition">Profile</a>
             <form method="POST" action="{{ route('logout') }}">
               @csrf
-              <button
+                <button
                 type="submit"
-                class="w-full text-left px-4 py-2 hover:bg-red-600 hover:text-white text-red-400 transition cursor-pointer"
-              >
-                Logout
-              </button>
+                class="w-full text-left px-4 py-2 hover:bg-red-600 hover:text-white text-red-400 transition cursor-pointer">
+                    Logout
+                </button>
             </form>
           </div>
         </div>
