@@ -6,7 +6,7 @@
     {{-- Header --}}
     <header class="text-center py-10 backdrop-blur-xl bg-white/5 border-b border-white/10 shadow-inner">
         <h1 class="text-4xl md:text-5xl font-orbitron uppercase text-sky-400 drop-shadow-md">
-            Super Dashboard
+            Member Dashboard
         </h1>
     </header>
 
