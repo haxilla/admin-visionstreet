@@ -29,7 +29,7 @@
         </div>
 
         <button type="submit"
-                class="w-full mt-4 text-center py-2 tracking-widest text-sm uppercase font-bold bg-gradient-to-r from-white to-gray-300 text-white/60 hover:from-gray-100 hover:to-white transition border border-white/30 rounded-sm">
+                class="w-full mt-4 text-center py-2 tracking-widest text-sm uppercase font-bold text-white/60 hover:from-gray-100 hover:to-white transition border border-white/30 rounded-sm">
           Enter
         </button>
       </form>
