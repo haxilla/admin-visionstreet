@@ -1,6 +1,14 @@
 @include('admin.header.doctype')
+<style>
+  body {
+    background-image: url('/images/vision-street-admin-black-1.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Orbitron', sans-serif;
+  }
+</style>
 
-  <body class="h-full w-full flex flex-col items-center justify-center px-4 relative">
+<body class="h-full w-full flex flex-col items-center justify-center px-4 relative">
     <!-- Login Panel -->
     <div class="bg-black/70 backdrop-blur-md border border-white/20 p-8 md:p-10 rounded-md w-full max-w-sm shadow-2xl z-10 mt-10">
       <h1 class="text-center text-white text-sm tracking-widest mb-6 border-b border-white/20 pb-2 uppercase">
