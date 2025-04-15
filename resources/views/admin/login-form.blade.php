@@ -4,7 +4,6 @@
     background-image: url('/images/vision-street-admin-black-1.png');
     background-size: cover;
     background-position: center;
-    font-family: 'Orbitron', sans-serif;
   }
 </style>
 
