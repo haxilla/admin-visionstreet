@@ -34,11 +34,11 @@
             class="absolute right-0 mt-2 w-40 bg-black border border-sky-600 shadow-lg rounded-lg py-2 z-50 text-sm"
           >
             <a href="/profile" class="block px-4 py-2 hover:bg-sky-800 text-sky-300 hover:text-white transition">Profile</a>
-            <form method="POST" action="{{ route('logout') }}" class="cursor-pointer">
+            <form method="POST" action="{{ route('logout') }}">
               @csrf
               <button
                 type="submit"
-                class="w-full text-left px-4 py-2 hover:bg-red-600 hover:text-white text-red-400 transition"
+                class="w-full text-left px-4 py-2 hover:bg-red-600 hover:text-white text-red-400 transition cursor-pointer"
               >
                 Logout
               </button>
