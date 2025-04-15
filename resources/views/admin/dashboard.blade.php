@@ -42,7 +42,7 @@
     </main>
 
     {{-- Footer --}}
-    @include('super.footer.main')
+    @include('admin.footer.main')
 
 </body>
 

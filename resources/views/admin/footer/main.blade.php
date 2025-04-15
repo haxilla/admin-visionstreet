@@ -10,4 +10,4 @@
     	<p>© {{ now()->year }} Vision Street. All rights reserved.</p>
 	</div>
 </footer>
-@include('super.footer.js')
+@include('admin.footer.js')
