@@ -11,7 +11,7 @@ class DashboardController extends Controller
     {
         $this->middleware(function ($request, $next) {
             if (!Auth::check()) {
-                return view('super.login-form')}
+                return view('super.login-form');}
 
             return $next($request);
         });
