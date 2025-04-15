@@ -20,11 +20,35 @@
             Dashboard
         </a>
 
-        <a href="/super/settings"
-           class="text-sky-200 hover:text-white transition duration-150">
-            Settings
-        </a>
+    <div x-data="{ open: false }" class="relative">
+      <button
+        @click="open = !open"
+        @click.away="open = false"
+        class="text-sky-400 hover:text-white transition duration-200 focus:outline-none"
+        aria-label="Settings"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7Zm9.43-3.5c.04.49.07.99.07 1.5s-.03 1.01-.07 1.5l2.11 1.65c.19.15.24.42.1.64l-2 3.46a.5.5 0 0 1-.61.21l-2.49-1a9.48 9.48 0 0 1-2.6 1.5l-.38 2.65a.5.5 0 0 1-.5.42h-4a.5.5 0 0 1-.5-.42l-.38-2.65a9.48 9.48 0 0 1-2.6-1.5l-2.49 1a.5.5 0 0 1-.61-.21l-2-3.46a.5.5 0 0 1 .1-.64l2.11-1.65A9.83 9.83 0 0 1 2.5 12c0-.51.03-1.01.07-1.5L.46 8.85a.5.5 0 0 1-.1-.64l2-3.46a.5.5 0 0 1 .61-.21l2.49 1a9.48 9.48 0 0 1 2.6-1.5l.38-2.65a.5.5 0 0 1 .5-.42h4a.5.5 0 0 1 .5.42l.38 2.65a9.48 9.48 0 0 1 2.6 1.5l2.49-1a.5.5 0 0 1 .61.21l2 3.46a.5.5 0 0 1-.1.64l-2.11 1.65Z" />
+        </svg>
+      </button>
 
+      <div
+        x-show="open"
+        x-transition
+        class="absolute right-0 mt-2 w-40 bg-black border border-sky-600 shadow-lg rounded-lg py-2 z-50 text-sm"
+      >
+        <a href="/profile" class="block px-4 py-2 hover:bg-sky-800 text-sky-300 hover:text-white transition">Profile</a>
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+          <button
+            type="submit"
+            class="w-full text-left px-4 py-2 hover:bg-red-600 hover:text-white text-red-400 transition"
+          >
+            Logout
+          </button>
+        </form>
+      </div>
+    </div>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit"
