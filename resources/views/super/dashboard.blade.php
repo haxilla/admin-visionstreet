@@ -22,7 +22,7 @@
             <div class="grid gap-6 md:grid-cols-2">
                 <a href="/super/stats" class="block p-6 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 hover:from-indigo-600 hover:to-purple-600 transition text-center shadow-lg hover:shadow-xl">
                     <h3 class="text-xl font-russo uppercase mb-2">View Stats</h3>
-                    <p class="font-orbitron racking-wide text-sm text-white/70">Check system metrics</p>
+                    <p class="font-orbitron tracking-wide text-sm text-white/70">Check system metrics</p>
                 </a>
                 <a href="/super/users" class="block p-6 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 hover:from-rose-500 hover:to-pink-500 transition text-center shadow-lg hover:shadow-xl">
                     <h3 class="text-xl font-russo uppercase mb-2">Manage Users</h3>

@@ -39,7 +39,7 @@ Route::post('/logout', function () {
     // Redirect based on role
     switch ($role) {
         case 'super':
-            return redirect('/super/login');
+            return redirect('/super/dashboard');
         case 'admin':
             return redirect('/admin/login');
         case 'member':
