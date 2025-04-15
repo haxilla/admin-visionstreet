@@ -19,17 +19,17 @@
         <div>
           <label for="username" class="text-xs text-white/60 uppercase">Username</label>
           <input type="text" id="username" name="username"
-                 class="w-full mt-1 px-3 py-2 bg-black/80 text-white border border-white/30 rounded-sm outline-none focus:ring-2 focus:ring-white transition" required />
+                 class="w-full mt-1 px-3 py-2 bg-black/80 text-white border border-white/30 rounded-sm outline-none focus:ring-1 focus:ring-white transition" required />
         </div>
 
         <div>
           <label for="password" class="text-xs text-white/60 uppercase">Password</label>
           <input type="password" id="password" name="password"
-                 class="w-full mt-1 px-3 py-2 bg-black/80 text-white border border-white/30 rounded-sm outline-none focus:ring-2 focus:ring-white transition" required />
+                 class="w-full mt-1 px-3 py-2 bg-black/80 text-white border border-white/30 rounded-sm outline-none focus:ring-1 focus:ring-white transition" required />
         </div>
 
         <button type="submit"
-                class="w-full mt-4 text-center py-2 tracking-widest text-sm uppercase font-bold text-white/60 hover:from-gray-100 hover:to-white transition border border-white/30 rounded-sm">
+                class="w-full mt-4 text-center py-2 tracking-widest text-sm uppercase font-bold text-white/60 hover:from-gray-100 hover:to-white transition border border-white/30 rounded-sm cursor-pointer">
           Enter
         </button>
       </form>
