@@ -19,7 +19,7 @@
 
   <div class="relative z-10 w-full max-w-md px-6 py-10 bg-white/10 backdrop-blur-md rounded-xl shadow-xl border border-white/30">
     <div class="mb-8 text-center">
-      <img src="/images/visionstreet-logo.png" alt="VisionStreet" class="mx-auto h-10">
+      <img src="/images/visionStreetCrop-transparent.png" alt="VisionStreet" class="mx-auto h-10">
       <h2 class="text-2xl font-bold text-white mt-4">Welcome Back</h2>
       <p class="text-sm text-white/70">Please sign in to continue</p>
     </div>
