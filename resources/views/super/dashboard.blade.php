@@ -43,7 +43,6 @@
 
     {{-- Footer --}}
     @include('super.footer.main')
-    @include('super.footer.js')
 
 </body>
 
