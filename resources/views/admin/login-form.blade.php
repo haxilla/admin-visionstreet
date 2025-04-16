@@ -43,7 +43,7 @@
 
     <script>
         grecaptcha.ready(function () {
-            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {action: 'super_login'}).then(function (token) {
+            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {action: 'admin_login'}).then(function (token) {
                 document.getElementById('recaptchaToken').value = token;
             });
         });
