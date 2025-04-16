@@ -93,23 +93,6 @@
     &copy; 2025 Vision Street. All rights reserved.
   </footer>
 
-</body>
-</html>
-
-
-  <!-- Footer -->
-  <footer class="z-10 text-xs text-center text-white/70 px-4 py-4">
-    This site is protected by reCAPTCHA and the Google
-    <a href="https://policies.google.com/privacy" class="underline">Privacy Policy</a> and
-    <a href="https://policies.google.com/terms" class="underline">Terms of Service</a> apply.
-    <br />
-    &copy; 2025 Vision Street. All rights reserved.
-  </footer>
-
-</body>
-</html>
-
-
   <!-- Footer -->
   @include('member.footer.main')
 
@@ -123,3 +106,4 @@
     });
   </script>
 </body>
+</html>
