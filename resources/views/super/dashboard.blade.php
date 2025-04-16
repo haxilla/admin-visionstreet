@@ -1,4 +1,4 @@
-@include(super.header.doctype)
+@include('super.header.doctype')
 <script>
   tailwind.config = {
     theme: {
