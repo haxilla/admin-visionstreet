@@ -51,34 +51,12 @@ class GuestController extends Controller
             $role = $user->role ?? 'member'; // fallback if role is missing
 
             // Intercept intended URL
-            $intended = session()->pull('url.intended'); // retrieve and remove
-
-            if ($intended && static::canAccessRoute($role, $intended)) {
-                return redirect()->to($intended);
-            }
+            $intended = session()->pull('url.intended');
 
             return redirect("/{$role}/dashboard");
         }
 
         return back()->withErrors(['email' => 'Invalid credentials.'])->withInput();}
-
-    protected static function canAccessRoute($role, $url)
-    {
-        $accessMap = [
-            'super' => ['super', 'admin', 'member'],
-            'admin' => ['admin', 'member'],
-            'member' => ['member'],
-        ];
-
-        $path = parse_url($url, PHP_URL_PATH);
-
-        foreach ($accessMap[$role] ?? [] as $prefix) {
-            if (str_starts_with($path, "/$prefix")) {
-                return true;
-            }
-        }
-
-        return false;}
 
 
     public function about()
