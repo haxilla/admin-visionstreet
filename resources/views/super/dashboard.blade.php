@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-950 text-white">
+<html lang="en" class="h-full bg-white text-gray-900">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,61 +9,69 @@
     body {
       font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
     }
+    .logo-accent {
+      background: conic-gradient(from 180deg, #f44336, #ff9800, #4caf50, #2196f3, #9c27b0, #f44336);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   </style>
 </head>
 <body class="h-full">
 
   <!-- Top Navbar -->
-  <header class="fixed top-0 left-0 w-full h-14 bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 shadow z-40 flex items-center justify-between px-6">
-    <div class="text-lg font-bold tracking-wide">VISION STREET</div>
-    <div class="text-sm text-gray-300">Welcome back, Agent</div>
+  <header class="fixed top-0 left-0 w-full h-16 bg-white shadow z-40 flex items-center justify-between px-6 border-b">
+    <div class="flex items-center space-x-2">
+      <img src="/path/to/logo.png" alt="Vision Street" class="h-8 w-auto" />
+      <span class="font-extrabold text-lg tracking-tight logo-accent">VISION STREET</span>
+    </div>
+    <div class="text-sm text-gray-600">Welcome back, Agent</div>
   </header>
 
   <!-- Sidebar -->
-  <aside class="fixed top-14 left-0 w-56 h-[calc(100vh-3.5rem)] bg-blue-950 border-r border-blue-800 z-30 flex flex-col py-6 px-4 space-y-4 text-sm">
-    <nav class="flex flex-col space-y-2">
-      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Add Lead</a>
-      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Add Client</a>
-      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Add Project</a>
-      <hr class="border-blue-700 my-2">
-      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Clients</a>
-      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Tools</a>
-      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Projects</a>
-      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">SEO</a>
+  <aside class="fixed top-16 left-0 w-52 h-[calc(100vh-4rem)] bg-white border-r z-30 flex flex-col py-6 px-3 text-sm space-y-2 shadow">
+    <nav class="flex flex-col space-y-1">
+      <a href="#" class="px-3 py-2 rounded hover:bg-gray-100 text-blue-600 font-semibold">Add Lead</a>
+      <a href="#" class="px-3 py-2 rounded hover:bg-gray-100 text-green-600 font-semibold">Add Client</a>
+      <a href="#" class="px-3 py-2 rounded hover:bg-gray-100 text-pink-600 font-semibold">Add Project</a>
+      <hr class="my-2">
+      <a href="#" class="px-3 py-2 rounded hover:bg-gray-100 text-gray-800">Clients</a>
+      <a href="#" class="px-3 py-2 rounded hover:bg-gray-100 text-gray-800">Tools</a>
+      <a href="#" class="px-3 py-2 rounded hover:bg-gray-100 text-gray-800">Projects</a>
+      <a href="#" class="px-3 py-2 rounded hover:bg-gray-100 text-yellow-600 font-semibold">SEO</a>
     </nav>
   </aside>
 
   <!-- Main Content -->
-  <main class="ml-56 mt-14 p-6 bg-gray-950 text-gray-100 min-h-[calc(100vh-3.5rem)] overflow-y-auto">
-    <h1 class="text-2xl font-semibold mb-4">Dashboard Overview</h1>
+  <main class="ml-52 mt-16 p-8 bg-white text-gray-800 min-h-[calc(100vh-4rem)]">
+    <h1 class="text-3xl font-bold tracking-tight mb-6">Dashboard</h1>
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Card 1 -->
-      <div class="bg-blue-900/60 rounded-xl p-5 shadow-lg backdrop-blur border border-blue-800">
-        <h2 class="text-lg font-bold mb-1">Leads This Month</h2>
-        <p class="text-3xl font-semibold text-blue-300">42</p>
+      <div class="rounded-xl p-5 border shadow bg-gradient-to-br from-blue-100 via-blue-50 to-white">
+        <h2 class="text-lg font-semibold mb-2 text-blue-800">Leads</h2>
+        <p class="text-4xl font-bold text-blue-700">42</p>
       </div>
       <!-- Card 2 -->
-      <div class="bg-blue-900/60 rounded-xl p-5 shadow-lg backdrop-blur border border-blue-800">
-        <h2 class="text-lg font-bold mb-1">Active Clients</h2>
-        <p class="text-3xl font-semibold text-blue-300">15</p>
+      <div class="rounded-xl p-5 border shadow bg-gradient-to-br from-green-100 via-green-50 to-white">
+        <h2 class="text-lg font-semibold mb-2 text-green-800">Clients</h2>
+        <p class="text-4xl font-bold text-green-700">15</p>
       </div>
       <!-- Card 3 -->
-      <div class="bg-blue-900/60 rounded-xl p-5 shadow-lg backdrop-blur border border-blue-800">
-        <h2 class="text-lg font-bold mb-1">Projects In Progress</h2>
-        <p class="text-3xl font-semibold text-blue-300">8</p>
+      <div class="rounded-xl p-5 border shadow bg-gradient-to-br from-pink-100 via-pink-50 to-white">
+        <h2 class="text-lg font-semibold mb-2 text-pink-800">Projects</h2>
+        <p class="text-4xl font-bold text-pink-700">8</p>
       </div>
     </div>
 
     <section class="mt-10">
-      <h2 class="text-xl font-semibold mb-3">Recent Activity</h2>
+      <h2 class="text-xl font-semibold mb-4 text-gray-900">Recent Activity</h2>
       <ul class="space-y-2">
-        <li class="bg-gray-800/50 border border-gray-700 rounded p-3">✔️ Added new lead: <span class="font-medium text-blue-300">John Doe</span></li>
-        <li class="bg-gray-800/50 border border-gray-700 rounded p-3">✔️ Updated SEO report for <span class="font-medium text-blue-300">VisionApp</span></li>
-        <li class="bg-gray-800/50 border border-gray-700 rounded p-3">✔️ Added new project: <span class="font-medium text-blue-300">PixelRush</span></li>
+        <li class="border rounded-lg px-4 py-3 text-sm bg-gray-50">✔️ New lead added: <strong class="text-blue-600">John Doe</strong></li>
+        <li class="border rounded-lg px-4 py-3 text-sm bg-gray-50">🚀 SEO audit complete for <strong class="text-yellow-600">VisionApp</strong></li>
+        <li class="border rounded-lg px-4 py-3 text-sm bg-gray-50">🛠️ Project <strong class="text-pink-600">PixelRush</strong> initialized</li>
       </ul>
     </section>
   </main>
 
 </body>
 </html>
-
