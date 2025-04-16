@@ -1,4 +1,9 @@
 @include('super.header.doctype')
+
+<div class="bg-sidebar text-white p-4">
+  DEBUG: bg-sidebar test block
+</div>
+
 <body class="bg-white h-full font-sans text-gray-800">
 
   <!-- Layout Container -->
