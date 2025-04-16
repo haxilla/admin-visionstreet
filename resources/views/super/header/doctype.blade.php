@@ -17,4 +17,5 @@
     {{-- Optional: fonts --}}
     @include('super.header.fonts')
     @include('super.header.styles')
+    @include('super.header.favicons')
 </head>
