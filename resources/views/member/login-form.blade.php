@@ -1,3 +1,4 @@
+@include('member.header.doctype')
 <body class="min-h-screen flex flex-col bg-gray-100">
 
   <!-- Page content (centered login box) -->
