@@ -17,8 +17,8 @@
       <form method="POST" action="{{ route('login.submit') }}" class="space-y-5">
         @csrf
         <div>
-          <label for="username" class="text-xs text-white/60 uppercase">Username</label>
-          <input type="text" id="username" name="username"
+          <label for="email" class="text-xs text-white/60 uppercase">Username</label>
+          <input type="text" id="username" name="email"
                  class="w-full mt-1 px-3 py-2 bg-black/80 text-white border border-white/30 rounded-sm outline-none focus:ring-1 focus:ring-white transition" required />
         </div>
 
@@ -32,20 +32,21 @@
                 class="w-full mt-4 text-center py-2 tracking-widest text-sm uppercase font-bold text-white/60 hover:from-gray-100 hover:to-white transition border border-white/30 rounded-sm cursor-pointer">
           Enter
         </button>
-      @if ($errors->any())
-        <div class="mt-6 flex items-start rounded-md border-l-4 border-orange-400 bg-gradient-to-r from-red-600 to-pink-600 p-4 text-sm text-white shadow-lg">
-            <svg class="h-5 w-5 mr-3 mt-0.5 flex-shrink-0 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 9v2m0 4h.01M4.93 4.93l14.14 14.14M12 2a10 10 0 100 20 10 10 0 000-20z"/>
-            </svg>
-            <ul class="list-disc space-y-1 pl-1">
-                @foreach ($errors->all() as $error)
-                    @if ($error) <li>{{ $error }}</li> @endif
-                @endforeach
-            </ul>
-        </div>
-      @endif
+        @if ($errors->any())
+          <div class="mt-6 flex items-start rounded-md border-l-4 border-orange-400 bg-gradient-to-r from-red-600 to-pink-600 p-4 text-sm text-white shadow-lg">
+              <svg class="h-5 w-5 mr-3 mt-0.5 flex-shrink-0 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01M4.93 4.93l14.14 14.14M12 2a10 10 0 100 20 10 10 0 000-20z"/>
+              </svg>
+              <ul class="list-disc space-y-1 pl-1">
+                  @foreach ($errors->all() as $error)
+                      @if ($error) <li>{{ $error }}</li> @endif
+                  @endforeach
+              </ul>
+          </div>
+        @endif
+        <input type="hidden" name="recaptcha_token" id="recaptchaToken">
       </form>
 
       <p class="mt-6 text-[0.65rem] text-center text-white/40 border-t border-white/10 pt-4">
