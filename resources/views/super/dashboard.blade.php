@@ -1,4 +1,4 @@
-
+@include('super.header.doctype')
 <body class="bg-white h-full font-sans text-gray-800">
 
   <!-- Layout Container -->
