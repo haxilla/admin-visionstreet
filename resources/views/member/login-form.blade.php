@@ -37,7 +37,7 @@
       </div>
 
       <!-- Right Illustration Area -->
-      <div class="hidden md:flex w-1/2 bg-white">
+      <div class="hidden md:flex w-1/2 bg-white p-6">
         <img src="/images/vision-street-square.jpg" alt="Vision Street Logo" class="object-cover w-full h-full" />
       </div>
 
