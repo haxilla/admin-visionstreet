@@ -31,8 +31,7 @@
       <!-- Logo Row -->
       <div class="px-6 py-5 border-b border-white/10 text-left font-extrabold text-xl tracking-tight leading-none">
         <div class="leading-none">
-          <span class="text-white">VISI<span class="text-accentBlue">ON</span></span><br />
-          <span class="text-accentBlue font-light">STREET</span>
+          <img src="/images/vision-street-square-logo-pixels.png">
         </div>
       </div>
 
