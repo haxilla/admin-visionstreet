@@ -1,62 +1,60 @@
-@include('member.header.doctype')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vision Street Login</title>
-</head>
-<body class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-  <div class="w-full max-w-5xl flex rounded-2xl overflow-hidden shadow-lg bg-white">
+<body class="min-h-screen flex flex-col bg-gray-100">
 
-    <!-- Left Sidebar -->
-    <div class="w-full md:w-1/2 bg-[#0A3A60] text-white p-8 flex flex-col justify-center space-y-6">
-      <!-- Logo -->
-      <div class="space-y-2">
-        <div class="text-3xl font-bold leading-tight">VISION<br />STREET</div>
-        <div class="flex space-x-1">
-          <div class="w-4 h-2 bg-blue-800 rounded-sm"></div>
-          <div class="w-4 h-2 bg-blue-600 rounded-sm"></div>
-          <div class="w-4 h-2 bg-blue-400 rounded-sm"></div>
+  <!-- Page content (centered login box) -->
+  <div class="flex-1 flex items-center justify-center">
+    <div class="w-full max-w-5xl flex rounded-2xl overflow-hidden shadow-lg bg-white">
+
+      <!-- Left Sidebar -->
+      <div class="w-full md:w-1/2 bg-[#0A3A60] text-white p-8 flex flex-col justify-center space-y-6">
+        <!-- Logo -->
+        <div class="space-y-2">
+          <div class="text-3xl font-bold leading-tight">VISION<br />STREET</div>
+          <div class="flex space-x-1">
+            <div class="w-4 h-2 bg-blue-800 rounded-sm"></div>
+            <div class="w-4 h-2 bg-blue-600 rounded-sm"></div>
+            <div class="w-4 h-2 bg-blue-400 rounded-sm"></div>
+          </div>
         </div>
+
+        <!-- Welcome Text -->
+        <div>
+          <h2 class="text-xl font-semibold">Welcome Back</h2>
+          <p class="text-sm text-white/80">Sign in to your account</p>
+        </div>
+
+        <!-- Login Form -->
+        <form class="space-y-4">
+          <div>
+            <label for="email" class="block text-sm mb-1">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com"
+              class="w-full px-3 py-2 rounded-md bg-white/10 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+          </div>
+          <div>
+            <label for="password" class="block text-sm mb-1">Password</label>
+            <input type="password" id="password" name="password" placeholder="••••••••"
+              class="w-full px-3 py-2 rounded-md bg-white/10 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center space-x-2">
+              <input type="checkbox" class="accent-blue-500" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="text-blue-200 hover:underline">Forgot password?</a>
+          </div>
+          <button type="submit" class="w-full py-2 rounded-md bg-blue-500 hover:bg-blue-600 font-semibold">Sign In</button>
+        </form>
       </div>
 
-      <!-- Welcome Text -->
-      <div>
-        <h2 class="text-xl font-semibold">Welcome Back</h2>
-        <p class="text-sm text-white/80">Sign in to your account</p>
+      <!-- Right Illustration Area -->
+      <div class="hidden md:flex w-1/2 bg-white">
+        <img src="/images/vision-street-login-illustration.png" alt="People working on computer" class="object-cover w-full h-full" />
       </div>
 
-      <!-- Login Form -->
-      <form class="space-y-4">
-        <div>
-          <label for="email" class="block text-sm mb-1">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com"
-            class="w-full px-3 py-2 rounded-md bg-white/10 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-        </div>
-        <div>
-          <label for="password" class="block text-sm mb-1">Password</label>
-          <input type="password" id="password" name="password" placeholder="••••••••"
-            class="w-full px-3 py-2 rounded-md bg-white/10 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-        </div>
-        <div class="flex items-center justify-between text-sm">
-          <label class="flex items-center space-x-2">
-            <input type="checkbox" class="accent-blue-500" />
-            <span>Remember me</span>
-          </label>
-          <a href="#" class="text-blue-200 hover:underline">Forgot password?</a>
-        </div>
-        <button type="submit" class="w-full py-2 rounded-md bg-blue-500 hover:bg-blue-600 font-semibold">Sign In</button>
-      </form>
     </div>
-
-    <!-- Right Illustration Area -->
-    <div class="hidden md:flex w-1/2 bg-white">
-      <img src="/images/vision-street-login-illustration.png" alt="People working on computer" class="object-cover w-full h-full" />
-    </div>
-
   </div>
 
+  <!-- Footer -->
+  @include('member.footer.main')
 
   <!-- reCAPTCHA -->
   <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
@@ -67,9 +65,4 @@
         });
     });
   </script>
-
-  <!-- Footer -->
-  @include('member.footer.main')
-
 </body>
-</html>
