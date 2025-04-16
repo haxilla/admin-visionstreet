@@ -1,5 +1,5 @@
-@include('super.header.doctype')
-@include('super.header.topnav')
+@include('member.header.doctype')
+@include('member.header.topnav')
 
 <body class="min-h-screen bg-black text-white flex flex-col pt-20">
 
