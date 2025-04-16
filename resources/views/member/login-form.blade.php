@@ -34,7 +34,7 @@
 
   <!-- Background -->
   <div class="absolute inset-0 z-0">
-    <img src="/images/vision-street-square-logo-pixels.png" alt="Vision Street Background"
+    <img src="/images/vision-street-member-login-2.jpg" alt="Vision Street Background"
          class="w-full h-full object-cover object-center" />
     <div class="absolute inset-0 bg-black/60"></div>
   </div>
@@ -45,7 +45,7 @@
 
       <!-- Logo -->
       <div class="flex justify-center">
-        <img src="/images/vision-street-logo-left-sidebar-1.png" alt="Vision Street Logo" class="w-40 glow-logo" />
+        <img src="/images/vision-street-square-logo-pixels.png" alt="Vision Street Logo" class="w-40 glow-logo" />
       </div>
 
       <!-- Headline -->
