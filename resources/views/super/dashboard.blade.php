@@ -1,94 +1,80 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-50">
+<html lang="en" class="h-full">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vision Street Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            sidebar: '#234567',
-          },
-        },
-      },
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
     }
-  </script>
+    .collapsed .label {
+      display: none;
+    }
+    .collapsed .sidebar {
+      width: 64px;
+    }
+    .collapsed .main {
+      margin-left: 64px;
+    }
+  </style>
 </head>
-<body class="h-full font-sans">
+<body class="h-full bg-gray-100 text-gray-800">
 
   <!-- Sidebar -->
-  <div id="sidebar" class="fixed top-0 left-0 h-full w-60 bg-sidebar text-white transition-all duration-300 ease-in-out z-50">
-    <!-- Logo & Burger -->
-    <div class="flex items-center justify-between px-4 py-4 border-b border-white/10">
-      <span class="font-black text-xl tracking-wide whitespace-nowrap">VISION<span class="font-light">STREET</span></span>
-      <button id="toggleSidebar" class="text-white hover:text-blue-300 focus:outline-none">
-        ☰
-      </button>
-    </div>
+  <div id="layout" class="flex h-screen transition-all duration-300">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar w-60 bg-blue-900 text-white flex flex-col transition-all duration-300 fixed top-0 left-0 h-full z-40">
+      <!-- Top Logo Row -->
+      <div class="flex items-center justify-between px-4 py-4 border-b border-blue-800">
+        <span class="font-bold text-lg tracking-wide label">VISION STREET</span>
+        <button id="toggleSidebar" class="text-white hover:text-blue-300">
+          ☰
+        </button>
+      </div>
+      <!-- Nav Items -->
+      <nav class="mt-4 flex-1 flex flex-col space-y-3 px-4 text-sm">
+        <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
+          <span>👑</span><span class="label">Users</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
+          <span>😊</span><span class="label">Clients</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
+          <span>💰</span><span class="label">Leads</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
+          <span>📊</span><span class="label">Projects</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
+          <span>📈</span><span class="label">SEO</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
+          <span>🧪</span><span class="label">Version</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
+          <span>🔒</span><span class="label">Admin</span>
+        </a>
+        <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
+          <span>🎰</span><span class="label">Baccarat</span>
+        </a>
+      </nav>
+    </aside>
 
-    <!-- Menu -->
-    <nav class="mt-6 flex flex-col space-y-2 px-4 text-sm">
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>👑</span><span class="label">Users</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>😊</span><span class="label">Clients</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>💰</span><span class="label">Leads</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>📊</span><span class="label">Projects</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>📈</span><span class="label">SEO</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>📋</span><span class="label">Pipeline</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>🛠️</span><span class="label">Tasks</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>🖼️</span><span class="label">Gallery</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>🔧</span><span class="label">Dev</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>🧪</span><span class="label">Version</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>🔒</span><span class="label">Admin</span>
-      </a>
-      <a href="#" class="flex items-center space-x-3 hover:text-blue-300">
-        <span>🎰</span><span class="label">Baccarat</span>
-      </a>
-    </nav>
+    <!-- Main Content -->
+    <div id="main" class="main flex-1 ml-60 transition-all duration-300 p-8">
+      <h1 class="text-3xl font-bold mb-4">Dashboard Overview</h1>
+      <p>This main content area adjusts when sidebar collapses.</p>
+    </div>
   </div>
 
-  <!-- Main Content -->
-  <main id="mainContent" class="ml-60 transition-all duration-300 ease-in-out p-8">
-    <h1 class="text-3xl font-bold mb-4">Dashboard Overview</h1>
-    <p class="text-gray-600">Content area adjusts based on sidebar state. Feel free to build out whatever you want here.</p>
-  </main>
-
   <script>
-    const toggleBtn = document.getElementById('toggleSidebar');
-    const sidebar = document.getElementById('sidebar');
-    const mainContent = document.getElementById('mainContent');
-    let collapsed = false;
+    const toggleButton = document.getElementById('toggleSidebar');
+    const layout = document.getElementById('layout');
 
-    toggleBtn.addEventListener('click', () => {
-      collapsed = !collapsed;
-      sidebar.style.width = collapsed ? '60px' : '240px';
-      mainContent.style.marginLeft = collapsed ? '60px' : '240px';
-      document.querySelectorAll('.label').forEach(el => {
-        el.style.display = collapsed ? 'none' : 'inline';
-      });
+    toggleButton.addEventListener('click', () => {
+      layout.classList.toggle('collapsed');
     });
   </script>
 
