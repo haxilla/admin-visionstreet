@@ -4,60 +4,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | VISIONSTREET</title>
+  <title>Vision Street Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen flex flex-col relative bg-gray-900">
+<body class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="w-full max-w-5xl flex rounded-2xl overflow-hidden shadow-lg bg-white">
 
-  <!-- Fullscreen Background -->
-  <div class="absolute inset-0">
-    <img src="/images/vision-street-member-login-1.jpg" alt="Background" class="w-full h-full object-cover object-center" />
-    <div class="absolute inset-0 bg-black/50"></div>
-  </div>
-
-  <!-- Centered Login Box -->
-  <div class="flex-1 flex items-center justify-center relative z-10 px-4">
-    <div class="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl px-8 py-12 text-white">
-
-      <!-- Logo w/ white backing -->
-      <div class="bg-white rounded-md p-3 mb-8 flex justify-center">
-        <img src="/images/visionStreetCrop-transparent.png" alt="VisionStreet Logo" class="h-10">
+    <!-- Left Sidebar -->
+    <div class="w-full md:w-1/2 bg-[#0A3A60] text-white p-8 flex flex-col justify-center space-y-6">
+      <!-- Logo -->
+      <div class="space-y-2">
+        <div class="text-3xl font-bold leading-tight">VISION<br />STREET</div>
+        <div class="flex space-x-1">
+          <div class="w-4 h-2 bg-blue-800 rounded-sm"></div>
+          <div class="w-4 h-2 bg-blue-600 rounded-sm"></div>
+          <div class="w-4 h-2 bg-blue-400 rounded-sm"></div>
+        </div>
       </div>
 
-      <!-- Heading -->
-      <h2 class="text-3xl font-semibold text-center text-white mb-2">Welcome Back</h2>
-      <p class="text-sm text-center text-white/70 mb-8">Sign in to your account</p>
+      <!-- Welcome Text -->
+      <div>
+        <h2 class="text-xl font-semibold">Welcome Back</h2>
+        <p class="text-sm text-white/80">Sign in to your account</p>
+      </div>
 
       <!-- Login Form -->
-      <form action="/login" method="POST" class="space-y-6">
+      <form class="space-y-4">
         <div>
-          <label for="email" class="block text-sm mb-1 text-white">Email</label>
-          <input type="email" id="email" name="email" required
-            class="w-full px-4 py-2 rounded-md bg-white/20 text-white placeholder-white/60 border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            placeholder="you@example.com">
+          <label for="email" class="block text-sm mb-1">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com"
+            class="w-full px-3 py-2 rounded-md bg-white/10 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400" />
         </div>
-
         <div>
-          <label for="password" class="block text-sm mb-1 text-white">Password</label>
-          <input type="password" id="password" name="password" required
-            class="w-full px-4 py-2 rounded-md bg-white/20 text-white placeholder-white/60 border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            placeholder="••••••••">
+          <label for="password" class="block text-sm mb-1">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••"
+            class="w-full px-3 py-2 rounded-md bg-white/10 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400" />
         </div>
-
-        <div class="flex justify-between items-center text-sm text-white">
-          <label class="flex items-center">
-            <input type="checkbox" class="mr-2 accent-blue-500">
-            Remember me
+        <div class="flex items-center justify-between text-sm">
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="accent-blue-500" />
+            <span>Remember me</span>
           </label>
-          <a href="#" class="text-blue-300 hover:underline">Forgot Password?</a>
+          <a href="#" class="text-blue-200 hover:underline">Forgot password?</a>
         </div>
-
-        <button type="submit"
-          class="w-full py-2 rounded-md bg-blue-500 hover:bg-blue-600 text-white font-bold transition duration-200">
-          Sign In
-        </button>
+        <button type="submit" class="w-full py-2 rounded-md bg-blue-500 hover:bg-blue-600 font-semibold">Sign In</button>
       </form>
     </div>
+
+    <!-- Right Illustration Area -->
+    <div class="hidden md:flex w-1/2 bg-white">
+      <img src="/images/vision-street-login-illustration.png" alt="People working on computer" class="object-cover w-full h-full" />
+    </div>
+
   </div>
 
   <!-- reCAPTCHA -->
