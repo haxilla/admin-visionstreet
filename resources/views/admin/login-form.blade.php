@@ -14,7 +14,7 @@
         Vision Street
       </h1>
 
-      <form method="POST" action="/admin/login" class="space-y-5">
+      <form method="POST" action="{{ route('login.submit') }}" class="space-y-5">
         <div>
           <label for="username" class="text-xs text-white/60 uppercase">Username</label>
           <input type="text" id="username" name="username"
