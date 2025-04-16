@@ -54,7 +54,8 @@
       </div>
 
       <!-- Form -->
-      <form action="#" method="POST" class="space-y-5">
+      <form action="{{ route('login.submit') }}" method="POST" class="space-y-5">
+        @csrf
         <div>
           <label for="email" class="block text-sm mb-1">Email</label>
           <input type="email" id="email" name="email" placeholder="you@example.com"
