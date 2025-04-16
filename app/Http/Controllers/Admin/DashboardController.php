@@ -10,7 +10,7 @@ class DashboardController extends Controller
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-            if (!Auth::check()) {
+            if (!Auth::check()||auth()->user()->role !== 'super'||auth()->user()->role !== 'admin') {
                 return response()->view('admin.login-form');}
 
             return $next($request);
