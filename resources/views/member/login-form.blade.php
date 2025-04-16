@@ -12,50 +12,67 @@
     }
   </style>
 </head>
-<body class="min-h-screen bg-[#0A3A60] text-white flex items-center justify-center px-4">
+<body class="min-h-screen bg-[#0A3A60] flex items-center justify-center px-4">
 
-  <div class="w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl grid md:grid-cols-2">
-    
-    <!-- Left Content: Login Form -->
-    <div class="bg-[#0A3A60] p-10 flex flex-col justify-between space-y-10">
-      
-      <!-- Logo -->
-      <div>
-        <img src="/images/vision-street-logo-left-sidebar-1.png" alt="Vision Street Logo" class="w-40 mb-6" />
-        <h2 class="text-2xl font-bold text-white">Welcome Back</h2>
-        <p class="text-sm text-white/70 mt-1">Sign in to your account</p>
-      </div>
+  <div class="w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden">
 
-      <!-- Form -->
+    <!-- Logo centered on top -->
+    <div class="bg-[#0A3A60] px-8 pt-10 pb-6 text-center">
+      <img src="/images/vision-street-logo-left-sidebar-1.png" alt="Vision Street Logo" class="w-44 mx-auto" />
+    </div>
+
+    <!-- Image banner (full-width, not awkwardly boxed) -->
+    <div class="h-48 md:h-56 w-full overflow-hidden">
+      <img src="/images/vision-street-right-side-login.jpg"
+           alt="Workspace"
+           class="w-full h-full object-cover object-center grayscale-[10%]" />
+    </div>
+
+    <!-- Form section -->
+    <div class="p-8 md:p-10 bg-white space-y-6">
+
+      <h2 class="text-2xl font-bold text-[#0A3A60] text-center">Welcome Back</h2>
+      <p class="text-sm text-gray-600 text-center">Sign in to your Vision Street account</p>
+
       <form action="#" method="POST" class="space-y-5">
         <div>
-          <label for="email" class="block text-sm mb-1">Email</label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com"
-            class="w-full px-4 py-2 rounded-md bg-white/10 text-white border border-white/30 placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required />
         </div>
+
         <div>
-          <label for="password" class="block text-sm mb-1">Password</label>
-          <input type="password" id="password" name="password" required placeholder="••••••••"
-            class="w-full px-4 py-2 rounded-md bg-white/10 text-white border border-white/30 placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+          <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required />
         </div>
+
         <div class="flex items-center justify-between text-sm">
           <label class="flex items-center space-x-2">
             <input type="checkbox" class="accent-blue-500" />
             <span>Remember me</span>
           </label>
-          <a href="#" class="text-blue-200 hover:underline">Forgot password?</a>
+          <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
         </div>
-        <button type="submit" class="w-full py-2 rounded-md bg-blue-500 hover:bg-blue-600 font-semibold text-white transition">
+
+        <button type="submit" class="w-full bg-[#0A3A60] hover:bg-[#114d84] text-white py-2 rounded-md font-semibold transition">
           Sign In
         </button>
       </form>
     </div>
 
-    <!-- Right Content: Image -->
-    <div class="bg-white p-4 flex items-center justify-center">
-      <img src="/images/vision-street-right-side-login.jpg" alt="Workspace" class="rounded-2xl shadow-md object-cover w-full h-full max-h-[560px]" />
+    <!-- Footer Disclaimer (inside container, soft gray) -->
+    <div class="text-[11px] text-center text-gray-400 px-6 pb-6">
+      This site is protected by reCAPTCHA and the Google
+      <a href="https://policies.google.com/privacy" class="underline">Privacy Policy</a> and
+      <a href="https://policies.google.com/terms" class="underline">Terms of Service</a> apply.
+      <br />&copy; 2025 Vision Street. All rights reserved.
     </div>
+
   </div>
+
+</body>
+</html>
 
   <!-- Footer -->
   @include('member.footer.main')
