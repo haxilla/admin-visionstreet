@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" class="h-full">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vision Street Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            sidebar: '#0f172a',
-            accentBlue: '#3b82f6',
-            accentYellow: '#facc15',
-            accentPink: '#f472b6',
-            accentTeal: '#2dd4bf',
-          },
+@include(super.header.doctype)
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          sidebar: '#0f172a',
+          accentBlue: '#3b82f6',
+          accentYellow: '#facc15',
+          accentPink: '#f472b6',
+          accentTeal: '#2dd4bf',
         },
       },
-    };
-  </script>
-</head>
+    },
+  };
+</script>
 <body class="bg-white h-full font-sans text-gray-800">
 
   <!-- Layout Container -->
