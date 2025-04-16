@@ -51,7 +51,6 @@
 
       <!-- Headline -->
       <div class="text-center">
-        <h2 class="text-2xl font-bold mb-1">Welcome Back</h2>
         <p class="text-sm text-white/80">Sign in to your Vision Street account</p>
       </div>
 
