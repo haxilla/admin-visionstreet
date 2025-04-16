@@ -1,6 +1,4 @@
-// tailwind.config.js
-
-module.exports = {
+export default {
   content: [
     './resources/views/**/*.blade.php',
     './resources/js/**/*.js',
