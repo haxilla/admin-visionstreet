@@ -7,16 +7,6 @@
 
       <!-- Left Sidebar -->
       <div class="w-full md:w-1/2 bg-[#0A3A60] text-white p-8 flex flex-col justify-center space-y-6">
-        <!-- Logo -->
-        <div class="space-y-2">
-          <div class="text-3xl font-bold leading-tight">VISION<br />STREET</div>
-          <div class="flex space-x-1">
-            <div class="w-4 h-2 bg-blue-800 rounded-sm"></div>
-            <div class="w-4 h-2 bg-blue-600 rounded-sm"></div>
-            <div class="w-4 h-2 bg-blue-400 rounded-sm"></div>
-          </div>
-        </div>
-
         <!-- Welcome Text -->
         <div>
           <h2 class="text-xl font-semibold">Welcome Back</h2>
