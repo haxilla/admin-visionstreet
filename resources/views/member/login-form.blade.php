@@ -48,7 +48,7 @@
 
       <!-- Right Illustration Area -->
       <div class="hidden md:flex w-1/2 bg-white">
-        <img src="/images/vision-street-login-illustration.png" alt="People working on computer" class="object-cover w-full h-full" />
+        <img src="/images/vision-street-square" alt="Vision Street Logo" class="object-cover w-full h-full" />
       </div>
 
     </div>
