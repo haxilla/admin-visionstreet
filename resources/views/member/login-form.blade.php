@@ -5,9 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vision Street Login</title>
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen flex items-center justify-center bg-gray-100">
+<body class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
   <div class="w-full max-w-5xl flex rounded-2xl overflow-hidden shadow-lg bg-white">
 
     <!-- Left Sidebar -->
@@ -57,6 +56,7 @@
     </div>
 
   </div>
+
 
   <!-- reCAPTCHA -->
   <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
