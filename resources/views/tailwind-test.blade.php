@@ -18,6 +18,9 @@
             Test Button
         </button>
     </div>
+    <div class="bg-sidebar text-white p-4 text-lg">
+  TEST BLOCK: Should show dark background
+</div>
 
 </body>
 </html>
