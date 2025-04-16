@@ -1,9 +1,16 @@
-@include('super.header.doctype')
-@include('super.header.topnav')
-<style>
-body {
-    font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;}
-</style>
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-950 text-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vision Street Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
+    }
+  </style>
+</head>
 <body class="h-full">
 
   <!-- Top Navbar -->
@@ -59,3 +66,4 @@ body {
 
 </body>
 </html>
+
