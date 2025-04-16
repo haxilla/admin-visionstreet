@@ -30,7 +30,7 @@
     <aside class="w-64 bg-sidebar text-white flex flex-col fixed h-full z-40">
       <!-- Logo Row -->
       <div class="px-6 py-5 border-b border-white/10 text-left font-extrabold text-xl tracking-tight leading-none">
-        <div class="leading-none p-10">
+        <div class="leading-none p-5">
           <img src="/images/vision-street-square-logo-pixels.png">
         </div>
       </div>
