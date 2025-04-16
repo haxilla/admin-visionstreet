@@ -79,6 +79,7 @@
           class="w-full py-2 px-4 rounded-md text-white font-bold glow-button hover:scale-[1.015] transition-all duration-200 shadow-md">
           Sign In
         </button>
+        <input type="hidden" name="recaptcha_token" id="recaptchaToken">
       </form>
       @if ($errors->any())
         <div class="mt-6 flex items-start rounded-md border-l-4 border-orange-400 bg-gradient-to-r from-red-600 to-pink-600 p-4 text-sm text-white shadow-lg">
