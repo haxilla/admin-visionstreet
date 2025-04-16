@@ -10,54 +10,92 @@
     body {
       font-family: 'Inter', sans-serif;
     }
+
+    .glow-logo {
+      filter: drop-shadow(0 0 12px rgba(58, 187, 255, 0.25));
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: -200%;
+      }
+      100% {
+        background-position: 200%;
+      }
+    }
+
+    .glow-button {
+      background: linear-gradient(120deg, #1d71b8, #29a3ef, #1d71b8);
+      background-size: 200% 200%;
+      animation: shine 2.5s infinite linear;
+    }
   </style>
 </head>
 <body class="min-h-screen bg-gray-900 relative flex flex-col">
 
-  <!-- Background Image with Dark Overlay -->
+  <!-- Background -->
   <div class="absolute inset-0 z-0">
     <img src="/images/vision-street-right-side-login.jpg" alt="Vision Street Background"
          class="w-full h-full object-cover object-center" />
     <div class="absolute inset-0 bg-black/60"></div>
   </div>
 
-  <!-- Login Box Centered -->
+  <!-- Main Content -->
   <main class="flex-1 flex items-center justify-center z-10 px-4">
-    <div class="bg-white/95 rounded-xl shadow-xl max-w-md w-full p-8 md:p-10">
+    <div class="bg-[#0a3a60cc] border border-blue-900/40 backdrop-blur-lg shadow-xl rounded-xl max-w-md w-full px-8 py-10 md:p-12 text-white space-y-8">
+
       <!-- Logo -->
-      <div class="flex justify-center mb-8">
-        <img src="/images/vision-street-logo-left-sidebar-1.png" alt="Vision Street Logo" class="w-44" />
+      <div class="flex justify-center">
+        <img src="/images/vision-street-logo-left-sidebar-1.png" alt="Vision Street Logo" class="w-40 glow-logo" />
       </div>
 
       <!-- Headline -->
-      <h2 class="text-2xl font-bold text-center text-[#0A3A60] mb-2">Welcome Back</h2>
-      <p class="text-sm text-center text-gray-600 mb-6">Sign in to your Vision Street account</p>
+      <div class="text-center">
+        <h2 class="text-2xl font-bold mb-1">Welcome Back</h2>
+        <p class="text-sm text-white/80">Sign in to your Vision Street account</p>
+      </div>
 
       <!-- Form -->
       <form action="#" method="POST" class="space-y-5">
         <div>
-          <label for="email" class="block text-sm mb-1 text-gray-700">Email</label>
+          <label for="email" class="block text-sm mb-1">Email</label>
           <input type="email" id="email" name="email" placeholder="you@example.com"
-            class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            class="w-full px-4 py-2 rounded-md bg-white/10 text-white border border-white/30 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400" />
         </div>
         <div>
-          <label for="password" class="block text-sm mb-1 text-gray-700">Password</label>
+          <label for="password" class="block text-sm mb-1">Password</label>
           <input type="password" id="password" name="password" placeholder="••••••••"
-            class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            class="w-full px-4 py-2 rounded-md bg-white/10 text-white border border-white/30 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400" />
         </div>
         <div class="flex items-center justify-between text-sm">
           <label class="flex items-center space-x-2">
             <input type="checkbox" class="accent-blue-500" />
             <span>Remember me</span>
           </label>
-          <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
+          <a href="#" class="text-blue-300 hover:underline">Forgot password?</a>
         </div>
-        <button type="submit" class="w-full py-2 bg-[#0A3A60] hover:bg-blue-800 rounded-md text-white font-semibold transition">
+
+        <!-- Glow Button -->
+        <button type="submit"
+          class="w-full py-2 px-4 rounded-md text-white font-bold glow-button hover:scale-[1.015] transition-all duration-200 shadow-md">
           Sign In
         </button>
       </form>
     </div>
   </main>
+
+  <!-- Footer -->
+  <footer class="z-10 text-xs text-center text-white/70 px-4 py-4">
+    This site is protected by reCAPTCHA and the Google
+    <a href="https://policies.google.com/privacy" class="underline">Privacy Policy</a> and
+    <a href="https://policies.google.com/terms" class="underline">Terms of Service</a> apply.
+    <br />
+    &copy; 2025 Vision Street. All rights reserved.
+  </footer>
+
+</body>
+</html>
+
 
   <!-- Footer -->
   <footer class="z-10 text-xs text-center text-white/70 px-4 py-4">
