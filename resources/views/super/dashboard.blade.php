@@ -1,49 +1,61 @@
 @include('super.header.doctype')
 @include('super.header.topnav')
+<style>
+body {
+    font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;}
+</style>
+<body class="h-full">
 
-<body class="min-h-screen bg-black text-white flex flex-col pt-20">
+  <!-- Top Navbar -->
+  <header class="fixed top-0 left-0 w-full h-14 bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 shadow z-40 flex items-center justify-between px-6">
+    <div class="text-lg font-bold tracking-wide">VISION STREET</div>
+    <div class="text-sm text-gray-300">Welcome back, Agent</div>
+  </header>
 
-    {{-- Header --}}
-    <header class="text-center py-10 backdrop-blur-xl bg-white/5 border-b border-white/10 shadow-inner">
-        <h1 class="text-4xl md:text-5xl font-orbitron uppercase text-sky-400 drop-shadow-md">
-            Super Dashboard
-        </h1>
-    </header>
+  <!-- Sidebar -->
+  <aside class="fixed top-14 left-0 w-56 h-[calc(100vh-3.5rem)] bg-blue-950 border-r border-blue-800 z-30 flex flex-col py-6 px-4 space-y-4 text-sm">
+    <nav class="flex flex-col space-y-2">
+      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Add Lead</a>
+      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Add Client</a>
+      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Add Project</a>
+      <hr class="border-blue-700 my-2">
+      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Clients</a>
+      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Tools</a>
+      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">Projects</a>
+      <a href="#" class="text-blue-100 hover:text-white hover:bg-blue-800 px-3 py-2 rounded transition">SEO</a>
+    </nav>
+  </aside>
 
-    {{-- Main content --}}
-    <main class="flex-grow flex items-center justify-center">
-        <div class="w-full max-w-2xl mx-auto px-6 py-12 bg-white/5 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/10">
+  <!-- Main Content -->
+  <main class="ml-56 mt-14 p-6 bg-gray-950 text-gray-100 min-h-[calc(100vh-3.5rem)] overflow-y-auto">
+    <h1 class="text-2xl font-semibold mb-4">Dashboard Overview</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-blue-900/60 rounded-xl p-5 shadow-lg backdrop-blur border border-blue-800">
+        <h2 class="text-lg font-bold mb-1">Leads This Month</h2>
+        <p class="text-3xl font-semibold text-blue-300">42</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-blue-900/60 rounded-xl p-5 shadow-lg backdrop-blur border border-blue-800">
+        <h2 class="text-lg font-bold mb-1">Active Clients</h2>
+        <p class="text-3xl font-semibold text-blue-300">15</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-blue-900/60 rounded-xl p-5 shadow-lg backdrop-blur border border-blue-800">
+        <h2 class="text-lg font-bold mb-1">Projects In Progress</h2>
+        <p class="text-3xl font-semibold text-blue-300">8</p>
+      </div>
+    </div>
 
-            <div class="text-center mb-8">
-                <h2 class="text-2xl text-sky-100 font-russo tracking-wide">QUICK ACTIONS</h2>
-                <p class="text-sm text-white/60">Choose where to go next</p>
-            </div>
-
-            <div class="grid gap-6 md:grid-cols-2">
-                <a href="/super/stats" class="block p-6 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 hover:from-indigo-600 hover:to-purple-600 transition text-center shadow-lg hover:shadow-xl">
-                    <h3 class="text-xl font-russo uppercase mb-2">View Stats</h3>
-                    <p class="font-orbitron tracking-wide text-sm text-white/70">Check system metrics</p>
-                </a>
-                <a href="/super/users" class="block p-6 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 hover:from-rose-500 hover:to-pink-500 transition text-center shadow-lg hover:shadow-xl">
-                    <h3 class="text-xl font-russo uppercase mb-2">Manage Users</h3>
-                    <p class="text-sm text-white/70 font-orbitron tracking-wide">Administer user accounts</p>
-                </a>
-                <a href="/super/settings" class="block p-6 rounded-xl bg-gradient-to-br from-green-500 to-teal-500 hover:from-teal-500 hover:to-green-500 transition text-center shadow-lg hover:shadow-xl">
-                    <h3 class="text-xl font-russo uppercase mb-2">Settings</h3>
-                    <p class="font-orbitron text-sm text-white/70 tracking-wide">System configuration</p>
-                </a>
-                <a href="/super/logs" class="block p-6 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 hover:from-orange-500 hover:to-yellow-400 transition text-center shadow-lg hover:shadow-xl">
-                    <h3 class="text-xl font-russo uppercase mb-2">System Logs</h3>
-                    <p class="font-orbitron text-sm text-white/70 tracking-wide">View Activity logs</p>
-                </a>
-            </div>
-
-        </div>
-    </main>
-
-    {{-- Footer --}}
-    @include('super.footer.main')
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold mb-3">Recent Activity</h2>
+      <ul class="space-y-2">
+        <li class="bg-gray-800/50 border border-gray-700 rounded p-3">✔️ Added new lead: <span class="font-medium text-blue-300">John Doe</span></li>
+        <li class="bg-gray-800/50 border border-gray-700 rounded p-3">✔️ Updated SEO report for <span class="font-medium text-blue-300">VisionApp</span></li>
+        <li class="bg-gray-800/50 border border-gray-700 rounded p-3">✔️ Added new project: <span class="font-medium text-blue-300">PixelRush</span></li>
+      </ul>
+    </section>
+  </main>
 
 </body>
-
 </html>
