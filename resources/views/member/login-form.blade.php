@@ -34,7 +34,7 @@
 
   <!-- Background -->
   <div class="absolute inset-0 z-0">
-    <img src="/images/vision-street-member-login.png" alt="Vision Street Background"
+    <img src="/images/vision-street-member-login-2.jpg" alt="Vision Street Background"
          class="w-full h-full object-cover object-center" />
     <div class="absolute inset-0 bg-black/60"></div>
   </div>
