@@ -7,22 +7,6 @@
 
     {{-- Vite asset bundling --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            sidebar: '#0f172a',
-            accentBlue: '#3b82f6',
-            accentYellow: '#facc15',
-            accentPink: '#f472b6',
-            accentTeal: '#2dd4bf',
-          },
-        },
-      },
-    };
-  </script>
 
     {{-- CSRF token for forms --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
