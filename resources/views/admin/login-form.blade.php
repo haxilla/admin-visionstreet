@@ -15,6 +15,7 @@
       </h1>
 
       <form method="POST" action="{{ route('login.submit') }}" class="space-y-5">
+        @csrf
         <div>
           <label for="username" class="text-xs text-white/60 uppercase">Username</label>
           <input type="text" id="username" name="username"
