@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        sidebar: '#0f172a',
+        testcolor: '#0f172a',
       },
     },
   },
