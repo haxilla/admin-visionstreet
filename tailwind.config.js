@@ -1,3 +1,9 @@
+
+export default {
+  notARealThing: true
+}
+
+
 export default {
   content: [
     './resources/views/**/*.blade.php',
