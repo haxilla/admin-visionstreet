@@ -4,6 +4,7 @@ export default {
     './resources/js/**/*.js',
     './resources/**/*.php', // optional fallback
   ],
+  safelist: ['bg-sidebar'],
   theme: {
     extend: {
       colors: {
