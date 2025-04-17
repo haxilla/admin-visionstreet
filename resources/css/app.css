@@ -1,15 +1,1 @@
 @import 'tailwindcss';
-
-@theme {
-  --color-sidebar: #0f172a;
-  --color-accent: #facc15;
-}
-
-@layer utilities {
-  .bg-sidebar {
-    background-color: var(--color-sidebar);
-  }
-  .text-accent {
-    color: var(--color-accent);
-  }
-}
