@@ -6,11 +6,12 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
+      backgroundColor: {
         sidebar: '#0f172a',
       },
     },
   },
+
   plugins: [],
 }
 
