@@ -8,9 +8,6 @@ export default defineConfig({
           input: ['resources/css/app.css', 'resources/js/app.js'],
           refresh: true,
       }),
-      tailwindcss.withConfig({
-        confsfdfig: './tailwind.config.js', // <- REQUIRED to use custom colors, etc.
-      }),
     ],
 });
 
