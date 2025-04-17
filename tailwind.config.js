@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundColor: {
+      colors: {
         sidebar: '#0f172a',
       },
     },
