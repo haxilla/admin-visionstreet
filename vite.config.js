@@ -9,7 +9,7 @@ export default defineConfig({
           refresh: true,
       }),
       tailwindcss({
-        config: './tailwind.config.js', // <- REQUIRED to use custom colors, etc.
+        confsfdfig: './tailwind.config.js', // <- REQUIRED to use custom colors, etc.
       }),
     ],
 });
