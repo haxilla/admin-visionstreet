@@ -1,9 +1,5 @@
 @include('super.header.doctype')
 
-<div class="bg-testcolor text-white p-4">
-  DEBUG: bg-testcolor test block
-</div>
-
 <body class="bg-white h-full font-sans text-gray-800">
 
   <!-- Layout Container -->
