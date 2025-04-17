@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import laravel from 'laravel-vite-plugin'
-import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
   plugins: [
@@ -8,8 +7,6 @@ export default defineConfig({
       input: ['resources/css/app.css', 'resources/js/app.js'],
       refresh: true,
     }),
-    tailwindcss(), // THIS is required to inject your config
-
   ]
 })
 
