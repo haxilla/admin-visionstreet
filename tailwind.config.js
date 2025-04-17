@@ -8,10 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        testcolor: '#0f172a',
+        testcolor: '#0f172a'
+        accent: '#3b82f6'
+
       },
     },
-  },
+  }
 
   plugins: [],
 }
