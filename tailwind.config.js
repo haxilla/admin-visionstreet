@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   content: [
     './resources/views/**/*.blade.php',
     './resources/js/**/*.js',
@@ -15,4 +15,5 @@ export default {
     },
   },
   plugins: [],
-};
+}
+
