@@ -20,43 +20,36 @@
             </div>
 
             <nav class="flex-1 mt-4 space-y-1 text-sm">
-                <template x-for="section in [
-  { title: 'Users',    route: 'users',    icon: `<path d='M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' /><circle cx='12' cy='7' r='4' />` },
-  { title: 'Clients',  route: 'clients',  icon: `<path d='M5 13l4 4L19 7' />` },
-  { title: 'Projects', route: 'projects', icon: `<path d='M9 17v-6h13M9 12H4M4 12v2a2 2 0 0 0 2 2h3' />` },
-  { title: 'Leads',    route: 'leads',    icon: `<path d='M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z' /><path d='M4 12v4h16v-4' />` }
-]" :key="section.route">
-  <div x-data="() => ({ open: false })"
-       x-init="$watch('open', value => { if (collapsed) dropdownOpen = value })">
+                <div x-data="{ open: false }" class="relative">
+  <!-- Main nav item -->
+  <a @click="open = !open"
+     class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
+     :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
+    
+    <svg class="w-5 h-5 shrink-0 text-white">...</svg>
 
-    <!-- Parent button -->
-    <button @click="open = !open"
-            class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-            :class="collapsed ? 'justify-center' : 'gap-3'">
-      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-           x-html="section.icon"></svg>
-      <span class="text-white" x-show="!collapsed" x-text="section.title" x-cloak></span>
-      <svg x-show="!collapsed"
-           :class="open ? 'rotate-90' : ''"
-           class="w-4 h-4 ml-auto transition-transform"
-           fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
+    <span x-show="!collapsed" class="text-white" x-cloak>Users</span>
 
-    <!-- Submenu -->
-    <div x-show="open && !collapsed" x-transition x-cloak class="ml-11 mt-1 space-y-1">
-      <a :href="'/' + section.route"
-         class="block text-sm text-white/90 hover:text-white">
-        All <span x-text="section.title"></span>
-      </a>
-      <a :href="'/' + section.route + '/create'"
-         class="block text-sm text-white/90 hover:text-white">
-        New <span x-text="section.title"></span>
-      </a>
-    </div>
+    <svg class="w-4 h-4 text-white ml-auto" x-show="!collapsed" x-cloak>
+      <path d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+
+  <!-- Submenu when expanded -->
+  <div x-show="open && !collapsed" x-cloak class="pl-12 mt-1 space-y-1 text-sm text-white">
+    <a href="/users/all" class="block hover:text-blue-300">All Users</a>
+    <a href="/users/new" class="block hover:text-blue-300">Add User</a>
   </div>
-</template>
+
+  <!-- Flyout submenu when collapsed -->
+  <div x-show="open && collapsed"
+       x-cloak
+       class="absolute left-full top-0 mt-2 bg-[#0A1B32] p-3 rounded-md shadow-md z-50 space-y-1 text-sm w-40 text-white">
+    <a href="/users/all" class="block hover:text-blue-300">All Users</a>
+    <a href="/users/new" class="block hover:text-blue-300">Add User</a>
+  </div>
+</div>
+
 
             </nav>
 
