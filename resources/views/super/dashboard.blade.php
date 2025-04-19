@@ -7,18 +7,22 @@
   <aside :class="collapsed ? 'w-20' : 'w-64'" 
          class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-all duration-300">
     <!-- Sidebar Logo Block -->
-    <div class="h-[180px] p-6 border-b border-white/10 flex items-center justify-center overflow-hidden">
-      <template x-if="!collapsed">
-        <img src="/images/vision-street-square-logo-pixels.png"
-             alt="Full Logo"
-             class="max-h-full object-contain" />
-      </template>
-      <template x-if="collapsed">
-        <img src="/favicon-96x96.png"
-             alt="Collapsed Logo"
-             class="w-8 h-8 mx-auto block" />
-      </template>
-    </div>
+    <div
+  :class="collapsed ? 'h-20 p-2' : 'h-[180px] p-6'"
+  class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300"
+>
+  <template x-if="!collapsed">
+    <img src="/images/vision-street-square-logo-pixels.png"
+         alt="Full Logo"
+         class="max-h-full object-contain" />
+  </template>
+  <template x-if="collapsed">
+    <img src="/favicon-96x96.png"
+         alt="Collapsed Logo"
+         class="w-8 h-8 mx-auto block" />
+  </template>
+</div>
+
     <nav class="flex-1 mt-4 space-y-1 text-sm">
       <a href="#" class="flex items-center px-4 py-2 gap-3 hover:bg-white/10" :class="collapsed ? 'justify-center' : ''">
         <svg class="w-5 h-5" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24">
