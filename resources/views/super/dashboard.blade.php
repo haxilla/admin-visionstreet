@@ -10,7 +10,7 @@
       <template x-if="!collapsed">
         <img src="/images/vision-street-square-logo-pixels.png"
              alt="Full Logo"
-             class="h-12 mx-auto block" />
+             class="h-[180px] mx-auto block" />
       </template>
       <template x-if="collapsed">
         <img src="/favicon-96x96.png"
