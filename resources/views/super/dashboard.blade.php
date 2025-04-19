@@ -4,7 +4,7 @@
 
   <!-- Layout Container -->
   <div class="flex h-screen overflow-hidden">
-
+    @include('super.header.topnav')
     <!-- Sidebar -->
     <aside class="w-64 bg-sidebar text-white flex flex-col fixed h-full z-40">
       <!-- Logo Row -->
