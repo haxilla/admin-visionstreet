@@ -90,7 +90,7 @@
   <div :class="collapsed ? 'ml-20' : 'ml-64'" class="transition-all duration-300 flex-1 flex flex-col bg-white">
 
     <!-- TOP NAV -->
-    <header class="h-20 flex items-center justify-between px-6 border-b border-gray-200 bg-white relative">
+    <header class="fixed top-0 left-0 right-0 z-40 h-16 flex items-center justify-between px-6 bg-white border-b border-gray-200">
 
       <!-- Collapse Button -->
       <button @click="collapsed = !collapsed" class="text-gray-600 hover:text-black cursor-pointer">
@@ -143,7 +143,7 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="flex-1 p-10 overflow-auto">
+    <main class="flex-1 p-10 pt-24 overflow-auto">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-4xl font-black tracking-tight mb-2">Dashboard Overview</h1>
         <p class="text-gray-500 mb-10">This main content area adjusts when sidebar collapses.</p>
