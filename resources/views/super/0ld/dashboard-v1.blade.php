@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 @include('super.header.doctype')
 <body class="bg-white h-full font-sans text-gray-800" x-data="{ collapsed: false }">
 
@@ -22,25 +24,6 @@
       </a>
     </div>
       <nav class="flex-1 mt-4 space-y-1 text-sm">
-
-<!-- Clients Menu -->
-<div x-data="{ open: false }" class="space-y-1">
-  <button @click="open = !open"
-          class="flex items-center justify-between w-full px-4 py-2 hover:bg-white/10">
-    <span class="flex items-center gap-3">
-      <svg class="w-5 h-5" ...></svg>
-      <span x-show="!collapsed">Clients</span>
-    </span>
-    <svg x-show="!collapsed" class="w-4 h-4 transform" :class="{ 'rotate-90': open }" ...></svg>
-  </button>
-  <div x-show="open" class="ml-8 space-y-1">
-    <a href="/clients" class="block py-1 text-sm text-white/90 hover:text-white">All Clients</a>
-    <a href="/clients/create" class="block py-1 text-sm text-white/90 hover:text-white">New Client</a>
-  </div>
-</div>
-
-
-
         <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
            :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
           <svg class="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="2"
