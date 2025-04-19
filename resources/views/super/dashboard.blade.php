@@ -4,7 +4,6 @@
 
   <!-- Layout Container -->
   <div class="flex h-screen overflow-hidden">
-    @include('super.header.topnav')
     <!-- Sidebar -->
     <aside class="w-64 bg-sidebar text-white flex flex-col fixed h-full z-40">
       <!-- Logo Row -->
@@ -50,6 +49,8 @@
     <!-- Main Content Area -->
     <main class="ml-64 flex-1 p-10 overflow-auto">
       <div class="max-w-4xl mx-auto">
+       @include('super.header.topnav')
+
         <h1 class="text-4xl font-black tracking-tight mb-2">Dashboard Overview</h1>
         <p class="text-gray-500 mb-10">This main content area adjusts when sidebar collapses.</p>
 
