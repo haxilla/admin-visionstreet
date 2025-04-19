@@ -1,8 +1,7 @@
 @include('super.header.doctype')
 <body class="bg-white h-full font-sans text-gray-800">
 
-<!-- Alpine.js logic for collapsing -->
-<div x-data="{ collapsed: false }" class="flex h-screen overflow-hidden">
+<div x-data="{ collapsed: false }" class="flex h-screen overflow-hidden relative">
 
   <!-- Sidebar -->
   <aside 
@@ -19,37 +18,32 @@
       </template>
     </div>
 
-    <!-- Sidebar nav -->
+    <!-- Nav Items -->
     <nav class="flex-1 mt-6 space-y-1 text-sm">
       <a href="#" class="flex items-center px-4 py-2 gap-3 hover:bg-white/10" :class="collapsed ? 'justify-center' : ''">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="w-5 h-5" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24">
           <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
         </svg>
         <span x-show="!collapsed">Users</span>
       </a>
-      <a href="#" class="flex items-center px-4 py-2 gap-3 hover:bg-white/10" :class="collapsed ? 'justify-center' : ''">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M5 13l4 4L19 7" />
-        </svg>
-        <span x-show="!collapsed">Clients</span>
-      </a>
-      <!-- Add more menu items here following same structure -->
+      <!-- Add additional items here... -->
     </nav>
   </aside>
 
-  <!-- Main Content Area -->
+  <!-- Persistent Toggle Button -->
+  <div class="absolute top-4 left-4 z-50">
+    <button @click="collapsed = !collapsed" class="text-gray-600 bg-white border rounded-full p-1 shadow hover:text-black transition">
+      <svg class="w-6 h-6" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Main Content -->
   <div :class="collapsed ? 'ml-20' : 'ml-64'" class="transition-all duration-300 flex-1 flex flex-col">
 
-    <!-- Top Nav -->
-    <header class="w-full h-16 flex items-center justify-between px-6 bg-white border-b border-gray-200">
-      <!-- Sidebar Toggle Button -->
-      <button @click="collapsed = !collapsed" class="text-gray-600 hover:text-gray-900 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-
-      <!-- Right-Aligned Controls -->
+    <!-- Top Navigation -->
+    <header class="w-full h-16 flex items-center justify-end px-6 bg-white border-b border-gray-200">
       <div class="flex items-center gap-4">
         <input type="text" placeholder="Search..." class="px-3 py-1.5 text-sm border rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
         <button>
@@ -60,7 +54,7 @@
       </div>
     </header>
 
-    <!-- Main -->
+    <!-- Page Content -->
     <main class="flex-1 p-10 overflow-auto">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-4xl font-black tracking-tight mb-2">Dashboard Overview</h1>
@@ -73,11 +67,10 @@
         </div>
       </div>
     </main>
-
   </div>
 </div>
 
-<!-- Alpine.js (must be at the bottom!) -->
+<!-- Alpine.js -->
 <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 </html>
