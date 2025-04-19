@@ -9,18 +9,20 @@
   <aside :class="collapsed ? 'w-20' : 'w-64'" class="transition-all duration-300 bg-[#0A1B32] text-white flex flex-col fixed h-full z-40">
     
     <!-- Logo -->
-    <div class="px-6 py-6 border-b border-white/10 flex justify-center items-center h-[200px]">
+    <div :class="collapsed ? 'h-[64px] p-2' : 'h-[140px] p-6'"
+         class="transition-all duration-300 border-b border-white/10 flex justify-center items-center overflow-hidden">
       <template x-if="!collapsed">
         <img src="/images/vision-street-square-logo-pixels.png"
              alt="Logo"
              class="w-full h-full object-contain" />
       </template>
       <template x-if="collapsed">
-        <img src="/favicon-96x96.png"
+        <img src="/images/vision-V-icon.png"
              alt="V Icon"
              class="w-[40px] h-[40px] object-contain" />
       </template>
     </div>
+
 
     <!-- Nav Items -->
     <nav class="flex-1 mt-4 space-y-1 text-sm">
@@ -89,7 +91,7 @@
     <header class="h-20 flex items-center justify-between px-6 border-b border-gray-200 bg-white relative">
 
       <!-- Collapse Button -->
-      <button @click="collapsed = !collapsed" class="text-gray-600 hover:text-black">
+      <button @click="collapsed = !collapsed" class="text-gray-600 hover:text-black cursor-pointer">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
