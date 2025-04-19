@@ -26,54 +26,43 @@
         </svg>
         <span x-show="!collapsed">Users</span>
       </a>
-      <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-md" :class="{ 'justify-center': collapsed }">
-        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" /></svg>
-        <span x-show="!collapsed">Clients</span>
-      </a>
-      <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-md" :class="{ 'justify-center': collapsed }">
-        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z"/><path d="M4 12v4h16v-4" /></svg>
-        <span x-show="!collapsed">Leads</span>
-      </a>
-      <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-md" :class="{ 'justify-center': collapsed }">
-        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 17v-6h13M9 12H4M4 12v2a2 2 0 0 0 2 2h3" /></svg>
-        <span x-show="!collapsed">Projects</span>
-      </a>
-      <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-md" :class="{ 'justify-center': collapsed }">
-        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18" /></svg>
-        <span x-show="!collapsed">SEO</span>
-      </a>
-      <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-md" :class="{ 'justify-center': collapsed }">
-        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
-        <span x-show="!collapsed">Pipeline</span>
-      </a>
-      <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-md" :class="{ 'justify-center': collapsed }">
-        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" /></svg>
-        <span x-show="!collapsed">Tasks</span>
-      </a>
+      <!-- Repeat for other nav items -->
     </nav>
   </aside>
 
-  <!-- Right Section (Topnav + Content) -->
+  <!-- Right Section -->
   <div :class="collapsed ? 'ml-20' : 'ml-64'" class="transition-all duration-300 flex-1 flex flex-col bg-white">
 
     <!-- Topnav -->
-    <header class="h-16 flex items-center justify-between px-6 border-b border-gray-200 bg-white">
+    <header class="h-20 flex items-center justify-between px-6 border-b border-gray-200 bg-white relative">
+
       <!-- Collapse Toggle -->
-      <button @click="collapsed = !collapsed" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+      <button 
+        @click="collapsed = !collapsed" 
+        class="absolute left-6 text-gray-600 hover:text-gray-900 focus:outline-none"
+      >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
 
-      <!-- Search + Settings -->
-      <div class="flex items-center gap-4">
-        <input type="text" placeholder="Search..." class="px-3 py-1.5 text-sm border rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
-        <button>
-          <svg class="w-6 h-6 text-gray-600 hover:text-gray-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M12 4v1M12 19v1M4 12h1M19 12h1M5.64 5.64l.7.7M17.66 17.66l.7.7M5.64 18.36l.7-.7M17.66 6.34l.7-.7M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" />
-          </svg>
-        </button>
+      <!-- Centered Search Bar -->
+      <div class="w-full flex justify-center">
+        <input 
+          type="text" 
+          placeholder="Search..." 
+          class="w-[40%] px-5 py-2 text-base border border-gray-300 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
+        >
       </div>
+
+      <!-- Settings Icon (Right) -->
+      <button class="absolute right-6 text-gray-600 hover:text-gray-900">
+        <!-- Lucide-style gear -->
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.591 1.062c1.527-.88 3.276.869 2.397 2.397a1.724 1.724 0 0 0 1.061 2.59c1.757.427 1.757 2.924 0 3.351a1.724 1.724 0 0 0-1.061 2.59c.879 1.528-.87 3.277-2.397 2.397a1.724 1.724 0 0 0-2.591 1.061c-.426 1.757-2.924 1.757-3.35 0a1.724 1.724 0 0 0-2.59-1.061c-1.528.88-3.277-.869-2.398-2.397a1.724 1.724 0 0 0-1.06-2.59c-1.757-.427-1.757-2.924 0-3.351a1.724 1.724 0 0 0 1.06-2.59c-.879-1.528.87-3.277 2.398-2.397a1.724 1.724 0 0 0 2.59-1.061z"/>
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      </button>
     </header>
 
     <!-- Main Content -->
@@ -96,4 +85,3 @@
 <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 </html>
-
