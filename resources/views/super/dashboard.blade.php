@@ -1,68 +1,37 @@
 @include('super.header.doctype')
-@include('super.header.topnav')
 <body class="bg-white h-full font-sans text-gray-800">
 
-  <!-- Layout Container -->
-  <div class="flex h-screen overflow-hidden">
-    <!-- Sidebar -->
-    <aside class="w-64 bg-sidebar text-white flex flex-col fixed h-full z-40">
-      <!-- Logo Row -->
-      <div class="px-6 py-5 border-b border-white/10 text-left font-extrabold text-xl tracking-tight leading-none">
-        <div class="leading-none p-5">
-          <img src="/images/vision-street-square-logo-pixels.png">
-        </div>
-      </div>
+<!-- Vue or Alpine.js toggle logic — this example uses Alpine.js -->
+<div x-data="{ collapsed: false }" class="flex h-screen overflow-hidden">
 
-      <!-- Nav Items -->
-      <nav class="flex-1 mt-6 space-y-1 text-sm px-4">
-        <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 bg-white/10">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
-          <span>Users</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" /></svg>
-          <span>Clients</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z"/><path d="M4 12v4h16v-4" /></svg>
-          <span>Leads</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 17v-6h13M9 12H4M4 12v2a2 2 0 0 0 2 2h3" /></svg>
-          <span>Projects</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18" /></svg>
-          <span>SEO</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
-          <span>Pipeline</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" /></svg>
-          <span>Tasks</span>
-        </a>
-      </nav>
-    </aside>
+  <!-- Sidebar -->
+  <aside 
+    :class="collapsed ? 'w-20' : 'w-64'" 
+    class="transition-all duration-300 bg-sidebar text-white flex flex-col fixed h-full z-40"
+  >
+    <!-- Logo -->
+    <div class="px-4 py-5 border-b border-white/10 text-center">
+      <template x-if="!collapsed">
+        <img src="/images/vision-street-square-logo-pixels.png" alt="Vision Street Logo" class="h-12 mx-auto">
+      </template>
+      <template x-if="collapsed">
+        <img src="/images/vision-V-icon.png" alt="V Logo" class="h-8 mx-auto">
+      </template>
+    </div>
 
-    <!-- Main Content Area -->
-    <main class="ml-64 flex-1 p-10 overflow-auto">
-      <div class="max-w-4xl mx-auto">
-       @include('super.header.topnav')
-
-        <h1 class="text-4xl font-black tracking-tight mb-2">Dashboard Overview</h1>
-        <p class="text-gray-500 mb-10">This main content area adjusts when sidebar collapses.</p>
-
-        <!-- Colorful abstract blobs / layout -->
-        <div class="flex items-center gap-6 flex-wrap">
-          <div class="w-32 h-32 bg-accentTeal rounded-full"></div>
-          <div class="w-16 h-16 bg-accentPink rounded"></div>
-          <div class="w-20 h-20 bg-accentYellow rounded-full"></div>
-        </div>
-      </div>
-    </main>
-  </div>
-
-</body>
-</html>
+    <!-- Nav -->
+    <nav class="flex-1 mt-6 space-y-1 text-sm px-2" :class="collapsed ? 'px-1' : 'px-4'">
+      <template x-for="item in [
+        { label: 'Users', icon: 'user' },
+        { label: 'Clients', icon: 'check' },
+        { label: 'Leads', icon: 'lock' },
+        { label: 'Projects', icon: 'clipboard' },
+        { label: 'SEO', icon: 'bar' },
+        { label: 'Pipeline', icon: 'menu' },
+        { label: 'Tasks', icon: 'clock' }
+      ]" :key="item.label">
+        <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10"
+           :class="{ 'justify-center': collapsed }">
+          <template x-if="item.icon === 'user'">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M16 21v-2a4 4 0
