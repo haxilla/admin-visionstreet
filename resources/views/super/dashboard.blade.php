@@ -9,7 +9,7 @@
   <aside :class="collapsed ? 'w-20' : 'w-64'" class="transition-all duration-300 bg-[#0A1B32] text-white flex flex-col fixed h-full z-40">
     
     <!-- Logo -->
-    <div :class="collapsed ? 'h-[64px] p-2' : 'h-[140px] p-6'"
+    <div :class="collapsed ? 'h-[64px] p-2' : 'h-[200px] p-4'"
          class="transition-all duration-300 border-b border-white/10 flex justify-center items-center overflow-hidden">
       <template x-if="!collapsed">
         <img src="/images/vision-street-square-logo-pixels.png"
@@ -17,7 +17,7 @@
              class="w-full h-full object-contain" />
       </template>
       <template x-if="collapsed">
-        <img src="/images/vision-V-icon.png"
+        <img src="/favicon-96x96.png"
              alt="V Icon"
              class="w-[40px] h-[40px] object-contain" />
       </template>
