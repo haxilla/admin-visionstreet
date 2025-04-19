@@ -39,7 +39,7 @@
           class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-200 flex items-center justify-between px-6 transition-all duration-300 w-[calc(100%-5rem)]"
           :style="collapsed ? 'width: calc(100% - 5rem)' : 'width: calc(100% - 16rem)'">
     <!-- Sidebar toggle -->
-    <button @click="collapsed = !collapsed" class="text-gray-600 hover:text-black focus:outline-none">
+    <button @click="collapsed = !collapsed" class="text-gray-600 hover:text-black focus:outline-none cursor-pointer">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M4 6h16M4 12h16M4 18h16" />
       </svg>
