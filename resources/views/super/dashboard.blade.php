@@ -11,7 +11,7 @@
         <img src="/images/vision-street-square-logo-pixels.png" class="h-12" alt="Full Logo">
       </template>
       <template x-if="collapsed">
-        <img src="/images/vision-V-icon.png" class="h-8" alt="V Logo">
+        <img src="/favicon-96x96.png" class="h-8" alt="V Logo">
       </template>
     </div>
     <nav class="flex-1 mt-4 space-y-1 text-sm">
