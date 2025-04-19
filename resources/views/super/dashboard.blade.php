@@ -6,12 +6,16 @@
   <!-- Sidebar -->
   <aside :class="collapsed ? 'w-20' : 'w-64'" 
          class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-all duration-300">
-    <div class="flex justify-center items-center h-20 border-b border-white/10">
+    <div class="flex items-center justify-center h-20 border-b border-white/10">
       <template x-if="!collapsed">
-        <img src="/images/vision-street-square-logo-pixels.png" class="h-12" alt="Full Logo">
+        <img src="/images/vision-street-square-logo-pixels.png"
+             alt="Full Logo"
+             class="h-12 mx-auto block" />
       </template>
       <template x-if="collapsed">
-        <img src="/favicon-96x96.png" class="h-8" alt="V Logo">
+        <img src="/favicon-96x96.png"
+             alt="Collapsed Logo"
+             class="w-8 h-8 mx-auto block" />
       </template>
     </div>
     <nav class="flex-1 mt-4 space-y-1 text-sm">
