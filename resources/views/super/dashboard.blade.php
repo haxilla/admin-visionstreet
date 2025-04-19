@@ -131,9 +131,10 @@
         <div x-show="open" x-transition 
              class="absolute right-0 mt-2 w-36 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
           <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
-          <form method="POST" action="/logout">
+          <form method="POST" action="/logout"
+          class="cursor-pointer">
             @csrf
-            <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 cursor-pointer">
+            <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">
               Log out
             </button>
           </form>
