@@ -1,78 +1,69 @@
-@include('super.header.doctype')
-<body class="h-full font-sans text-gray-800">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed Sidebar Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans h-screen overflow-hidden text-gray-800">
 
-<div x-data="{ collapsed: false }" class="flex h-screen overflow-hidden">
+<div x-data="{ collapsed: false }" class="flex h-full">
 
   <!-- Sidebar -->
-  <aside 
-    :class="collapsed ? 'w-20' : 'w-64'" 
-    class="transition-all duration-300 bg-[#0A1B32] text-white flex flex-col fixed h-full z-40"
-  >
+  <aside :class="collapsed ? 'w-20' : 'w-64'" class="bg-[#0A1B32] text-white transition-all duration-300 flex flex-col">
     <!-- Logo -->
-    <div class="px-4 py-4 border-b border-white/10 flex justify-center">
+    <div class="p-4 border-b border-white/10 flex justify-center">
       <template x-if="!collapsed">
-        <img src="/images/vision-street-square-logo-pixels.png" alt="Vision Street Logo" class="h-10">
+        <img src="/images/vision-street-square-logo-pixels.png" class="h-10" alt="Logo">
       </template>
       <template x-if="collapsed">
-        <img src="/images/vision-V-icon.png" alt="V Icon" class="h-8">
+        <img src="/images/vision-V-icon.png" class="h-8" alt="V">
       </template>
     </div>
 
-    <!-- Nav Items -->
-    <nav class="flex-1 mt-4 space-y-1 text-sm">
-      <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-md"
-         :class="{ 'justify-center': collapsed }">
-        <!-- ICON ALWAYS VISIBLE -->
+    <!-- Menu -->
+    <nav class="flex-1 mt-4 space-y-1">
+      <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded"
+         :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+          <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-        <!-- TEXT ONLY HIDDEN -->
-        <span x-show="!collapsed" class="whitespace-nowrap">Users</span>
+        <span x-show="!collapsed" class="transition-all duration-200">Users</span>
       </a>
-
-      <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-md"
-         :class="{ 'justify-center': collapsed }">
-        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M5 13l4 4L19 7" />
-        </svg>
-        <span x-show="!collapsed" class="whitespace-nowrap">Clients</span>
-      </a>
-
-      <!-- Repeat others the same way -->
+      <!-- Add more items similarly -->
     </nav>
   </aside>
 
-  <!-- Main Content -->
-  <div :class="collapsed ? 'ml-20' : 'ml-64'" class="transition-all duration-300 flex-1 flex flex-col bg-white">
+  <!-- Main Panel -->
+  <div class="flex-1 flex flex-col">
 
-    <!-- Topnav -->
-    <header class="h-20 flex items-center justify-between px-6 border-b border-gray-200 bg-white relative">
-
-      <!-- Collapse Toggle -->
-      <button 
-        @click="collapsed = !collapsed" 
-        class="absolute left-6 text-gray-600 hover:text-gray-900 focus:outline-none"
-      >
-        <!-- Hamburger / X -->
-        <svg x-show="!collapsed" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-             viewBox="0 0 24 24">
+    <!-- Top Bar -->
+    <header class="h-16 flex items-center justify-between px-6 bg-white border-b border-gray-200">
+      <button @click="collapsed = !collapsed" class="text-gray-600 hover:text-black">
+        <!-- No x-show needed. Let it stay static -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg x-show="collapsed" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-             viewBox="0 0 24 24">
-          <path d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
 
-      <!-- Centered Search -->
-      <div class="w-full flex justify-center">
-        <input 
-          type="text" 
-          placeholder="Search..." 
-          class="w-[60%] max-w-[700px] pl-5 py-2 text-base border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
-        >
-      </div>
+      <input type="text" placeholder="Search..."
+             class="w-[60%] max-w-[700px] pl-5 py-2 text-base border border-gray-300 rounded-full shadow focus:ring-2 focus:ring-blue-400">
 
-      <!-- Settings Gear -->
-      <button class="absolute right-6 text-gray-600 hover:text-gray-900">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5
+      <svg class="w-7 h-7 text-gray-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.591 1.062c1.527-.88 3.276.869 2.397 2.397a1.724 1.724 0 0 0 1.061 2.59c1.757.427 1.757 2.924 0 3.351a1.724 1.724 0 0 0-1.061 2.59c.879 1.528-.87 3.277-2.397 2.397a1.724 1.724 0 0 0-2.591 1.061c-.426 1.757-2.924 1.757-3.35 0a1.724 1.724 0 0 0-2.59-1.061c-1.528.88-3.277-.869-2.398-2.397a1.724 1.724 0 0 0-1.06-2.59c-1.757-.427-1.757-2.924 0-3.351a1.724 1.724 0 0 0 1.06-2.59c-.879-1.528.87-3.277 2.398-2.397a1.724 1.724 0 0 0 2.59-1.061z"/>
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-1 p-10 overflow-auto bg-white">
+      <h1 class="text-3xl font-bold mb-4">It works!</h1>
+      <p>Collapse and expand using the button. Sidebar icons stay visible, labels toggle.</p>
+    </main>
+
+  </div>
+</div>
+
+</body>
+</html>
