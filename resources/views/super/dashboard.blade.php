@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@include(super.header.doctype)
+@include('super.header.doctype')
 <body class="h-full font-sans text-gray-800">
 
 <div x-data="{ collapsed: false }" class="flex h-screen overflow-hidden">
