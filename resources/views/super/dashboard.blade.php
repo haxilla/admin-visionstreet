@@ -50,7 +50,7 @@
         ]" :key="section.route">
           <div 
             x-data="() => ({ open: false })"
-            x-init="$watch('open', value => { if (collapsed) dropdownOpen = value })"
+            x-init="$watch('open', value => { dropdownOpen = value })"
             x-effect="if (!dropdownOpen) open = false">
 
             <!-- Dropdown Parent -->
