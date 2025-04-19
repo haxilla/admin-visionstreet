@@ -30,7 +30,7 @@
     </nav>
   </aside>
 
-  <!-- Right Section -->
+  <!-- Main Content -->
   <div :class="collapsed ? 'ml-20' : 'ml-64'" class="transition-all duration-300 flex-1 flex flex-col bg-white">
 
     <!-- Topnav -->
@@ -41,8 +41,11 @@
         @click="collapsed = !collapsed" 
         class="absolute left-6 text-gray-600 hover:text-gray-900 focus:outline-none"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg x-show="!collapsed" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg x-show="collapsed" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
 
@@ -51,13 +54,12 @@
         <input 
           type="text" 
           placeholder="Search..." 
-          class="w-[40%] px-5 py-2 text-base border border-gray-300 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
+          class="w-[50%] max-w-[600px] px-6 py-3 text-base border border-gray-300 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400 transition-all"
         >
       </div>
 
       <!-- Settings Icon (Right) -->
       <button class="absolute right-6 text-gray-600 hover:text-gray-900">
-        <!-- Lucide-style gear -->
         <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.591 1.062c1.527-.88 3.276.869 2.397 2.397a1.724 1.724 0 0 0 1.061 2.59c1.757.427 1.757 2.924 0 3.351a1.724 1.724 0 0 0-1.061 2.59c.879 1.528-.87 3.277-2.397 2.397a1.724 1.724 0 0 0-2.591 1.061c-.426 1.757-2.924 1.757-3.35 0a1.724 1.724 0 0 0-2.59-1.061c-1.528.88-3.277-.869-2.398-2.397a1.724 1.724 0 0 0-1.06-2.59c-1.757-.427-1.757-2.924 0-3.351a1.724 1.724 0 0 0 1.06-2.59c-.879-1.528.87-3.277 2.398-2.397a1.724 1.724 0 0 0 2.59-1.061z"/>
           <circle cx="12" cy="12" r="3" />
@@ -65,7 +67,7 @@
       </button>
     </header>
 
-    <!-- Main Content -->
+    <!-- Page Content -->
     <main class="flex-1 p-10 overflow-auto">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-4xl font-black tracking-tight mb-2">Dashboard Overview</h1>
