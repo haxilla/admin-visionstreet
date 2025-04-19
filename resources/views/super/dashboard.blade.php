@@ -24,7 +24,7 @@
 
     <!-- Nav Items -->
     <nav class="flex-1 mt-4 space-y-1 text-sm">
-      <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
+      <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all cursor-pointer"
          :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
         <svg class="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
