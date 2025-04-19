@@ -11,16 +11,18 @@
   :class="collapsed ? 'h-20 p-2' : 'h-[180px] p-6'"
   class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300"
 >
-  <template x-if="!collapsed">
-    <img src="/images/vision-street-square-logo-pixels.png"
-         alt="Full Logo"
-         class="max-h-full object-contain" />
-  </template>
-  <template x-if="collapsed">
-    <img src="/favicon-96x96.png"
-         alt="Collapsed Logo"
-         class="w-8 h-8 mx-auto block" />
-  </template>
+  <a href="/">
+    <template x-if="!collapsed">
+      <img src="/images/vision-street-square-logo-pixels.png"
+           alt="Full Logo"
+           class="max-h-full object-contain" />
+    </template>
+    <template x-if="collapsed">
+      <img src="/favicon-96x96.png"
+           alt="Collapsed Logo"
+           class="w-8 h-8 mx-auto block" />
+    </template>
+  </a>
 </div>
 
     <nav class="flex-1 mt-4 space-y-1 text-sm">
