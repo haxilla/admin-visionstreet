@@ -119,6 +119,7 @@
     </main>
   </div>
 </div>
+@include('super.footer.main')
 
 </body>
 </html>
