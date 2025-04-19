@@ -16,7 +16,7 @@
              class="w-full h-full object-contain" />
       </template>
       <template x-if="collapsed">
-        <img src="/images/vision-V-icon.png"
+        <img src="/favicon-96x96.png"
              alt="V Icon"
              class="w-[40px] h-[40px] object-contain" />
       </template>
