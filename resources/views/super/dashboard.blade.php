@@ -50,16 +50,22 @@
         ]" :key="section.route">
           <div 
             x-data="() => ({ open: false })"
-x-init="$watch('open', value => {
-  if (value) {
-    dropdownOpen = true
-    activeDropdown = section.route
-  }
-})"
-x-effect="if (!dropdownOpen || activeDropdown !== section.route) open = false">
+            x-effect="open = activeDropdown === section.route">
 
             <!-- Dropdown Parent -->
-            <button @click="open = !open"
+            <button @click="
+  if (activeDropdown === section.route) {
+    activeDropdown = null
+    dropdownOpen = false
+  } else {
+    dropdownOpen = false
+    setTimeout(() => {
+      dropdownOpen = true
+      activeDropdown = section.route
+    }, 10)
+  }
+"
+
                     class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
                     :class="collapsed ? 'justify-center' : 'gap-3'">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
