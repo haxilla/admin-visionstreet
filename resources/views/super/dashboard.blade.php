@@ -2,7 +2,7 @@
 <body class="bg-white h-full font-sans text-gray-800" x-data="{ collapsed: false }">
     <div x-data="{ collapsed: false, dropdownOpen: false }">
         <!-- Sidebar -->
-        <aside :class="collapsed ? 'w-20' : 'w-64'"class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-all duration-300">
+        <aside :class="(collapsed && dropdownOpen) ? 'w-64' : (collapsed ? 'w-20' : 'w-64')" class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-all duration-300">
             <!-- Sidebar Logo Block -->
             <div :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
                 <a href="/">
@@ -19,73 +19,60 @@
                 </a>
             </div>
 
-            <nav class="flex-1 mt-4 space-y-1 text-sm">
-                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-                   :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
-                  <svg class="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                       viewBox="0 0 24 24">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                  <span class="text-white" x-show="!collapsed" x-cloak>Users</span>
-                </a>
+<nav class="mt-4 space-y-2 text-sm">
+  <template x-for="section in [
+    {
+      title: 'Users',
+      route: 'users',
+      icon: `<path d='M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' /><circle cx='12' cy='7' r='4' />`
+    },
+    {
+      title: 'Clients',
+      route: 'clients',
+      icon: `<path d='M5 13l4 4L19 7' />`
+    },
+    {
+      title: 'Projects',
+      route: 'projects',
+      icon: `<path d='M9 17v-6h13M9 12H4M4 12v2a2 2 0 0 0 2 2h3' />`
+    },
+    {
+      title: 'Leads',
+      route: 'leads',
+      icon: `<path d='M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z' /><path d='M4 12v4h16v-4' />`
+    }
+  ]" :key="section.route">
+    <div x-data="() => ({ open: false })"
+         x-init="$watch('open', value => { if (collapsed) dropdownOpen = value })">
+      
+      <!-- Parent -->
+      <button @click="open = !open"
+              class="flex items-center w-full px-4 py-2 gap-3 hover:bg-white/10 transition"
+              :class="collapsed ? 'justify-center' : ''">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+             x-html="section.icon"></svg>
+        <span x-show="!collapsed" x-text="section.title"></span>
+        <svg x-show="!collapsed"
+             :class="open ? 'rotate-90' : ''"
+             class="w-4 h-4 ml-auto transition-transform"
+             fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
 
-                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-                   :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
-                  <svg class="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                       viewBox="0 0 24 24">
-                    <path d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span class="text-white" x-show="!collapsed" x-cloak>Clients</span>
-                </a>
+      <!-- Dropdown Menu -->
+      <div x-show="open && !collapsed" x-transition x-cloak class="ml-11 mt-1 space-y-1">
+        <a :href="'/' + section.route" class="block text-sm text-white/90 hover:text-white">
+          All <span x-text="section.title"></span>
+        </a>
+        <a :href="'/' + section.route + '/create'" class="block text-sm text-white/90 hover:text-white">
+          New <span x-text="section.title"></span>
+        </a>
+      </div>
+    </div>
+  </template>
+</nav>
 
-                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-                   :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
-                  <svg class="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                       viewBox="0 0 24 24">
-                    <path d="M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z"/>
-                    <path d="M4 12v4h16v-4" />
-                  </svg>
-                  <span class="text-white" x-show="!collapsed" x-cloak>Leads</span>
-                </a>
-
-                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-                   :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
-                  <svg class="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                       viewBox="0 0 24 24">
-                    <path d="M9 17v-6h13M9 12H4M4 12v2a2 2 0 0 0 2 2h3" />
-                  </svg>
-                  <span class="text-white" x-show="!collapsed" x-cloak>Projects</span>
-                </a>
-
-                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-                   :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
-                  <svg class="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                       viewBox="0 0 24 24">
-                    <path d="M3 3v18h18" />
-                  </svg>
-                  <span class="text-white" x-show="!collapsed" x-cloak>SEO</span>
-                </a>
-
-                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-                   :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
-                  <svg class="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                       viewBox="0 0 24 24">
-                    <path d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                  <span class="text-white" x-show="!collapsed" x-cloak>Pipeline</span>
-                </a>
-
-                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-                   :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
-                  <svg class="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                       viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 6v6l4 2" />
-                  </svg>
-                  <span class="text-white" x-show="!collapsed" x-cloak>Tasks</span>
-                </a>
-            </nav>
 
         </aside>
     </div>
