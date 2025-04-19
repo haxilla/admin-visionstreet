@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Dashboard</title>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+@include(super.header.doctype)
 <body class="h-full font-sans text-gray-800">
 
 <div x-data="{ collapsed: false }" class="flex h-screen overflow-hidden">
