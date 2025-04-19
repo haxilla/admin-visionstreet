@@ -1,7 +1,7 @@
 @include('super.header.doctype')
 <body class="bg-white h-full font-sans text-gray-800" x-data="{ collapsed: false, dropdownOpen: false }">
     <div>
-        <aside :class="collapsed ? (dropdownOpen ? 'w-[220px]' : 'w-20') : 'w-64'" class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto">
+        <aside :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto">
 
   <!-- Sidebar Logo Block -->
   <div 
