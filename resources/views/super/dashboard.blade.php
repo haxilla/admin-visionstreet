@@ -6,11 +6,12 @@
   <!-- Sidebar -->
   <aside :class="collapsed ? 'w-20' : 'w-64'" 
          class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-all duration-300">
-    <div class="flex items-center justify-center h-20 border-b border-white/10">
+    <!-- Sidebar Logo Block -->
+    <div class="h-[180px] p-6 border-b border-white/10 flex items-center justify-center overflow-hidden">
       <template x-if="!collapsed">
         <img src="/images/vision-street-square-logo-pixels.png"
              alt="Full Logo"
-             class="h-[180px] mx-auto block" />
+             class="max-h-full object-contain" />
       </template>
       <template x-if="collapsed">
         <img src="/favicon-96x96.png"
