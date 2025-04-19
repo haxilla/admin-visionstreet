@@ -8,7 +8,7 @@
          class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-all duration-300">
     <!-- Sidebar Logo Block -->
     <div
-    :class="collapsed ? 'h-20 p-2' : 'h-[180px] p-6'"
+    :class="collapsed ? 'h-20 p-2' : 'h-[160px] p-6'"
     class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
       <a href="/">
         <template x-if="!collapsed">
@@ -91,17 +91,6 @@
         </a>
       </nav>
 
-    <!--
-    <nav class="flex-1 mt-4 space-y-1 text-sm">
-      <a href="#" class="flex items-center px-4 py-2 gap-3 hover:bg-white/10" :class="collapsed ? 'justify-center' : ''">
-        <svg class="w-5 h-5" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-          <circle cx="12" cy="7" r="4" />
-        </svg>
-        <span x-show="!collapsed">Users</span>
-      </a>
-    </nav>
-    -->
   </aside>
 
   <!-- Topbar -->
