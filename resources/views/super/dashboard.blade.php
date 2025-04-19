@@ -20,6 +20,30 @@
         </div>
 
         <nav class="flex-1 mt-4 space-y-1 text-sm">
+            <!-- Clients Dropdown -->
+            <div x-data="{ open: false }">
+              <button @click="open = !open"
+                      class="flex items-center w-full px-4 py-2 gap-3 text-left hover:bg-white/10 transition"
+                      :class="collapsed ? 'justify-center' : ''">
+                <svg class="w-5 h-5" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                <span x-show="!collapsed">Clients</span>
+                <svg x-show="!collapsed"
+                     :class="open ? 'rotate-90' : ''"
+                     class="w-3 h-3 ml-auto transition-transform"
+                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              <div x-show="open" x-transition
+                   class="ml-11 mt-1 space-y-1"
+                   x-cloak>
+                <a href="/clients" class="block text-sm text-white/90 hover:text-white">All Clients</a>
+                <a href="/clients/create" class="block text-sm text-white/90 hover:text-white">New Client</a>
+              </div>
+            </div>
             <a href="#" class="flex items-center px-4 py-2 hover:bg-white/10 rounded-md transition-all"
                :class="{ 'justify-center': collapsed, 'gap-3': !collapsed }">
               <svg class="w-5 h-5 shrink-0 text-white" fill="none" stroke="currentColor" stroke-width="2"
