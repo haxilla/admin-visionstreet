@@ -2,7 +2,7 @@
 <body class="bg-white h-full font-sans text-gray-800" x-data="{ collapsed: false }">
     <div x-data="{ collapsed: false, dropdownOpen: false }">
         <!-- Sidebar -->
-        <aside :class="(collapsed && dropdownOpen) ? 'w-64' : (collapsed ? 'w-20' : 'w-64')"
+        <aside :class="collapsed ? 'w-20' : 'w-64'"
  class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-all duration-300">
             <!-- Sidebar Logo Block -->
             <div :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
