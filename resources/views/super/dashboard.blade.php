@@ -14,7 +14,7 @@
         <template x-if="!collapsed">
           <img src="/images/vision-street-square-logo-pixels.png"
                alt="Full Logo"
-               class="max-h-full object-contain" />
+               class="max-h-[120px] w-auto object-contain" />
         </template>
         <template x-if="collapsed">
           <img src="/favicon-96x96.png"
