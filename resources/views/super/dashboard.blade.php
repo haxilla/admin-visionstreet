@@ -20,13 +20,13 @@
 
     <!-- Nav Items -->
     <nav class="flex-1 mt-4 space-y-1 text-sm">
-      <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-md" :class="{ 'justify-center': collapsed }">
+      <a href="#" class="flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-md" :class="collapsed ? 'justify-center' : ''">
         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
         </svg>
         <span x-show="!collapsed">Users</span>
       </a>
-      <!-- Repeat for other nav items -->
+      <!-- Add other items here similarly -->
     </nav>
   </aside>
 
@@ -54,11 +54,11 @@
         <input 
           type="text" 
           placeholder="Search..." 
-          class="w-[50%] max-w-[600px] px-6 py-3 text-base border border-gray-300 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400 transition-all"
+          class="w-[60%] max-w-[700px] pl-5 py-2 text-base border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400 transition-all"
         >
       </div>
 
-      <!-- Settings Icon (Right) -->
+      <!-- Settings Icon -->
       <button class="absolute right-6 text-gray-600 hover:text-gray-900">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.591 1.062c1.527-.88 3.276.869 2.397 2.397a1.724 1.724 0 0 0 1.061 2.59c1.757.427 1.757 2.924 0 3.351a1.724 1.724 0 0 0-1.061 2.59c.879 1.528-.87 3.277-2.397 2.397a1.724 1.724 0 0 0-2.591 1.061c-.426 1.757-2.924 1.757-3.35 0a1.724 1.724 0 0 0-2.59-1.061c-1.528.88-3.277-.869-2.398-2.397a1.724 1.724 0 0 0-1.06-2.59c-1.757-.427-1.757-2.924 0-3.351a1.724 1.724 0 0 0 1.06-2.59c-.879-1.528.87-3.277 2.398-2.397a1.724 1.724 0 0 0 2.59-1.061z"/>
@@ -67,7 +67,7 @@
       </button>
     </header>
 
-    <!-- Page Content -->
+    <!-- Main Content -->
     <main class="flex-1 p-10 overflow-auto">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-4xl font-black tracking-tight mb-2">Dashboard Overview</h1>
