@@ -106,11 +106,10 @@
       </div>
 
       <!-- Gear Icon -->
-      <svg class="w-7 h-7 text-gray-600 absolute right-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-        <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.591 1.062c1.527-.88 3.276.869 2.397 2.397a1.724 1.724 0 0 0 1.061 2.59c1.757.427 1.757 2.924 0 3.351a1.724 1.724 0 0 0-1.061 2.59c.879 1.528-.87 3.277-2.397 2.397a1.724 1.724 0 0 0-2.591 1.061c-.426 1.757-2.924 1.757-3.35 0a1.724 1.724 0 0 0-2.59-1.061c-1.528.88-3.277-.869-2.398-2.397a1.724 1.724 0 0 0-1.06-2.59c-1.757-.427-1.757-2.924 0-3.351a1.724 1.724 0 0 0 1.06-2.59c-.879-1.528.87-3.277 2.398-2.397a1.724 1.724 0 0 0 2.59-1.061z"/>
-        <circle cx="12" cy="12" r="3" />
+      <svg class="w-6 h-6 text-gray-600 hover:text-gray-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M11.25 3.375c.621 0 1.127.506 1.127 1.125v.624a8.25 8.25 0 0 1 2.348.975l.442-.442a1.125 1.125 0 1 1 1.59 1.59l-.442.443a8.25 8.25 0 0 1 .975 2.348h.624a1.125 1.125 0 0 1 0 2.25h-.624a8.25 8.25 0 0 1-.975 2.348l.442.442a1.125 1.125 0 1 1-1.59 1.59l-.443-.442a8.25 8.25 0 0 1-2.348.975v.624a1.125 1.125 0 0 1-2.25 0v-.624a8.25 8.25 0 0 1-2.348-.975l-.442.442a1.125 1.125 0 0 1-1.59-1.59l.442-.443a8.25 8.25 0 0 1-.975-2.348h-.624a1.125 1.125 0 0 1 0-2.25h.624a8.25 8.25 0 0 1 .975-2.348l-.442-.442a1.125 1.125 0 0 1 1.59-1.59l.443.442a8.25 8.25 0 0 1 2.348-.975v-.624c0-.62.506-1.125 1.125-1.125zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
       </svg>
-    </header>
 
     <!-- MAIN CONTENT -->
     <main class="flex-1 p-10 overflow-auto">
@@ -119,10 +118,6 @@
         <p class="text-gray-500 mb-10">This main content area adjusts when sidebar collapses.</p>
 
         <div class="flex items-center gap-6 flex-wrap">
-          <div class="w-32 h-32 bg-accentTeal rounded-full"></div>
-          <div class="w-16 h-16 bg-accentPink rounded"></div>
-          <div class="w-20 h-20 bg-accentYellow rounded-full"></div>
-        </div>
       </div>
     </main>
   </div>
