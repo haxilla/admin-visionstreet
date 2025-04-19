@@ -1,5 +1,5 @@
 @include('super.header.doctype')
-<body class="bg-white h-full font-sans text-gray-800" x-data="{ collapsed: false, dropdownOpen: false }">
+<body class="bg-white h-full font-sans text-gray-800" x-data="{ collapsed: false, dropdownOpen: false, activeDropdown: null }">
   <div>
     <aside 
       :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
@@ -50,8 +50,13 @@
         ]" :key="section.route">
           <div 
             x-data="() => ({ open: false })"
-            x-init="$watch('open', value => { dropdownOpen = value })"
-            x-effect="if (!dropdownOpen) open = false">
+x-init="$watch('open', value => {
+  if (value) {
+    dropdownOpen = true
+    activeDropdown = section.route
+  }
+})"
+x-effect="if (!dropdownOpen || activeDropdown !== section.route) open = false">
 
             <!-- Dropdown Parent -->
             <button @click="open = !open"
