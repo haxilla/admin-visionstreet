@@ -8,7 +8,7 @@
          class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-all duration-300">
     <!-- Sidebar Logo Block -->
     <div
-    :class="collapsed ? 'h-20 p-2' : 'h-[160px] p-6'"
+    :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'"
     class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
       <a href="/">
         <template x-if="!collapsed">
