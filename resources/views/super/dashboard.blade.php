@@ -7,94 +7,97 @@ closing: false,
 isOpen(route) {return this.activeDropdown === route;}}">
     <div>
         <aside 
-          :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
-          class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
-          @click.away="dropdownOpen = false; activeDropdown = null">
-
-          <!-- Sidebar Logo Block -->
-          <div 
-            :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" 
-            class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
-            <a href="/">
-              <template x-if="!collapsed">
-                <img src="/images/vision-street-square-logo-pixels.png"
-                     alt="Full Logo"
-                     class="max-h-[120px] w-auto object-contain" />
-              </template>
-              <template x-if="collapsed">
-                <img src="/favicon-96x96.png"
-                     alt="Collapsed Logo"
-                     class="w-8 h-8 mx-auto block" />
-              </template>
-            </a>
-          </div>
-
-          <!-- Navigation with Dropdowns -->
-          <nav class="flex-1 mt-4 space-y-1 text-sm">
-            <template x-for="section in [
-              {
-                title: 'Users',
-                route: 'users',
-                icon: `<path d='M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' /><circle cx='12' cy='7' r='4' />`
-              },
-              {
-                title: 'Clients',
-                route: 'clients',
-                icon: `<path d='M5 13l4 4L19 7' />`
-              },
-              {
-                title: 'Projects',
-                route: 'projects',
-                icon: `<path d='M9 17v-6h13M9 12H4M4 12v2a2 2 0 0 0 2 2h3' />`
-              },
-              {
-                title: 'Leads',
-                route: 'leads',
-                icon: `<path d='M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z' /><path d='M4 12v4h16v-4' />`
-              }
-            ]" :key="section.route">
-              <div>
-                <!-- Dropdown Parent -->
-                <button 
-                @click="
-                  dropdownOpen = true;
-                  activeDropdown = (activeDropdown === section.route) ? null : section.route;"
-
-                  class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-                  :class="collapsed ? 'justify-center' : 'gap-3'">
-                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                       x-html="section.icon"></svg>
-                  <span class="text-white" x-show="!collapsed" x-text="section.title" x-cloak></span>
-                  <svg x-show="!collapsed"
-                       :class="isOpen(section.route) ? 'rotate-90' : ''"
-                       class="w-4 h-4 ml-auto transition-transform"
-                       fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-
-                <!-- Dropdown Content -->
-                <div
-  x-show="isOpen(section.route) && (!collapsed || dropdownOpen)"
-  x-cloak
-  class="transition-all duration-200 ease-in-out transform origin-top opacity-0 scale-95"
-  :class="isOpen(section.route) ? 'opacity-100 scale-100' : 'opacity-0 scale-95'"
-  :class="collapsed ? 'mt-2 text-center space-y-1' : 'ml-11 mt-1 space-y-1'"
+  :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
+  class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
+  @click.away="dropdownOpen = false; activeDropdown = null"
 >
->
-                  <a :href="'/' + section.route"
-                     class="block text-sm text-white/90 hover:text-white">
-                    All <span x-text="section.title"></span>
-                  </a>
-                  <a :href="'/' + section.route + '/create'"
-                     class="block text-sm text-white/90 hover:text-white">
-                    New <span x-text="section.title"></span>
-                  </a>
-                </div>
-              </div>
-            </template>
-          </nav>
-        </aside>
+
+  <!-- Sidebar Logo Block -->
+  <div 
+    :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" 
+    class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
+    <a href="/">
+      <template x-if="!collapsed">
+        <img src="/images/vision-street-square-logo-pixels.png"
+             alt="Full Logo"
+             class="max-h-[120px] w-auto object-contain" />
+      </template>
+      <template x-if="collapsed">
+        <img src="/favicon-96x96.png"
+             alt="Collapsed Logo"
+             class="w-8 h-8 mx-auto block" />
+      </template>
+    </a>
+  </div>
+
+  <!-- Navigation with Dropdowns -->
+  <nav class="flex-1 mt-4 space-y-1 text-sm">
+    <template x-for="section in [
+      {
+        title: 'Users',
+        route: 'users',
+        icon: `<path d='M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' /><circle cx='12' cy='7' r='4' />`
+      },
+      {
+        title: 'Clients',
+        route: 'clients',
+        icon: `<path d='M5 13l4 4L19 7' />`
+      },
+      {
+        title: 'Projects',
+        route: 'projects',
+        icon: `<path d='M9 17v-6h13M9 12H4M4 12v2a2 2 0 0 0 2 2h3' />`
+      },
+      {
+        title: 'Leads',
+        route: 'leads',
+        icon: `<path d='M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z' /><path d='M4 12v4h16v-4' />`
+      }
+    ]" :key="section.route">
+      <div>
+        <!-- Dropdown Parent -->
+        <button 
+          @click="
+            dropdownOpen = true;
+            activeDropdown = (activeDropdown === section.route) ? null : section.route;
+          "
+          class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
+          :class="collapsed ? 'justify-center' : 'gap-3'">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+               x-html="section.icon"></svg>
+          <span class="text-white" x-show="!collapsed" x-text="section.title" x-cloak></span>
+          <svg x-show="!collapsed"
+               :class="isOpen(section.route) ? 'rotate-90' : ''"
+               class="w-4 h-4 ml-auto transition-transform"
+               fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <!-- Dropdown Content -->
+        <div
+          x-show="isOpen(section.route) && (!collapsed || dropdownOpen)"
+          x-cloak
+          :class="[
+            collapsed ? 'text-center space-y-1 mt-2' : 'pl-11 space-y-1 mt-1',
+            'transition-all duration-300 ease-in-out transform origin-top',
+            isOpen(section.route) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-1 scale-95'
+          ]"
+        >
+          <a :href="'/' + section.route"
+             class="block text-sm text-white/90 hover:text-white">
+            All <span x-text="section.title"></span>
+          </a>
+          <a :href="'/' + section.route + '/create'"
+             class="block text-sm text-white/90 hover:text-white">
+            New <span x-text="section.title"></span>
+          </a>
+        </div>
+      </div>
+    </template>
+  </nav>
+</aside>
+
     </div>
 
 <!-- Topbar -->
