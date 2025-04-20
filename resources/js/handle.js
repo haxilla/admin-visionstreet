@@ -23,7 +23,7 @@ document.addEventListener('click', (e) => {
 
   const csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
   const endpoint = '/' + renderFrom.replace('.', '/');
-  const postData = new URLSearchParams({ renderFrom, renderto: renderTo, renderas: renderAs, key, value, isapp });
+  const postData = new URLSearchParams({ renderFrom, renderTo, renderAs, key, value, isapp });
 
   if (renderAs === 'html') {
     renderHTML(endpoint, postData, renderTo, csrf);
