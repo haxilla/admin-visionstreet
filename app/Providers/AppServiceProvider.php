@@ -42,12 +42,12 @@ class AppServiceProvider extends ServiceProvider
             }
         }
 
+        // ✅ Register the alias here (once, globally available)
+        Route::aliasMiddleware('role', RequireRole::class);
+
+        // ✅ Then group routes as usual
         Route::middleware('web')
-        ->group(function () {
-            Route::middleware([
-                'role' => RequireRole::class, // 🔥 register it here
-            ])->group(base_path('routes/web.php'));
-        });
+            ->group(base_path('routes/web.php'));
 
     }
 }
