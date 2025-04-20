@@ -71,8 +71,8 @@ isOpen(route) { return this.activeDropdown === route; }}">
 
 <!-- Seamless Sidebar Toggle Tab -->
 <div 
-  class="fixed z-50 top-4 transition-all duration-300"
-  :style="collapsed ? 'left: 72px' : 'left: 256px'"
+  class="fixed z-50 top-4 transition-all duration-300" 
+  :style="collapsed ? (dropdownOpen ? 'left: 180px' : 'left: 72px') : 'left: 256px'"
 >
   <button 
     @click="collapsed = !collapsed"
