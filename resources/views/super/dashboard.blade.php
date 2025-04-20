@@ -80,14 +80,14 @@
     </nav>
   </aside>
 
-<!-- Integrated Sidebar Toggle Button -->
+<!-- Seamless Sidebar Toggle Tab -->
 <div 
   class="fixed z-50 top-4 transition-all duration-300"
   :class="collapsed ? 'left-[72px]' : 'left-[256px]'"
 >
   <button 
     @click="collapsed = !collapsed"
-    class="h-10 w-6 bg-sidebar text-white rounded-r-md flex items-center justify-center transition-all duration-300 hover:bg-white/10"
+    class="h-10 w-6 bg-sidebar text-white rounded-r-md flex items-center justify-center cursor-pointer"
     aria-label="Toggle Sidebar"
   >
     <svg xmlns="http://www.w3.org/2000/svg"
@@ -98,6 +98,7 @@
     </svg>
   </button>
 </div>
+
 
 
 
