@@ -1,18 +1,30 @@
 @include('super.header.doctype')
 <body class="bg-white h-full font-sans text-gray-800" x-data="{
-collapsed: false,
-dropdownOpen: false,
-activeDropdown: null,
-closing: false,
-isOpen(route) { return this.activeDropdown === route; }}">
-<!-- Sidebar Toggle Button -->
-<div class="absolute top-[88px] -right-3 z-50">
+  collapsed: false,
+  dropdownOpen: false,
+  activeDropdown: null,
+  closing: false,
+  isOpen(route) { return this.activeDropdown === route; }}">
+
+  <div>
+    <aside 
+      :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
+      class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
+      @click.away="dropdownOpen = false; activeDropdown = null"
+    >
+
+    <!-- Toggle inside the sidebar -->
+<div 
+  class="absolute top-[88px] -right-3 z-50"
+  :class="collapsed ? 'left-[80px]' : 'left-[256px]'"
+>
   <button 
     @click="collapsed = !collapsed"
-    class="w-7 h-7 bg-white text-gray-700 border border-gray-300 shadow hover:bg-gray-100 
-           rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer">
+    class="w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-md hover:bg-gray-100 
+           rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+  >
     <svg xmlns="http://www.w3.org/2000/svg"
-         class="w-3.5 h-3.5 transition-transform duration-300"
+         class="w-4 h-4 transition-transform duration-300"
          :class="collapsed ? '' : 'rotate-180'"
          fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -20,12 +32,6 @@ isOpen(route) { return this.activeDropdown === route; }}">
   </button>
 </div>
 
-
-    <aside 
-      :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
-      class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
-      @click.away="dropdownOpen = false; activeDropdown = null"
-    >
       <!-- Sidebar Logo Block -->
       <div 
         :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" 
