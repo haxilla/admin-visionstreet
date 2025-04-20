@@ -5,8 +5,14 @@ dropdownOpen: false,
 activeDropdown: null,
 closing: false,
 isOpen(route) {return this.activeDropdown === route;}}">
-<!-- Sidebar Toggle Button -->
-<!-- Sidebar Toggle Button -->
+    <div>
+       <aside 
+  :class="relative collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
+  class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
+  @click.away="dropdownOpen = false; activeDropdown = null"
+>
+
+    <!-- Sidebar Toggle Button -->
 <!-- Add this inside your <aside> tag -->
 <button 
   @click="collapsed = !collapsed"
@@ -20,29 +26,6 @@ isOpen(route) {return this.activeDropdown === route;}}">
     <path d="M15 19l-7-7 7-7" />
   </svg>
 </button>
-
-  <svg xmlns="http://www.w3.org/2000/svg"
-       class="w-4 h-4 transition-transform duration-300"
-       fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-       :class="collapsed ? '' : 'rotate-180'">
-    <path d="M15 19l-7-7 7-7" />
-  </svg>
-</button>
-
-  <svg xmlns="http://www.w3.org/2000/svg" 
-       class="w-4 h-4 transition-transform duration-300"
-       fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-       :class="collapsed ? 'rotate-180' : ''">
-    <path d="M15 19l-7-7 7-7" />
-  </svg>
-</button>
-
-    <div>
-       <aside 
-  :class="relative collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
-  class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
-  @click.away="dropdownOpen = false; activeDropdown = null"
->
 
   <!-- Sidebar Logo Block -->
   <div 
