@@ -25,8 +25,8 @@ document.addEventListener('click', (e) => {
 
     // Build POST data
     const postData = new URLSearchParams({
-        renderTo
-        renderFrom
+        renderTo,
+        renderFrom,
         renderAs
     });
 
