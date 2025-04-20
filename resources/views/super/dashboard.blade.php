@@ -67,7 +67,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
         d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7
         c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
         </svg>
-          View Clients
+          View
       </a>
       <a href="#"
         class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
@@ -81,7 +81,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
         </svg>
-          Add Client
+          Add
       </a>
     </div>
   </div>
