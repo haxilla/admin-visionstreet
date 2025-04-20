@@ -61,20 +61,11 @@
       <div>
         <!-- Dropdown Parent -->
         <button 
-          @click="
-            if (activeDropdown === section.route) {
-              activeDropdown = null;
-              dropdownOpen = false;
-            } else {
-              closing = true;
-              activeDropdown = null;
-              setTimeout(() => {
-                closing = false;
-                activeDropdown = section.route;
-                dropdownOpen = true;
-              }, 200);
-            }
-          "
+        @click="
+          dropdownOpen = true;
+          activeDropdown = (activeDropdown === section.route) ? null : section.route;
+        "
+
           class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
           :class="collapsed ? 'justify-center' : 'gap-3'">
           <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
