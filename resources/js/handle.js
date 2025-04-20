@@ -1,8 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // ⛔ Don't run this unless the body has the 'linkcheck' class
+document.addEventListener('click', (e) => {
+
     if (!document.body.classList.contains('linkcheck')) return;
 
-    // ✅ Only act on an <a> element with data-action="handle"
     if (e.target.tagName !== 'A' || e.target.dataset.action !== 'handle') return;
 
     const el = e.target;
@@ -10,13 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderFrom = el.dataset.renderfrom;
     const renderTo = el.dataset.renderto;
     const renderAs = el.dataset.renderas;
-    const value = el.dataset.value || '';
-    const key = el.dataset.key || '';
-    const isapp = el.dataset.isapp || '0';
 
     if (!renderFrom || !renderTo || !renderAs) {
-        console.error('Missing data-renderfrom, data-renderto, or data-renderas');
-        return;}
+    console.error('Missing data-renderfrom, data-renderto, or data-renderas');
+    return;}
 
     e.preventDefault();
 
