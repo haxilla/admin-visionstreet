@@ -81,6 +81,8 @@ isOpen(route) { return this.activeDropdown === route; }}">
 >
   <button 
     @click="collapsed = !collapsed"
+    activeDropdown = null;
+    dropdownOpen = false;
     class="h-10 w-6 bg-sidebar text-white rounded-r-md flex items-center justify-center cursor-pointer"
     aria-label="Toggle Sidebar"
   >
