@@ -6,7 +6,7 @@ activeDropdown: null,
 closing: false,
 isOpen(route) {return this.activeDropdown === route;}}">
     <div>
-        <aside 
+       <aside 
   :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
   class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
   @click.away="dropdownOpen = false; activeDropdown = null"
@@ -79,7 +79,7 @@ isOpen(route) {return this.activeDropdown === route;}}">
           x-show="isOpen(section.route) && (!collapsed || dropdownOpen)"
           x-cloak
           :class="[
-            collapsed ? 'text-center space-y-1 mt-2' : 'pl-11 space-y-1 mt-1',
+            collapsed ? 'text-center space-y-1 mt-2 px-2' : 'pl-[52px] space-y-1 mt-1',
             'transition-all duration-300 ease-in-out transform origin-top',
             isOpen(section.route) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-1 scale-95'
           ]"
@@ -97,7 +97,7 @@ isOpen(route) {return this.activeDropdown === route;}}">
     </template>
   </nav>
 </aside>
-
+ 
     </div>
 
 <!-- Topbar -->
