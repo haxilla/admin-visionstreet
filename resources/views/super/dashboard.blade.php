@@ -31,7 +31,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
     <nav class="flex-1 mt-4 space-y-1 text-sm">
         <template x-for="section in [
         { title: 'Users', route: 'users', icon: `<path d='M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' /><circle cx='12' cy='7' r='4' />` },
-        { title: 'Clients', route: 'clients', icon: `<path d='M5 13l4 4L19 7' />` },
+        { title: 'Clients', route: 'client', icon: `<path d='M5 13l4 4L19 7' />` },
         { title: 'Projects', route: 'projects', icon: `<path d='M9 17v-6h13M9 12H4M4 12v2a2 2 0 0 0 2 2h3' />` },
         { title: 'Leads', route: 'leads', icon: `<path d='M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z' /><path d='M4 12v4h16v-4' />` }
         ]" :key="section.route">
@@ -67,8 +67,12 @@ isOpen(route) { return this.activeDropdown === route; }}">
                class="block w-full px-4 py-2 text-sm hover:bg-white/10">
               All <span x-text="section.title"></span>
             </a>
-            <a :href="'/' + section.route + '/create'"
-               class="block w-full px-4 py-2 text-sm hover:bg-white/10">
+            <a 
+            href="#"
+            data-renderto="pageswap"
+            :data-renderfrom="section.route + '.create'"
+            data-renderas="json"
+            class="block w-full px-4 py-2 text-sm hover:bg-white/10">
               New <span x-text="section.title"></span>
             </a>
           </div>
