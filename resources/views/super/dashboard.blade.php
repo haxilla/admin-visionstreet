@@ -7,63 +7,67 @@ activeDropdown: null,
 closing: false,
 isOpen(route) { return this.activeDropdown === route; }}">
 
-<aside
-  :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'"
-  class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
-  @click.away="activeDropdown = null; dropdownOpen = false"
->
-  <!-- … your logo markup … -->
-
-  <nav class="flex-1 mt-4 space-y-1 text-sm" x-data="{ activeDropdown: null }">
-    <!-- CLIENTS -->
-    <div>
-      <button
-        @click="
-          const willOpen = activeDropdown !== 'client';
-          activeDropdown = willOpen ? 'client' : null;
-          if (collapsed) dropdownOpen = willOpen;
-        "
-        class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-        :class="collapsed ? 'justify-center' : 'gap-3'"
-      >
-        <svg class="w-5 h-5 text-white" /* … */>…</svg>
-        <span class="text-white" x-show="!collapsed">Clients</span>
-        <svg
-          x-show="!collapsed"
-          class="ml-auto transform"
-          :class="activeDropdown === 'client' ? 'rotate-90' : ''"
-          /* … */
-        >…</svg>
-      </button>
-
-      <div
-        x-show="activeDropdown === 'client'"
-        x-transition
-        class="pl-4 mt-1 space-y-1"
-      >
-        <a href="/client"
-           class="block w-full px-4 py-2 text-sm hover:bg-white/10"
-           data-action="handle"
-           data-renderfrom="client.index"
-           data-renderto="pageswap">
-           View Clients
-        </a>
-
-        <a href="/client/create"
-           class="block w-full px-4 py-2 text-sm hover:bg-white/10"
-           data-action="handle"
-           data-renderfrom="client.create"
-           data-renderto="pageswap"
-           data-renderas="html">
-           Add Client
-        </a>
-      </div>
+    <!-- Sidebar -->
+    <aside :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
+    class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
+    @click.away="dropdownOpen = false; activeDropdown = null">
+    <!-- Sidebar Logo -->
+    <div 
+      :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" 
+      class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
+      <a href="/">
+        <template x-if="!collapsed">
+          <img src="/images/vision-street-square-logo-pixels.png" alt="Full Logo"
+               class="max-h-[120px] w-auto object-contain" />
+        </template>
+        <template x-if="collapsed">
+          <img src="/favicon-96x96.png" alt="Collapsed Logo"
+               class="w-8 h-8 mx-auto block" />
+        </template>
+      </a>
     </div>
+    <nav class="flex-1 mt-4 space-y-1 text-sm" x-data="{ activeDropdown: null}">
+  
+  <!-- CLIENTS -->
+  <div>
+    <button
+    @click="if (collapsed) {dropdownOpen = true;} activeDropdown = activeDropdown === 'client' ? null : 'client';"
+    class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
+    :class="collapsed ? 'justify-center' : 'gap-3'">
+      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M5 13l4 4L19 7" />
+      </svg>
+      <span class="text-white" x-show="!collapsed">Clients</span>
+      <svg x-show="!collapsed" class="ml-auto transform" :class="activeDropdown === 'client' ? 'rotate-90' : ''" width="16" height="16" fill="none">
+        <path stroke="currentColor" stroke-width="2" d="M6 4l6 6-6 6" />
+      </svg>
+    </button>
 
-    <!-- other sections… -->
-  </nav>
-</aside>
+    <div x-show="activeDropdown === 'client'" x-transition class="pl-4 mt-1 space-y-1">
+      <a href="/client"
+         class="block w-full px-4 py-2 text-sm hover:bg-white/10"
+         data-action="handle"
+         data-renderfrom="client.index"
+         data-renderto="pageswap">
+         View Clients
+      </a>
 
+      <a href="/client/create"
+         class="block w-full px-4 py-2 text-sm hover:bg-white/10"
+         data-action="handle"
+         data-renderfrom="client.create"
+         data-renderto="pageswap"
+         data-renderas="html">
+         Add Client
+      </a>
+    </div>
+  </div>
+
+  <!-- ADD MORE SECTIONS BELOW LIKE 'USERS', 'PROJECTS', ETC. -->
+
+</nav>
+
+    </aside>
 
 <!-- Seamless Sidebar Toggle Tab -->
 <div 
