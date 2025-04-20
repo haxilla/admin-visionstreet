@@ -83,65 +83,69 @@
   </div>
 
   <!-- Topbar -->
-  <header 
-    :class="collapsed ? 'ml-20' : 'ml-64'" 
-    class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-100 flex items-center px-6 transition-all duration-300"
-    :style="collapsed ? 'width: calc(100% - 5rem)' : 'width: calc(100% - 16rem)'">
-    <!-- Sidebar toggle button -->
-<div 
-  class="absolute top-4 transition-all duration-300"
-  :style="collapsed ? 'left: 5rem;' : 'left: 16rem;'"
+<!-- Topbar -->
+<header 
+  :class="collapsed ? 'ml-20' : 'ml-64'" 
+  class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-100 flex items-center px-6 transition-all duration-300"
+  :style="collapsed ? 'width: calc(100% - 5rem)' : 'width: calc(100% - 16rem)'"
 >
-  <button 
-    @click="collapsed = !collapsed"
-    class="w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-sm hover:bg-gray-100 
-           rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+
+  <!-- Sidebar toggle button -->
+  <div 
+    class="absolute top-4 transition-all duration-300"
+    :style="collapsed ? 'left: 5rem;' : 'left: 16rem;'"
   >
-    <svg xmlns="http://www.w3.org/2000/svg"
-         class="w-4 h-4 transition-transform duration-300"
-         :class="collapsed ? '' : 'rotate-180'"
-         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-    </svg>
-  </button>
-</div>
+    <button 
+      @click="collapsed = !collapsed"
+      class="w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-sm hover:bg-gray-100 
+             rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg"
+           class="w-4 h-4 transition-transform duration-300"
+           :class="collapsed ? '' : 'rotate-180'"
+           fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
 
-    <!-- Centered Search Bar -->
-    <div class="flex-1 flex justify-center">
-      <div class="w-full max-w-xl">
-        <input type="text" placeholder="Search..." 
-               class="w-full px-4 py-2 text-sm border rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-accentTeal">
-      </div>
+  <!-- Centered Search Bar -->
+  <div class="flex-1 flex justify-center">
+    <div class="w-full max-w-xl">
+      <input type="text" placeholder="Search..." 
+             class="w-full px-4 py-2 text-sm border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-accentTeal">
     </div>
+  </div>
 
-    <!-- Gear dropdown -->
-    <div x-data="{ open: false }" class="relative ml-auto">
-      <button @click="open = !open" @click.away="open = false"
-              class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 hover:text-black transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-          <circle cx="12" cy="12" r="3" />
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33
-                   1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51
-                   1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65
-                   1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65
-                   1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1
-                   1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0
-                   0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65
-                   1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65
-                   1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65
-                   1.65 0 0 0-1.51 1z" />
-        </svg>
-      </button>
-      <div x-show="open" x-transition
-           class="absolute right-0 mt-2 w-36 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
-        <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
-        <form method="POST" action="/logout">
-          @csrf
-          <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 hover:text-red-700 cursor-pointer">
-            Log out
-          </button>
-        </form>
-      </div>
+  <!-- Gear dropdown -->
+  <div x-data="{ open: false }" class="relative ml-auto">
+    <button @click="open = !open" @click.away="open = false"
+            class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 hover:text-black transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33
+                 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51
+                 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65
+                 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65
+                 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1
+                 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0
+                 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65
+                 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65
+                 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65
+                 1.65 0 0 0-1.51 1z" />
+      </svg>
+    </button>
+    <div x-show="open" x-transition
+         class="absolute right-0 mt-2 w-36 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
+      <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+      <form method="POST" action="/logout">
+        @csrf
+        <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 hover:text-red-700 cursor-pointer">
+          Log out
+        </button>
+      </form>
     </div>
-  </header>
+  </div>
+</header>
+
 </body>
