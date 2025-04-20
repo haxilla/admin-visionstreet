@@ -23,7 +23,7 @@ class ClientHandleController extends Controller
     public function create(Request $request)
     {
         $data = [
-            'renderTo' => $request->input('renderTo')
+            'renderTo' => $request->input('renderTo'),
             'renderFrom' => $request->input('renderFrom'),
             'renderAs' => $request->input('renderAs'),
             'key' => $request->input('key'),
