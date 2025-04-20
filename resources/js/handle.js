@@ -1,67 +1,73 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Only run if body has linkcheck class
+    // ⛔ Don't run this unless the body has the 'linkcheck' class
     if (!document.body.classList.contains('linkcheck')) return;
 
-    document.addEventListener('click', (e) => {
+    // ✅ Only act on an <a> element with data-action="handle"
+    if (e.target.tagName !== 'A' || e.target.dataset.action !== 'handle') return;
 
-        // 🛑 Prevent full page load only if JS is active
-        e.preventDefault();
+    const el = e.target;
 
-        const el = e.target.closest('[data-action="handle"]');
-        if (!el) return;
+    const renderFrom = el.dataset.renderfrom;
+    const renderTo = el.dataset.renderto;
+    const renderAs = el.dataset.renderas;
+    const value = el.dataset.value || '';
+    const key = el.dataset.key || '';
+    const isapp = el.dataset.isapp || '0';
 
-        e.preventDefault();
+    if (!renderFrom || !renderTo || !renderAs) {
+        console.error('Missing data-renderfrom, data-renderto, or data-renderas');
+        return;}
 
-        // Gather attributes from clicked element
-        const renderTo = el.dataset.renderto;
-        const renderFrom = el.dataset.renderfrom;
-        const renderAs = el.dataset.renderas
-        const value = el.dataset.value || '';
-        const key = el.dataset.key || '';
-        const isapp = el.dataset.isapp || '0';
+    e.preventDefault();
+    // Gather attributes from clicked element
+    const renderTo = el.dataset.renderto;
+    const renderFrom = el.dataset.renderfrom;
+    const renderAs = el.dataset.renderas
+    const value = el.dataset.value || '';
+    const key = el.dataset.key || '';
+    const isapp = el.dataset.isapp || '0';
 
-        // Validate required attributes
-        if (!renderFrom || !renderTo || !renderAs) {
-            console.error('Missing data-renderfrom or data-renderto');
-            return;}
+    // Validate required attributes
+    if (!renderFrom || !renderTo || !renderAs) {
+        console.error('Missing data-renderfrom or data-renderto');
+        return;}
 
-        // Build endpoint URL based on body context
-        const section = document.body.dataset.section || '';
-        const endpoint = section ? `/${section}/handle` : '/handle';
+    // Build endpoint URL based on body context
+    const section = document.body.dataset.section || '';
+    const endpoint = section ? `/${section}/handle` : '/handle';
 
-        // Build POST data
-        const postData = new URLSearchParams({
-            renderFrom,
-            renderto: renderTo,
-            value,
-            key,
-            isapp
-        });
+    // Build POST data
+    const postData = new URLSearchParams({
+        renderFrom,
+        renderto: renderTo,
+        value,
+        key,
+        isapp
+    });
 
-        const csrf = document.querySelector('meta[name="csrf-token"]')?.content;
+    const csrf = document.querySelector('meta[name="csrf-token"]')?.content;
 
-        fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                ...(csrf ? { 'X-CSRF-TOKEN': csrf } : {})
-            },
-            body: postData.toString()
-        })
-        .then(res => {
-            if (!res.ok) throw new Error(`Failed request: ${res.status}`);
-            return res.text();
-        })
-        .then(html => {
-            const target = document.querySelector(`.${renderTo}`);
-            if (target) {
-                target.innerHTML = html;
-            } else {
-                console.warn(`Target container .${renderTo} not found`);
-            }
-        })
-        .catch(err => {
-            console.error('Handle request error:', err);
-        });
+    fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            ...(csrf ? { 'X-CSRF-TOKEN': csrf } : {})
+        },
+        body: postData.toString()
+    })
+    .then(res => {
+        if (!res.ok) throw new Error(`Failed request: ${res.status}`);
+        return res.text();
+    })
+    .then(html => {
+        const target = document.querySelector(`.${renderTo}`);
+        if (target) {
+            target.innerHTML = html;
+        } else {
+            console.warn(`Target container .${renderTo} not found`);
+        }
+    })
+    .catch(err => {
+        console.error('Handle request error:', err);
     });
 });
