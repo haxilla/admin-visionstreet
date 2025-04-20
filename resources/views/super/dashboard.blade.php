@@ -83,7 +83,7 @@
 <!-- Seamless Sidebar Toggle Tab -->
 <div 
   class="fixed z-50 top-4 transition-all duration-300"
-  :class="collapsed ? 'left-[72px]' : 'left-[256px]'"
+  :style="collapsed ? 'left: 72px' : 'left: 256px'"
 >
   <button 
     @click="collapsed = !collapsed"
@@ -98,6 +98,7 @@
     </svg>
   </button>
 </div>
+
 
 
 
