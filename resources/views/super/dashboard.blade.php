@@ -14,15 +14,17 @@ isOpen(route) {return this.activeDropdown === route;}}">
 
     <!-- Sidebar Toggle Button -->
 <!-- Add this inside your <aside> tag -->
-<button 
+<button
   @click="collapsed = !collapsed"
-  class="absolute top-6 -right-4 w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-sm 
-         hover:bg-gray-100 transition-all rounded-full flex items-center justify-center z-50"
+  class="absolute top-6 -right-5 w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-lg hover:bg-gray-100 cursor-pointer
+         rounded-full flex items-center justify-center z-50 transition-transform"
+  :class="collapsed ? 'translate-x-1' : '-translate-x-1'"
+  style="transition: all 0.3s ease;"
 >
   <svg xmlns="http://www.w3.org/2000/svg"
-       class="w-4 h-4 transition-transform duration-300"
+       class="w-4 h-4 transform transition-transform duration-300"
        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-       :class="collapsed ? '' : 'rotate-180'">
+       :class="collapsed ? 'rotate-180' : ''">
     <path d="M15 19l-7-7 7-7" />
   </svg>
 </button>
