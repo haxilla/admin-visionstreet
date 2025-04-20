@@ -1,12 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Super\DashboardController as SuperDashboard;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Member\DashboardController as MemberDashboard;
 use App\Http\Controllers\Guest\GuestController as Guest;
-use App\Http\Controllers\HandleController;
 
 /* ---------------- Public ---------------- */
 Route::get('/', [Guest::class, 'home'])->name('home');
@@ -24,13 +22,13 @@ Route::get('/admin/dashboard', [AdminDashboard::class, 'index'])->name('admin.da
 /* ---------------- Member ---------------- */
 Route::get('/member/dashboard', [MemberDashboard::class, 'index'])->name('member.dashboard');
 
-/* ---- Internal Request Handler -- */
-Route::post('/handle', [HandleController::class, 'handle'])->name('handle');
 
-// Temporary or diagnostic
-Route::get('/php-version', fn() => phpversion())->name('php.version');
+/********************************************/
+//useful somewhere at some point
+Route::get('/php-version', function () {
+    return phpversion();});
 
-// Role-based logout
+//logouts (per role)
 Route::post('/logout', function () {
     $role = Auth::user()->role ?? 'guest';
 
@@ -38,10 +36,15 @@ Route::post('/logout', function () {
     request()->session()->invalidate();
     request()->session()->regenerateToken();
 
-    return match ($role) {
-        'super'  => redirect('/super/dashboard'),
-        'admin'  => redirect('/admin/dashboard'),
-        'member' => redirect('/member/dashboard'),
-        default  => redirect('/login'),
-    };
+    // Redirect based on role
+    switch ($role) {
+        case 'super':
+            return redirect('/super/dashboard');
+        case 'admin':
+            return redirect('/admin/dashboard');
+        case 'member':
+            return redirect('/member/dashboard');
+        default:
+            return redirect('/login');
+    }
 })->name('logout');
