@@ -23,7 +23,7 @@ class ClientHandleController extends Controller
     public function create(Request $request)
     {
         // Only runs for admin/super
-        dd("YOURE READY TO CREATE HERE");
+        dd(request()->all());
 
     }
 }
