@@ -75,24 +75,26 @@ isOpen(route) {return this.activeDropdown === route;}}">
         </button>
 
         <!-- Dropdown Content -->
-        <div
-          x-show="isOpen(section.route) && (!collapsed || dropdownOpen)"
-          x-cloak
-          :class="[
-            collapsed ? 'text-center space-y-1 mt-2 px-2' : 'pl-[52px] space-y-1 mt-1',
-            'transition-all duration-300 ease-in-out transform origin-top',
-            isOpen(section.route) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-1 scale-95'
-          ]"
-        >
-          <a :href="'/' + section.route"
-             class="block text-sm text-white/90 hover:text-white">
-            All <span x-text="section.title"></span>
-          </a>
-          <a :href="'/' + section.route + '/create'"
-             class="block text-sm text-white/90 hover:text-white">
-            New <span x-text="section.title"></span>
-          </a>
-        </div>
+<div
+  x-show="isOpen(section.route) && (!collapsed || dropdownOpen)"
+  x-cloak
+  :class="[
+    collapsed ? 'text-center space-y-1 mt-2 px-2' : 'pl-[52px] space-y-1 mt-1',
+    'bg-white/5 rounded-md py-2',
+    'transition-all duration-300 ease-in-out transform origin-top',
+    isOpen(section.route) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-1 scale-95'
+  ]"
+>
+  <a :href="'/' + section.route"
+     class="block text-sm text-white/90 hover:text-white px-2">
+    All <span x-text="section.title"></span>
+  </a>
+  <a :href="'/' + section.route + '/create'"
+     class="block text-sm text-white/90 hover:text-white px-2">
+    New <span x-text="section.title"></span>
+  </a>
+</div>
+
       </div>
     </template>
   </nav>
