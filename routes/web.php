@@ -27,7 +27,7 @@ Route::get('/admin/dashboard', [AdminDashboard::class, 'index'])->name('admin.da
 Route::get('/member/dashboard', [MemberDashboard::class, 'index'])->name('member.dashboard');
 
 /* ---------------- Clients ---------------- */
-Route::get('/clients/create', [ClientHandleController::class, 'create'])->name('clients.create');
+Route::post('/clients/create', [ClientHandleController::class, 'create'])->name('clients.create');
 
 /* ---- Internal Request Handler -- */
 Route::post('/handle', [HandleController::class, 'handle'])->name('handle');

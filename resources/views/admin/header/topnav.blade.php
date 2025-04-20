@@ -12,7 +12,6 @@
         </a>
     </div>
 
-
     {{-- Nav links (push them away from logo) --}}
     <div class="flex items-center gap-6 pr-6 text-sm tracking-wider font-russo">
         <div x-data="{ open: false }" class="relative">

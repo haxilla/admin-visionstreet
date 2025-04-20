@@ -1,12 +1,11 @@
 @include('super.header.doctype')
-<body class="relative bg-white h-full font-sans text-gray-800"
-      x-data="{
-        collapsed: false,
-        dropdownOpen: false,
-        activeDropdown: null,
-        closing: false,
-        isOpen(route) { return this.activeDropdown === route; }
-      }">
+<body data-section="super"
+class="linkcheck relative bg-white h-full font-sans text-gray-800" x-data="{
+collapsed: false,
+dropdownOpen: false,
+activeDropdown: null,
+closing: false,
+isOpen(route) { return this.activeDropdown === route; }}">
 
     <!-- Sidebar -->
     <aside :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
