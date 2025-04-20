@@ -84,26 +84,26 @@
 
 <!-- Topbar Container -->
 <div class="relative">
-<!-- Chevron Toggle Button (centered on edge between sidebar and main area) -->
-<div 
-  class="absolute z-50 top-[16px]"
-  :style="collapsed ? 'left: 80px; transform: translateX(-50%)' : 'left: 256px; transform: translateX(-50%)'"
->
-  <button 
-    @click="collapsed = !collapsed"
-    class="w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-md hover:bg-gray-100 
-           rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+  <!-- Chevron Toggle Button -->
+  <div 
+    class="absolute z-50 transition-all duration-300"
+    :class="collapsed 
+      ? 'top-[100px] left-[74px]' 
+      : 'top-[16px] left-[244px]'"
   >
-    <svg xmlns="http://www.w3.org/2000/svg"
-         class="w-4 h-4 transition-transform duration-300"
-         :class="collapsed ? '' : 'rotate-180'"
-         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-    </svg>
-  </button>
-</div>
-
-
+    <button 
+      @click="collapsed = !collapsed"
+      class="w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-md hover:bg-gray-100 
+             rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg"
+           class="w-4 h-4 transition-transform duration-300"
+           :class="collapsed ? '' : 'rotate-180'"
+           fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
 
   <!-- Header -->
   <header 
