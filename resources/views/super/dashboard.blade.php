@@ -53,7 +53,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
     x-cloak
     class="space-y-1 bg-[#0f7dbf] text-white">
       <a href="/client"
-         class="block w-full px-4 py-2 text-sm hover:bg-white/10"
+         class="block w-full px-4 py-2 text-sm hover:bg-black/10 transition-colors"
          data-action="handle"
          data-renderfrom="client.index"
          data-renderto="pageswap">
@@ -61,7 +61,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
       </a>
 
       <a href="/client/create"
-         class="block w-full px-4 py-2 text-sm hover:bg-white/10"
+         class="block w-full px-4 py-2 text-sm hover:bg-black/10 transition-colors"
          data-action="handle"
          data-renderfrom="client.create"
          data-renderto="pageswap"
