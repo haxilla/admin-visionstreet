@@ -19,13 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;}
 
     e.preventDefault();
-    // Gather attributes from clicked element
-    const renderTo = el.dataset.renderto;
-    const renderFrom = el.dataset.renderfrom;
-    const renderAs = el.dataset.renderas
-    const value = el.dataset.value || '';
-    const key = el.dataset.key || '';
-    const isapp = el.dataset.isapp || '0';
 
     // Validate required attributes
     if (!renderFrom || !renderTo || !renderAs) {
