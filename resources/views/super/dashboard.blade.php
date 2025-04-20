@@ -50,23 +50,16 @@ isOpen(route) { return this.activeDropdown === route; }}">
          data-action="handle"
          data-renderfrom="client.index"
          data-renderto="pageswap">
-         All Clients
+         View Clients
       </a>
 
       <a href="/client/create"
          class="block w-full px-4 py-2 text-sm hover:bg-white/10"
          data-action="handle"
          data-renderfrom="client.create"
-         data-renderto="pageswap">
+         data-renderto="pageswap"
+         data-renderas="json">
          Add Client
-      </a>
-
-      <a href="/client/settings"
-         class="block w-full px-4 py-2 text-sm hover:bg-white/10"
-         data-action="handle"
-         data-renderfrom="client.settings"
-         data-renderto="pageswap">
-         Client Settings
       </a>
     </div>
   </div>
