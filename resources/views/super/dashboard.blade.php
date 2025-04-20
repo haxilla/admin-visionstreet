@@ -84,24 +84,25 @@
 
 <!-- Topbar Container -->
 <div class="relative">
-  <!-- Sidebar Toggle Button (straddles blue/white boundary) -->
-  <div 
-    class="absolute top-4 z-50 transition-all duration-300"
-    :style="collapsed ? 'left: 5rem;' : 'left: 16rem;'"
+<!-- Chevron Toggle Button (overlapping sidebar and topbar) -->
+<div 
+  class="absolute z-50 top-4 -left-4"
+  :class="collapsed ? 'left-[72px]' : 'left-[248px]'"
+>
+  <button 
+    @click="collapsed = !collapsed"
+    class="w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-md hover:bg-gray-100 
+           rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
   >
-    <button 
-      @click="collapsed = !collapsed"
-      class="w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-sm hover:bg-gray-100 
-             rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg"
-           class="w-4 h-4 transition-transform duration-300"
-           :class="collapsed ? '' : 'rotate-180'"
-           fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
-  </div>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="w-4 h-4 transition-transform duration-300"
+         :class="collapsed ? '' : 'rotate-180'"
+         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>
+
 
   <!-- Header -->
   <header 
@@ -148,7 +149,5 @@
     </div>
   </header>
 </div>
-
-
-
+@include('super.footer.main')
 </body>
