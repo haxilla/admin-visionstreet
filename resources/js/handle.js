@@ -8,7 +8,6 @@ document.addEventListener('click', (e) => {
 
     console.log('Clicked element:', e.target);
 
-
     const el = e.target;
 
     const renderFrom = el.dataset.renderfrom;
