@@ -80,27 +80,28 @@
     </nav>
   </aside>
 
-  <!-- Sidebar Toggle Button (pill-style) -->
-  <div 
-    class="fixed z-50 transition-all duration-300"
-    :class="collapsed 
-      ? 'left-[72px] top-1/2 transform -translate-y-1/2' 
-      : 'left-[256px] top-4 transform'"
+  <!-- Sidebar Toggle Button (stays fixed on top edge) -->
+<div 
+  class="fixed z-50 top-4 transition-all duration-300"
+  :class="collapsed 
+    ? 'left-[72px]' 
+    : 'left-[256px]'"
+>
+  <button 
+    @click="collapsed = !collapsed"
+    class="h-10 w-6 bg-[#1e2a44] hover:bg-[#2c3e5d] text-white shadow-md 
+           rounded-r-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+    aria-label="Toggle Sidebar"
   >
-    <button 
-      @click="collapsed = !collapsed"
-      class="h-10 w-6 bg-[#1e2a44] hover:bg-[#2c3e5d] text-white shadow-md 
-             rounded-r-full flex items-center justify-center transition-all duration-300 cursor-pointer"
-      aria-label="Toggle Sidebar"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg"
-           class="w-4 h-4 transition-transform duration-300"
-           :class="collapsed ? '' : 'rotate-180'"
-           fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
-  </div>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="w-4 h-4 transition-transform duration-300"
+         :class="collapsed ? '' : 'rotate-180'"
+         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>
+
 
   <!-- Header -->
   <header 
