@@ -69,15 +69,18 @@ isOpen(route) { return this.activeDropdown === route; }}">
         </svg>
           View Clients
       </a>
-
-
       <a href="#"
-         class="block w-full px-4 py-2 text-sm hover:bg-black/10 transition-colors"
-         data-action="handle"
-         data-renderfrom="client.create"
-         data-renderto="pageswap"
-         data-renderas="html">
-         Add Client
+        class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
+        data-action="handle"
+        data-renderfrom="client.index"
+        data-renderto="pageswap">
+        <!-- Plus icon for “Add” -->
+        <svg xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4 mr-2 flex-shrink-0"
+        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
+          Add Client
       </a>
     </div>
   </div>
