@@ -4,15 +4,7 @@ class ClientHandleController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(function ($request, $next) {
-            $user = Auth::user();
-
-            if (!$user || !in_array($user->role, ['admin', 'super'])) {
-                abort(403, 'Unauthorized');
-            }
-
-            return $next($request);
-        });
+    	$this->middleware('role:admin,super');
     }
 
     public function handle(Request $request)
