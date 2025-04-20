@@ -133,6 +133,8 @@ isOpen(route) { return this.activeDropdown === route; }}">
       </div>
     </div>
   </header>
+  <div class="pageswap">
+  </div>
 
 @include('super.footer.main')
 </body>
