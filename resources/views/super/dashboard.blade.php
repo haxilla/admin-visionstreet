@@ -1,31 +1,25 @@
 @include('super.header.doctype')
 <body class="bg-white h-full font-sans text-gray-800" x-data="{
-  collapsed: false,
-  dropdownOpen: false,
-  activeDropdown: null,
-  closing: false,
-  isOpen(route) { return this.activeDropdown === route; }
-}">
+collapsed: false,
+dropdownOpen: false,
+activeDropdown: null,
+closing: false,
+isOpen(route) { return this.activeDropdown === route; }}">
+    <!-- Sidebar Toggle Button -->
+    <div class="absolute top-[88px] left-[calc(100%-12px)] z-50">
+      <button 
+        @click="collapsed = !collapsed"
+        class="w-6 h-6 bg-[#1e2a44] hover:bg-[#2c3e5d] text-white border border-white/20 shadow-md 
+               rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-3 h-3 transform transition-transform duration-300"
+             :class="collapsed ? '' : 'rotate-180'"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
 
-  <!-- Sidebar Toggle Button -->
-  <div 
-    class="fixed top-6 z-50 transition-all duration-300"
-    :class="collapsed ? 'left-[72px]' : 'left-[256px]'"
-  >
-    <button 
-      @click="collapsed = !collapsed"
-      class="w-8 h-8 bg-white text-gray-800 border border-gray-300 rounded-full shadow-md 
-             flex items-center justify-center hover:bg-gray-100 transition-all cursor-pointer"
-      aria-label="Toggle Sidebar"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg"
-           class="w-4 h-4 transition-transform duration-300"
-           fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-           :class="collapsed ? '' : 'rotate-180'">
-        <path d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-  </div>
 
   <div>
     <aside 
@@ -104,7 +98,7 @@
   <!-- Topbar -->
   <header 
     :class="collapsed ? 'ml-20' : 'ml-64'" 
-    class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-200 flex items-center px-6 transition-all duration-300"
+    class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-100 flex items-center px-6 transition-all duration-300"
     :style="collapsed ? 'width: calc(100% - 5rem)' : 'width: calc(100% - 16rem)'">
 
     <!-- Centered Search Bar -->
