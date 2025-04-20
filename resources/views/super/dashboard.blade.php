@@ -48,7 +48,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
       </svg>
     </button>
 
-    <div x-show="activeDropdown === 'client'" x-transition class="pl-4 mt-1 space-y-1">
+<div x-show="activeDropdown === 'client'" x-transition x-cloak class="pl-4 mt-1 space-y-1 bg-blue-700 text-white rounded-md shadow-lg">
       <a href="/client"
          class="block w-full px-4 py-2 text-sm hover:bg-white/10"
          data-action="handle"
