@@ -31,7 +31,7 @@ class ClientHandleController extends Controller
             'isapp' => $request->input('isapp'),
         ];
 
-        return '<script>console.log("🔍 Incoming request:", ' . json_encode($data) . ');</script><div>Loaded form UI here</div>';
+        dd($data);
     }
 
 }
