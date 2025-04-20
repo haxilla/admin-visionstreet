@@ -26,7 +26,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
         </template>
       </a>
     </div>
-    <nav class="flex-1 mt-4 space-y-1 text-sm" x-data="{ activeDropdown: null}">
+    <nav class="flex-1 mt-4 space-y-1 text-sm">
   
   <!-- CLIENTS -->
   <div>
