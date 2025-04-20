@@ -5,23 +5,22 @@ dropdownOpen: false,
 activeDropdown: null,
 closing: false,
 isOpen(route) { return this.activeDropdown === route; }}">
-    <!-- Sidebar Toggle Button -->
-    <div class="absolute top-[88px] left-[calc(100%-12px)] z-50">
-      <button 
-        @click="collapsed = !collapsed"
-        class="w-6 h-6 bg-[#1e2a44] hover:bg-[#2c3e5d] text-white border border-white/20 shadow-md 
-               rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg"
-             class="w-3 h-3 transform transition-transform duration-300"
-             :class="collapsed ? '' : 'rotate-180'"
-             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-    </div>
+<!-- Sidebar Toggle Button -->
+<div class="absolute top-[88px] -right-3 z-50">
+  <button 
+    @click="collapsed = !collapsed"
+    class="w-7 h-7 bg-white text-gray-700 border border-gray-300 shadow hover:bg-gray-100 
+           rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="w-3.5 h-3.5 transition-transform duration-300"
+         :class="collapsed ? '' : 'rotate-180'"
+         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>
 
 
-  <div>
     <aside 
       :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
       class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
