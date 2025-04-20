@@ -30,8 +30,6 @@ class ClientHandleController extends Controller
             'value' => $request->input('value'),
             'isapp' => $request->input('isapp'),
         ];
-
-        dd($data);
     }
 
 }

@@ -34,7 +34,9 @@ document.addEventListener('click', (e) => {
   }
 });
 
-function renderHTML(endpoint, postData, renderTo, csrf) {
+function renderHTML(endpoint, postData, renderTo) {
+  const csrf = document.querySelector('meta[name="csrf-token"]')?.content;
+
   fetch(endpoint, {
     method: 'POST',
     headers: {
@@ -43,18 +45,11 @@ function renderHTML(endpoint, postData, renderTo, csrf) {
     },
     body: postData.toString()
   })
-  .then(async res => {
-    if (!res.ok) {
-      const errorText = await res.text();
-      console.error(`🚨 HTML Error ${res.status}:\n`, errorText);
-      return;
-    }
-
-    const html = await res.text();
-
-    // ✅ Intercept: See exactly what Laravel returned before injecting
-    console.log(`🧪 Raw HTML from ${endpoint}:`, html);
-
+  .then(res => {
+    // Pass through HTML, even if it's a 500 error page
+    return res.text();
+  })
+  .then(html => {
     const target = document.querySelector(`.${renderTo}`);
     if (target) {
       target.innerHTML = html;
@@ -63,9 +58,10 @@ function renderHTML(endpoint, postData, renderTo, csrf) {
     }
   })
   .catch(err => {
-    console.error('❌ HTML Fetch failed:', err.message);
+    console.error('💥 Handle request error:', err);
   });
 }
+
 
 function renderJSON(endpoint, postData, csrf) {
   fetch(endpoint, {
