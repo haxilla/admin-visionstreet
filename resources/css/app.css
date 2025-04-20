@@ -12,4 +12,7 @@
   .text-accent {
     color: var(--color-accent);
   }
+  [x-cloak] {
+    display: none !important;
+  }
 }
