@@ -52,15 +52,22 @@ isOpen(route) { return this.activeDropdown === route; }}">
     x-transition
     x-cloak
     class="space-y-1 bg-[#0f7dbf] text-white">
-      <a href="/client"
-         class="block w-full px-4 py-2 text-sm hover:bg-black/10 transition-colors"
+      <a href="#"
+         class="flex items-center w-full px-4 py-2 text-sm hover:bg-black/10 transition-colors"
          data-action="handle"
          data-renderfrom="client.index"
          data-renderto="pageswap">
+         <!-- use your preferred SVG icon here: -->
+         <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 mr-2 flex-shrink-0"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+           <path d="M5 13l4 4L19 7" />
+         </svg>
          View Clients
       </a>
 
-      <a href="/client/create"
+
+      <a href="#"
          class="block w-full px-4 py-2 text-sm hover:bg-black/10 transition-colors"
          data-action="handle"
          data-renderfrom="client.create"
