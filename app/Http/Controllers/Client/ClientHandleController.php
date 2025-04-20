@@ -30,6 +30,9 @@ class ClientHandleController extends Controller
             'value' => $request->input('value'),
             'isapp' => $request->input('isapp'),
         ];
+
+        return response('<pre>' . print_r($data, true) . '</pre>');
+
     }
 
 }
