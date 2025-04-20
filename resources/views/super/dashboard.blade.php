@@ -58,7 +58,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
          data-action="handle"
          data-renderfrom="client.create"
          data-renderto="pageswap"
-         data-renderas="json">
+         data-renderas="html">
          Add Client
       </a>
     </div>
