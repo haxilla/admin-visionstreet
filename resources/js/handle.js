@@ -51,6 +51,10 @@ function renderHTML(endpoint, postData, renderTo, csrf) {
     }
 
     const html = await res.text();
+
+    // ✅ Intercept: See exactly what Laravel returned before injecting
+    console.log(`🧪 Raw HTML from ${endpoint}:`, html);
+
     const target = document.querySelector(`.${renderTo}`);
     if (target) {
       target.innerHTML = html;
