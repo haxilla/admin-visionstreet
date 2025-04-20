@@ -80,24 +80,6 @@
       </template>
     </nav>
   </aside>
-
-  <!-- Toggle Button (Visible always) -->
-  <div 
-    class="absolute top-[88px] z-50"
-    :class="collapsed ? 'left-[80px]' : 'left-[256px]'"
-  >
-    <button 
-      @click="collapsed = !collapsed"
-      class="w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-md hover:bg-gray-100 
-             rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg"
-           class="w-4 h-4 transition-transform duration-300"
-           :class="collapsed ? '' : 'rotate-180'"
-           fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
   </div>
 
   <!-- Topbar -->
@@ -105,6 +87,24 @@
     :class="collapsed ? 'ml-20' : 'ml-64'" 
     class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-100 flex items-center px-6 transition-all duration-300"
     :style="collapsed ? 'width: calc(100% - 5rem)' : 'width: calc(100% - 16rem)'">
+    <!-- Sidebar toggle button -->
+<div 
+  class="absolute top-4 transition-all duration-300"
+  :style="collapsed ? 'left: 5rem;' : 'left: 16rem;'"
+>
+  <button 
+    @click="collapsed = !collapsed"
+    class="w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-sm hover:bg-gray-100 
+           rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="w-4 h-4 transition-transform duration-300"
+         :class="collapsed ? '' : 'rotate-180'"
+         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>
 
     <!-- Centered Search Bar -->
     <div class="flex-1 flex justify-center">
