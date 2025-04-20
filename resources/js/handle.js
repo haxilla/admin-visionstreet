@@ -25,9 +25,8 @@ document.addEventListener('click', (e) => {
   const isapp = el.dataset.isapp || '0';
 
   if (!renderFrom || !renderTo || !renderAs) {
-    console.error('Missing data-renderfrom, data-renderto, or data-renderas');
-    return;
-  }
+    console.error('Error-line28-hander.js - missing render info');
+    return;}
 
   const csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
   const endpoint = '/' + renderFrom.replace('.', '/');
