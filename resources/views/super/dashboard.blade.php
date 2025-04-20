@@ -80,21 +80,22 @@ isOpen(route) {return this.activeDropdown === route;}}">
   x-cloak
   :class="[
     collapsed ? 'text-center space-y-1 mt-0 px-2' : 'pl-[52px] space-y-1 mt-0 pr-4',
-    'bg-[#2e4a7f] rounded-md py-2',
+    'bg-[#2e4a7f] py-2',
     'text-white',
     'transition-all duration-300 ease-in-out transform origin-top',
     isOpen(section.route) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-1 scale-95'
   ]"
 >
   <a :href="'/' + section.route"
-     class="block text-sm hover:text-white px-2">
+     class="block text-sm hover:bg-white/10 px-2 py-1 rounded-sm">
     All <span x-text="section.title"></span>
   </a>
   <a :href="'/' + section.route + '/create'"
-     class="block text-sm hover:text-white px-2">
+     class="block text-sm hover:bg-white/10 px-2 py-1 rounded-sm">
     New <span x-text="section.title"></span>
   </a>
 </div>
+
 
 
       </div>
