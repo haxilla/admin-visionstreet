@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!document.body.classList.contains('linkcheck')) return;
 
     document.addEventListener('click', (e) => {
+
+        // 🛑 Prevent full page load only if JS is active
+        e.preventDefault();
+
         const el = e.target.closest('[data-action="handle"]');
         if (!el) return;
 
