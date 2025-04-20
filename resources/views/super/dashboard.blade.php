@@ -42,8 +42,8 @@ isOpen(route) { return this.activeDropdown === route; }}">
       <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M5 13l4 4L19 7" />
       </svg>
-      <span class="text-white" x-show="!collapsed">Clients</span>
-      <svg x-show="!collapsed" class="ml-auto transform" :class="activeDropdown === 'client' ? 'rotate-90' : ''" width="16" height="16" fill="none">
+      <span class="text-white" x-show="!collapsed || dropdownOpen">Clients</span>
+      <svg x-show="!collapsed || dropdownOpen" class="ml-auto transform" :class="activeDropdown === 'client' ? 'rotate-90' : ''" width="16" height="16" fill="none">
         <path stroke="currentColor" stroke-width="2" d="M6 4l6 6-6 6" />
       </svg>
     </button>
