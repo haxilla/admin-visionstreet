@@ -10,5 +10,14 @@ class ClientHandleController extends Controller
     public function handle(Request $request)
     {
         // Only runs for admin/super
+        dd("YOURE READY TO HANDLE HERE");
+
+    }
+
+    public function create(Request $request)
+    {
+        // Only runs for admin/super
+        dd("YOURE READY TO CREATE HERE");
+
     }
 }
