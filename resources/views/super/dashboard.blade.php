@@ -44,7 +44,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
       </svg>
     </button>
 
-    <div x-show="activeDropdown === 'client'" x-transition class="pl-4 mt-1 space-y-1" x-cloak>
+    <div x-show="activeDropdown === 'client'" x-transition class="pl-4 mt-1 space-y-1">
       <a href="/client"
          class="block w-full px-4 py-2 text-sm hover:bg-white/10"
          data-action="handle"
@@ -121,7 +121,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
                    1.65 0 0 0-1.51 1z" />
         </svg>
       </button>
-      <div x-show="open" x-transition
+      <div x-show="open" x-cloak x-transition
            class="absolute right-0 mt-2 w-36 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
         <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
         <form method="POST" action="/logout">
