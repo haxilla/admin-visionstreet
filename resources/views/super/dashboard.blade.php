@@ -48,7 +48,10 @@ isOpen(route) { return this.activeDropdown === route; }}">
       </svg>
     </button>
 
-<div x-show="activeDropdown === 'client'" x-transition x-cloak class="pl-4 mt-1 space-y-1 bg-blue-700 text-white rounded-md shadow-lg">
+    <div x-show="activeDropdown === 'client'"
+    x-transition
+    x-cloak
+    class="space-y-1 bg-[#0f7dbf] text-white">
       <a href="/client"
          class="block w-full px-4 py-2 text-sm hover:bg-white/10"
          data-action="handle"
@@ -72,7 +75,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
 
 </nav>
 
-    </aside>
+</aside>
 
 <!-- Seamless Sidebar Toggle Tab -->
 <div 
