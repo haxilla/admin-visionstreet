@@ -51,9 +51,9 @@ isOpen(route) { return this.activeDropdown === route; }}">
     <div x-show="activeDropdown === 'client'"
     x-transition
     x-cloak
-    class="pl-6 space-y-1 bg-[#0f7dbf] text-white">
+    class="space-y-1 bg-[#0f7dbf] text-white">
       <a href="#"
-        class="flex items-center w-full px-4 py-2 text-sm hover:bg-black/10 transition-colors"
+        class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
         data-action="handle"
         data-renderfrom="client.index"
         data-renderto="pageswap">
