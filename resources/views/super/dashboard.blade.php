@@ -31,10 +31,9 @@ isOpen(route) { return this.activeDropdown === route; }}">
   <!-- CLIENTS -->
   <div>
     <button
-      @click="activeDropdown = activeDropdown === 'client' ? null : 'client'"
-      class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-      :class="collapsed ? 'justify-center' : 'gap-3'"
-    >
+    @click="if (collapsed) {dropdownOpen = true;} activeDropdown = activeDropdown === 'client' ? null : 'client';"
+    class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
+    :class="collapsed ? 'justify-center' : 'gap-3'">
       <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M5 13l4 4L19 7" />
       </svg>
