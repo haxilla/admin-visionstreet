@@ -1,3 +1,11 @@
+const handlers = {
+  // example entry:
+  onClientsLoaded: () => {
+    console.log('Clients have been loaded');
+  },
+  // add more function names here as needed
+};
+
 document.addEventListener('click', (e) => {
   if (
     !document.body.classList.contains('linkcheck') ||
@@ -62,7 +70,6 @@ function renderHTML(endpoint, postData, renderTo) {
   });
 }
 
-
 function renderJSON(endpoint, postData, csrf) {
   fetch(endpoint, {
     method: 'POST',
@@ -82,12 +89,16 @@ function renderJSON(endpoint, postData, csrf) {
     const json = await res.json();
     console.log('✅ JSON response:', json);
 
-    // Optionally do something with JSON
     if (json?.funcName) {
-      try {
-        eval(json.funcName); // ⚠️ if you're intentionally doing this
-      } catch (err) {
-        console.error('⚠️ Failed to run funcName:', err);
+      const fn = handlers[json.funcName];
+      if (typeof fn === 'function') {
+        try {
+          fn();
+        } catch (err) {
+          console.error('⚠️ Handler error for', json.funcName, err);
+        }
+      } else {
+        console.warn('⚠️ No handler defined for', json.funcName);
       }
     }
   })
