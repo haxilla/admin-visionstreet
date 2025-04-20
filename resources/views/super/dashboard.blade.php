@@ -133,8 +133,14 @@ isOpen(route) { return this.activeDropdown === route; }}">
       </div>
     </div>
   </header>
-  <div class="pageswap">
-  </div>
+  <main
+    class="absolute top-16 right-0 bottom-0 overflow-y-auto transition-all duration-300"
+    :class="collapsed ? 'left-20' : 'left-64'"
+  >
+    <div class="pageswap p-4">
+      <!-- dynamic content goes here -->
+    </div>
+  </main>
 
 @include('super.footer.main')
 </body>
