@@ -84,10 +84,10 @@
 
 <!-- Topbar Container -->
 <div class="relative">
-<!-- Chevron Toggle Button (overlapping sidebar and topbar) -->
+<!-- Chevron Toggle Button (centered on edge between sidebar and main area) -->
 <div 
-  class="absolute z-50 top-[16px] left-[-30px]" 
-  :class="collapsed ? 'left-[72px]' : 'left-[248px]'"
+  class="absolute z-50 top-[16px]"
+  :style="collapsed ? 'left: 80px; transform: translateX(-50%)' : 'left: 256px; transform: translateX(-50%)'"
 >
   <button 
     @click="collapsed = !collapsed"
@@ -102,6 +102,7 @@
     </svg>
   </button>
 </div>
+
 
 
   <!-- Header -->
