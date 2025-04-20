@@ -4,6 +4,8 @@ document.addEventListener('click', (e) => {
 
     if (e.target.tagName !== 'A' || e.target.dataset.action !== 'handle') return;
 
+    e.preventDefault();
+
     const el = e.target;
 
     const renderFrom = el.dataset.renderfrom;
@@ -13,8 +15,6 @@ document.addEventListener('click', (e) => {
     if (!renderFrom || !renderTo || !renderAs) {
     console.error('Missing data-renderfrom, data-renderto, or data-renderas');
     return;}
-
-    e.preventDefault();
 
     // Validate required attributes
     if (!renderFrom || !renderTo || !renderAs) {
