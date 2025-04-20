@@ -86,7 +86,7 @@
 <div class="relative">
 <!-- Chevron Toggle Button (overlapping sidebar and topbar) -->
 <div 
-  class="absolute z-50 top-[16px] left-[-20px]"
+  class="absolute z-50 top-[16px] left-[-30px]"
 "
   :class="collapsed ? 'left-[72px]' : 'left-[248px]'"
 >
