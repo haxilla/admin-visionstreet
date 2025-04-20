@@ -6,15 +6,14 @@ document.addEventListener('click', (e) => {
 
     e.preventDefault();
 
+    console.log('Clicked element:', e.target);
+
+
     const el = e.target;
 
     const renderFrom = el.dataset.renderfrom;
     const renderTo = el.dataset.renderto;
     const renderAs = el.dataset.renderas;
-
-    if (!renderFrom || !renderTo || !renderAs) {
-    console.error('Missing data-renderfrom, data-renderto, or data-renderas');
-    return;}
 
     // Validate required attributes
     if (!renderFrom || !renderTo || !renderAs) {
