@@ -9,12 +9,7 @@ class DashboardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(function ($request, $next) {
-            if (!Auth::check()) {
-                return response()->view('member.login-form');}
-
-            return $next($request);
-        });
+        $this->middleware('role:admin,super,member');
     }
 
 
