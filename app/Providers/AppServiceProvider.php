@@ -40,5 +40,12 @@ class AppServiceProvider extends ServiceProvider
             }
         }
 
+        Route::middleware('web')
+        ->group(function () {
+            Route::middleware([
+                'role' => RequireRole::class, // 🔥 register it here
+            ])->group(base_path('routes/web.php'));
+        });
+
     }
 }
