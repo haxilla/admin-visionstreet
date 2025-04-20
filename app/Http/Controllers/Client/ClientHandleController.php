@@ -20,10 +20,16 @@ class ClientHandleController extends Controller
 
     }
 
-    public function create(Request $request)
-    {
-        // Only runs for admin/super
-        dd(request()->all());
+public function create(Request $request)
+{
+    $data = [
+        'renderFrom' => $request->input('renderFrom'),
+        'key' => $request->input('key'),
+        'value' => $request->input('value'),
+        'isapp' => $request->input('isapp'),
+    ];
 
-    }
+    return '<script>console.log("🔍 Incoming request:", ' . json_encode($data) . ');</script><div>Loaded form UI here</div>';
+}
+
 }
