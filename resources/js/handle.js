@@ -21,7 +21,7 @@ document.addEventListener('click', (e) => {
 
     // Build endpoint URL based on body context
     const section = document.body.dataset.section || '';
-    const endpoint = section ? `/${section}/handle` : '/handle';
+    const endpoint = '/' + renderFrom.replace('.', '/');
 
     // Build POST data
     const postData = new URLSearchParams({
