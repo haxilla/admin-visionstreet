@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Member\DashboardController as MemberDashboard;
 use App\Http\Controllers\Guest\GuestController as Guest;
 use App\Http\Controllers\HandleController;
-use App\Http\Controllers\ClientHandleController;
+use App\Http\Controllers\Client\ClientHandleController;
 
 
 /* ---------------- Public ---------------- */
