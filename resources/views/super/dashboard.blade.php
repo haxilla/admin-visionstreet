@@ -14,7 +14,7 @@
     class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
     @click.away="dropdownOpen = false; activeDropdown = null"
   >
-    <!-- Sidebar Logo Block -->
+    <!-- Sidebar Logo -->
     <div 
       :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" 
       class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
@@ -30,7 +30,7 @@
       </a>
     </div>
 
-    <!-- Navigation with Dropdowns -->
+    <!-- Navigation -->
     <nav class="flex-1 mt-4 space-y-1 text-sm">
       <template x-for="section in [
         { title: 'Users', route: 'users', icon: `<path d='M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' /><circle cx='12' cy='7' r='4' />` },
@@ -39,7 +39,6 @@
         { title: 'Leads', route: 'leads', icon: `<path d='M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z' /><path d='M4 12v4h16v-4' />` }
       ]" :key="section.route">
         <div>
-          <!-- Dropdown Parent -->
           <button 
             @click="
               dropdownOpen = true;
@@ -56,7 +55,7 @@
             </svg>
           </button>
 
-          <!-- Dropdown Content -->
+          <!-- Dropdown -->
           <div
             x-show="isOpen(section.route) && (!collapsed || dropdownOpen)"
             x-cloak
@@ -80,21 +79,19 @@
       </template>
     </nav>
   </aside>
-  </div>
 
-<!-- Topbar Container -->
-<div class="relative">
-  <!-- Chevron Toggle Button -->
+  <!-- Sidebar Toggle Button (pill-style) -->
   <div 
-    class="absolute z-50 transition-all duration-300"
+    class="fixed z-50 transition-all duration-300"
     :class="collapsed 
-      ? 'top-[100px] left-[74px]' 
-      : 'top-[16px] left-[244px]'"
+      ? 'left-[72px] top-1/2 transform -translate-y-1/2' 
+      : 'left-[256px] top-4 transform'"
   >
     <button 
       @click="collapsed = !collapsed"
-      class="w-8 h-8 bg-white text-gray-700 border border-gray-300 shadow-md hover:bg-gray-100 
-             rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+      class="h-10 w-6 bg-[#1e2a44] hover:bg-[#2c3e5d] text-white shadow-md 
+             rounded-r-full flex items-center justify-center transition-all duration-300 cursor-pointer"
+      aria-label="Toggle Sidebar"
     >
       <svg xmlns="http://www.w3.org/2000/svg"
            class="w-4 h-4 transition-transform duration-300"
@@ -149,6 +146,6 @@
       </div>
     </div>
   </header>
-</div>
+
 @include('super.footer.main')
 </body>
