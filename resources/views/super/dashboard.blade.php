@@ -5,6 +5,21 @@ dropdownOpen: false,
 activeDropdown: null,
 closing: false,
 isOpen(route) {return this.activeDropdown === route;}}">
+<!-- Sidebar Toggle Button -->
+<button 
+  @click="collapsed = !collapsed"
+  class="fixed top-4 z-50 transition-all duration-300 bg-white border border-gray-300 text-gray-600 hover:text-black shadow-sm 
+         w-8 h-8 flex items-center justify-center rounded-full cursor-pointer"
+  :class="collapsed ? 'left-[70px]' : 'left-[250px]'"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       class="w-4 h-4 transition-transform duration-300"
+       fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+       :class="collapsed ? 'rotate-180' : ''">
+    <path d="M15 19l-7-7 7-7" />
+  </svg>
+</button>
+
     <div>
        <aside 
   :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
@@ -105,13 +120,6 @@ isOpen(route) {return this.activeDropdown === route;}}">
 <header :class="collapsed ? 'ml-20' : 'ml-64'" 
       class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-200 flex items-center justify-between px-6 transition-all duration-300 w-[calc(100%-5rem)]"
       :style="collapsed ? 'width: calc(100% - 5rem)' : 'width: calc(100% - 16rem)'">
-
-  <!-- Sidebar toggle -->
-  <button @click="collapsed = !collapsed" class="text-gray-600 hover:text-black focus:outline-none cursor-pointer">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </button>
 
   <!-- Search bar -->
   <div class="flex-1 max-w-md mx-4">
