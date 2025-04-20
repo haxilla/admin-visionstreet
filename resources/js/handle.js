@@ -17,7 +17,7 @@ document.addEventListener('click', (e) => {
 
     // Validate required attributes
     if (!renderFrom || !renderTo || !renderAs) {
-        console.error('Missing data-renderfrom or data-renderto');
+        console.error('error-line20-handle.js');
         return;}
 
     // Build endpoint URL based on body context
