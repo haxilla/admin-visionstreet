@@ -5,14 +5,15 @@ dropdownOpen: false,
 activeDropdown: null,
 closing: false,
 isOpen(route) {return this.activeDropdown === route;}}">
+<!-- Sidebar Toggle Button -->
 <div 
-  class="absolute top-6 transition-all duration-300 z-50"
+  class="fixed top-6 z-50 transition-all duration-300"
   :class="collapsed ? 'left-[72px]' : 'left-[256px]'"
 >
   <button 
     @click="collapsed = !collapsed"
     class="w-8 h-8 bg-white text-gray-800 border border-gray-300 rounded-full shadow-md 
-           flex items-center justify-center hover:bg-gray-100 transition-all duration-300 cursor-pointer"
+           flex items-center justify-center hover:bg-gray-100 transition-all cursor-pointer"
     aria-label="Toggle Sidebar"
   >
     <svg xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +24,7 @@ isOpen(route) {return this.activeDropdown === route;}}">
     </svg>
   </button>
 </div>
+
 
     <div>
        <aside 
@@ -120,9 +122,18 @@ isOpen(route) {return this.activeDropdown === route;}}">
     </div>
 
 <!-- Topbar -->
-<header :class="collapsed ? 'ml-20' : 'ml-64'" 
-      class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-200 flex items-center justify-between px-6 transition-all duration-300 w-[calc(100%-5rem)]"
-      :style="collapsed ? 'width: calc(100% - 5rem)' : 'width: calc(100% - 16rem)'">
+<header 
+  :class="collapsed ? 'ml-20' : 'ml-64'" 
+  class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-200 flex items-center justify-center px-6 transition-all duration-300"
+  :style="collapsed ? 'width: calc(100% - 5rem)' : 'width: calc(100% - 16rem)'"
+>
+  <!-- Centered Search Bar -->
+  <div class="w-full max-w-xl">
+    <input type="text" placeholder="Search..." 
+           class="w-full px-4 py-2 text-sm border rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-accentTeal">
+  </div>
+</header>
+
 
   <!-- Search bar -->
   <div class="flex-1 max-w-md mx-4">
