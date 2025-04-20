@@ -25,11 +25,9 @@ document.addEventListener('click', (e) => {
 
     // Build POST data
     const postData = new URLSearchParams({
-        renderFrom,
-        renderto: renderTo,
-        value,
-        key,
-        isapp
+        renderTo
+        renderFrom
+        renderAs
     });
 
     const csrf = document.querySelector('meta[name="csrf-token"]')?.content;
