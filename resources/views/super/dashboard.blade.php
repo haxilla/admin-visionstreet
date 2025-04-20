@@ -87,7 +87,7 @@
 <!-- Chevron Toggle Button (overlapping sidebar and topbar) -->
 <div 
   class="absolute z-50 top-4 -left-4"
-  :class="collapsed ? 'left-[72px]' : 'left-[248px]'"
+  :class="collapsed ? 'left-[65px]' : 'left-[248px]'"
 >
   <button 
     @click="collapsed = !collapsed"
