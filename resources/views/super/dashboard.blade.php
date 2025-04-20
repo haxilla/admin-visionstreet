@@ -73,7 +73,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
         class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
         data-action="handle"
         data-renderto="pageswap"
-        data-renderfrom="client.index"
+        data-renderfrom="client.create"
         data-renderas="html">
         <!-- Plus icon for “Add” -->
         <svg xmlns="http://www.w3.org/2000/svg"
