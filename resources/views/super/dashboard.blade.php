@@ -8,12 +8,10 @@
         isOpen(route) { return this.activeDropdown === route; }
       }">
 
-  <!-- Sidebar -->
-  <aside 
-    :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
+    <!-- Sidebar -->
+    <aside :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
     class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
-    @click.away="dropdownOpen = false; activeDropdown = null"
-  >
+    @click.away="dropdownOpen = false; activeDropdown = null">
     <!-- Sidebar Logo -->
     <div 
       :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" 
@@ -32,12 +30,12 @@
 
     <!-- Navigation -->
     <nav class="flex-1 mt-4 space-y-1 text-sm">
-      <template x-for="section in [
+        <template x-for="section in [
         { title: 'Users', route: 'users', icon: `<path d='M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' /><circle cx='12' cy='7' r='4' />` },
         { title: 'Clients', route: 'clients', icon: `<path d='M5 13l4 4L19 7' />` },
         { title: 'Projects', route: 'projects', icon: `<path d='M9 17v-6h13M9 12H4M4 12v2a2 2 0 0 0 2 2h3' />` },
         { title: 'Leads', route: 'leads', icon: `<path d='M12 8c-1.657 0-3 1.343-3 3v3h6v-3c0-1.657-1.343-3-3-3z' /><path d='M4 12v4h16v-4' />` }
-      ]" :key="section.route">
+        ]" :key="section.route">
         <div>
           <button 
             @click="
@@ -76,9 +74,9 @@
             </a>
           </div>
         </div>
-      </template>
+        </template>
     </nav>
-  </aside>
+    </aside>
 
 <!-- Seamless Sidebar Toggle Tab -->
 <div 
@@ -98,10 +96,6 @@
     </svg>
   </button>
 </div>
-
-
-
-
 
   <!-- Header -->
   <header 
