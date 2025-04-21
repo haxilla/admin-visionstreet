@@ -5,7 +5,7 @@
     <h1>Contact Info</h1>
     <!-- Form -->
     <form
-    action=""
+    action="/client/submit"
     method="POST"
     class="bg-slate-800 rounded-lg shadow-lg p-6 space-y-6">
       @csrf

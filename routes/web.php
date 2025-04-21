@@ -28,6 +28,7 @@ Route::get('/member/dashboard', [MemberDashboard::class, 'index'])->name('member
 
 /* ---------------- Clients ---------------- */
 Route::post('/client/create', [ClientHandleController::class, 'create'])->name('client.create');
+Route::post('/client/submit', [ClientHandleController::class, 'submit'])->name('client.submit');
 
 /* ---- Internal Request Handler -- */
 Route::post('/handle', [HandleController::class, 'handle'])->name('handle');
