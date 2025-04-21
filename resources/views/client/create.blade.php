@@ -183,7 +183,7 @@
     type="submit"
     class="w-full py-3 bg-sky-500 hover:bg-sky-600 transition rounded text-white font-semibold"
   >
-    Submit Your Project
+    SAVE CONTACT
   </button>
 </form>
 
