@@ -2,8 +2,7 @@
 <body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-4">
   <div class="w-full max-w-xl">
     <!-- Logo/Header -->
-    <h1>Client Info</h1>
-
+    <h1>Contact Info</h1>
     <!-- Form -->
     <form
     action=""
@@ -111,7 +110,7 @@
               value="web-dev"
               class="h-4 w-4 text-sky-400 bg-slate-700 border-slate-600 rounded focus:ring-sky-400"
             />
-            <span class="ml-2 text-slate-200">Website Development</span>
+            <span class="ml-2 text-slate-200">Website</span>
           </label>
           <label class="flex items-center">
             <input
@@ -120,7 +119,7 @@
               value="seo"
               class="h-4 w-4 text-sky-400 bg-slate-700 border-slate-600 rounded focus:ring-sky-400"
             />
-            <span class="ml-2 text-slate-200">SEO Services</span>
+            <span class="ml-2 text-slate-200">SEO</span>
           </label>
           <label class="flex items-center">
             <input
@@ -136,7 +135,7 @@
 
       <!-- Project Details -->
       <div>
-        <label for="details" class="block text-sm font-medium text-slate-300">
+        <label for="details" class="block text-sm font-mediumtext-slate-300">
           Project Details
         </label>
         <textarea
@@ -149,8 +148,8 @@
       </div>
       <!-- Submit -->
       <button
-        type="submit"
-        class="w-full py-3 bg-sky-500 hover:bg-sky-600 transition rounded text-white font-semibold">
+      type="submit"
+      class="w-full py-3 bg-sky-500 hover:bg-sky-600 transition rounded text-white font-semibold">
         SAVE CONTACT
       </button>
     </form>
