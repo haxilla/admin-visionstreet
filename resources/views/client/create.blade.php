@@ -129,7 +129,7 @@
               value="maintenance"
               class="h-4 w-4 text-sky-400 bg-slate-700 border-slate-600 rounded focus:ring-sky-400"
             />
-            <span class="ml-2 text-slate-200">Ongoing Maintenance</span>
+            <span class="ml-2 text-slate-200">Hosting</span>
           </label>
         </div>
       </fieldset>
