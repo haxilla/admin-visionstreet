@@ -42,3 +42,5 @@ chmod 660 "$EXPORT_FILE" "$RESTORE_FILE"
 echo "✅ Backups complete:"
 echo " - Export:  $EXPORT_FILE"
 echo " - Restore: $RESTORE_FILE"
+
+#end
