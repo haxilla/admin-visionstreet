@@ -1,5 +1,8 @@
 <div class="w-full max-w-xl mx-auto">
   <h1 class="text-2xl font-bold mb-2">Contact Info</h1>
+  <div>
+    {{$subhead}}
+  </div>
 
   @if($mode !== 'view')
     <form

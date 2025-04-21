@@ -28,6 +28,7 @@ class ClientHandleController extends Controller
         return view($renderFrom, [
             'client'    => null,
             'mode'      => 'create'
+            'subhead'   => 'Create New Contact'
         ]);
 
     }
