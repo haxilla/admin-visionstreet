@@ -9,11 +9,7 @@
 <body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-4">
   <div class="w-full max-w-xl">
     <!-- Logo/Header -->
-    <div class="text-center mb-8">
-      <img src="/path/to/vision-street-logo.svg" alt="Vision Street" class="mx-auto h-12">
-      <h1 class="mt-4 text-3xl font-bold">Project Intake Form</h1>
-      <p class="mt-1 text-slate-300">Tell us about your website & SEO needs</p>
-    </div>
+    <h1>Client Info</h1>
 
     <!-- Form -->
     <form class="bg-slate-800 rounded-lg shadow-lg p-6 space-y-6">
