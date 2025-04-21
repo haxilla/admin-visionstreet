@@ -13,7 +13,7 @@
 
     <!-- Form -->
 <form
-  action="{{ route('client.create.submit') }}"
+  action=""
   method="POST"
   class="bg-slate-800 rounded-lg shadow-lg p-6 space-y-6"
 >
