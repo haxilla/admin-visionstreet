@@ -48,7 +48,7 @@
           id="company"
           name="company"
           class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
-                 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
+          focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
         />
       </div>
 
@@ -58,12 +58,11 @@
           Current Website URL
         </label>
         <input
-          type="url"
-          id="website"
-          name="website"
-          class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
-                 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
-        />
+        type="url"
+        id="website"
+        name="website"
+        class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
+        focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"/>
       </div>
 
       <!-- Referred By -->
@@ -72,12 +71,11 @@
           Referred By
         </label>
         <input
-          type="text"
-          id="referred_by"
-          name="referred_by"
-          class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
-                 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
-        />
+        type="text"
+        id="referred_by"
+        name="referred_by"
+        class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
+        focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"/>
       </div>
 
       <!-- Status Dropdown -->
@@ -86,12 +84,11 @@
           Status
         </label>
         <select
-          id="status"
-          name="status"
-          required
-          class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
-                 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
-        >
+        id="status"
+        name="status"
+        required
+        class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
+        focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400">
           <option value="">Select…</option>
           <option value="contact">Contact</option>
           <option value="cold_lead">Cold Lead</option>
@@ -104,7 +101,7 @@
       <!-- Services -->
       <fieldset>
         <legend class="text-sm font-medium text-slate-300">
-          Services You’re Interested In
+          Add Service
         </legend>
         <div class="mt-2 space-y-2">
           <label class="flex items-center">
@@ -143,23 +140,21 @@
           Project Details
         </label>
         <textarea
-          id="details"
-          name="details"
-          rows="4"
-          required
-          class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
-                 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
-        ></textarea>
+        id="details"
+        name="details"
+        rows="4"
+        required
+        class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
+        focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"></textarea>
       </div>
       <!-- Submit -->
       <button
         type="submit"
-        class="w-full py-3 bg-sky-500 hover:bg-sky-600 transition rounded text-white font-semibold"
-      >
+        class="w-full py-3 bg-sky-500 hover:bg-sky-600 transition rounded text-white font-semibold">
         SAVE CONTACT
       </button>
     </form>
-
   </div>
+@include('client.footer.main')
 </body>
 </html>
