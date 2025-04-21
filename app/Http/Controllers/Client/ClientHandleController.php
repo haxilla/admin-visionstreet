@@ -23,6 +23,18 @@ class ClientHandleController extends Controller
     public function create(Request $request)
     {
 
+                // e.g. your form posts { renderTo: 'client.intake' }
+        $renderTo = $request->input('renderTo');
+
+        // Optional: guard against someone passing an arbitrary view
+        if (! view()->exists($renderTo)) {
+            abort(404, "View [{$renderTo}] not found.");
+        }
+
+        // return that dynamic view
+        return view("$renderTo", [
+            // any data you want to pass…
+        ]);
 
     }
 
