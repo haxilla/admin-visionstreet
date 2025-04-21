@@ -7,10 +7,10 @@ activeDropdown: null,
 closing: false,
 isOpen(route) { return this.activeDropdown === route; }}">
 
-    <!-- Sidebar -->
-    <aside :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
-    class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
-    @click.away="dropdownOpen = false; activeDropdown = null">
+  <!-- Sidebar -->
+  <aside :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
+  class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
+  @click.away="dropdownOpen = false; activeDropdown = null">
     <!-- Sidebar Logo -->
     <div :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" 
     class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
@@ -28,6 +28,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
     <nav class="flex-1 mt-4 space-y-1 text-sm">
 
       <div>
+
         <button
         @click="
         if (collapsed) {
@@ -83,33 +84,11 @@ isOpen(route) { return this.activeDropdown === route; }}">
           </a>
         </div>
 
-        <div>
-          <a href="#"
-          class="flex items-center w-full px-4 py-2 text-sm hover:bg-black/10 transition-colors"
-          data-action="handle"
-          data-task="postgres.home"
-          data-renderfrom="admin.tools.postgres"
-          data-renderto="pageswap">
-          <!-- Eye icon for “View” -->
-          <svg xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-4 h-4 mr-2 flex-shrink-0 text-white">
-            <polygon points="12 2 20 6 12 10 4 6 12 2" />
-            <polyline points="20 6 20 14 12 18 4 14 4 6" />
-            <polyline points="4 14 12 18 20 14" />
-          </svg>
-            Postgres
-          </a>
-        </div>
+      </div>
 
     </nav>
 
-</aside>
+  </aside>
 
 <!-- Seamless Sidebar Toggle Tab -->
 <div 
