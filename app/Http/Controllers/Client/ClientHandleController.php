@@ -35,7 +35,7 @@ class ClientHandleController extends Controller
         return view($renderTo, [
             // any data you want to pass…
         ]);
-
+        
     }
 
 }
