@@ -1,6 +1,6 @@
 <div class="w-full max-w-xl mx-auto">
-  <h1 class="text-2xl font-bold mb-2">Contact Info</h1>
-  <div>
+  <h1 class="text-2xl font-bold">Contact Info</h1>
+  <div class="text-sm italic text-slate-400">
     {{$subhead}}
   </div>
 
