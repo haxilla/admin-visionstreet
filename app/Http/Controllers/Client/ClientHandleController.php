@@ -28,7 +28,8 @@ class ClientHandleController extends Controller
 
         // return that dynamic view
         return view($renderFrom, [
-            // any data you want to pass…
+            'client'    => null,
+            'mode'      => 'create'
         ]);
 
     }
