@@ -10,9 +10,12 @@ class PostgresController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', '']);
+        $this->middleware(['auth', 'role:admin,super']);
     }
 
+    public function handle(Request $request)
+    {
+        dd($request->all());
+    }
 
-    // Add more methods like addColumn, dropColumn, copyTable, etc.
 }

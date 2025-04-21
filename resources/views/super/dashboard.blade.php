@@ -84,7 +84,29 @@ isOpen(route) { return this.activeDropdown === route; }}">
           Add
       </a>
     </div>
-  </div>
+    <div>
+      <a href="#"
+      class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
+      data-action="handle"
+      data-task="postgres.home"
+      data-renderfrom="admin.tools.postgres"
+      data-renderto="pageswap">
+      <!-- Eye icon for “View” -->
+      <svg xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="w-4 h-4 mr-2 flex-shrink-0 text-orange-500">
+        <polygon points="12 2 20 6 12 10 4 6 12 2" />
+        <polyline points="20 6 20 14 12 18 4 14 4 6" />
+        <polyline points="4 14 12 18 20 14" />
+      </svg>
+        Postgres
+      </a>
+    </div>
 
   <!-- ADD MORE SECTIONS BELOW LIKE 'USERS', 'PROJECTS', ETC. -->
 
