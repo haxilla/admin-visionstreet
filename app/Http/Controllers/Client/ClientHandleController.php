@@ -27,8 +27,8 @@ class ClientHandleController extends Controller
         // return that dynamic view
         return view($renderFrom, [
             'client'    => null,
-            'mode'      => 'create'
-            'subhead'   => 'Create New Contact'
+            'mode'      => 'create',
+            'subhead'   => 'Create New Contact',
         ]);
 
     }
