@@ -36,7 +36,7 @@ fi
 
 # Fix ownership and permissions for both backup files
 echo "🛡 Setting ownership and secure permissions..."
-chown $(whoami):jammy "$EXPORT_FILE" "$RESTORE_FILE"
+sudo chown $(whoami):jammy "$EXPORT_FILE" "$RESTORE_FILE"
 chmod 660 "$EXPORT_FILE" "$RESTORE_FILE"
 
 echo "✅ Backups complete:"
