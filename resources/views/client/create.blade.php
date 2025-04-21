@@ -1,7 +1,7 @@
 <div class="w-full max-w-xl mx-auto">
   <h1 class="text-2xl font-bold">Contact Info</h1>
   <div class="text-sm italic text-slate-400 mb-2">
-    {{$subhead}}
+    MODE: {{$mode}}
   </div>
 
   @if($mode !== 'view')
