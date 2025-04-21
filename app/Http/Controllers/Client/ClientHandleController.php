@@ -32,10 +32,10 @@ class ClientHandleController extends Controller
         }
 
         // return that dynamic view
-        return view($renderTo, [
+        return view('clients.create', [
             // any data you want to pass…
         ]);
-        
+
     }
 
 }
