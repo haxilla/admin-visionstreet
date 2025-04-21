@@ -34,7 +34,7 @@ class ClientHandleController extends Controller
     }
 
     public function submit (Request $request){
-        
+        dd($_POST);
     }
 
 }
