@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Paths
-ROOT_DIR="/var/www/html/larasites/admin_visionstreet"
+ROOT_DIR="/var/www/html/larasites/admin-visionstreet"
 RESTORE_DIR="$ROOT_DIR/backups/postgres/restore"
 EXPORT_DIR="$ROOT_DIR/backups/postgres/export"
 TIMESTAMP=$(date +%F_%H-%M)
