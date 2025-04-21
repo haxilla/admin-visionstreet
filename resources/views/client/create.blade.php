@@ -31,29 +31,26 @@
   <div class="bg-slate-800 rounded-lg shadow-lg p-6 space-y-6 {{ $mode === 'view' ? '' : 'mt-0' }}">
 
     <!-- First & Last Name -->
-<div>
-  <label class="block text-sm font-medium text-slate-300">Name</label>
-  @if($mode === 'view')
-    <p class="mt-1 text-slate-200">{{ trim($firstName . ' ' . $lastName) ?: '-' }}</p>
-  @else
-    <div class="mt-1 flex flex-col md:flex-row gap-4">
-      <div class="w-full md:w-1/2">
-        <label for="first_name" class="block text-xs text-slate-400 mb-1">First Name</label>
-        <input type="text" id="first_name" name="first_name" required
-               value="{{ $firstName }}"
-               class="block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
-                      focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"/>
-      </div>
-      <div class="w-full md:w-1/2">
-        <label for="last_name" class="block text-xs text-slate-400 mb-1">Last Name</label>
-        <input type="text" id="last_name" name="last_name" required
-               value="{{ $lastName }}"
-               class="block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
-                      focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"/>
-      </div>
+    <div>
+      @if($mode === 'view')
+        <p class="mt-1 text-slate-200">{{ trim($firstName . ' ' . $lastName) ?: '-' }}</p>
+      @else
+        <div class="mt-1 flex flex-col md:flex-row gap-4">
+          <div class="w-full md:w-1/2">
+            <label for="first_name" class="block text-sm text-white-400 mb-1">First Name</label>
+            <input type="text" id="first_name" name="first_name" required
+            value="{{ $firstName }}"
+            class="block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
+            focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"/>
+          </div>
+          <div class="w-full md:w-1/2">
+            <label for="last_name" class="block text-sm text-white mb-1">Last Name</label>
+            <input type="text" id="last_name" name="last_name" required value="{{ $lastName }}" class="block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
+            focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"/>
+          </div>
+        </div>
+      @endif
     </div>
-  @endif
-</div>
 
     <!-- Email -->
     <div>
