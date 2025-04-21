@@ -12,9 +12,8 @@ isOpen(route) { return this.activeDropdown === route; }}">
     class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
     @click.away="dropdownOpen = false; activeDropdown = null">
     <!-- Sidebar Logo -->
-    <div 
-      :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" 
-      class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
+    <div :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" 
+    class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
       <a href="/">
         <template x-if="!collapsed">
           <img src="/images/vision-street-square-logo-pixels.png" alt="Full Logo"
@@ -27,89 +26,88 @@ isOpen(route) { return this.activeDropdown === route; }}">
       </a>
     </div>
     <nav class="flex-1 mt-4 space-y-1 text-sm">
-  
-  <!-- CLIENTS -->
-  <div>
-    <button
-    @click="
-    if (collapsed) {
-      // willOpen is true when opening, false when closing
-      dropdownOpen = activeDropdown !== 'client';
-    }
-    activeDropdown = activeDropdown === 'client' ? null : 'client';"
-    class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
-    :class="collapsed ? 'justify-center' : 'gap-3'">
-      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path d="M5 13l4 4L19 7" />
-      </svg>
-      <span class="text-white" x-show="!collapsed || dropdownOpen">Contacts</span>
-      <svg x-show="!collapsed || dropdownOpen" class="ml-auto transform" :class="activeDropdown === 'client' ? 'rotate-90' : ''" width="16" height="16" fill="none">
-        <path stroke="currentColor" stroke-width="2" d="M6 4l6 6-6 6" />
-      </svg>
-    </button>
 
-    <div x-show="activeDropdown === 'client'"
-    x-transition
-    x-cloak
-    class="space-y-1 bg-[#0f7dbf] text-white">
-      <a href="#"
-        class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
-        data-action="handle"
-        data-renderfrom="client.index"
-        data-renderto="pageswap">
-        <!-- Eye icon for “View” -->
-        <svg xmlns="http://www.w3.org/2000/svg"
-        class="w-4 h-4 mr-2 flex-shrink-0"
-        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round"
-        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        <path stroke-linecap="round" stroke-linejoin="round"            
-        d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7
-        c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
-        </svg>
-          View
-      </a>
-      <a href="#"
-        class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
-        data-action="handle"
-        data-renderto="pageswap"
-        data-renderfrom="client.create"
-        data-renderas="html">
-        <!-- Plus icon for “Add” -->
-        <svg xmlns="http://www.w3.org/2000/svg"
-        class="w-4 h-4 mr-2 flex-shrink-0"
-        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-        </svg>
-          Add
-      </a>
-    </div>
+      <div>
+        <button
+        @click="
+        if (collapsed) {
+          // willOpen is true when opening, false when closing
+          dropdownOpen = activeDropdown !== 'client';
+        }
+        activeDropdown = activeDropdown === 'client' ? null : 'client';"
+        class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
+        :class="collapsed ? 'justify-center' : 'gap-3'">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="text-white" x-show="!collapsed || dropdownOpen">Contacts</span>
+          <svg x-show="!collapsed || dropdownOpen" class="ml-auto transform" :class="activeDropdown === 'client' ? 'rotate-90' : ''" width="16" height="16" fill="none">
+            <path stroke="currentColor" stroke-width="2" d="M6 4l6 6-6 6" />
+          </svg>
+        </button>
 
-    <div>
-      <a href="#"
-      class="flex items-center w-full pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
-      data-action="handle"
-      data-task="postgres.home"
-      data-renderfrom="admin.tools.postgres"
-      data-renderto="pageswap">
-      <!-- Eye icon for “View” -->
-      <svg xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="w-4 h-4 mr-2 flex-shrink-0 text-orange-500">
-        <polygon points="12 2 20 6 12 10 4 6 12 2" />
-        <polyline points="20 6 20 14 12 18 4 14 4 6" />
-        <polyline points="4 14 12 18 20 14" />
-      </svg>
-        Postgres
-      </a>
-    </div>
+        <div x-show="activeDropdown === 'client'"
+        x-transition
+        x-cloak
+        class="space-y-1 bg-[#0f7dbf] text-white">
+          <a href="#"
+            class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
+            data-action="handle"
+            data-renderfrom="client.index"
+            data-renderto="pageswap">
+            <!-- Eye icon for “View” -->
+            <svg xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4 mr-2 flex-shrink-0"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round"            
+            d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7
+            c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
+            </svg>
+              View
+          </a>
+          <a href="#"
+            class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
+            data-action="handle"
+            data-renderto="pageswap"
+            data-renderfrom="client.create"
+            data-renderas="html">
+            <!-- Plus icon for “Add” -->
+            <svg xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4 mr-2 flex-shrink-0"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+              Add
+          </a>
+        </div>
 
-</nav>
+        <div>
+          <a href="#"
+          class="flex items-center w-full px-4 py-2 text-sm hover:bg-black/10 transition-colors"
+          data-action="handle"
+          data-task="postgres.home"
+          data-renderfrom="admin.tools.postgres"
+          data-renderto="pageswap">
+          <!-- Eye icon for “View” -->
+          <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-4 h-4 mr-2 flex-shrink-0 text-orange-500">
+            <polygon points="12 2 20 6 12 10 4 6 12 2" />
+            <polyline points="20 6 20 14 12 18 4 14 4 6" />
+            <polyline points="4 14 12 18 20 14" />
+          </svg>
+            Postgres
+          </a>
+        </div>
+
+    </nav>
 
 </aside>
 
