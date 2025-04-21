@@ -31,8 +31,10 @@ class ClientHandleController extends Controller
             abort(404, "View [{$renderTo}] not found.");
         }
 
+        dd($renderTo);
+
         // return that dynamic view
-        return view("$renderTo", [
+        return view($renderTo, [
             // any data you want to pass…
         ]);
 
