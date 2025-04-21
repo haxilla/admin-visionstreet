@@ -84,9 +84,10 @@ isOpen(route) { return this.activeDropdown === route; }}">
           Add
       </a>
     </div>
+
     <div>
       <a href="#"
-      class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
+      class="flex items-center w-full pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
       data-action="handle"
       data-task="postgres.home"
       data-renderfrom="admin.tools.postgres"
@@ -107,8 +108,6 @@ isOpen(route) { return this.activeDropdown === route; }}">
         Postgres
       </a>
     </div>
-
-  <!-- ADD MORE SECTIONS BELOW LIKE 'USERS', 'PROJECTS', ETC. -->
 
 </nav>
 
