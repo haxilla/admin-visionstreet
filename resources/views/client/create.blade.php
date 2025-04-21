@@ -1,4 +1,4 @@
-<div class="w-full max-w-xl">
+<div class="w-full max-w-xl mx-auto">
   <!-- Logo/Header -->
   <h1>Contact Info</h1>
   <!-- Form -->
