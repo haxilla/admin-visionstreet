@@ -98,7 +98,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="w-4 h-4 mr-2 flex-shrink-0 text-orange-500">
+            class="w-4 h-4 mr-2 flex-shrink-0 text-white">
             <polygon points="12 2 20 6 12 10 4 6 12 2" />
             <polyline points="20 6 20 14 12 18 4 14 4 6" />
             <polyline points="4 14 12 18 20 14" />
