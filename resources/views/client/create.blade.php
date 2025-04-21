@@ -29,12 +29,12 @@
           Email Address
         </label>
         <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
-          focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"/>
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
+        focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"/>
       </div>
 
       <!-- Company -->
@@ -105,20 +105,18 @@
         <div class="mt-2 space-y-2">
           <label class="flex items-center">
             <input
-              type="checkbox"
-              name="services[]"
-              value="web-dev"
-              class="h-4 w-4 text-sky-400 bg-slate-700 border-slate-600 rounded focus:ring-sky-400"
-            />
+            type="checkbox"
+            name="services[]"
+            value="web-dev"
+            class="h-4 w-4 text-sky-400 bg-slate-700 border-slate-600 rounded focus:ring-sky-400"/>
             <span class="ml-2 text-slate-200">Website</span>
           </label>
           <label class="flex items-center">
             <input
-              type="checkbox"
-              name="services[]"
-              value="seo"
-              class="h-4 w-4 text-sky-400 bg-slate-700 border-slate-600 rounded focus:ring-sky-400"
-            />
+            type="checkbox"
+            name="services[]"
+            value="seo"
+            class="h-4 w-4 text-sky-400 bg-slate-700 border-slate-600 rounded focus:ring-sky-400"/>
             <span class="ml-2 text-slate-200">SEO</span>
           </label>
           <label class="flex items-center">
