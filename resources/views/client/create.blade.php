@@ -162,22 +162,6 @@
              focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
     ></textarea>
   </div>
-
-  <!-- Desired Timeline -->
-  <div>
-    <label for="timeline" class="block text-sm font-medium text-slate-300">
-      Desired Timeline
-    </label>
-    <input
-      type="text"
-      id="timeline"
-      name="timeline"
-      required
-      class="mt-1 block w-full rounded bg-slate-700 text-white px-3 py-2 border border-slate-600
-             focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-sky-400"
-    />
-  </div>
-
   <!-- Submit -->
   <button
     type="submit"
