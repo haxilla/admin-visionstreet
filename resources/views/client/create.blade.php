@@ -1,5 +1,5 @@
 <div class="w-full max-w-xl mx-auto">
-  <h1 class="text-2xl font-bold mb-6 text-white">Contact Info</h1>
+  <h1 class="text-2xl font-bold mb-2">Contact Info</h1>
 
   @if($mode !== 'view')
     <form

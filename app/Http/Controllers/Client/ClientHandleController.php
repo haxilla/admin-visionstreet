@@ -22,8 +22,6 @@ class ClientHandleController extends Controller
 
     public function create(Request $request)
     {
-
-                // e.g. your form posts { renderTo: 'client.intake' }
         $renderFrom = $request->input('renderFrom');
 
         // return that dynamic view
