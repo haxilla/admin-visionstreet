@@ -1,6 +1,6 @@
 @include('super.header.doctype')
 <body data-section="super"
-class="linkcheck relative bg-white min-h-screen font-sans flex flex-col text-gray-800" x-data="{
+class="linkcheck relative bg-white min-h-screen font-sans text-gray-800" x-data="{
 collapsed: false,
 dropdownOpen: false,
 activeDropdown: null,
@@ -98,12 +98,11 @@ isOpen(route) { return this.activeDropdown === route; }}">
   :style="collapsed ? (dropdownOpen ? 'left: 180px' : 'left: 72px') : 'left: 256px'"
 >
   <button 
-    @click="collapsed = !collapsed"
-    activeDropdown = null;
-    dropdownOpen = false;
-    class="h-10 w-6 bg-sidebar text-white rounded-r-md flex items-center justify-center cursor-pointer"
-    aria-label="Toggle Sidebar"
-  >
+  @click="collapsed = !collapsed"
+  activeDropdown = null;
+  dropdownOpen = false;
+  class="h-10 w-6 bg-sidebar text-white rounded-r-md flex items-center justify-center cursor-pointer"
+  aria-label="Toggle Sidebar">
     <svg xmlns="http://www.w3.org/2000/svg"
          class="w-4 h-4 transition-transform duration-300"
          :class="collapsed ? '' : 'rotate-180'"
@@ -158,9 +157,9 @@ isOpen(route) { return this.activeDropdown === route; }}">
     </div>
   </header>
   <main
-  class="absolute top-16 right-0 bottom-0 overflow-y-auto transition-all duration-300"
+  class="transition-all duration-300 min-h-screen pt-16"
   :class="collapsed ? 'left-20' : 'left-64'">
-    <div class="pageswap flex-grow p-6">
+    <div class="pageswap p-6">
       <!-- dynamic content goes here -->
     </div>
   </main>
