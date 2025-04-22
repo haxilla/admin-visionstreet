@@ -12,14 +12,21 @@ class PostgresController extends Controller
     }
 
     public function index(Request $request){
-        // Only runs for admin/super
-        $schemas = \DB::select("
-            SELECT schema_name
-            FROM information_schema.schemata
-            WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
-            ORDER BY schema_name");
+        //clear
+        $data=null;
+        $value=null;
+        //check post
+        $renderFrom=$_POST['renderFrom'];
+        //check for value
+        if(isset($_POST['value'])){
+          $value=$_POST['value'];}
 
-        return view('admin.tools.postgres.index', [
+        //should it use an app file?
+        if(isset($_POST['isapp'])){
+          $renderURL = str_replace(".", "/",$renderFrom);
+          include(app_path().'/'.$renderURL.'.php');}
+
+        return view($renderFrom, [
             'schemas' => $schemas,
         ]);
     }
