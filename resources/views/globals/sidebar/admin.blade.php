@@ -29,8 +29,12 @@
         activeDropdown = activeDropdown === 'client' ? null : 'client';"
         class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
         :class="collapsed ? 'justify-center' : 'gap-3'">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M5 13l4 4L19 7" />
+          <svg xmlns="http://www.w3.org/2000/svg"
+          fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="1.5"
+          class="w-4 h-4 mr-2 flex-shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round"
+            d="M16 14c2.21 0 4 1.79 4 4v1H4v-1c0-2.21 1.79-4 4-4h8zM12 12a4 4 0 100-8 4 4 0 000 8z" />
           </svg>
           <span class="text-white" x-show="!collapsed || dropdownOpen">Contacts</span>
           <svg x-show="!collapsed || dropdownOpen" class="ml-auto transform" :class="activeDropdown === 'client' ? 'rotate-90' : ''" width="16" height="16" fill="none">
