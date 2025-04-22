@@ -92,21 +92,21 @@ isOpen(route) { return this.activeDropdown === route; }}">
         @click="
         if (collapsed) {
           // willOpen is true when opening, false when closing
-          dropdownOpen = activeDropdown !== 'client';
+          dropdownOpen = activeDropdown !== 'data';
         }
-        activeDropdown = activeDropdown === 'client' ? null : 'client';"
+        activeDropdown = activeDropdown === 'data' ? null : 'data';"
         class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
         :class="collapsed ? 'justify-center' : 'gap-3'">
           <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M5 13l4 4L19 7" />
           </svg>
           <span class="text-white" x-show="!collapsed || dropdownOpen">Data</span>
-          <svg x-show="!collapsed || dropdownOpen" class="ml-auto transform" :class="activeDropdown === 'client' ? 'rotate-90' : ''" width="16" height="16" fill="none">
+          <svg x-show="!collapsed || dropdownOpen" class="ml-auto transform" :class="activeDropdown === 'data' ? 'rotate-90' : ''" width="16" height="16" fill="none">
             <path stroke="currentColor" stroke-width="2" d="M6 4l6 6-6 6" />
           </svg>
         </button>
 
-        <div x-show="activeDropdown === 'client'"
+        <div x-show="activeDropdown === 'data'"
         x-transition
         x-cloak
         class="space-y-1 bg-[#0f7dbf] text-white">
@@ -150,32 +150,30 @@ isOpen(route) { return this.activeDropdown === route; }}">
 
   </aside>
 
-<!-- Seamless Sidebar Toggle Tab -->
-<div 
+  <!-- Seamless Sidebar Toggle Tab -->
+  <div 
   class="fixed z-50 top-4 transition-all duration-300" 
-  :style="collapsed ? (dropdownOpen ? 'left: 180px' : 'left: 72px') : 'left: 256px'"
->
-  <button 
-  @click="collapsed = !collapsed"
-  activeDropdown = null;
-  dropdownOpen = false;
-  class="h-10 w-6 bg-sidebar text-white rounded-r-md flex items-center justify-center cursor-pointer"
-  aria-label="Toggle Sidebar">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         class="w-4 h-4 transition-transform duration-300"
-         :class="collapsed ? '' : 'rotate-180'"
-         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-    </svg>
-  </button>
-</div>
+  :style="collapsed ? (dropdownOpen ? 'left: 180px' : 'left: 72px') : 'left: 256px'">
+    <button 
+    @click="collapsed = !collapsed"
+    activeDropdown = null;
+    dropdownOpen = false;
+    class="h-10 w-6 bg-sidebar text-white rounded-r-md flex items-center justify-center cursor-pointer"
+    aria-label="Toggle Sidebar">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           class="w-4 h-4 transition-transform duration-300"
+           :class="collapsed ? '' : 'rotate-180'"
+           fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
 
   <!-- Header -->
   <header 
-    :class="collapsed ? 'ml-20' : 'ml-64'" 
-    class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-100 flex items-center px-6 transition-all duration-300"
-    :style="collapsed ? 'width: calc(100% - 5rem)' : 'width: calc(100% - 16rem)'"
-  >
+  :class="collapsed ? 'ml-20' : 'ml-64'" 
+  class="fixed top-0 right-0 h-16 z-30 bg-white border-b border-gray-100 flex items-center px-6 transition-all duration-300" :style="collapsed ? 'width: calc(100% - 5rem)' : 'width: calc(100% - 16rem)'">
+
     <!-- Centered Search Bar -->
     <div class="flex-1 flex justify-center">
       <div class="w-full max-w-xl">
@@ -187,7 +185,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
     <!-- Gear dropdown -->
     <div x-data="{ open: false }" class="relative ml-auto">
       <button @click="open = !open" @click.away="open = false"
-              class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition cursor-pointer">
+      class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 hover:text-black transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
           <circle cx="12" cy="12" r="3" />
           <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33
