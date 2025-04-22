@@ -29,7 +29,8 @@ if (document.body.classList.contains('linkcheck')) {
     }
 
     const csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
-    const endpoint = '/' + renderFrom.replace('.', '/');
+    const section = document.body.dataset.section || '';
+    const endpoint = `/${section}/handle`;
     const postData = new URLSearchParams({ renderFrom, renderTo, renderAs, key, value, isapp });
 
     if (renderAs === 'html') {
