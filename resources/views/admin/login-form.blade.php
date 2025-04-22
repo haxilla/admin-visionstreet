@@ -1,4 +1,4 @@
-@include('admin.header.doctype')
+@include('globals.doctype.admin')
 <style>
   body {
     background-image: url('/images/vision-street-admin-black-1.png');
