@@ -6,6 +6,7 @@
 <div>
   @foreach($schemas as $schema)
     <a href="#"
+    data-isapp=1
     data-action="handle"
     data-task="tables.show"
     data-value="schema:{{ $schema->schema_name }}"
