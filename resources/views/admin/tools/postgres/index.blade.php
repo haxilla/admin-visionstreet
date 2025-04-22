@@ -10,7 +10,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
   @include('globals.sidebar.admin')
   @include('globals.nav.admin-header')
 
-  <div class="space-y-1 text-sm">
+  <div>
     @foreach($schemas as $schema)
       <a href="#"
          data-action="handle"
