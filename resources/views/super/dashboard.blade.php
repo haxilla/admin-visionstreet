@@ -7,7 +7,7 @@ activeDropdown: null,
 closing: false,
 isOpen(route) { return this.activeDropdown === route; }}">
 
-  @include('globals.sidebar.main')
+  @include('globals.sidebar.admin')
 
   <!-- Header -->
   <header 
