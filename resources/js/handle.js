@@ -22,9 +22,10 @@ if (document.body.classList.contains('linkcheck')) {
     const postData = new URLSearchParams({ ...attr });
 
     const renderAs=attr.renderas;
+    const renderTo=attr.renderto;
 
     if (renderAs === 'html') {
-      renderHTML(endpoint, postData, csrf);
+      renderHTML(endpoint, postData, renderTo, csrf);
     } else if (renderAs === 'json') {
       renderJSON(endpoint, postData, csrf);
     } else {
@@ -76,7 +77,7 @@ if (document.body.classList.contains('linkcheck')) {
     }
   }
 
-  function renderHTML(endpoint, postData, csrf) {
+  function renderHTML(endpoint, postData, renderTo, csrf) {
     fetch(endpoint, {
       method: 'POST',
       headers: {
