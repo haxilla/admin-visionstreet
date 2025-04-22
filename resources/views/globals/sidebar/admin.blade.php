@@ -63,9 +63,9 @@
           <a href="#"
             class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
             data-action="handle"
-            data-renderTox="pageswap"
-            data-renderFromx="client.create"
-            data-renderAsx="html">
+            data-renderTo="pageswap"
+            data-renderFrom="client.create"
+            data-renderAs="html">
             <!-- Plus icon for “Add” -->
             <svg xmlns="http://www.w3.org/2000/svg"
             class="w-4 h-4 mr-2 flex-shrink-0"
