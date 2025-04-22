@@ -13,27 +13,10 @@ class PostgresController extends Controller
 
     public function index(Request $request){
 
-        dd($_POST);
-        //clear
-        $data=null;
-        $value=null;
-        //check post
-        $renderFrom=$_POST['renderFrom'];
-        //check for value
-        if(isset($_POST['value'])){
-          $value=$_POST['value'];}
+        include(app_path().'/admin/tools/postgres/schemas/showall.php');
 
-        //should it use an app file?
-        if(isset($_POST['isapp'])){
-          $renderURL = str_replace(".", "/",$renderFrom);
-          include(app_path().'/'.$renderURL.'.php');}
-
-        return view($renderFrom, [
+        return view('admin.tools.postgres.index', [
             'schemas' => $schemas,
         ]);
-    }
-
-    public function listSchemas(Request $request){
-
     }
 }
