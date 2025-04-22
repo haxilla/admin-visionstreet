@@ -1,6 +1,12 @@
 @include('globals.doctype.admin')
 
-<body class="linkcheck relative bg-white min-h-screen font-sans text-gray-800">
+<body data-section="postgres" 
+class="linkcheck relative bg-white min-h-screen font-sans text-gray-800" x-data="{
+collapsed: false,
+dropdownOpen: false,
+activeDropdown: null,
+closing: false,
+isOpen(route) { return this.activeDropdown === route; }}">
   <!-- sidebar -->
   @include('globals.sidebar.admin')
   <!-- Header / Topnav-->
