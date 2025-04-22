@@ -125,7 +125,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
                  stroke-width="1.5"
                  stroke-linecap="round"
                  stroke-linejoin="round"
-                 class="w-4 h-4 mr-2 flex-shrink-0 text-[#336791]">
+                 class="w-4 h-4 mr-2 flex-shrink-0">
               <ellipse cx="12" cy="5" rx="9" ry="3" />
               <path d="M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5" />
               <path d="M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6" />
@@ -143,14 +143,14 @@ isOpen(route) { return this.activeDropdown === route; }}">
                  stroke-width="1.5"
                  stroke-linecap="round"
                  stroke-linejoin="round"
-                 class="w-4 h-4 mr-2 flex-shrink-0 text-[#336791]">
+                 class="w-4 h-4 mr-2 flex-shrink-0">
               <ellipse cx="12" cy="5" rx="9" ry="3" />
               <path d="M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5" />
               <path d="M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6" />
             </svg>
 
             MySQL
-            
+
           </a>
         </div>
 
