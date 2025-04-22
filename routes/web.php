@@ -23,7 +23,7 @@ Route::get('/super/reports', [SuperDashboard::class, 'reports'])->name('super.re
 /* ---------------- Admin ---------------- */
 Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
 Route::get('/postgres', [PostgresController::class, 'index'])->name('admin.postgres');
-Route::get('/postgres/handle', [PostgresController::class, 'handle'])->name('postgres.handle');
+Route::post('/postgres/handle', [PostgresController::class, 'handle'])->name('postgres.handle');
 Route::get('/mysql', [MysqlController::class, 'index'])->name('admin.mysql');
 
 /* ---------------- Member ---------------- */
