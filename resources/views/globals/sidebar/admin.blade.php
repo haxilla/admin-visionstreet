@@ -1,7 +1,7 @@
   <!-- Sidebar -->
   <aside :class="collapsed ? (dropdownOpen ? 'w-[180px]' : 'w-20') : 'w-64'" 
   class="fixed top-0 left-0 h-screen z-40 bg-sidebar text-white flex flex-col transition-[width] duration-300 ease-in-out overflow-y-auto"
-  @click.away="dropdownOpen = false; activeDropdown = null">
+  @click.away="dropdownOpen = false; activeDropdown = null" data-aside="">
     <!-- Sidebar Logo -->
     <div :class="collapsed ? 'h-20 p-2' : 'h-[160px] py-6 px-6'" 
     class="border-b border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300">
@@ -63,6 +63,7 @@
           <a href="#"
             class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
             data-action="handle"
+            data-route="/client/create"
             data-renderTo="pageswap"
             data-renderFrom="client.create"
             data-renderAs="html">
