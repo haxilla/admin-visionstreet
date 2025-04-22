@@ -65,7 +65,7 @@
             data-action="handle"
             data-renderTo="pageswap"
             data-renderFrom="client.create"
-            data-renderAs="html">
+            data-render-as="html">
             <!-- Plus icon for “Add” -->
             <svg xmlns="http://www.w3.org/2000/svg"
             class="w-4 h-4 mr-2 flex-shrink-0"
