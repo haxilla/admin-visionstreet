@@ -22,10 +22,9 @@ class ClientHandleController extends Controller
 
     public function create(Request $request)
     {
-        $renderFrom = $request->input('renderFrom');
 
         // return that dynamic view
-        return view($renderFrom, [
+        return view('client.create', [
             'client'    => null,
             'mode'      => 'create',
         ]);

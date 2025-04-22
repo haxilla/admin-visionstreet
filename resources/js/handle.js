@@ -8,18 +8,13 @@ if (document.body.classList.contains('linkcheck')) {
   };
 
   document.addEventListener('click', (e) => {
-    const el = e.target.closest('a[data-action="handle"]');
-    if (!el) return;
+    
+    if (e.target.dataset.action !== 'handle') return;
 
-    e.preventDefault();
+    const el = e.target;
 
     //checks for all data-attributes on click target
     const dataset = { ...el.dataset };
-    //makes datafile.$$ convert back to $$ for script processing
-    window.__tempGlobals = window.__tempGlobals || [];
-    for (const [key, value] of Object.entries(dataset)) {
-      window[key] = value;
-      window.__tempGlobals.push(key);}
 
     const csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
     const section = document.body.dataset.section || '';
@@ -35,14 +30,6 @@ if (document.body.classList.contains('linkcheck')) {
       alert('error-line37-handler.js');
     }
 
-    // Immediately clean up temporary globals
-    if (Array.isArray(window.__tempGlobals)) {
-      for (const key of window.__tempGlobals) {
-        delete window[key];
-      }
-      delete window.__tempGlobals;
-    }
-
   });
 
   document.addEventListener('submit', (e) => {
@@ -52,7 +39,7 @@ if (document.body.classList.contains('linkcheck')) {
 
     e.preventDefault();
     handleFormSubmission(form);
-    
+
   });
 
   function handleFormSubmission(form) {
