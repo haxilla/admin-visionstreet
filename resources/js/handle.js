@@ -21,13 +21,15 @@ if (document.body.classList.contains('linkcheck')) {
     const endpoint = `/${section}/handle`;
     const postData = new URLSearchParams({ ...attrs });
 
+    renderAs=attr.renderAs
+
     if (renderAs === 'html') {
       renderHTML(endpoint, postData, csrf);
-    } else if (renderAs === 'json') {
+    } else if (attrs.renderAs === 'json') {
       renderJSON(endpoint, postData, csrf);
     } else {
       console.warn('Unknown renderAs:', renderAs);
-      alert('error-line37-handler.js');
+      alert('error-line32-handler.js');
     }
 
   });
