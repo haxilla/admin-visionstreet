@@ -1,4 +1,4 @@
-@include('super.header.doctype')
+@include('globals.doctype.admin')
 
 <style>
     body {
@@ -73,6 +73,6 @@
     </script>
 
     {{-- footer --}}
-    @include('super.footer.main')
+    @include('globals.footer.admin')
 </body>
 </html>
