@@ -14,6 +14,7 @@ class PostgresController extends Controller
     public function index(Request $request){
         // Only runs for admin/super
         $task = $request->input('task');
+        $renderFrom = $request->input('renderFrom')
 
         if ($task === 'index') {
             return $this->listSchemas($request);
