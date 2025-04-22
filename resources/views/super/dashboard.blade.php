@@ -51,11 +51,8 @@ isOpen(route) { return this.activeDropdown === route; }}">
         x-transition
         x-cloak
         class="space-y-1 bg-[#0f7dbf] text-white">
-          <a href="#"
-            class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
-            data-action="handle"
-            data-renderfrom="client.index"
-            data-renderto="pageswap">
+          <a href="/admin/contacts"
+          class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors">
             <!-- Eye icon for “View” -->
             <svg xmlns="http://www.w3.org/2000/svg"
             class="w-4 h-4 mr-2 flex-shrink-0"
