@@ -8,6 +8,12 @@ activeDropdown: null,
 closing: false,
 isOpen(route) { return this.activeDropdown === route; }}">
 
+  <div>
+    <h1 class="text-2xl font-bold">
+      POSTGRES
+    </h1>
+  </div>
+
   @include('globals.sidebar.admin')
 
   @include('globals.nav.admin-header')

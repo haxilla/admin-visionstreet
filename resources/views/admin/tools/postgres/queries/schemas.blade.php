@@ -1,5 +1,5 @@
 <div>
-  <h1 class="text-2xl font-bold">
+  <h2 class="text-2xl font-bold">
     SCHEMAS
   </h1>
 </div>
