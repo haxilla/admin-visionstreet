@@ -18,6 +18,10 @@ class PostgresController extends Controller
         if ($task === 'index') {
             return $this->listSchemas($request);
         }
+
+        return view($renderFrom, [
+            'schemas' => $schemas,
+        ]);
     }
 
     public function listSchemas(Request $request){
@@ -26,9 +30,5 @@ class PostgresController extends Controller
             FROM information_schema.schemata
             WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
             ORDER BY schema_name");
-
-        return view($renderFrom, [
-            'schemas' => $schemas,
-        ]);
     }
 }
