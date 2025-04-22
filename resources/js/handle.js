@@ -14,12 +14,12 @@ if (document.body.classList.contains('linkcheck')) {
     const el = e.target;
 
     //checks for all data-attributes on click target
-    const attrs = { ...el.dataset };
+    const attr = { ...el.dataset };
 
     const csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
     const section = document.body.dataset.section || '';
     const endpoint = `/${section}/handle`;
-    const postData = new URLSearchParams({ ...attrs });
+    const postData = new URLSearchParams({ ...attr });
 
     renderAs=attr.renderAs
 
