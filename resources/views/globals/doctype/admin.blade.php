@@ -15,7 +15,7 @@
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     {{-- Optional: fonts --}}
-    @include('global.fonts.admin')
-    @include('global.styles.admin')
-    @include('global.favicons.admin')
+    @include('globals.fonts.admin')
+    @include('globals.styles.admin')
+    @include('globals.favicons.admin')
 </head>
