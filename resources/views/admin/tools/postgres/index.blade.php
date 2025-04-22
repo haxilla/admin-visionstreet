@@ -12,10 +12,10 @@ isOpen(route) { return this.activeDropdown === route; }}">
 
   @include('globals.nav.admin-header')
 
-  <main class="transition-all duration-300 min-h-screen pt-16"
+  <main class="transition-all duration-300 min-h-screen pt-24"
   :class="collapsed ? 'left-20' : 'left-64'">
     <div class="max-w-xl mx-auto">
-      <div pt-4>
+      <div>
         <h1 class="text-2xl font-bold">
           POSTGRES
         </h1>
