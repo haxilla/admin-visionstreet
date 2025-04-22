@@ -21,7 +21,7 @@ if (document.body.classList.contains('linkcheck')) {
     const endpoint = `/${section}/handle`;
     const postData = new URLSearchParams({ ...attr });
 
-    const renderAs=attr.renderAs;
+    const renderAs=attr.renderas;
 
     if (renderAs === 'html') {
       renderHTML(endpoint, postData, csrf);
