@@ -21,7 +21,7 @@ if (document.body.classList.contains('linkcheck')) {
     const endpoint = `/${section}/handle`;
     const postData = new URLSearchParams({ ...attr });
 
-    renderAs=attr.renderAs
+    const renderAs=attr.renderAs;
 
     if (renderAs === 'html') {
       renderHTML(endpoint, postData, csrf);
@@ -66,7 +66,7 @@ if (document.body.classList.contains('linkcheck')) {
     const endpoint = '/' + renderFrom.replace('.', '/');
 
     if (renderAs === 'html') {
-      renderHTML(endpoint, postData, renderTo, csrf);
+      renderHTML(endpoint, postData, csrf);
     } else if (renderAs === 'json') {
       renderJSON(endpoint, postData, csrf);
     } else {
@@ -74,7 +74,7 @@ if (document.body.classList.contains('linkcheck')) {
     }
   }
 
-  function renderHTML(endpoint, postData, renderTo, csrf) {
+  function renderHTML(endpoint, postData, csrf) {
     fetch(endpoint, {
       method: 'POST',
       headers: {
