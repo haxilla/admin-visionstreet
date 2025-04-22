@@ -6,9 +6,9 @@ use App\Http\Controllers\Super\DashboardController as SuperDashboard;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Member\DashboardController as MemberDashboard;
 use App\Http\Controllers\Guest\GuestController as Guest;
-use App\Http\Controllers\HandleController;
 use App\Http\Controllers\Client\ClientHandleController;
-
+use App\Http\Controllers\Data\PostgresController;
+use App\Http\Controllers\Data\MysqlController;
 
 /* ---------------- Public ---------------- */
 Route::get('/', [Guest::class, 'home'])->name('home');
@@ -22,6 +22,8 @@ Route::get('/super/reports', [SuperDashboard::class, 'reports'])->name('super.re
 
 /* ---------------- Admin ---------------- */
 Route::get('/admin/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
+Route::get('/admin/postgres', [PostgresController::class, 'index'])->name('admin.postgres');
+Route::get('/admin/mysql', [MysqlController::class, 'index'])->name('admin.mysql');
 
 /* ---------------- Member ---------------- */
 Route::get('/member/dashboard', [MemberDashboard::class, 'index'])->name('member.dashboard');
@@ -29,9 +31,6 @@ Route::get('/member/dashboard', [MemberDashboard::class, 'index'])->name('member
 /* ---------------- Clients ---------------- */
 Route::post('/client/create', [ClientHandleController::class, 'create'])->name('client.create');
 Route::post('/client/submit', [ClientHandleController::class, 'submit'])->name('client.submit');
-
-/* ---- Internal Request Handler -- */
-Route::post('/handle', [HandleController::class, 'handle'])->name('handle');
 
 // Temporary or diagnostic
 Route::get('/php-version', fn() => phpversion())->name('php.version');
@@ -50,4 +49,5 @@ Route::post('/logout', function () {
         'member' => redirect('/member/dashboard'),
         default  => redirect('/login'),
     };
+
 })->name('logout');
