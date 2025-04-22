@@ -28,6 +28,8 @@ if (document.body.classList.contains('linkcheck')) {
     } else if (renderAs === 'json') {
       renderJSON(endpoint, postData, csrf);
     } else {
+      console.log(attr);
+      console.log(attr.renderAs)
       console.warn('Unknown renderAs:', renderAs);
       alert('error-line32-handler.js');
     }
