@@ -15,7 +15,7 @@ class PostgresController extends Controller
         // Only runs for admin/super
         $task = $request->input('task');
         $renderFrom = $request->input('renderFrom');
-        $schemas = DB::select("
+        $schemas = \DB::select("
             SELECT schema_name
             FROM information_schema.schemata
             WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
