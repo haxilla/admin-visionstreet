@@ -13,15 +13,13 @@ class PostgresController extends Controller
 
     public function index(Request $request){
         // Only runs for admin/super
-        $task = $request->input('task');
-        $renderFrom = $request->input('renderFrom');
         $schemas = \DB::select("
             SELECT schema_name
             FROM information_schema.schemata
             WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
             ORDER BY schema_name");
 
-        return view($renderFrom, [
+        return view('admin.postgres.index', [
             'schemas' => $schemas,
         ]);
     }
