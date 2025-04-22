@@ -1,13 +1,10 @@
 @include('globals.doctype.admin')
-@include('globals.nav.admin')
-
 
 <body class="linkcheck relative bg-white min-h-screen font-sans text-gray-800">
-  
+  <!-- sidebar -->
+  @include('globals.sidebar.admin')
   <!-- Header / Topnav-->
   @include('globals.nav.admin')
-    <!-- sidebar -->
-  @include('globals.sidebar.admin')
 
   <div class="space-y-1 text-sm">
     @foreach($schemas as $schema)
