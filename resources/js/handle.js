@@ -15,18 +15,13 @@ if (document.body.classList.contains('linkcheck')) {
 
     e.preventDefault();
 
-    const el = e.target;
-    const renderFrom = el.dataset.renderfrom;
-    const renderTo = el.dataset.renderto;
-    const renderAs = el.dataset.renderas;
-    const value = el.dataset.value || '';
-    const key = el.dataset.key || '';
-    const isapp = el.dataset.isapp || '0';
-
-    if (!renderFrom || !renderTo || !renderAs) {
-      console.error('Error-line28-handler.js - missing render info');
-      return;
-    }
+    //checks for all data-attributes on click target
+    const dataset = { ...el.dataset };
+    //makes datafile.$$ convert back to $$ for script processing
+    window.__tempGlobals = window.__tempGlobals || [];
+    for (const [key, value] of Object.entries(dataset)) {
+      window[key] = value;
+      window.__tempGlobals.push(key);}
 
     const csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
     const section = document.body.dataset.section || '';
@@ -34,12 +29,22 @@ if (document.body.classList.contains('linkcheck')) {
     const postData = new URLSearchParams({ renderFrom, renderTo, renderAs, key, value, isapp });
 
     if (renderAs === 'html') {
-      renderHTML(endpoint, postData, renderTo, csrf);
+      renderHTML(endpoint, postData, csrf);
     } else if (renderAs === 'json') {
       renderJSON(endpoint, postData, csrf);
     } else {
       console.warn('Unknown renderAs:', renderAs);
+      alert('error-line37-handler.js');
     }
+
+    // Immediately clean up temporary globals
+    if (Array.isArray(window.__tempGlobals)) {
+      for (const key of window.__tempGlobals) {
+        delete window[key];
+      }
+      delete window.__tempGlobals;
+    }
+
   });
 
   document.addEventListener('submit', (e) => {
@@ -49,6 +54,7 @@ if (document.body.classList.contains('linkcheck')) {
 
     e.preventDefault();
     handleFormSubmission(form);
+    
   });
 
   function handleFormSubmission(form) {
