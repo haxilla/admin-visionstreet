@@ -63,8 +63,8 @@
           <a href="#"
             class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
             data-action="handle"
-            data-renderTo="pageswap"
-            data-renderFrom="client.create"
+            data-render-to="pageswap"
+            data-render-from="client.create"
             data-render-as="html">
             <!-- Plus icon for “Add” -->
             <svg xmlns="http://www.w3.org/2000/svg"
