@@ -94,8 +94,17 @@ isOpen(route) { return this.activeDropdown === route; }}">
         activeDropdown = activeDropdown === 'data' ? null : 'data';"
         class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
         :class="collapsed ? 'justify-center' : 'gap-3'">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M5 13l4 4L19 7" />
+          <svg xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.5"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               class="w-4 h-4 mr-2 flex-shrink-0">
+            <polygon points="12 2 20 6 12 10 4 6 12 2" />
+            <polyline points="20 6 20 14 12 18 4 14 4 6" />
+            <polyline points="4 14 12 18 20 14" />
           </svg>
           <span class="text-white" x-show="!collapsed || dropdownOpen">Data</span>
           <svg x-show="!collapsed || dropdownOpen" class="ml-auto transform" :class="activeDropdown === 'data' ? 'rotate-90' : ''" width="16" height="16" fill="none">
