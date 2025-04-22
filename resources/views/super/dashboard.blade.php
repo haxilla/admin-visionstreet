@@ -1,4 +1,5 @@
 @include('globals.doctype.admin')
+
 <body data-section="super"
 class="linkcheck relative bg-white min-h-screen font-sans text-gray-800" x-data="{
 collapsed: false,

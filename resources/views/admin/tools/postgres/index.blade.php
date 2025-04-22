@@ -7,7 +7,9 @@ dropdownOpen: false,
 activeDropdown: null,
 closing: false,
 isOpen(route) { return this.activeDropdown === route; }}">
+
   @include('globals.sidebar.admin')
+
   @include('globals.nav.admin-header')
 
   <main class="transition-all duration-300 min-h-screen pt-16"
@@ -29,4 +31,3 @@ isOpen(route) { return this.activeDropdown === route; }}">
   </main>
   @include('globals.footer.admin')
 </body>
-</html>
