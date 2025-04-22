@@ -86,6 +86,66 @@ isOpen(route) { return this.activeDropdown === route; }}">
 
       </div>
 
+      <div>
+
+        <button
+        @click="
+        if (collapsed) {
+          // willOpen is true when opening, false when closing
+          dropdownOpen = activeDropdown !== 'client';
+        }
+        activeDropdown = activeDropdown === 'client' ? null : 'client';"
+        class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
+        :class="collapsed ? 'justify-center' : 'gap-3'">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="text-white" x-show="!collapsed || dropdownOpen">Data</span>
+          <svg x-show="!collapsed || dropdownOpen" class="ml-auto transform" :class="activeDropdown === 'client' ? 'rotate-90' : ''" width="16" height="16" fill="none">
+            <path stroke="currentColor" stroke-width="2" d="M6 4l6 6-6 6" />
+          </svg>
+        </button>
+
+        <div x-show="activeDropdown === 'client'"
+        x-transition
+        x-cloak
+        class="space-y-1 bg-[#0f7dbf] text-white">
+          <a href="#"
+            class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
+            data-action="handle"
+            data-renderto="pageswap"
+            data-renderfrom="admin.tools.postgres"
+            data-renderas="html">
+            <!-- Eye icon for “View” -->
+            <svg xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4 mr-2 flex-shrink-0"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round"            
+            d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7
+            c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
+            </svg>
+              Postgres
+          </a>
+          <a href="#"
+            class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors"
+            data-action="handle"
+            data-renderto="pageswap"
+            data-renderfrom="admin.tools.mysql"
+            data-renderas="html">
+            <!-- Plus icon for “Add” -->
+            <svg xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4 mr-2 flex-shrink-0"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+              MySQL
+          </a>
+        </div>
+
+      </div>
+
     </nav>
 
   </aside>
