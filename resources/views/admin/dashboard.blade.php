@@ -1,5 +1,5 @@
-@include('admin.header.doctype')
-@include('admin.header.topnav')
+@include('globals.doctype.admin')
+@include('globals.nav.admin')
 
 <body class="min-h-screen bg-black text-white flex flex-col pt-20">
 
@@ -42,7 +42,7 @@
     </main>
 
     {{-- Footer --}}
-    @include('admin.footer.main')
+    @include('globals.footer.admin')
 
 </body>
 
