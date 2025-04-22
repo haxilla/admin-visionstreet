@@ -119,24 +119,38 @@ isOpen(route) { return this.activeDropdown === route; }}">
           <a href="/admin/postgres"
           class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 25.6 25.6"
-                 class="w-4 h-4 mr-2 flex-shrink-0">
-              <g fill="none" stroke="#fff">
-                <path d="M18.983 18.636c.163-1.357.114-1.555 1.124-1.336l.257.023c.777.035 1.793-.125 2.4-.402 1.285-.596 2.047-1.592.78-1.33-2.89.596-3.1-.383-3.1-.383 3.053-4.53 4.33-10.28 3.227-11.687-3.004-3.84-8.205-2.024-8.292-1.976l-.028.005c-.57-.12-1.2-.19-1.93-.2-1.308-.02-2.3.343-3.054.914 0 0-9.277-3.822-8.846 4.807.092 1.836 2.63 13.9 5.66 10.25C8.29 15.987 9.36 14.86 9.36 14.86c.53.353 1.167.533 1.834.468l.052-.044a2.01 2.01 0 0 0 .021.518c-.78.872-.55 1.025-2.11 1.346-1.578.325-.65.904-.046 1.056.734.184 2.432.444 3.58-1.162l-.046.183c.306.245.285 1.76.33 2.842s.116 2.093.337 2.688.48 2.13 2.53 1.7c1.713-.367 3.023-.896 3.143-5.81" fill="#000" stroke="#000" stroke-linecap="butt" stroke-width="2.149"/>
-                <path d="M23.535 15.6c-2.89.596-3.1-.383-3.1-.383 3.053-4.53 4.33-10.28 3.228-11.687-3.004-3.84-8.205-2.023-8.292-1.976l-.028.005a10.31 10.31 0 0 0-1.929-.201c-1.308-.02-2.3.343-3.054.914 0 0-9.278-3.822-8.846 4.807.092 1.836 2.63 13.9 5.66 10.25C8.29 15.987 9.36 14.86 9.36 14.86c.53.353 1.167.533 1.834.468l.052-.044a2.02 2.02 0 0 0 .021.518c-.78.872-.55 1.025-2.11 1.346-1.578.325-.65.904-.046 1.056.734.184 2.432.444 3.58-1.162l-.046.183c.306.245.52 1.593.484 2.815s-.06 2.06.18 2.716.48 2.13 2.53 1.7c1.713-.367 2.6-1.32 2.725-2.906.088-1.128.286-.962.3-1.97l.16-.478c.183-1.53.03-2.023 1.085-1.793l.257.023c.777.035 1.794-.125 2.39-.402 1.285-.596 2.047-1.592.78-1.33z" fill="#336791" stroke="none"/>
-              </g>
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 class="w-4 h-4 mr-2 flex-shrink-0 text-[#336791]">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5" />
+              <path d="M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6" />
             </svg>
+
+            Postgres
 
           </a>
           <a href="/admin/mysql"
           class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors">
-            <!-- Plus icon for “Add” -->
             <svg xmlns="http://www.w3.org/2000/svg"
-            class="w-4 h-4 mr-2 flex-shrink-0"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 class="w-4 h-4 mr-2 flex-shrink-0 text-[#336791]">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M3 5v6c0 1.7 4 3 9 3s9-1.3 9-3V5" />
+              <path d="M3 11v6c0 1.7 4 3 9 3s9-1.3 9-3v-6" />
             </svg>
-              MySQL
+
+            MySQL
+            
           </a>
         </div>
 
