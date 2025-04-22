@@ -19,7 +19,7 @@ class PostgresController extends Controller
             WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
             ORDER BY schema_name");
 
-        return view('admin.postgres.index', [
+        return view('admin.tools.postgres.index', [
             'schemas' => $schemas,
         ]);
     }
