@@ -8,14 +8,17 @@ use Illuminate\Http\Request;
 class PostgresController extends Controller
 {
     public function __construct(){
-    	$this->middleware('role:admin,super');}
+    	$this->middleware('role:admin,super');
+    }
 
     public function index(Request $request){
         // Only runs for admin/super
         $task = $request->input('task');
 
         if ($task === 'index') {
-            return $this->listSchemas($request);}
+            return $this->listSchemas($request);
+        }
+    }
 
     public function listSchemas(Request $request){
         $schemas = DB::select("
@@ -24,7 +27,8 @@ class PostgresController extends Controller
             WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
             ORDER BY schema_name");
 
-        return view($renderTo, [
+        return view($renderFrom, [
             'schemas' => $schemas,
-        ]);}
+        ]);
+    }
 }
