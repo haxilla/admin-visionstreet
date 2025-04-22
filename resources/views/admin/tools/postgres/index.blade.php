@@ -7,10 +7,8 @@ dropdownOpen: false,
 activeDropdown: null,
 closing: false,
 isOpen(route) { return this.activeDropdown === route; }}">
-  <!-- sidebar -->
   @include('globals.sidebar.admin')
-  <!-- Header / Topnav-->
-  @include('globals.nav.admin')
+  @include('globals.nav.admin-header')
 
   <div class="space-y-1 text-sm">
     @foreach($schemas as $schema)
