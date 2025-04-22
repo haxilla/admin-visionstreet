@@ -8,18 +8,17 @@ activeDropdown: null,
 closing: false,
 isOpen(route) { return this.activeDropdown === route; }}">
 
-  <div>
-    <h1 class="text-2xl font-bold">
-      POSTGRES
-    </h1>
-  </div>
-
   @include('globals.sidebar.admin')
 
   @include('globals.nav.admin-header')
 
   <main class="transition-all duration-300 min-h-screen pt-16"
   :class="collapsed ? 'left-20' : 'left-64'">
+    <div>
+      <h1 class="text-2xl font-bold">
+        POSTGRES
+      </h1>
+    </div>
     <div class="pageswap p-6 w-full max-w-xl mx-auto">
         @include('admin.tools.postgres.queries.schemas')
     </div>
