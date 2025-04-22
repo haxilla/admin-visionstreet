@@ -9,15 +9,14 @@ isOpen(route) { return this.activeDropdown === route; }}">
 
   <!-- sidebar -->
   @include('globals.sidebar.admin')
-
   <!-- Header / Topnav-->
-  @include('globals.nav.admin')
+  @include('globals.nav.admin-header')
 
-  <main
+  <main 
   class="transition-all duration-300 min-h-screen pt-16"
   :class="collapsed ? 'left-20' : 'left-64'">
     <div class="pageswap p-6">
-      <!-- dynamic content goes here -->
+    <!-- dynamic content goes here -->
     </div>
   </main>
 
