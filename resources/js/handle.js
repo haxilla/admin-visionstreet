@@ -25,7 +25,7 @@ if (document.body.classList.contains('linkcheck')) {
 
     if (renderAs === 'html') {
       renderHTML(endpoint, postData, csrf);
-    } else if (attrs.renderAs === 'json') {
+    } else if (renderAs === 'json') {
       renderJSON(endpoint, postData, csrf);
     } else {
       console.warn('Unknown renderAs:', renderAs);
