@@ -15,10 +15,11 @@ class PostgresController extends Controller
         // Only runs for admin/super
         $task = $request->input('task');
         $renderFrom = $request->input('renderFrom');
-
-        if ($task === 'index') {
-            return $this->listSchemas($request);
-        }
+        $schemas = DB::select("
+            SELECT schema_name
+            FROM information_schema.schemata
+            WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
+            ORDER BY schema_name");
 
         return view($renderFrom, [
             'schemas' => $schemas,
@@ -26,10 +27,6 @@ class PostgresController extends Controller
     }
 
     public function listSchemas(Request $request){
-        $schemas = DB::select("
-            SELECT schema_name
-            FROM information_schema.schemata
-            WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
-            ORDER BY schema_name");
+
     }
 }
