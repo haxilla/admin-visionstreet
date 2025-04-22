@@ -21,5 +21,5 @@ isOpen(route) { return this.activeDropdown === route; }}">
     </div>
   </main>
 
-@include('super.footer.main')
+@include('globals.footer.admin')
 </body>
