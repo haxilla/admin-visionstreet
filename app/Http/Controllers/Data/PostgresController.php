@@ -12,6 +12,8 @@ class PostgresController extends Controller
     }
 
     public function index(Request $request){
+
+        dd($_POST);
         //clear
         $data=null;
         $value=null;
