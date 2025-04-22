@@ -14,12 +14,10 @@ class PostgresController extends Controller
     public function index(Request $request){
         // Only runs for admin/super
         $schemas = \DB::select("
-        SELECT nspname AS schema_name
-        FROM pg_namespace
-        WHERE nspname NOT IN ('pg_catalog', 'information_schema')
-          AND nspname NOT LIKE 'pg_toast%'
-          AND nspname NOT LIKE 'pg_temp_%'
-        ORDER BY nspname");
+            SELECT schema_name
+            FROM information_schema.schemata
+            WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
+            ORDER BY schema_name");
 
         return view('admin.tools.postgres.index', [
             'schemas' => $schemas,
