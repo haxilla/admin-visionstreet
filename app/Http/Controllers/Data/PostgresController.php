@@ -19,4 +19,10 @@ class PostgresController extends Controller
             'schemas' => $schemas,
         ]);
     }
+
+    public function handle(Request $request){
+
+        dd("READY TO HANDLE");
+
+    }
 }
