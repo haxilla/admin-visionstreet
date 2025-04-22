@@ -1,4 +1,9 @@
 <div>
+  <h1>
+    SCHEMAS
+  </h1>
+</div>
+<div>
   @foreach($schemas as $schema)
     <a href="#"
     data-action="handle"
