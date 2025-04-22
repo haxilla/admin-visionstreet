@@ -21,9 +21,10 @@ Route::get('/super/dashboard', [SuperDashboard::class, 'index'])->name('super.da
 Route::get('/super/reports', [SuperDashboard::class, 'reports'])->name('super.reports');
 
 /* ---------------- Admin ---------------- */
-Route::get('/admin/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
-Route::get('/admin/postgres', [PostgresController::class, 'index'])->name('admin.postgres');
-Route::get('/admin/mysql', [MysqlController::class, 'index'])->name('admin.mysql');
+Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
+Route::get('/postgres', [PostgresController::class, 'index'])->name('admin.postgres');
+Route::get('/postgres/handle', [PostgresController::class, 'handle'])->name('postgres.handle');
+Route::get('/mysql', [MysqlController::class, 'index'])->name('admin.mysql');
 
 /* ---------------- Member ---------------- */
 Route::get('/member/dashboard', [MemberDashboard::class, 'index'])->name('member.dashboard');

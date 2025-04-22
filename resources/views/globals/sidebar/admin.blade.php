@@ -111,7 +111,7 @@
         x-transition
         x-cloak
         class="space-y-1 bg-[#0f7dbf] text-white">
-          <a href="/admin/postgres"
+          <a href="/postgres"
           class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 24 24"
@@ -129,7 +129,7 @@
             Postgres
 
           </a>
-          <a href="/admin/mysql"
+          <a href="/mysql"
           class="flex items-center w-full pl-10 pr-4 py-2 text-sm hover:bg-black/10 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 24 24"
