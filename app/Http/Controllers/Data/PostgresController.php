@@ -34,6 +34,7 @@ class PostgresController extends Controller
         if(isset($isapp)){
             $renderURL = str_replace('.', '/', $renderfrom);
             $renderTask= str_replace('.', '/', $task);
+            $renderView="$renderfrom.$task";
             include(app_path()."/$renderURL/$renderTask.php");}
 
 
