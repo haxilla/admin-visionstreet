@@ -30,7 +30,8 @@ class PostgresController extends Controller
 
         if(isset($isapp)){
             $renderURL = str_replace('.', '/', $renderfrom);
-            include(app_path()."/$renderURL");}
+
+            include(app_path()."/$renderURL/");}
 
 
     }
