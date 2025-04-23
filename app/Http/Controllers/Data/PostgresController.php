@@ -24,9 +24,13 @@ class PostgresController extends Controller
 
         $data = request()->only([
             'renderfrom', 'renderto', 'renderas', 
-            'task', 'value', 'isapp',]);
+            'task', 'value', 'isapp','schema']);
 
         extract($data);
+
+        if(isset($value)){
+            
+        }
 
         if(isset($isapp)){
             $renderURL = str_replace('.', '/', $renderfrom);

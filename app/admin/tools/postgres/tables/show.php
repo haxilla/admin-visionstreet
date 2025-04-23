@@ -1,5 +1,6 @@
 <?php
 
+
 if(!isset($schema)){
 	dd("error-line4-postgres/tables/show");}
 
