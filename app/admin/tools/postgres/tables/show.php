@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($schema)){
+if(empty($schema)){
 	dd("error-line4-postgres/tables/show");}
 
 $tables = \DB::select("
@@ -10,4 +10,5 @@ $tables = \DB::select("
       AND table_type = 'BASE TABLE'
 ", [$schema]);
 
-dd($tables,$schema);
+echo view($renderFrom, 
+  compact('tables', 'schema'))->render();
