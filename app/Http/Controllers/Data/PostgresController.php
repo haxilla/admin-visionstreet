@@ -28,6 +28,8 @@ class PostgresController extends Controller
 
         extract($data);
 
+        dd($data);
+
         if(isset($value)){
             include(app_path().'/code/admin/getValue.php');}
 
@@ -37,7 +39,7 @@ class PostgresController extends Controller
             $renderView="$renderfrom.$task";
 
             dd("/$renderURL/$renderTask.php");
-            
+
             include(app_path()."/$renderURL/$renderTask.php");}
 
 
