@@ -10,4 +10,4 @@ if(empty($schemas)){
     dd("error-line10-postgres/schemas/show");}
 
 echo view('admin.tools.postgres.index', 
-  compact('schemas','renderfrom','task'))->render();
+  compact('schemas'))->render();
