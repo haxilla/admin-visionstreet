@@ -22,7 +22,14 @@ class PostgresController extends Controller
 
     public function handle(Request $request){
 
-        dd($request->all());
+        $data = request()->only([
+            'renderfrom', 'renderto', 'renderas', 
+            'task', 'value', 'isapp',]);
+
+        extract($data);
+
+        dd($data);
+
 
     }
 }
