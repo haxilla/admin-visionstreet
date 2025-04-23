@@ -11,4 +11,4 @@ $tables = \DB::select("
 ", [$schema]);
 
 echo view($renderfrom.'.index', 
-  compact('tables', 'schema'))->render();
+  compact('tables', 'schema','renderfrom','task'))->render();
