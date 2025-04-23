@@ -15,8 +15,6 @@ class PostgresController extends Controller
 
         include(app_path().'/admin/tools/postgres/schemas/show.php');
 
-        dd('???');
-        
         return view('admin.tools.postgres.index', [
             'schemas' => $schemas,
         ]);
