@@ -9,5 +9,8 @@ $schemas = \DB::select("
 if(empty($schemas)){
     dd("error-line10-postgres/schemas/show");}
 
+$renderfrom="admin.tools.postgres";
+$task="schemas.show";
+
 echo view('admin.tools.postgres.index', 
-  compact('schemas'))->render();
+  compact('schemas','renderfrom','task'))->render();
