@@ -15,9 +15,6 @@ class PostgresController extends Controller
 
         include(app_path().'/admin/tools/postgres/schemas/show.php');
 
-        return view('admin.tools.postgres.index', [
-            'schemas' => $schemas,
-        ]);
     }
 
     public function handle(Request $request){
