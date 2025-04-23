@@ -14,7 +14,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
 
   <main class="transition-all duration-300 min-h-screen pt-24"
   :class="collapsed ? 'left-20' : 'left-64'">
-    <div class="max-w-6x1 mx-auto">
+    <div class="ml-8 mr-8 lg:ml-10 lg:mr-10">
       <div>
         <h1 class="text-2xl font-bold">
           POSTGRES
