@@ -26,9 +26,9 @@ class PostgresController extends Controller
             'renderfrom', 'renderto', 'renderas', 
             'task', 'value', 'isapp',]);
 
-        extract($data);
-
-        dd($data);
+        if($isapp){
+            $renderURL = str_replace('.', '/', $renderfrom);
+            include(app_path()."/$renderfrom");}
 
 
     }
