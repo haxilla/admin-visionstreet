@@ -13,8 +13,10 @@ class PostgresController extends Controller
 
     public function index(Request $request){
 
-        include(app_path().'/admin/tools/postgres/schemas/showall.php');
+        include(app_path().'/admin/tools/postgres/schemas/show.php');
 
+        dd('???');
+        
         return view('admin.tools.postgres.index', [
             'schemas' => $schemas,
         ]);
@@ -27,8 +29,6 @@ class PostgresController extends Controller
             'task', 'value', 'isapp','schema']);
 
         extract($data);
-
-        dd($data);
 
         if(isset($value)){
             include(app_path().'/code/admin/getValue.php');}
