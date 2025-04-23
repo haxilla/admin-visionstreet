@@ -29,11 +29,11 @@ class PostgresController extends Controller
             include(app_path().'/code/admin/getValue.php');}
 
         if(isset($isapp)){
-            $renderURL = str_replace('.', '/', $renderfrom);
-            $renderTask= str_replace('.', '/', $task);
-            $renderView="$renderfrom.$task";
+            $renderPath = str_replace('.', '/', "$renderfrom/$task");
+            include(app_path($renderPath.'.php'));}
 
-            include(app_path()."/$renderURL/$renderTask.php");}
+        $html = view('admin.tools.postgres.index', compact('result')->render();
+        echo $html;
 
     }
 }

@@ -21,7 +21,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
         </h1>
       </div>
       <div class="pageswap p-6 w-full">
-          @include("$renderfrom.$task")
+        {!! $result !!}
       </div>
     </div>
   </main>

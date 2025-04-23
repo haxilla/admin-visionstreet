@@ -12,5 +12,5 @@ if(empty($schemas)){
 $renderfrom="admin.tools.postgres";
 $task="schemas.show";
 
-echo view('admin.tools.postgres.index', 
+$html=view('admin.tools.postgres.index', 
   compact('schemas','renderfrom','task'))->render();

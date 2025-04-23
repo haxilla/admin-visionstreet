@@ -10,5 +10,5 @@ $tables = \DB::select("
       AND table_type = 'BASE TABLE'
 ", [$schema]);
 
-echo view($renderfrom.'.index', 
+$html=view($renderfrom.'.index', 
   compact('tables', 'schema','renderfrom','task'))->render();
