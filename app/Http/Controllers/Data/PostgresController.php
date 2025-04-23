@@ -22,7 +22,7 @@ class PostgresController extends Controller
 
     public function handle(Request $request){
 
-        dd($request->all());
+        
 
     }
 }
