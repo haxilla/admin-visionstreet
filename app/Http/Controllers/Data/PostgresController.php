@@ -29,8 +29,7 @@ class PostgresController extends Controller
         extract($data);
 
         if(isset($value)){
-            
-        }
+            include(app_path().'/code/admin/getValue.php');}
 
         if(isset($isapp)){
             $renderURL = str_replace('.', '/', $renderfrom);
