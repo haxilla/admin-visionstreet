@@ -36,10 +36,7 @@ class PostgresController extends Controller
             $renderTask= str_replace('.', '/', $task);
             $renderView="$renderfrom.$task";
 
-            dd("/$renderURL/$renderTask.php");
-
             include(app_path()."/$renderURL/$renderTask.php");}
-
 
     }
 }
