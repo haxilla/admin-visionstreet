@@ -32,7 +32,7 @@ class PostgresController extends Controller
             $renderPath = str_replace('.', '/', "$renderfrom/$task");
             include(app_path($renderPath.'.php'));}
 
-        $html = view('admin.tools.postgres.index', compact('result')->render();
+        $html = view('admin.tools.postgres.index', compact('result'))->render();
         echo $html;
 
     }
