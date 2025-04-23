@@ -29,7 +29,7 @@ class PostgresController extends Controller
         extract($data);
 
         if(isset($isapp)){
-            include(app_path()."/$renderFrom");}
+            include(app_path()."/$renderfrom");}
 
 
     }
