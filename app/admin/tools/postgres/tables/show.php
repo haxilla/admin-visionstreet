@@ -1,6 +1,5 @@
 <?php
 
-
 if(!isset($schema)){
 	dd("error-line4-postgres/tables/show");}
 
@@ -11,4 +10,4 @@ $tables = DB::select("
       AND table_type = 'BASE TABLE'
 ", [$schema]);
 
-dd($tables);
+dd($tables,$schema);
