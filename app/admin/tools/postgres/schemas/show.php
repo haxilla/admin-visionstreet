@@ -12,5 +12,14 @@ if(empty($schemas)){
 $renderfrom="admin.tools.postgres";
 $task="schemas.show";
 
-$html=view('admin.tools.postgres.index', 
+$result=view('admin.tools.postgres.index', 
   compact('schemas','renderfrom','task'))->render();
+
+// Step 3: Render the layout and inject $result
+$html = view('admin.tools.postgres.index', [
+    'schemas'       => $schemas,
+    'renderfrom'    => $renderfrom,
+    'result'        => $result,
+])->render();
+
+echo $html;
