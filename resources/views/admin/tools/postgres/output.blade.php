@@ -107,16 +107,33 @@
                   data-renderas="html"
                   data-renderto="pageswap"
                   data-schema="{{ $data['schema'] }}"
-                  data-table="{{ $data['table'] }}"
-            >
+                  data-table="{{ $data['table'] }}">
                 @csrf
                 <td class="border px-2 py-1">
-                    <input type="text" name="column_name" placeholder="New column name"
-                           class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+                    <input type="text" name="column_name" 
+                    placeholder="New column name"
+                    class="w-full text-sm px-2 py-1 border border-gray-300 
+                    rounded focus:outline-none focus:ring focus:ring-blue-200" />
                 </td>
                 <td class="border px-2 py-1">
-                    <input type="text" name="data_type" placeholder="Data type (e.g., text)"
-                           class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+                    <select name="data_type" class="w-full text-sm px-2 py-1 
+                    border border-gray-300 rounded focus:outline-none 
+                    focus:ring focus:ring-blue-200">
+                      <option value="">Select data type</option>
+                      <option value="text">text</option>
+                      <option value="varchar(255)">varchar(255)</option>
+                      <option value="integer">integer</option>
+                      <option value="bigint">bigint</option>
+                      <option value="boolean">boolean</option>
+                      <option value="timestamp">timestamp</option>
+                      <option value="timestamptz">timestamptz</option>
+                      <option value="date">date</option>
+                      <option value="time">time</option>
+                      <option value="numeric(10,2)">numeric(10,2)</option>
+                      <option value="uuid">uuid</option>
+                      <option value="json">json</option>
+                      <option value="jsonb">jsonb</option>
+                  </select>
                 </td>
             </form>
         </tr>
