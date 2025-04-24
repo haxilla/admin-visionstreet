@@ -25,7 +25,7 @@
   </div>
 @elseif($data['sqltype']=='table')
   <div class="tables">
-    <h2 class="text-xl font-semibold mb-4">Tables in schema: {{ucase($data['schema'])}} </h2>
+    <h2 class="text-xl font-semibold mb-4">Tables in schema: {{strtoupper($data['schema'])}} </h2>
 
     <ul class="list-disc pl-6">
       @forelse ($data['tables'] as $table)
