@@ -28,7 +28,16 @@ isOpen(route) { return this.activeDropdown === route; }}">
             <ul class="space-y-2 pl-4 list-disc">
               @forelse ($schemas as $schema)
                 <li class="text-gray-800">
-                  <span class="font-mono text-sm">{{ $schema->schema_name }}</span>
+                  <a href="#"
+                  data-action="handle"
+                  data-value=""
+                  data-renderfrom=""
+                  data-renderto=""
+                  data-renderas="">
+                    <span class="font-mono text-sm">
+                      {{ $schema->schema_name }}
+                    </span>
+                  </a>
                 </li>
               @empty
                 <li class="text-red-500">No schemas found.</li>
