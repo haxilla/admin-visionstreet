@@ -18,7 +18,28 @@ class PostgresController extends Controller
     }
 
     public function handle(Request $request){
+        
+        //renderFrom
+        $renderFrom=$_POST['renderFrom'];
+        $task=$_POST['task'];
 
+        if(!$renderFrom || !$task){
+            dd("error-line27-postgresController");}
+        
+        //should it use an app file?
+        if(isset($_POST['isapp'])){
+          $renderURL = str_replace(".", "/",$renderFrom."/$task");
+          include(app_path().'/'.$renderURL.'.php');}
+
+        $html=\View::make($renderFrom)
+          ->with([
+            'data'=>$data,
+          ])->render();
+
+        echo $html;
+
+
+        /*
         $data = request()->only([
             'renderfrom', 'renderto', 'renderas', 
             'task', 'value', 'isapp','schema']);
@@ -34,6 +55,7 @@ class PostgresController extends Controller
 
         $html = view('admin.tools.postgres.index', compact('result'))->render();
         echo $html;
+        */
 
     }
 }
