@@ -10,5 +10,10 @@ $tables = \DB::select("
       AND table_type = 'BASE TABLE'
 ", [$schema]);
 
-$html=view($renderfrom.'.index', 
-  compact('tables', 'schema','renderfrom','task'))->render();
+$data=[
+    'sqltype'   => 'schema',
+    'schema'    => $schema,
+    'tables'    => $tables, 
+];
+
+$renderFrom='admin.tools.postgres.index';
