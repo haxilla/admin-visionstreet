@@ -18,8 +18,6 @@ class PostgresController extends Controller
     }
 
     public function handle(Request $request){
-        
-        dd("are you here");
 
         $data=null;
         //renderFrom
@@ -28,6 +26,10 @@ class PostgresController extends Controller
 
         if(!$renderFrom || !$task){
             dd("error-line27-postgresController");}
+
+        $sqltype = explode('.', $task)[0] ?? '';
+        if(!$sqltype){
+            dd("error-line34-postgresController");}
         
         //should it use an app file?
         if(isset($_POST['isapp'])){

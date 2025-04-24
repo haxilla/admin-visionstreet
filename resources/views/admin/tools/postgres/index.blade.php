@@ -21,7 +21,15 @@ isOpen(route) { return this.activeDropdown === route; }}">
         </h1>
       </div>
       <div class="pageswap p-6 w-full">
-        dd($data);
+        @if($sqltype=='schema')
+          SCHEMA HERE
+        @endif
+        @if($sqltype=='table')
+          TABLE HERE
+        @endif
+        @if($sqltype=='column')
+          COLUMN HERE
+        @endif
       </div>
     </div>
   </main>
