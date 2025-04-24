@@ -21,7 +21,7 @@ class PostgresController extends Controller
 
         $data=null;
         //renderFrom
-        $renderFrom=$_POST['renderFrom'];
+        $renderFrom=$_POST['renderfrom'];
         $task=$_POST['task'];
 
         if(!$renderFrom || !$task){
