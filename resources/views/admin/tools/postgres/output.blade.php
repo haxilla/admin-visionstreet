@@ -54,40 +54,38 @@
 
 @elseif($data['sqltype']=='column')
 
-<div class="mb-4">
-    <nav class="text-sm text-gray-600">
-        <a href="#" class="text-blue-600 hover:underline">{{ $schema }}</a>
-        <span class="mx-2">&raquo;</span>
-        <a href="#" class="text-blue-600 hover:underline">{{ $table }}</a>
-    </nav>
-</div>
+  <div class="mb-4">
+      <nav class="text-sm text-gray-600">
+          <a href="#" class="text-blue-600 hover:underline">{{ $data['schema'] }}</a>
+          <span class="mx-2">&raquo;</span>
+          <a href="#" class="text-blue-600 hover:underline">{{ $data['table'] }}</a>
+      </nav>
+  </div>
 
-<h4 class="text-lg font-semibold mb-2">Columns in <code>{{ $table }}</code></h4>
+  <h4 class="text-lg font-semibold mb-2">Columns in <code>{{ $data['table'] }}</code></h4>
 
-<table class="w-full border border-collapse text-sm">
-    <thead class="bg-gray-100">
-        <tr>
-            <th class="border px-3 py-2 text-left">Column Name</th>
-            <th class="border px-3 py-2 text-left">Data Type</th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse ($columns as $col)
-            <tr>
-                <td class="border px-3 py-2">{{ $col->column_name }}</td>
-                <td class="border px-3 py-2">{{ $col->data_type }}</td>
-            </tr>
-        @empty
-            <tr>
-                <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
-                    No columns found.
-                </td>
-            </tr>
-        @endforelse
-    </tbody>
-</table>
-
-
+  <table class="w-full border border-collapse text-sm">
+      <thead class="bg-gray-100">
+          <tr>
+              <th class="border px-3 py-2 text-left">Column Name</th>
+              <th class="border px-3 py-2 text-left">Data Type</th>
+          </tr>
+      </thead>
+      <tbody>
+          @forelse ($columns as $col)
+              <tr>
+                  <td class="border px-3 py-2">{{ $col->column_name }}</td>
+                  <td class="border px-3 py-2">{{ $col->data_type }}</td>
+              </tr>
+          @empty
+              <tr>
+                  <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
+                      No columns found.
+                  </td>
+              </tr>
+          @endforelse
+      </tbody>
+  </table>
 
 @else
   PAGE ERROR
