@@ -1,4 +1,5 @@
 @if($data['sqltype']=='schema')
+
   <div class="schemas">
     <h2 class="text-xl font-semibold mb-4">Available Schemas</h2>
 
@@ -23,7 +24,9 @@
       @endforelse
     </ul>
   </div>
+
 @elseif($data['sqltype']=='table')
+
   <div class="tables">
     <h2 class="text-xl font-semibold mb-4">Tables in schema: {{strtoupper($data['schema'])}} </h2>
 
@@ -34,7 +37,7 @@
             data-isapp=1
             data-action="handle"
             data-value="schema:{{$data['schema']}};table:{{$table->table_name}}"
-            data-task="table.show"
+            data-task="column.show"
             data-renderfrom="admin.tools.postgres"
             data-renderto="pageswap"
             data-renderas="html">
@@ -46,8 +49,11 @@
       @endforelse
     </ul>
   </div>
+
 @elseif($data['sqltype']=='column')
-  COLUMN HERE
+
+
+
 @else
   PAGE ERROR
 @endif
