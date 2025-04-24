@@ -22,8 +22,11 @@ if (document.body.classList.contains('linkcheck')) {
 
     const renderAs=attr.renderas;
     const renderTo=attr.renderto;
+    const renderFrom=attr.renderfrom;
 
-    console.log('renderAs:',renderAs);
+    if(!renderTo||!renderAs||!renderFrom){
+      alert('error-line28-handler.js');
+      return;}
 
     if (renderAs === 'html') {
       renderHTML(endpoint, postData, renderTo, csrf);
