@@ -9,7 +9,7 @@ $schemas = \DB::select("
 if(empty($schemas)){
     dd("error-line10-postgres/schemas/show");}
 
-dd($data);
+dd($_POST);
 
 
 
