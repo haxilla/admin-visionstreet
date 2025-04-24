@@ -94,24 +94,34 @@
          data-renderfrom="admin.tools.postgres.tables.addcolumn"
          data-renderas="html"
          data-renderto="pageswap"
-         data-schema="{{ $schema }}"
-         data-table="{{ $table }}">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+         data-schema="{{$data['schema']}}"
+         data-table="{{$data['table']}}">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+          class="h-4 w-4 mr-2" fill="none" 
+          viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" d="M12 4v16m8-8H4" />
           </svg>
           Add Column
       </a>
 
       <a href="#"
-         class="inline-flex items-center bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-sm"
+         class="inline-flex items-center bg-red-600 
+         text-white px-4 py-2 rounded hover:bg-red-700 text-sm"
          data-action="handle"
          data-renderfrom="admin.tools.postgres.tables.deletetable"
          data-renderas="html"
          data-renderto="pageswap"
          data-schema="{{ $schema }}"
          data-table="{{ $table }}">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          <svg xmlns="http://www.w3.org/2000/svg" 
+          class="h-4 w-4 mr-2" fill="none" 
+          viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M6 18L18 6M6 6l12 12" />
           </svg>
           Delete Table
       </a>
