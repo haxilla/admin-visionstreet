@@ -21,12 +21,12 @@ isOpen(route) { return this.activeDropdown === route; }}">
         </h1>
       </div>
       <div class="pageswap p-6 w-full">
-        @if($sqltype=='schema')
+        @if($data['sqltype']=='schema')
           <div class="schemas">
             <h2 class="text-xl font-semibold mb-4">Available Schemas</h2>
 
             <ul class="space-y-2 pl-4 list-disc">
-              @forelse ($schemas as $schema)
+              @forelse ($data['schemas'] as $schema)
                 <li class="text-gray-800">
                   <a href="#"
                   data-action="handle"
@@ -45,9 +45,9 @@ isOpen(route) { return this.activeDropdown === route; }}">
               @endforelse
             </ul>
           </div>
-        @elseif($sqltype=='table')
+        @elseif($data['sqltype']=='table')
           TABLE HERE
-        @elseif($sqltype=='column')
+        @elseif($data['sqltype']=='column')
           COLUMN HERE
         @else
           PAGE ERROR
