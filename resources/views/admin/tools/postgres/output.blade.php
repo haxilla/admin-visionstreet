@@ -116,7 +116,7 @@
               </select>
 
               <button type="submit"
-              class="text-xs px-4 py-1.5 text-white 
+              class="text-xs px-4 py-1.5 text-white cursor-pointer
               bg-gray-400 hover:bg-gray-500 rounded transition"
               title="Add Column">
                   Add Column
