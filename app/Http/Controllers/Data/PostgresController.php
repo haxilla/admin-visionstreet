@@ -32,6 +32,7 @@ class PostgresController extends Controller
           $renderURL = str_replace(".", "/",$renderFrom."/$task");
           include(app_path().'/'.$renderURL.'.php');}
 
+        dd($data);
         //IE: admin/tools/posgres - index.blade.php
         $html=\View::make($renderFrom.'.index')
           ->with([
