@@ -13,7 +13,7 @@ class PostgresController extends Controller
 
     public function index(Request $request){
 
-        include(app_path().'/admin/tools/postgres/schemas/show.php');
+        include(app_path().'/admin/tools/postgres/schema/show.php');
 
     }
 
