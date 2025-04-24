@@ -30,7 +30,8 @@
     <ul class="list-disc pl-6">
       @forelse ($data['tables'] as $table)
         <li class="text-gray-800 font-mono text-sm">
-            <a data-isapp=1
+            <a href="#"
+            data-isapp=1
             data-action="handle"
             data-value="schema:{{$data['schema']}};table:{{$table->table_name}}"
             data-task="table.show"
