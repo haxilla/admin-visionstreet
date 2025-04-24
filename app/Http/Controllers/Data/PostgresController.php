@@ -30,14 +30,15 @@ class PostgresController extends Controller
         $data=null;
         //renderFrom
         $renderFrom=$_POST['renderfrom'];
+        $value=$_POST['value'];
         $task=$_POST['task'];
 
-        if(!$renderFrom || !$task){
-            dd("error-line27-postgresController");}
+        if(!$renderFrom || !$task || !$value){
+            dd("error-line37-postgresController");}
 
         $sqltype = explode('.', $task)[0] ?? '';
         if(!$sqltype){
-            dd("error-line34-postgresController");}
+            dd("error-line41-postgresController");}
         
         //should it use an app file?
         if(isset($_POST['isapp'])){
