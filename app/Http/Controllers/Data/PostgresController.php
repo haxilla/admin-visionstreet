@@ -19,6 +19,7 @@ class PostgresController extends Controller
 
     public function handle(Request $request){
         
+        $data=null;
         //renderFrom
         $renderFrom=$_POST['renderFrom'];
         $task=$_POST['task'];
@@ -31,7 +32,8 @@ class PostgresController extends Controller
           $renderURL = str_replace(".", "/",$renderFrom."/$task");
           include(app_path().'/'.$renderURL.'.php');}
 
-        $html=\View::make($renderFrom)
+        //IE: admin/tools/posgres - index.blade.php
+        $html=\View::make($renderFrom.'.index')
           ->with([
             'data'=>$data,
           ])->render();
