@@ -9,7 +9,7 @@ $columns = \DB::select("
 ", [$schema, $table]);
 
 $data=[
-    'sqltype'   => 'table',
+    'sqltype'   => 'column',
     'schema'   	=> $schema,
     'table'		=> $table,
     'columns'	=> $columns,];
