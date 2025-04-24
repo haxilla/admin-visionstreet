@@ -1,7 +1,7 @@
 <?php
 
 if(!isset($value)){
-	dd("error-line4-code/admin/getvalue");}
+	dd("error-line4-code/getvalue");}
 
 if(str_contains($value,';')){
 	//first explode
