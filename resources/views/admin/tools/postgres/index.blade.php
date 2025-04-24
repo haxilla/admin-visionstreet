@@ -29,14 +29,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
               @forelse ($schemas as $schema)
                 <li class="text-gray-800">
                   <a href="#"
-                  data action="handle">
-
-                    YOU ARE NOT ALLOWED TO TRAVERSE HERE 
-
-                  </a>
-
-                  <a href="#"
-                  data-action=""
+                  data-action="handle"
                   data-value=""
                   data-renderfrom=""
                   data-renderto=""
