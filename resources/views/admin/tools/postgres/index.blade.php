@@ -22,13 +22,25 @@ isOpen(route) { return this.activeDropdown === route; }}">
       </div>
       <div class="pageswap p-6 w-full">
         @if($sqltype=='schema')
-          SCHEMA HERE
-        @endif
-        @if($sqltype=='table')
+          <div class="schemas">
+            <h2 class="text-xl font-semibold mb-4">Available Schemas</h2>
+
+            <ul class="space-y-2 pl-4 list-disc">
+              @forelse ($schemas as $schema)
+                <li class="text-gray-800">
+                  <span class="font-mono text-sm">{{ $schema->schema_name }}</span>
+                </li>
+              @empty
+                <li class="text-red-500">No schemas found.</li>
+              @endforelse
+            </ul>
+          </div>
+        @elseif($sqltype=='table')
           TABLE HERE
-        @endif
-        @if($sqltype=='column')
+        @elseif($sqltype=='column')
           COLUMN HERE
+        @else
+          PAGE ERROR
         @endif
       </div>
     </div>
