@@ -42,6 +42,7 @@ class PostgresController extends Controller
         //should it use an app file?
         if(isset($_POST['isapp'])){
           $renderURL = str_replace(".", "/",$renderFrom."/$task");
+          include(app_path().'/getValue.php');
           include(app_path().'/'.$renderURL.'.php');}
 
         //IE: admin/tools/posgres
