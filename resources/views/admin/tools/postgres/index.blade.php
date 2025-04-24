@@ -48,10 +48,10 @@ isOpen(route) { return this.activeDropdown === route; }}">
           </div>
         @elseif($data['sqltype']=='table')
           <div class="tables">
-            <h2 class="text-xl font-semibold mb-4">Tables in {{$schema}}</h2>
+            <h2 class="text-xl font-semibold mb-4">Tables in {{$data['schema']}}</h2>
 
             <ul class="list-disc pl-6">
-              @forelse ($tables as $table)
+              @forelse ($data['tables'] as $table)
                 <li class="text-gray-800 font-mono text-sm">{{ $table->table_name }}</li>
               @empty
                 <li class="text-red-500">No tables found in this schema.</li>
