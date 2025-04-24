@@ -56,13 +56,13 @@
 
   <div class="mb-4">
       <nav class="text-sm text-gray-600">
-          <a href="#" class="text-blue-600 hover:underline">{{ $data['schema'] }}</a>
+          <a href="#" class="text-blue-600 hover:underline">{{ $schema }}</a>
           <span class="mx-2">&raquo;</span>
-          <a href="#" class="text-blue-600 hover:underline">{{ $data['table'] }}</a>
+          <a href="#" class="text-blue-600 hover:underline">{{ $table }}</a>
       </nav>
   </div>
 
-  <h4 class="text-lg pb-2"><b>Schema:</b> {{$data['schema']}} | <b>Table:</b> {{$data['table']}}</h4>
+  <h4 class="text-lg font-semibold mb-2">Columns in <code>{{ $table }}</code></h4>
 
   <table class="w-full border border-collapse text-sm">
       <thead class="bg-gray-100">
@@ -72,7 +72,7 @@
           </tr>
       </thead>
       <tbody>
-          @forelse ($data['columns'] as $col)
+          @forelse ($columns as $col)
               <tr>
                   <td class="border px-3 py-2">{{ $col->column_name }}</td>
                   <td class="border px-3 py-2">{{ $col->data_type }}</td>
@@ -86,6 +86,38 @@
           @endforelse
       </tbody>
   </table>
+
+  <div class="mt-4 flex justify-between items-center gap-4">
+      <a href="#"
+         class="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+         data-action="handle"
+         data-renderfrom="admin.tools.postgres.tables.addcolumn"
+         data-renderas="html"
+         data-renderto="pageswap"
+         data-schema="{{ $schema }}"
+         data-table="{{ $table }}"
+      >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+          Add Column
+      </a>
+
+      <a href="#"
+         class="inline-flex items-center bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-sm"
+         data-action="handle"
+         data-renderfrom="admin.tools.postgres.tables.deletetable"
+         data-renderas="html"
+         data-renderto="pageswap"
+         data-schema="{{ $schema }}"
+         data-table="{{ $table }}"
+      >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+          Delete Table
+      </a>
+  </div>
 
 @else
   PAGE ERROR
