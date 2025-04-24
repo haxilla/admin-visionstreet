@@ -28,7 +28,9 @@
 @elseif($data['sqltype']=='table')
 
   <div class="tables">
-    <h2 class="text-xl font-semibold mb-4">Tables in schema: {{strtoupper($data['schema'])}} </h2>
+    <h2 class="text-xl font-semibold mb-4">
+        Tables in schema: {{strtoupper($data['schema'])}} 
+    </h2>
 
     <ul class="list-disc pl-6">
       @forelse ($data['tables'] as $table)
@@ -51,6 +53,39 @@
   </div>
 
 @elseif($data['sqltype']=='column')
+
+<div class="mb-4">
+    <nav class="text-sm text-gray-600">
+        <a href="#" class="text-blue-600 hover:underline">{{ $schema }}</a>
+        <span class="mx-2">&raquo;</span>
+        <a href="#" class="text-blue-600 hover:underline">{{ $table }}</a>
+    </nav>
+</div>
+
+<h4 class="text-lg font-semibold mb-2">Columns in <code>{{ $table }}</code></h4>
+
+<table class="w-full border border-collapse text-sm">
+    <thead class="bg-gray-100">
+        <tr>
+            <th class="border px-3 py-2 text-left">Column Name</th>
+            <th class="border px-3 py-2 text-left">Data Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @forelse ($columns as $col)
+            <tr>
+                <td class="border px-3 py-2">{{ $col->column_name }}</td>
+                <td class="border px-3 py-2">{{ $col->data_type }}</td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
+                    No columns found.
+                </td>
+            </tr>
+        @endforelse
+    </tbody>
+</table>
 
 
 
