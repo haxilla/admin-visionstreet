@@ -9,6 +9,7 @@ if (document.body.classList.contains('linkcheck')) {
 
   document.addEventListener('click', (e) => {
     
+    console.log(e.target.dataset.action);
     if (e.target.dataset.action !== 'handle') return;
 
     const el = e.target;
