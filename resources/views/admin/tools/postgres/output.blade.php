@@ -72,7 +72,7 @@
           </tr>
       </thead>
       <tbody>
-          @forelse ($columns as $col)
+          @forelse ($data['columns'] as $col)
               <tr>
                   <td class="border px-3 py-2">{{ $col->column_name }}</td>
                   <td class="border px-3 py-2">{{ $col->data_type }}</td>
