@@ -8,14 +8,12 @@ if (document.body.classList.contains('linkcheck')) {
   };
 
   document.addEventListener('click', (e) => {
-    
-    console.log(e.target);
-    if (e.target.dataset.action !== 'handle') return;
 
-    const el = e.target;
+    const a = e.target.closest('a');
+    if (!a || a.dataset.action !== 'handle') return;
 
     //checks for all data-attributes on click target
-    const attr = { ...el.dataset };
+    const attr = { ...a.dataset };
 
     const csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
     const section = document.body.dataset.section || '';
