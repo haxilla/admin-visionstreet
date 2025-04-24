@@ -107,21 +107,16 @@
       </a>
 
       <a href="#"
-         class="inline-flex items-center bg-red-600 
-         text-white px-4 py-2 rounded hover:bg-red-700 text-sm"
+         class="inline-flex items-center px-2.5 py-1.5 text-xs text-gray-500 hover:text-red-600 border border-transparent hover:border-red-300 rounded transition"
          data-action="handle"
          data-renderfrom="admin.tools.postgres.tables.deletetable"
          data-renderas="html"
          data-renderto="pageswap"
-         data-schema="{{$data['schema']}}"
-         data-table="{{$data['table']}}">
-          <svg xmlns="http://www.w3.org/2000/svg" 
-          class="h-4 w-4 mr-2" fill="none" 
-          viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M6 18L18 6M6 6l12 12" />
+         data-schema="{{ $schema }}"
+         data-table="{{ $table }}"
+      >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
           Delete Table
       </a>
