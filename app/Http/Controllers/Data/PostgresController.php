@@ -14,6 +14,13 @@ class PostgresController extends Controller
     public function index(Request $request){
 
         include(app_path().'/admin/tools/postgres/schema/show.php');
+        //IE: admin/tools/posgres - index.blade.php
+        $html=\View::make($renderFrom)
+          ->with([
+            'data'=>$data,
+          ])->render();
+
+        echo $html;
 
     }
 
@@ -36,7 +43,7 @@ class PostgresController extends Controller
           $renderURL = str_replace(".", "/",$renderFrom."/$task");
           include(app_path().'/'.$renderURL.'.php');}
 
-        //IE: admin/tools/posgres - index.blade.php
+        //IE: admin/tools/posgres
         $html=\View::make($renderFrom)
           ->with([
             'data'=>$data,
