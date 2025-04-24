@@ -16,4 +16,6 @@ $data=[
     'tables'    => $tables, 
 ];
 
+dd($schema,$tables);
+
 $renderFrom='admin.tools.postgres.output';
