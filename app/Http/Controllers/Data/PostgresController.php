@@ -19,6 +19,8 @@ class PostgresController extends Controller
 
     public function handle(Request $request){
         
+        dd("are you here");
+
         $data=null;
         //renderFrom
         $renderFrom=$_POST['renderFrom'];
@@ -32,7 +34,6 @@ class PostgresController extends Controller
           $renderURL = str_replace(".", "/",$renderFrom."/$task");
           include(app_path().'/'.$renderURL.'.php');}
 
-        dd($data);
         //IE: admin/tools/posgres - index.blade.php
         $html=\View::make($renderFrom.'.index')
           ->with([
