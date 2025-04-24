@@ -29,6 +29,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
               @forelse ($data['schemas'] as $schema)
                 <li class="text-gray-800">
                   <a href="#"
+                  data-isapp=1
                   data-action="handle"
                   data-value="schema:{{$schema->schema_name}}"
                   data-task="schema.describe"
