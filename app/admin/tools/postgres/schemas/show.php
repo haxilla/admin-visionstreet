@@ -14,7 +14,7 @@ $html=view('admin.tools.postgres.index', [
     'schemas'       => $schemas,
 ])->render();
 
-echo $html
+echo $html;
 
 
 
