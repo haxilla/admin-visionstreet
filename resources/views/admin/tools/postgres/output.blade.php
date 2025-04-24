@@ -90,34 +90,48 @@
   </thead>
   <tbody id="column-sortable">
     @forelse ($data['columns'] as $col)
-      <tr data-column="{{ $col->column_name }}">
-        <td class="border px-3 py-2 flex justify-between items-center">
-          {{ $col->column_name }}
-          <div class="flex gap-1 text-xs text-gray-400">
-            <a href="#"
-               class="hover:text-blue-600"
-               data-action="handle"
-               data-renderfrom="admin.tools.postgres.columns.rename"
-               data-renderas="html"
-               data-renderto="pageswap"
-               data-schema="{{ $data['schema'] }}"
-               data-table="{{ $data['table'] }}"
-               data-column="{{ $col->column_name }}"
-               title="Rename column">Rename</a>
-            <a href="#"
-               class="hover:text-red-500"
-               data-action="handle"
-               data-renderfrom="admin.tools.postgres.columns.delete"
-               data-renderas="html"
-               data-renderto="pageswap"
-               data-schema="{{ $data['schema'] }}"
-               data-table="{{ $data['table'] }}"
-               data-column="{{ $col->column_name }}"
-               title="Delete column">Delete</a>
-          </div>
-        </td>
-        <td class="border px-3 py-2">{{ $col->data_type }}</td>
-      </tr>
+<tr data-column="{{ $col->column_name }}">
+  <td class="border px-3 py-2 flex justify-between items-center">
+    {{ $col->column_name }}
+
+    <div class="relative inline-block text-left">
+      <button type="button"
+              class="text-gray-400 hover:text-gray-600 focus:outline-none"
+              onclick="this.nextElementSibling.classList.toggle('hidden')">
+        &#x22EE; <!-- vertical ellipsis -->
+      </button>
+
+      <div class="absolute right-0 mt-1 w-32 bg-white border border-gray-200 rounded shadow-lg text-xs hidden z-10">
+        <a href="#"
+           class="block px-3 py-2 hover:bg-gray-100 text-blue-600"
+           data-action="handle"
+           data-renderfrom="admin.tools.postgres.columns.rename"
+           data-renderas="html"
+           data-renderto="pageswap"
+           data-schema="{{ $data['schema'] }}"
+           data-table="{{ $data['table'] }}"
+           data-column="{{ $col->column_name }}"
+        >
+          Rename
+        </a>
+        <a href="#"
+           class="block px-3 py-2 hover:bg-gray-100 text-red-500"
+           data-action="handle"
+           data-renderfrom="admin.tools.postgres.columns.delete"
+           data-renderas="html"
+           data-renderto="pageswap"
+           data-schema="{{ $data['schema'] }}"
+           data-table="{{ $data['table'] }}"
+           data-column="{{ $col->column_name }}"
+        >
+          Delete
+        </a>
+      </div>
+    </div>
+  </td>
+  <td class="border px-3 py-2">{{ $col->data_type }}</td>
+</tr>
+
     @empty
       <tr>
         <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
