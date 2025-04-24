@@ -62,7 +62,7 @@
       </nav>
   </div>
 
-  <h4 class="text-lg"><b>Schema:</b> {{$data['schema']}} | <b>Table:</b> {{$data['table']}}</h4>
+  <h4 class="text-lg pb-2"><b>Schema:</b> {{$data['schema']}} | <b>Table:</b> {{$data['table']}}</h4>
 
   <table class="w-full border border-collapse text-sm">
       <thead class="bg-gray-100">
