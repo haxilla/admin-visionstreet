@@ -37,7 +37,7 @@ class PostgresController extends Controller
           include(app_path().'/'.$renderURL.'.php');}
 
         //IE: admin/tools/posgres - index.blade.php
-        $html=\View::make($renderFrom.'.index')
+        $html=\View::make($renderFrom)
           ->with([
             'data'=>$data,
           ])->render();

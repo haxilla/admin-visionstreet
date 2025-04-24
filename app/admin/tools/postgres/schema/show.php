@@ -14,6 +14,8 @@ $data=[
     'schemas'   => $schemas,
 ];
 
+$renderFrom="admin.tools.postgres.index";
+
 /*
 $data=array([
     'schemas'=>$schemas,
