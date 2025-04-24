@@ -128,6 +128,8 @@ if (document.body.classList.contains('linkcheck')) {
       const target = document.querySelector(`.${renderTo}`);
       if (target) {
         target.innerHTML = html;
+        //registers dropdown functions
+        dropdownMenus();
       } else {
         console.warn(`⚠️ Target container .${renderTo} not found`);
       }
