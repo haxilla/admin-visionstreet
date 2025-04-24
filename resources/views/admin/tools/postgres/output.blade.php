@@ -54,100 +54,75 @@
 
 @elseif($data['sqltype']=='column')
 
-  <div class="mb-4">
-      <nav class="text-sm text-gray-600">
-          <a href="#" class="text-blue-600 hover:underline">{{ $data['schema'] }}</a>
-          <span class="mx-2">&raquo;</span>
-          <a href="#" class="text-blue-600 hover:underline">{{ $data['table'] }}</a>
-      </nav>
-  </div>
+  <div class="flex items-center justify-between mb-2">
+    <nav class="text-sm text-gray-600">
+        <a href="#" class="text-blue-600 hover:underline">{{ $data['schema'] }}</a>
+        <span class="mx-2">&raquo;</span>
+        <a href="#" class="text-blue-600 hover:underline">{{ $data['table'] }}</a>
+    </nav>
 
-  <h4 class="text-lg font-semibold mb-2">Columns in {{ $data['table'] }}</h4>
-
-  <table class="w-full border border-collapse text-sm">
-      <thead class="bg-gray-100">
-          <tr>
-              <th class="border px-3 py-2 text-left">Column Name</th>
-              <th class="border px-3 py-2 text-left">Data Type</th>
-          </tr>
-      </thead>
-      <tbody>
-        @forelse ($data['columns'] as $col)
-          <tr>
-              <td class="border px-3 py-2">{{ $col->column_name }}</td>
-              <td class="border px-3 py-2">{{ $col->data_type }}</td>
-          </tr>
-        @empty
-          <tr>
-            <td colspan="2" class="border px-3 
-            py-2 text-center text-gray-500">
-                No columns found.
-            </td>
-          </tr>
-        @endforelse
-<tr>
-    <form method="POST"
-          data-action="handle"
-          data-renderfrom="admin.tools.postgres.tables.createcolumn"
-          data-renderas="html"
-          data-renderto="pageswap"
-          data-schema="{{ $data['schema'] }}"
-          data-table="{{ $data['table'] }}"
+    <a href="#"
+       class="inline-flex items-center px-2.5 py-1.5 text-xs text-gray-500 hover:text-red-600 border border-transparent hover:border-red-300 rounded transition"
+       data-action="handle"
+       data-renderfrom="admin.tools.postgres.tables.deletetable"
+       data-renderas="html"
+       data-renderto="pageswap"
+       data-schema="{{ $data['schema'] }}"
+       data-table="{{ $data['table'] }}"
     >
-        @csrf
-        <td class="border px-2 py-1">
-            <input type="text" name="column_name" placeholder="New column name"
-                   class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
-        </td>
-        <td class="border px-2 py-1 flex items-center gap-2">
-            <input type="text" name="data_type" placeholder="Data type (e.g., text)"
-                   class="flex-1 text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
-            
-            <button type="submit"
-                    class="text-gray-400 hover:text-blue-600 text-xs px-2 py-1 rounded border border-transparent hover:border-blue-400 transition"
-                    title="Add Column">
-                Add
-            </button>
-        </td>
-    </form>
-</tr>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+        Delete Table
+    </a>
+</div>
 
-      </tbody>
-  </table>
+<h4 class="text-lg font-semibold mb-2">Columns in <code>{{ $data['table'] }}</code></h4>
 
-  <div class="mt-4 flex justify-between items-center gap-4">
-      <a href="#"
-         class="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
-         data-action="handle"
-         data-renderfrom="admin.tools.postgres.tables.addcolumn"
-         data-renderas="html"
-         data-renderto="pageswap"
-         data-schema="{{$data['schema']}}"
-         data-table="{{$data['table']}}">
-          <svg xmlns="http://www.w3.org/2000/svg" 
-          class="h-4 w-4 mr-2" fill="none" 
-          viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" d="M12 4v16m8-8H4" />
-          </svg>
-          Add Column
-      </a>
+<table class="w-full border border-collapse text-sm">
+    <thead class="bg-gray-100">
+        <tr>
+            <th class="border px-3 py-2 text-left">Column Name</th>
+            <th class="border px-3 py-2 text-left">Data Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @forelse ($columns as $col)
+            <tr>
+                <td class="border px-3 py-2">{{ $col->column_name }}</td>
+                <td class="border px-3 py-2">{{ $col->data_type }}</td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
+                    No columns found.
+                </td>
+            </tr>
+        @endforelse
 
-      <a href="#"
-         class="inline-flex items-center px-2.5 py-1.5 text-xs text-gray-500 hover:text-red-600 border border-transparent hover:border-red-300 rounded transition"
-         data-action="handle"
-         data-renderfrom="admin.tools.postgres.tables.deletetable"
-         data-renderas="html"
-         data-renderto="pageswap"
-         data-schema="{{$data['schema']}}"
-         data-table="{{$data['table']}}">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-          Delete Table
-      </a>
-  </div>
+        <tr>
+            <form method="POST"
+                  data-action="handle"
+                  data-renderfrom="admin.tools.postgres.tables.createcolumn"
+                  data-renderas="html"
+                  data-renderto="pageswap"
+                  data-schema="{{ $data['schema'] }}"
+                  data-table="{{ $data['table'] }}"
+            >
+                @csrf
+                <td class="border px-2 py-1">
+                    <input type="text" name="column_name" placeholder="New column name"
+                           class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+                </td>
+                <td class="border px-2 py-1">
+                    <input type="text" name="data_type" placeholder="Data type (e.g., text)"
+                           class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+                </td>
+            </form>
+        </tr>
+    </tbody>
+</table>
+
 
 @else
   PAGE ERROR
