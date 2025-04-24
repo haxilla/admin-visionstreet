@@ -11,7 +11,7 @@ $tables = \DB::select("
 ", [$schema]);
 
 $data=[
-    'sqltype'   => 'tables',
+    'sqltype'   => 'table',
     'schema'    => $schema,
     'tables'    => $tables, 
 ];
