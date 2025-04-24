@@ -32,7 +32,7 @@
         <li class="text-gray-800 font-mono text-sm">
             <a data-isapp=1
             data-action="handle"
-            data-value="schema:{{$data['schema']}};table:{{$table}}"
+            data-value="schema:{{$data['schema']}};table:{{$table->table_name}}"
             data-task="table.show"
             data-renderfrom="admin.tools.postgres"
             data-renderto="pageswap"
