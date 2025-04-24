@@ -1,7 +1,7 @@
 @include('globals.doctype.admin')
 
 <body data-section="postgres" 
-class="linkcheck relative bg-white min-h-screen font-sans text-gray-800" x-data="{
+class="linkcheck relative bg-white min-h-screen font-sans text-gray-800 postgres" x-data="{
 collapsed: false,
 dropdownOpen: false,
 activeDropdown: null,
@@ -47,7 +47,17 @@ isOpen(route) { return this.activeDropdown === route; }}">
             </ul>
           </div>
         @elseif($data['sqltype']=='table')
-          TABLE HERE
+          <div class="tables">
+            <h2 class="text-xl font-semibold mb-4">Tables in {{$schema}}</h2>
+
+            <ul class="list-disc pl-6">
+              @forelse ($tables as $table)
+                <li class="text-gray-800 font-mono text-sm">{{ $table->table_name }}</li>
+              @empty
+                <li class="text-red-500">No tables found in this schema.</li>
+              @endforelse
+            </ul>
+          </div>
         @elseif($data['sqltype']=='column')
           COLUMN HERE
         @else

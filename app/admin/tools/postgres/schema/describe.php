@@ -11,11 +11,9 @@ $tables = \DB::select("
 ", [$schema]);
 
 $data=[
-    'sqltype'   => 'schema',
+    'sqltype'   => 'tables',
     'schema'    => $schema,
     'tables'    => $tables, 
 ];
 
 $renderFrom='admin.tools.postgres.index';
-
-dd($tables);
