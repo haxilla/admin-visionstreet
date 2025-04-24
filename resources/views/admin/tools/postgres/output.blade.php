@@ -117,7 +117,7 @@
 
               <button type="submit"
               class="text-xs px-4 py-1.5 text-white 
-              bg-gray-600 hover:bg-gray-700 rounded transition"
+              bg-gray-200 hover:bg-gray-400 rounded transition"
               title="Add Column">
                   Add Column
               </button>
