@@ -56,13 +56,13 @@
 
   <div class="mb-4">
       <nav class="text-sm text-gray-600">
-          <a href="#" class="text-blue-600 hover:underline">{{ $schema }}</a>
+          <a href="#" class="text-blue-600 hover:underline">{{ $data['schema'] }}</a>
           <span class="mx-2">&raquo;</span>
-          <a href="#" class="text-blue-600 hover:underline">{{ $table }}</a>
+          <a href="#" class="text-blue-600 hover:underline">{{ $data['table'] }}</a>
       </nav>
   </div>
 
-  <h4 class="text-lg font-semibold mb-2">Columns in <code>{{ $table }}</code></h4>
+  <h4 class="text-lg font-semibold mb-2">Columns in {{ $data['table'] }}</h4>
 
   <table class="w-full border border-collapse text-sm">
       <thead class="bg-gray-100">
@@ -95,8 +95,7 @@
          data-renderas="html"
          data-renderto="pageswap"
          data-schema="{{ $schema }}"
-         data-table="{{ $table }}"
-      >
+         data-table="{{ $table }}">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
           </svg>
@@ -110,8 +109,7 @@
          data-renderas="html"
          data-renderto="pageswap"
          data-schema="{{ $schema }}"
-         data-table="{{ $table }}"
-      >
+         data-table="{{ $table }}">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
