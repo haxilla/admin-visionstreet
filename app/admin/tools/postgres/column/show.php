@@ -14,4 +14,4 @@ $data=[
     'table'		=> $table,
     'columns'	=> $columns,];
 
-$renderFrom="admin.tools.postgres.index";
+$renderFrom="admin.tools.postgres.output";

@@ -29,7 +29,7 @@
 
   <div class="tables">
     <h2 class="text-xl font-semibold mb-4">
-        Tables in schema: {{strtoupper($data['schema'])}} 
+        Tables in schema: {{$data['schema']}} 
     </h2>
 
     <ul class="list-disc pl-6">
@@ -62,8 +62,6 @@
       </nav>
   </div>
 
-  <h4 class="text-lg font-semibold mb-2">Columns in <code>{{ $data['table'] }}</code></h4>
-
   <table class="w-full border border-collapse text-sm">
       <thead class="bg-gray-100">
           <tr>
@@ -72,18 +70,18 @@
           </tr>
       </thead>
       <tbody>
-          @forelse ($data['columns'] as $col)
-              <tr>
-                  <td class="border px-3 py-2">{{ $col->column_name }}</td>
-                  <td class="border px-3 py-2">{{ $col->data_type }}</td>
-              </tr>
-          @empty
-              <tr>
-                  <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
-                      No columns found.
-                  </td>
-              </tr>
-          @endforelse
+      @forelse ($data['columns'] as $col)
+        <tr>
+            <td class="border px-3 py-2">{{ $col->column_name }}</td>
+            <td class="border px-3 py-2">{{ $col->data_type }}</td>
+        </tr>
+      @empty
+        <tr>
+            <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
+                No columns found.
+            </td>
+        </tr>
+      @endforelse
       </tbody>
   </table>
 
