@@ -17,3 +17,5 @@ $data=[
 ];
 
 $renderFrom='admin.tools.postgres.index';
+
+dd($tables);
