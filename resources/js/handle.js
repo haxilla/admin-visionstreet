@@ -9,7 +9,6 @@ if (document.body.classList.contains('linkcheck')) {
 
   document.addEventListener('click', (e) => {
     
-    alert('hi');
     if (e.target.dataset.action !== 'handle') return;
 
     const el = e.target;
@@ -24,6 +23,8 @@ if (document.body.classList.contains('linkcheck')) {
 
     const renderAs=attr.renderas;
     const renderTo=attr.renderto;
+
+    console.log('renderAs:',renderAs);
 
     if (renderAs === 'html') {
       renderHTML(endpoint, postData, renderTo, csrf);
