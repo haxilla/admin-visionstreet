@@ -29,7 +29,17 @@
 
     <ul class="list-disc pl-6">
       @forelse ($data['tables'] as $table)
-        <li class="text-gray-800 font-mono text-sm">{{ $table->table_name }}</li>
+        <li class="text-gray-800 font-mono text-sm">
+            <a data-isapp=1
+            data-action="handle"
+            data-value="schema:{{$schema->schema_name}};table:{{$table->table_name}}"
+            data-task="table.show"
+            data-renderfrom="admin.tools.postgres"
+            data-renderto="pageswap"
+            data-renderas="html">
+              {{ $table->table_name }}
+            </a>
+        </li>
       @empty
         <li class="text-red-500">No tables found in this schema.</li>
       @endforelse
