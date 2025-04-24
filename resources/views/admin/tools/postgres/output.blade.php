@@ -72,18 +72,36 @@
           </tr>
       </thead>
       <tbody>
-          @forelse ($data['columns'] as $col)
-              <tr>
-                  <td class="border px-3 py-2">{{ $col->column_name }}</td>
-                  <td class="border px-3 py-2">{{ $col->data_type }}</td>
-              </tr>
-          @empty
-              <tr>
-                  <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
-                      No columns found.
-                  </td>
-              </tr>
-          @endforelse
+        @forelse ($data['columns'] as $col)
+          <tr>
+              <td class="border px-3 py-2">{{ $col->column_name }}</td>
+              <td class="border px-3 py-2">{{ $col->data_type }}</td>
+          </tr>
+        @empty
+          <tr>
+            <td colspan="2" class="border px-3 
+            py-2 text-center text-gray-500">
+                No columns found.
+            </td>
+          </tr>
+        @endforelse
+          <tr>
+            <td colspan="2" class="border px-3 py-2 text-center">
+                <a href="#"
+                   class="inline-flex items-center justify-center w-6 h-6 rounded-full border border-gray-300 text-gray-500 hover:text-blue-600 hover:border-blue-400 transition"
+                   title="Add Column"
+                   data-action="handle"
+                   data-renderfrom="admin.tools.postgres.tables.addcolumn"
+                   data-renderas="html"
+                   data-renderto="pageswap"
+                   data-schema="{{ $data['schema'] }}"
+                   data-table="{{ $data['table'] }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                </a>
+            </td>
+          </tr>
       </tbody>
   </table>
 
