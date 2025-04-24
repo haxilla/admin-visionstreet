@@ -30,10 +30,11 @@ isOpen(route) { return this.activeDropdown === route; }}">
                 <li class="text-gray-800">
                   <a href="#"
                   data-action="handle"
-                  data-value=""
-                  data-renderfrom=""
-                  data-renderto=""
-                  data-renderas="">
+                  data-value="schema:{{$schema}};table:{{$table}}"
+                  data-task="table.show"
+                  data-renderfrom="admin.tools.postgres"
+                  data-renderto="pageswap"
+                  data-renderas="html">
                     <span class="font-mono text-sm">
                       {{ $schema->schema_name }}
                     </span>
