@@ -9,8 +9,9 @@ $columns = \DB::select("
 ", [$schema, $table]);
 
 $data=[
-    'sqltype'   =>'table',
-    'schemas'   => $schemas,
-];
+    'sqltype'   => 'table',
+    'schema'   	=> $schema,
+    'table'		=> $table,
+    'columns'	=> $columns,];
 
 $renderFrom="admin.tools.postgres.index";
