@@ -36,14 +36,11 @@ class AppServiceProvider extends ServiceProvider
 
             if (is_array($proto)) {
                 $proto = $proto[0];}
-
             if ($proto === 'https') {
                 URL::forceScheme('https');
 
             } else {
-
-                URL::forceScheme('https');
-                //abort(403, 'Secure connection required.');
+                abort(403, 'Secure connection required.');
             }
 
         }
