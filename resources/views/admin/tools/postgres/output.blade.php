@@ -92,8 +92,8 @@
     @forelse ($data['columns'] as $col)
       <tr data-column="{{ $col->column_name }}">
 <td class="border border-gray-300 px-3 py-2">
-  <div class="w-full flex justify-between items-center pl-1">
-    {{ $col->column_name }}
+  <div class="flex items-center justify-between w-full gap-2">
+    <span class="truncate">{{ $col->column_name }}</span>
 
     <div x-data="{ open: false }" class="relative inline-block text-left">
       <button type="button"
@@ -133,6 +133,7 @@
     </div>
   </div>
 </td>
+
 
         <td class="border px-3 py-2">{{ $col->data_type }}</td>
       </tr>
