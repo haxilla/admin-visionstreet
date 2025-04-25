@@ -91,10 +91,11 @@
         <th class="border px-3 py-2 text-left">Data Type</th>
       </tr>
     </thead>
-    <tbody id="column-sortable" x-init="$nextTick(() => console.log('ready'))"
->
+    <tbody id="column-sortable"
+    x-data
+    x-init="$nextTick(() => window.initSortableColumns($el))">
       @forelse ($data['columns'] as $col)
-        <tr data-column="{{ $col->column_name }}">
+        <tr data-column="{{ $col->column_name }}" class="drag-handle">
           <td class="border border-gray-300 px-3 py-2">
             <div class="flex items-center gap-2">
               <a href="#"

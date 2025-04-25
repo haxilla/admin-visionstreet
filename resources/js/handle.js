@@ -14,7 +14,6 @@ if (typeof window !== 'undefined') {
   };
 }
 
-
 if (document.body.classList.contains('linkcheck')) {
 
   const handlers = {
