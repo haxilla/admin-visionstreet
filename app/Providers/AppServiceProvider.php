@@ -35,14 +35,11 @@ class AppServiceProvider extends ServiceProvider
             $proto = $request->header('x-forwarded-proto');
 
             if (is_array($proto)) {
-                $proto = $proto[0];
-            }
+                $proto = $proto[0];}
 
-            if (is_array($proto)) {
-                $proto = $proto[0]; // grab the first value if array
-            }
             if ($proto === 'https') {
                 URL::forceScheme('https');
+
             } else {
                 Log::warning('FORCE_HTTPS is enabled, but request is not marked secure.', [
                     'url' => request()->fullUrl(),
