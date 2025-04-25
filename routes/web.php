@@ -61,3 +61,11 @@ Route::get('/debug-proto', function () {
         'headers' => request()->headers->all(),
     ];
 });
+
+Route::get('/check-env', function () {
+    return [
+        'env_raw' => env('FORCE_HTTPS'),
+        'env_bool' => filter_var(env('FORCE_HTTPS'), FILTER_VALIDATE_BOOLEAN),
+        'config' => config('app.force_https'),
+    ];
+});
