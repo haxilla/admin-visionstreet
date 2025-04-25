@@ -29,8 +29,6 @@ class AppServiceProvider extends ServiceProvider
             !app()->runningInConsole()
         ) {
 
-            dd("SANITY CHECK");
-            
             $proto = request()->header('x-forwarded-proto');
 
             if ($proto === 'https') {
