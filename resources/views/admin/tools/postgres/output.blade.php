@@ -147,21 +147,21 @@
               </a>
               <span class="font-mono text-sm">{{ $table->table_name }}</span>
             </div>
-            <a href="#"
-               title="Delete"
-               class="text-xs text-gray-400 hover:text-red-500"
-               data-action="handle"
-               data-renderfrom="admin.tools.postgres.tables.delete"
-               data-renderas="html"
-               data-renderto="pageswap"
-               data-schema="{{ $data['schema'] }}"
-               data-table="{{ $table->table_name }}">
-              &#x2715;
-            </a>
           </div>
         </td>
         <td class="border border-gray-300 px-3 py-2">
-          {{ $table->row_estimate ?? '—' }}
+          {{ $table->estimated_rows ?? '—' }}
+          <a href="#"
+          title="Delete"
+          class="text-xs text-gray-400 hover:text-red-500"
+          data-action="handle"
+          data-renderfrom="admin.tools.postgres.tables.delete"
+          data-renderas="html"
+          data-renderto="pageswap"
+          data-schema="{{ $data['schema'] }}"
+          data-table="{{ $table->table_name }}">
+            &#x2715;
+          </a>
         </td>
       </tr>
     @empty
