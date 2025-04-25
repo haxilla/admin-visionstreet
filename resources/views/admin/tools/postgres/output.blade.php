@@ -6,6 +6,78 @@
     <ul class="space-y-2 pl-4 list-disc">
       @forelse ($data['schemas'] as $schema)
         <li class="text-gray-800">
+          <div class="flex items-center justify-between">
+            <a href="#"
+               data-isapp=1
+               data-action="handle"
+               data-value="schema:{{ $schema->schema_name }}"
+               data-task="schema.describe"
+               data-renderfrom="admin.tools.postgres"
+               data-renderto="pageswap"
+               data-renderas="html"
+               class="text-gray-800 hover:underline font-mono text-sm">
+              {{ $schema->schema_name }}
+            </a>
+
+            <div class="flex gap-2 text-xs">
+              <a href="#"
+                 title="Rename"
+                 class="text-blue-500 hover:text-blue-700"
+                 data-action="handle"
+                 data-renderfrom="admin.tools.postgres.schemas.rename"
+                 data-renderas="html"
+                 data-renderto="pageswap"
+                 data-isapp="1"
+                 data-schema="{{ $schema->schema_name }}">
+                ✏️
+              </a>
+
+              <a href="#"
+                 title="Delete"
+                 class="text-red-400 hover:text-red-600"
+                 data-action="handle"
+                 data-renderfrom="admin.tools.postgres.schemas.delete"
+                 data-renderas="html"
+                 data-renderto="pageswap"
+                 data-isapp="1"
+                 data-schema="{{ $schema->schema_name }}">
+                &#x2715;
+              </a>
+            </div>
+          </div>
+        </li>
+      @empty
+        <li class="text-red-500">No schemas found.</li>
+      @endforelse
+
+      <li class="flex items-center gap-2 pt-4">
+        <form method="POST"
+              data-action="handle"
+              data-renderfrom="admin.tools.postgres.schemas.create"
+              data-renderas="json"
+              data-renderto="noop"
+              data-isapp="1">
+          @csrf
+          <input type="text" name="schema_name"
+                 placeholder="New schema name"
+                 class="text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+
+          <button type="submit"
+                  class="text-xs px-3 py-1.5 text-white bg-gray-500 hover:bg-gray-600 rounded transition">
+            Create
+          </button>
+        </form>
+      </li>
+    </ul>
+  </div>
+
+  <!--
+  <div class="schemas">
+    <h2 class="text-xl font-semibold mb-4">Available Schemas</h2>
+
+    <ul class="space-y-2 pl-4 list-disc">
+      @forelse ($data['schemas'] as $schema)
+        <li class="text-gray-800">
           <a href="#"
           data-isapp=1
           data-action="handle"
@@ -24,6 +96,7 @@
       @endforelse
     </ul>
   </div>
+  -->
 
 @elseif($data['sqltype']=='table')
 
