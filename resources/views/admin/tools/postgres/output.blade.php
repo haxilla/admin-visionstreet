@@ -91,10 +91,7 @@
         <th class="border px-3 py-2 text-left">Data Type</th>
       </tr>
     </thead>
-    <tbody id="column-sortable"
-      x-data
-      x-init="initSortableColumns($el)"
->
+    <tbody id="column-sortable">
       @forelse ($data['columns'] as $col)
         <tr data-column="{{ $col->column_name }}">
           <td class="border border-gray-300 px-3 py-2">
@@ -190,21 +187,6 @@
     </tbody>
   </table>
 
-<script>
-  window.initSortableColumns = (el) => {
-    import('sortablejs').then(({ default: Sortable }) => {
-      Sortable.create(el, {
-        animation: 150,
-        handle: '.drag-handle',
-        ghostClass: 'bg-yellow-100',
-        onEnd: (evt) => {
-          const newOrder = [...el.children].map(row => row.dataset.column);
-          console.log('New column order:', newOrder);
-        }
-      });
-    });
-  }
-</script>
 @else
   PAGE ERROR
 @endif
