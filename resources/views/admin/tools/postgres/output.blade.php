@@ -1,45 +1,37 @@
 @if($data['sqltype']=='schema')
 
-<div class="schemas max-w-3xl mx-auto">
-  <h2 class="text-xl font-semibold mb-4">Available Schemas</h2>
+<h2 class="text-lg font-semibold mb-4">Available Schemas</h2>
 
-  <table class="w-full border border-collapse text-sm">
-    <thead class="bg-gray-100">
-      <tr>
-        <th class="border px-3 py-2 text-left">Schema Name</th>
-        <th class="border px-3 py-2 text-left">Owner</th>
-      </tr>
-    </thead>
-    <tbody>
-      @forelse ($data['schemas'] as $schema)
-        <tr data-schema="{{ $schema->schema_name }}">
-          <td class="border px-3 py-2">
-            <div class="flex items-center justify-between gap-2">
+    <table class="w-full border border-collapse text-sm">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="border px-3 py-2 text-left">Schema Name</th>
+          <th class="border px-3 py-2 text-right w-24">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @forelse ($data['schemas'] as $schema)
+          @php
+            $name = $schema->schema_name;
+          @endphp
+          @if (!in_array($name, ['pg_catalog', 'pg_toast', 'information_schema']))
+          <tr>
+            <td class="border border-gray-300 px-3 py-2">
               <div class="flex items-center gap-2">
                 <a href="#"
-                  class="text-blue-500 hover:text-blue-700"
-                  data-action="handle"
-                  data-renderfrom="admin.tools.postgres.schemas.rename"
-                  data-renderas="html"
-                  data-renderto="pageswap"
-                  data-isapp="1"
-                  data-schema="{{ $schema->schema_name }}">
+                   title="Rename"
+                   class="text-gray-500 hover:text-blue-600"
+                   data-action="handle"
+                   data-renderfrom="admin.tools.postgres.schemas.rename"
+                   data-renderas="html"
+                   data-renderto="pageswap"
+                   data-schema="{{ $name }}">
                   ✏️
                 </a>
-                <a href="#"
-                data-isapp=1
-                data-action="handle"
-                data-value="schema:{{$schema->schema_name}}"
-                data-task="schema.describe"
-                data-renderfrom="admin.tools.postgres"
-                data-renderto="pageswap"
-                data-renderas="html">
-                  <span class="font-mono text-sm">
-                    {{ $schema->schema_name }}
-                  </span>
-                </a>
+                <span class="font-mono text-sm truncate">{{ $name }}</span>
               </div>
-
+            </td>
+            <td class="border border-gray-300 px-3 py-2 text-right">
               <a href="#"
                  title="Delete"
                  class="text-xs text-gray-400 hover:text-red-500"
@@ -47,48 +39,43 @@
                  data-renderfrom="admin.tools.postgres.schemas.delete"
                  data-renderas="html"
                  data-renderto="pageswap"
-                 data-isapp="1"
-                 data-schema="{{ $schema->schema_name }}">
+                 data-schema="{{ $name }}">
                 &#x2715;
               </a>
-            </div>
-          </td>
-          <td class="border px-3 py-2 text-gray-600">
-            {{ $schema->schema_owner ?? '—' }}
-          </td>
-        </tr>
-      @empty
-        <tr>
-          <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
-            No schemas found.
-          </td>
-        </tr>
-      @endforelse
+            </td>
+          </tr>
+          @endif
+        @empty
+          <tr>
+            <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
+              No schemas found.
+            </td>
+          </tr>
+        @endforelse
 
-      <tr>
         <form method="POST"
               data-action="handle"
               data-renderfrom="admin.tools.postgres.schemas.create"
-              data-renderas="json"
-              data-renderto="noop"
-              data-isapp="1">
+              data-renderas="html"
+              data-renderto="pageswap">
           @csrf
-          <td class="border px-2 py-1">
-            <input type="text" name="schema_name"
-                   placeholder="New schema name"
-                   class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
-          </td>
-          <td class="border px-2 py-1">
-            <button type="submit"
-                    class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-500 hover:bg-gray-600 rounded transition">
-              Create
-            </button>
-          </td>
+          <tr>
+            <td class="border border-gray-300 px-2 py-1">
+              <input type="text" name="schema_name"
+                     placeholder="New schema name"
+                     class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+            </td>
+            <td class="border border-gray-300 px-2 py-1 text-right">
+              <button type="submit"
+                      class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition"
+                      title="Create Schema">
+                Create
+              </button>
+            </td>
+          </tr>
         </form>
-      </tr>
-    </tbody>
-  </table>
-</div>
+      </tbody>
+    </table>
 
 
   <!--
