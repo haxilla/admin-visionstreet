@@ -24,10 +24,13 @@ class AppServiceProvider extends ServiceProvider
     {
 
         if (
-            (env('FORCE_HTTPS') === true || env('FORCE_HTTPS') === 'true') &&
-            app()->environment('production')&&
+            ( env('FORCE_HTTPS') === 'true' &&
+            app()->environment('production') &&
             !app()->runningInConsole()
         ) {
+
+            dd("SANITY CHECK");
+            
             $proto = request()->header('x-forwarded-proto');
 
             if ($proto === 'https') {
