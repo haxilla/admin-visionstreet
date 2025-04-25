@@ -23,11 +23,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
-        if (
-            ( env('FORCE_HTTPS') === 'true' &&
+        if ( env('FORCE_HTTPS') === 'true' &&
             app()->environment('production') &&
-            !app()->runningInConsole()
-        ) {
+            !app()->runningInConsole()){
 
             $proto = request()->header('x-forwarded-proto');
 
