@@ -17,17 +17,27 @@
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2">
                 <a href="#"
-                   title="Rename"
-                   class="text-blue-500 hover:text-blue-700"
-                   data-action="handle"
-                   data-renderfrom="admin.tools.postgres.schemas.rename"
-                   data-renderas="html"
-                   data-renderto="pageswap"
-                   data-isapp="1"
-                   data-schema="{{ $schema->schema_name }}">
+                  class="text-blue-500 hover:text-blue-700"
+                  data-action="handle"
+                  data-renderfrom="admin.tools.postgres.schemas.rename"
+                  data-renderas="html"
+                  data-renderto="pageswap"
+                  data-isapp="1"
+                  data-schema="{{ $schema->schema_name }}">
                   ✏️
                 </a>
-                <span class="font-mono truncate">{{ $schema->schema_name }}</span>
+                <a href="#"
+                data-isapp=1
+                data-action="handle"
+                data-value="schema:{{$schema->schema_name}}"
+                data-task="schema.describe"
+                data-renderfrom="admin.tools.postgres"
+                data-renderto="pageswap"
+                data-renderas="html">
+                  <span class="font-mono text-sm">
+                    {{ $schema->schema_name }}
+                  </span>
+                </a>
               </div>
 
               <a href="#"
