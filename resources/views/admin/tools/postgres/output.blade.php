@@ -158,14 +158,14 @@
     data-table="{{ $data['table'] }}">
       @csrf
       <tr>
-        <td class="border px-2 py-1">
+        <td class="border border-gray-300 px-2 py-1">
           <input type="text" name="column_name"
           placeholder="New column name"
           class="w-full text-sm px-2 py-1 border 
           border-gray-300 rounded focus:outline-none 
           focus:ring focus:ring-blue-200" />
         </td>
-        <td class="border px-2 py-1">
+        <td class="border border-gray-300 px-2 py-1">
           <div class="flex items-center gap-2">
             <select name="data_type"
             class="text-sm px-2 py-1 w-40 border 
