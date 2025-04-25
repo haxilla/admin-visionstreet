@@ -173,33 +173,34 @@
     @endforelse
 
     <form method="POST"
-          data-action="handle"
-          data-renderfrom="admin.tools.postgres.tables.create"
-          data-renderas="html"
-          data-renderto="pageswap"
-          data-schema="{{ $data['schema'] }}">
+    data-action="handle"
+    data-renderfrom="admin.tools.postgres.tables.create"
+    data-renderas="html"
+    data-renderto="pageswap"
+    data-schema="{{ $data['schema'] }}">
       @csrf
       <tr>
         <td class="border border-gray-300 px-2 py-1">
-          <input type="text" name="table_name"
-                 placeholder="New table name"
-                 class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+ <div class="flex items-center gap-2">
+    <input type="text" name="table_name"
+           placeholder="New table name"
+           class="flex-1 text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+    <button type="submit"
+            class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition"
+            title="Create Table">
+      Create
+    </button>
+  </div>
         </td>
         <td class="border border-gray-300 px-2 py-1"></td>
       </tr>
       <tr>
         <td colspan="2" class="border border-gray-300 px-2 py-1 text-right">
-          <button type="submit"
-                  class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition"
-                  title="Create Table">
-            Create
-          </button>
         </td>
       </tr>
     </form>
   </tbody>
 </table>
-
 
 
 
