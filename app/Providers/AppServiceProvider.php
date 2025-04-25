@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
+        if (config('app.env') === 'production') {
+        URL::forceScheme('https');}
+
+        /*
         if ( env('FORCE_HTTPS') === 'true' &&
             app()->environment('production') &&
             !app()->runningInConsole()){
@@ -39,7 +43,11 @@ class AppServiceProvider extends ServiceProvider
                 ]);
                 abort(403, 'Secure connection required.');
             }
+
         }
+        */
+
+
 
         // ✅ Register the alias here (once, globally available)
         Route::aliasMiddleware('role', RequireRole::class);
