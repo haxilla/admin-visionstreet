@@ -125,7 +125,7 @@
   <thead class="bg-gray-100">
     <tr>
       <th class="border px-3 py-2 text-left">Table Name</th>
-      <th class="border px-3 py-2 text-right w-12">Column Count</th>
+      <th class="border px-3 py-2 text-left w-40">Column Count</th>
     </tr>
   </thead>
   <tbody>
@@ -147,19 +147,21 @@
             <span class="font-mono text-sm">{{ $table->table_name }}</span>
           </div>
         </td>
-        <td class="border border-gray-300 px-3 py-2 text-right">
-          <span class="inline-block w-8">{{ $table->column_count ?? '—' }}</span>
-          <a href="#"
-             title="Delete"
-             class="text-xs text-gray-400 hover:text-red-500"
-             data-action="handle"
-             data-renderfrom="admin.tools.postgres.tables.delete"
-             data-renderas="html"
-             data-renderto="pageswap"
-             data-schema="{{ $data['schema'] }}"
-             data-table="{{ $table->table_name }}">
-            &#x2715;
-          </a>
+        <td class="border border-gray-300 px-3 py-2">
+          <div class="flex items-center justify-between">
+            <span>{{ $table->column_count ?? '—' }}</span>
+            <a href="#"
+               title="Delete"
+               class="text-xs text-gray-400 hover:text-red-500"
+               data-action="handle"
+               data-renderfrom="admin.tools.postgres.tables.delete"
+               data-renderas="html"
+               data-renderto="pageswap"
+               data-schema="{{ $data['schema'] }}"
+               data-table="{{ $table->table_name }}">
+              &#x2715;
+            </a>
+          </div>
         </td>
       </tr>
     @empty
@@ -170,7 +172,6 @@
       </tr>
     @endforelse
 
-    {{-- Create new table --}}
     <form method="POST"
           data-action="handle"
           data-renderfrom="admin.tools.postgres.tables.create"
@@ -180,22 +181,25 @@
       @csrf
       <tr>
         <td class="border border-gray-300 px-2 py-1">
-          <div class="flex items-center gap-2">
-            <input type="text" name="table_name"
-                   placeholder="New table name"
-                   class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
-            <button type="submit"
-                    class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition"
-                    title="Create Table">
-              Create
-            </button>
-          </div>
+          <input type="text" name="table_name"
+                 placeholder="New table name"
+                 class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
         </td>
         <td class="border border-gray-300 px-2 py-1"></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="border border-gray-300 px-2 py-1 text-right">
+          <button type="submit"
+                  class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition"
+                  title="Create Table">
+            Create
+          </button>
+        </td>
       </tr>
     </form>
   </tbody>
 </table>
+
 
 
 
