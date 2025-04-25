@@ -40,10 +40,16 @@ class AppServiceProvider extends ServiceProvider
                 URL::forceScheme('https');
 
             } else {
-                abort(403, 'Secure connection required.');
-            }
+                Log::warning('Non-HTTPS access blocked', [
+                    'url' => $request->fullUrl(),
+                    'ip' => $request->ip(),
+                    'proto_header' => $proto,
+                    'user_agent' => $request->header('user-agent'),
+                ]);
 
-        }
+                abort(403, 'Secure connection required.');
+                
+            };};
 
 
 
