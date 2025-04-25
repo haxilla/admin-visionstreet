@@ -15,7 +15,7 @@ if (typeof window !== 'undefined') {
 }
 
 window.addEventListener('popstate', function () {
-  location.reload();
+  alert('popstate!');
 });
 
 if (document.body.classList.contains('linkcheck')) {
