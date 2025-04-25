@@ -91,79 +91,87 @@
   <tbody id="column-sortable">
     @forelse ($data['columns'] as $col)
       <tr data-column="{{ $col->column_name }}">
-<td class="border border-gray-300 px-3 py-2">
-  <div class="flex items-center justify-between w-full gap-2">
-    <span class="truncate">{{ $col->column_name }}</span>
+        <td class="border border-gray-300 px-3 py-2">
+          <div class="flex items-center justify-between 
+          w-full gap-2">
+            <span class="truncate">
+              {{ $col->column_name }}
+            </span>
+            <div x-data="{ open: false }" class="relative 
+            inline-block text-left">
+              <button type="button"
+                @click="open = !open"
+                @click.outside="open = false"
+                class="text-gray-400 hover:text-gray-600 focus:outline-none">
+                &#x22EE;
+              </button>
 
-    <div x-data="{ open: false }" class="relative inline-block text-left">
-      <button type="button"
-              @click="open = !open"
-              @click.outside="open = false"
-              class="text-gray-400 hover:text-gray-600 focus:outline-none">
-        &#x22EE;
-      </button>
-
-      <div x-show="open"
-           x-transition
-           class="absolute right-0 mt-1 w-32 bg-white border border-gray-200 rounded shadow-lg text-xs z-10"
-           style="display: none;">
-        <a href="#"
-           class="block px-3 py-2 hover:bg-gray-100 text-blue-600"
-           data-action="handle"
-           data-renderfrom="admin.tools.postgres.columns.rename"
-           data-renderas="html"
-           data-renderto="pageswap"
-           data-schema="{{ $data['schema'] }}"
-           data-table="{{ $data['table'] }}"
-           data-column="{{ $col->column_name }}">
-          Rename
-        </a>
-        <a href="#"
-           class="block px-3 py-2 hover:bg-gray-100 text-red-500"
-           data-action="handle"
-           data-renderfrom="admin.tools.postgres.columns.delete"
-           data-renderas="html"
-           data-renderto="pageswap"
-           data-schema="{{ $data['schema'] }}"
-           data-table="{{ $data['table'] }}"
-           data-column="{{ $col->column_name }}">
-          Delete
-        </a>
-      </div>
-    </div>
-  </div>
-</td>
-
-
-        <td class="border px-3 py-2">{{ $col->data_type }}</td>
+              <div x-show="open"
+              x-transition
+              class="absolute right-0 mt-1 w-32 bg-white border 
+              border-gray-200 rounded shadow-lg text-xs z-10"
+              style="display: none;">
+                <a href="#"
+                   class="block px-3 py-2 hover:bg-gray-100 text-blue-600"
+                   data-action="handle"
+                   data-renderfrom="admin.tools.postgres.columns.rename"
+                   data-renderas="html"
+                   data-renderto="pageswap"
+                   data-schema="{{ $data['schema'] }}"
+                   data-table="{{ $data['table'] }}"
+                   data-column="{{ $col->column_name }}">
+                  Rename
+                </a>
+                <a href="#"
+                   class="block px-3 py-2 hover:bg-gray-100 text-red-500"
+                   data-action="handle"
+                   data-renderfrom="admin.tools.postgres.columns.delete"
+                   data-renderas="html"
+                   data-renderto="pageswap"
+                   data-schema="{{ $data['schema'] }}"
+                   data-table="{{ $data['table'] }}"
+                   data-column="{{ $col->column_name }}">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="border px-3 py-2">
+          {{ $col->data_type }}
+        </td>
       </tr>
-
     @empty
       <tr>
-        <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
+        <td colspan="2" class="border px-3 py-2 
+        text-center text-gray-500">
           No columns found.
         </td>
       </tr>
     @endforelse
 
     <form method="POST"
-          data-action="handle"
-          data-renderfrom="admin.tools.postgres.tables.createcolumn"
-          data-renderas="html"
-          data-renderto="pageswap"
-          data-schema="{{ $data['schema'] }}"
-          data-table="{{ $data['table'] }}">
+    data-action="handle"
+    data-renderfrom="admin.tools.postgres.tables.createcolumn"
+    data-renderas="html"
+    data-renderto="pageswap"
+    data-schema="{{ $data['schema'] }}"
+    data-table="{{ $data['table'] }}">
       @csrf
       <tr>
         <td class="border px-2 py-1">
           <input type="text" name="column_name"
-                 placeholder="New column name"
-                 class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+          placeholder="New column name"
+          class="w-full text-sm px-2 py-1 border 
+          border-gray-300 rounded focus:outline-none 
+          focus:ring focus:ring-blue-200" />
         </td>
         <td class="border px-2 py-1">
           <div class="flex items-center gap-2">
             <select name="data_type"
-                    class="text-sm px-2 py-1 w-40 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200">
+            class="text-sm px-2 py-1 w-40 border 
+            border-gray-300 rounded focus:outline-none 
+            focus:ring focus:ring-blue-200">
               <option value="">Type</option>
               <option value="text">text</option>
               <option value="varchar(255)">varchar(255)</option>
