@@ -125,44 +125,40 @@
   <thead class="bg-gray-100">
     <tr>
       <th class="border px-3 py-2 text-left">Table Name</th>
-      <th class="border px-3 py-2 text-left">Info</th>
+      <th class="border px-3 py-2 text-right w-12">Actions</th>
     </tr>
   </thead>
   <tbody>
     @forelse ($data['tables'] as $table)
       <tr>
         <td class="border border-gray-300 px-3 py-2">
-          <div class="flex items-center justify-between gap-2 w-full">
-            <div class="flex items-center gap-2">
-              <a href="#"
-                 title="Rename"
-                 class="text-gray-500 hover:text-blue-600"
-                 data-action="handle"
-                 data-renderfrom="admin.tools.postgres.tables.rename"
-                 data-renderas="html"
-                 data-renderto="pageswap"
-                 data-schema="{{ $data['schema'] }}"
-                 data-table="{{ $table->table_name }}">
-                ✏️
-              </a>
-              <span class="font-mono text-sm">{{ $table->table_name }}</span>
-            </div>
+          <div class="flex items-center gap-2">
             <a href="#"
-               title="Delete"
-               class="text-xs text-gray-400 hover:text-red-500"
+               title="Rename"
+               class="text-gray-500 hover:text-blue-600"
                data-action="handle"
-               data-renderfrom="admin.tools.postgres.tables.delete"
+               data-renderfrom="admin.tools.postgres.tables.rename"
                data-renderas="html"
                data-renderto="pageswap"
                data-schema="{{ $data['schema'] }}"
                data-table="{{ $table->table_name }}">
-              &#x2715;
+              ✏️
             </a>
+            <span class="font-mono text-sm">{{ $table->table_name }}</span>
           </div>
         </td>
-        <td class="border border-gray-300 px-3 py-2">
-          {{-- Placeholder for future info like table size or creation date --}}
-          —
+        <td class="border border-gray-300 px-3 py-2 text-right">
+          <a href="#"
+             title="Delete"
+             class="text-xs text-gray-400 hover:text-red-500"
+             data-action="handle"
+             data-renderfrom="admin.tools.postgres.tables.delete"
+             data-renderas="html"
+             data-renderto="pageswap"
+             data-schema="{{ $data['schema'] }}"
+             data-table="{{ $table->table_name }}">
+            &#x2715;
+          </a>
         </td>
       </tr>
     @empty
@@ -173,7 +169,7 @@
       </tr>
     @endforelse
 
-    {{-- Create new table row --}}
+    {{-- Create new table --}}
     <form method="POST"
           data-action="handle"
           data-renderfrom="admin.tools.postgres.tables.create"
@@ -182,7 +178,7 @@
           data-schema="{{ $data['schema'] }}">
       @csrf
       <tr>
-        <td class="border border-gray-300 px-2 py-1" colspan="2">
+        <td class="border border-gray-300 px-2 py-1">
           <div class="flex items-center gap-2">
             <input type="text" name="table_name"
                    placeholder="New table name"
@@ -194,6 +190,7 @@
             </button>
           </div>
         </td>
+        <td class="border border-gray-300 px-2 py-1"></td>
       </tr>
     </form>
   </tbody>
