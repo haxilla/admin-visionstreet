@@ -81,7 +81,7 @@
   Columns in <code>{{ $data['table'] }}</code>
 </h4>
 
-<table class="w-full border border-collapse text-sm">
+<table class="w-full border-collapse text-sm">
   <thead class="bg-gray-100">
     <tr>
       <th class="border px-3 py-2 text-left">Column Name</th>
