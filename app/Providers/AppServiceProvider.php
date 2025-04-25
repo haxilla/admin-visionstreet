@@ -34,9 +34,9 @@ class AppServiceProvider extends ServiceProvider
 
             $proto = $request->header('x-forwarded-proto');
 
-         if (is_array($proto)) {
-            $proto = $proto[0];
-        }
+            if (is_array($proto)) {
+                $proto = $proto[0];
+            }
 
             if (is_array($proto)) {
                 $proto = $proto[0]; // grab the first value if array
@@ -49,7 +49,9 @@ class AppServiceProvider extends ServiceProvider
                     'ip' => request()->ip(),
                     'proto_header' => $proto,
                 ]);
-                abort(403, 'Secure connection required.');
+
+                URL::forceScheme('https');
+                //abort(403, 'Secure connection required.');
             }
 
         }
