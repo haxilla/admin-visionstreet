@@ -6,7 +6,7 @@
       <thead class="bg-gray-100">
         <tr>
           <th class="border px-3 py-2 text-left w-1/2">Schema Name</th>
-          <th class="border px-3 py-2 text-left">Info</th>
+          <th class="border px-3 py-2 text-left">Owner</th>
         </tr>
       </thead>
       <tbody>
@@ -41,7 +41,7 @@
             <td class="border border-gray-300 px-3 py-2">
               <div class="flex items-center justify-between">
                 <span class="text-gray-600 text-xs italic">
-                  Owner: {{ $schema->schema_owner ?? 'unknown' }}
+                  {{ $schema->schema_owner ?? 'unknown' }}
                 </span>
                 <a href="#"
                    title="Delete"
@@ -74,16 +74,16 @@
             <td class="border border-gray-300 px-2 py-1">
               <div class="flex items-center gap-2">
                 <input type="text" name="schema_name"
-                       placeholder="New schema name"
-                       class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
-                <button type="submit"
-                        class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition"
-                        title="Create Schema">
+                placeholder="New schema name"
+                class="w-full text-sm px-2 py-1 border border-gray-300 
+                rounded focus:outline-none focus:ring focus:ring-blue-200" />
+                  <button type="submit"
+                  class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition" title="Create Schema">
                   Create
                 </button>
               </div>
             </td>
-            <td>
+            <td class="border border-gray-300 px-2 py-1">
             </td>
           </tr>
         </form>
