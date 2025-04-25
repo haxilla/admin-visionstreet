@@ -1,36 +1,3 @@
-window.dropdownMenus = function () {
-  // Unbind any old click handlers (optional safety)
-  document.querySelectorAll('.menu-trigger').forEach(trigger => {
-    trigger.onclick = null;
-  });
-
-  // Rebind click to all trigger buttons
-  document.querySelectorAll('.menu-trigger').forEach(trigger => {
-    trigger.onclick = function (e) {
-      e.stopPropagation();
-
-      // Close all others
-      document.querySelectorAll('.menu-panel').forEach(menu => {
-        menu.classList.add('hidden');
-      });
-
-      const menu = this.nextElementSibling;
-      if (menu?.classList.contains('menu-panel')) {
-        menu.classList.toggle('hidden');
-      }
-    };
-  });
-
-  // Close menus on click outside
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.menu-panel').forEach(menu => {
-      menu.classList.add('hidden');
-    });
-  });
-};
-
-
-
 if (document.body.classList.contains('linkcheck')) {
 
   const handlers = {
