@@ -1,12 +1,12 @@
 @if($data['sqltype']=='schema')
 
-<h2 class="text-lg font-semibold mb-4">Available Schemas</h2>
+   <h2 class="text-lg font-semibold mb-4">Available Schemas</h2>
 
     <table class="w-full border border-collapse text-sm">
       <thead class="bg-gray-100">
         <tr>
-          <th class="border px-3 py-2 text-left">Schema Name</th>
-          <th class="border px-3 py-2 text-right w-24">Actions</th>
+          <th class="border px-3 py-2 text-left w-1/2">Schema Name</th>
+          <th class="border px-3 py-2 text-left">Info</th>
         </tr>
       </thead>
       <tbody>
@@ -25,30 +25,35 @@
                   ✏️
                 </a>
                 <a href="#"
-                data-isapp=1
-                data-action="handle"
-                data-value="schema:{{$schema->schema_name}}"
-                data-task="schema.describe"
-                data-renderfrom="admin.tools.postgres"
-                data-renderto="pageswap"
-                data-renderas="html">
+                   data-isapp="1"
+                   data-action="handle"
+                   data-value="schema:{{ $schema->schema_name }}"
+                   data-task="schema.describe"
+                   data-renderfrom="admin.tools.postgres"
+                   data-renderto="pageswap"
+                   data-renderas="html">
                   <span class="font-mono text-sm">
                     {{ $schema->schema_name }}
                   </span>
                 </a>
               </div>
             </td>
-            <td class="border border-gray-300 px-3 py-2 text-right">
-              <a href="#"
-                 title="Delete"
-                 class="text-xs text-gray-400 hover:text-red-500"
-                 data-action="handle"
-                 data-renderfrom="admin.tools.postgres.schemas.delete"
-                 data-renderas="html"
-                 data-renderto="pageswap"
-                 data-schema="{{ $schema->schema_name }}">
-                &#x2715;
-              </a>
+            <td class="border border-gray-300 px-3 py-2">
+              <div class="flex items-center justify-between">
+                <span class="text-gray-600 text-xs italic">
+                  Owner: {{ $schema->schema_owner ?? 'unknown' }}
+                </span>
+                <a href="#"
+                   title="Delete"
+                   class="text-xs text-gray-400 hover:text-red-500"
+                   data-action="handle"
+                   data-renderfrom="admin.tools.postgres.schemas.delete"
+                   data-renderas="html"
+                   data-renderto="pageswap"
+                   data-schema="{{ $schema->schema_name }}">
+                  &#x2715;
+                </a>
+              </div>
             </td>
           </tr>
         @empty
@@ -66,23 +71,22 @@
               data-renderto="pageswap">
           @csrf
           <tr>
-            <td class="border border-gray-300 px-2 py-1">
-              <input type="text" name="schema_name"
-                     placeholder="New schema name"
-                     class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
-            </td>
-            <td class="border border-gray-300 px-2 py-1 text-right">
-              <button type="submit"
-                      class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition"
-                      title="Create Schema">
-                Create
-              </button>
+            <td colspan="2" class="border border-gray-300 px-2 py-1">
+              <div class="flex items-center gap-2">
+                <input type="text" name="schema_name"
+                       placeholder="New schema name"
+                       class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+                <button type="submit"
+                        class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition"
+                        title="Create Schema">
+                  Create
+                </button>
+              </div>
             </td>
           </tr>
         </form>
       </tbody>
     </table>
-
 
   <!--
   <div class="schemas">
