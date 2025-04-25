@@ -31,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
             app()->environment('production') &&
             !app()->runningInConsole()){
 
+            dd(request()->header('x-forwarded-proto'));
+
             $proto = request()->header('x-forwarded-proto');
 
             if (is_array($proto)) {
