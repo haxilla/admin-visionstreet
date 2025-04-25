@@ -41,11 +41,6 @@ class AppServiceProvider extends ServiceProvider
                 URL::forceScheme('https');
 
             } else {
-                Log::warning('FORCE_HTTPS is enabled, but request is not marked secure.', [
-                    'url' => request()->fullUrl(),
-                    'ip' => request()->ip(),
-                    'proto_header' => $proto,
-                ]);
 
                 URL::forceScheme('https');
                 //abort(403, 'Secure connection required.');
