@@ -194,10 +194,6 @@
         </td>
         <td class="border border-gray-300 px-2 py-1"></td>
       </tr>
-      <tr>
-        <td colspan="2" class="border border-gray-300 px-2 py-1 text-right">
-        </td>
-      </tr>
     </form>
   </tbody>
 </table>
