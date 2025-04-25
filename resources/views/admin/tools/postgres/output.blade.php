@@ -119,6 +119,87 @@
 
 @elseif($data['sqltype']=='table')
 
+<h2 class="text-lg font-semibold mb-4">Tables in schema: {{ $data['schema'] }}</h2>
+
+<table class="w-full border border-collapse text-sm max-w-4xl">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="border px-3 py-2 text-left">Table Name</th>
+      <th class="border px-3 py-2 text-left w-48">Estimated Rows</th>
+    </tr>
+  </thead>
+  <tbody>
+    @forelse ($data['tables'] as $table)
+      <tr>
+        <td class="border border-gray-300 px-3 py-2">
+          <div class="flex items-center justify-between gap-2 w-full">
+            <div class="flex items-center gap-2">
+              <a href="#"
+                 title="Rename"
+                 class="text-gray-500 hover:text-blue-600"
+                 data-action="handle"
+                 data-renderfrom="admin.tools.postgres.tables.rename"
+                 data-renderas="html"
+                 data-renderto="pageswap"
+                 data-schema="{{ $data['schema'] }}"
+                 data-table="{{ $table->table_name }}">
+                ✏️
+              </a>
+              <span class="font-mono text-sm">{{ $table->table_name }}</span>
+            </div>
+            <a href="#"
+               title="Delete"
+               class="text-xs text-gray-400 hover:text-red-500"
+               data-action="handle"
+               data-renderfrom="admin.tools.postgres.tables.delete"
+               data-renderas="html"
+               data-renderto="pageswap"
+               data-schema="{{ $data['schema'] }}"
+               data-table="{{ $table->table_name }}">
+              &#x2715;
+            </a>
+          </div>
+        </td>
+        <td class="border border-gray-300 px-3 py-2">
+          {{ $table->row_estimate ?? '—' }}
+        </td>
+      </tr>
+    @empty
+      <tr>
+        <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
+          No tables found.
+        </td>
+      </tr>
+    @endforelse
+
+    <form method="POST"
+          data-action="handle"
+          data-renderfrom="admin.tools.postgres.tables.create"
+          data-renderas="html"
+          data-renderto="pageswap"
+          data-schema="{{ $data['schema'] }}">
+      @csrf
+      <tr>
+        <td class="border border-gray-300 px-2 py-1">
+          <div class="flex items-center gap-2">
+            <input type="text" name="table_name"
+                   placeholder="New table name"
+                   class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+            <button type="submit"
+                    class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition"
+                    title="Create Table">
+              Create
+            </button>
+          </div>
+        </td>
+        <td class="border border-gray-300 px-2 py-1">&nbsp;</td>
+      </tr>
+    </form>
+  </tbody>
+</table>
+
+  
+  <!--
   <div class="tables">
     <h2 class="text-xl font-semibold mb-4">
         Tables in schema: {{$data['schema']}} 
@@ -143,6 +224,7 @@
       @endforelse
     </ul>
   </div>
+-->
 
 @elseif($data['sqltype']=='column')
 
