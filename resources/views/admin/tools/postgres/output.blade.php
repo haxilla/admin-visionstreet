@@ -62,15 +62,19 @@
     </nav>
 
     <a href="#"
-       class="inline-flex items-center px-2.5 py-1.5 text-xs text-gray-500 hover:text-red-600 border border-transparent hover:border-red-300 rounded transition"
-       data-action="handle"
-       data-renderfrom="admin.tools.postgres.tables.deletetable"
-       data-renderas="html"
-       data-renderto="pageswap"
-       data-schema="{{ $data['schema'] }}"
-       data-table="{{ $data['table'] }}">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    class="inline-flex items-center px-2.5 py-1.5 text-xs 
+    text-gray-500 hover:text-red-600 border border-transparent 
+    hover:border-red-300 rounded transition"
+    data-action="handle"
+    data-renderfrom="admin.tools.postgres.tables.deletetable"
+    data-renderas="html"
+    data-renderto="pageswap"
+    data-schema="{{ $data['schema'] }}"
+    data-table="{{ $data['table'] }}">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" 
+      fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+        stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
       Delete Table
     </a>
@@ -89,20 +93,8 @@
     </thead>
     <tbody id="column-sortable"
       x-data
-      x-init="
-       import('sortablejs').then(({ default: Sortable }) => {
-         Sortable.create($el, {
-           animation: 150,
-           handle: '.drag-handle',
-           ghostClass: 'bg-yellow-100',
-           onEnd: (evt) => {
-             // optional: console.log or save new order
-             const newOrder = [...$el.children].map(row => row.dataset.column);
-             console.log('New column order:', newOrder);
-           }
-         });
-       });
-      ">
+      x-init="initSortableColumns($el)"
+>
       @forelse ($data['columns'] as $col)
         <tr data-column="{{ $col->column_name }}">
           <td class="border border-gray-300 px-3 py-2">
@@ -198,7 +190,21 @@
     </tbody>
   </table>
 
-
+<script>
+  window.initSortableColumns = (el) => {
+    import('sortablejs').then(({ default: Sortable }) => {
+      Sortable.create(el, {
+        animation: 150,
+        handle: '.drag-handle',
+        ghostClass: 'bg-yellow-100',
+        onEnd: (evt) => {
+          const newOrder = [...el.children].map(row => row.dataset.column);
+          console.log('New column order:', newOrder);
+        }
+      });
+    });
+  }
+</script>
 @else
   PAGE ERROR
 @endif
