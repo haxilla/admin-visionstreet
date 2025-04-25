@@ -97,7 +97,7 @@ if (document.body.classList.contains('linkcheck')) {
     }
   }
 
-  function renderHTML(endpoint, postData, renderTo, csrf) {
+  function renderHTML(endpoint, postData, renderTo, csrf, newURL=null) {
     fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -111,9 +111,12 @@ if (document.body.classList.contains('linkcheck')) {
       const target = document.querySelector(`.${renderTo}`);
       if (target) {
         target.innerHTML = html;
+        //inject for browser back history
+        if(newURL){
+          history.pushState({}, '', newUrl);}
       } else {
-        console.warn(`⚠️ Target container .${renderTo} not found`);
-      }
+        console.warn(`⚠️ Target container .${renderTo} not found`);}
+        
     })
     .catch(err => {
       console.error('💥 Handle request error:', err);
