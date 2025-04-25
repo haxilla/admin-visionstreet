@@ -23,23 +23,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Request $request): void
     {
-        /*
-        if (config('app.env') === 'production') {
-        URL::forceScheme('https');}
-        */
-    
+        
+        //fix https bug/issue
         if ( config('app.force_https') &&
-            app()->environment('production') &&
-            !app()->runningInConsole()){
+        app()->environment('production') &&
+        !app()->runningInConsole()){
 
             $proto = $request->header('x-forwarded-proto');
 
-            if (is_array($proto)) {
-                $proto = $proto[0];}
             if ($proto === 'https') {
+
                 URL::forceScheme('https');
 
             } else {
+
                 Log::warning('Non-HTTPS access blocked', [
                     'url' => $request->fullUrl(),
                     'ip' => $request->ip(),
@@ -48,9 +45,9 @@ class AppServiceProvider extends ServiceProvider
                 ]);
 
                 abort(403, 'Secure connection required.');
-                
-            };};
 
+            };
+        };
 
 
         // ✅ Register the alias here (once, globally available)
