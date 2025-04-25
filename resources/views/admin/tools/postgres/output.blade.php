@@ -144,7 +144,16 @@
                data-table="{{ $table->table_name }}">
               ✏️
             </a>
-            <span class="font-mono text-sm">{{ $table->table_name }}</span>
+            <a href="#"
+            data-isapp=1
+            data-action="handle"
+            data-value="schema:{{$data['schema']}};table:{{$table->table_name}}"
+            data-task="column.show"
+            data-renderfrom="admin.tools.postgres"
+            data-renderto="pageswap"
+            data-renderas="html">
+              {{ $table->table_name }}
+            </a>
           </div>
         </td>
         <td class="border border-gray-300 px-3 py-2">
