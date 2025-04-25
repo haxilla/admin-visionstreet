@@ -71,7 +71,7 @@
               data-renderto="pageswap">
           @csrf
           <tr>
-            <td colspan="2" class="border border-gray-300 px-2 py-1">
+            <td class="border border-gray-300 px-2 py-1">
               <div class="flex items-center gap-2">
                 <input type="text" name="schema_name"
                        placeholder="New schema name"
@@ -82,6 +82,8 @@
                   Create
                 </button>
               </div>
+            </td>
+            <td>
             </td>
           </tr>
         </form>

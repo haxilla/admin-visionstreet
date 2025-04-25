@@ -1,7 +1,7 @@
 <?php
 
 $schemas = \DB::select("
-    SELECT schema_name
+    SELECT *
     FROM information_schema.schemata
     WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
     ORDER BY schema_name");
