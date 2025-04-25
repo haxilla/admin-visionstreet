@@ -1,10 +1,17 @@
 <?php
 
-$schemas = \DB::select("
-    SELECT *
-    FROM information_schema.schemata
-    WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
-    ORDER BY schema_name");
+$schemas = DB::select("
+  SELECT 
+    n.nspname AS schema_name,
+    pg_get_userbyid(n.nspowner) AS owner
+  FROM 
+    pg_namespace n
+  WHERE 
+    n.nspname NOT IN ('information_schema', 'pg_catalog', 'pg_toast', 'pg_temp_1', 'pg_toast_temp_1')
+    AND n.nspname NOT LIKE 'pg_%temp%'
+  ORDER BY 
+    n.nspname
+");
 
 if(empty($schemas)){
     dd("error-line10-postgres/schemas/show");}
