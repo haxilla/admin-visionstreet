@@ -51,7 +51,6 @@
               </a>
             </td>
           </tr>
-          @endif
         @empty
           <tr>
             <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
