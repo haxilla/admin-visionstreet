@@ -145,23 +145,34 @@
                  data-table="{{ $table->table_name }}">
                 ✏️
               </a>
-              <span class="font-mono text-sm">{{ $table->table_name }}</span>
+              <a href="#"
+              data-isapp=1
+              data-action="handle"
+              data-value="schema:{{$data['schema']}};table:{{$table->table_name}}"
+              data-task="column.show"
+              data-renderfrom="admin.tools.postgres"
+              data-renderto="pageswap"
+              data-renderas="html">
+                {{ $table->table_name }}
+              </a>
             </div>
           </div>
         </td>
         <td class="border border-gray-300 px-3 py-2">
           {{ $table->estimated_rows ?? '—' }}
-          <a href="#"
-          title="Delete"
-          class="text-xs text-gray-400 hover:text-red-500"
-          data-action="handle"
-          data-renderfrom="admin.tools.postgres.tables.delete"
-          data-renderas="html"
-          data-renderto="pageswap"
-          data-schema="{{ $data['schema'] }}"
-          data-table="{{ $table->table_name }}">
-            &#x2715;
-          </a>
+          <div class="flex justify-end">
+            <a href="#"
+            title="Delete"
+            class="text-xs text-gray-400 hover:text-red-500"
+            data-action="handle"
+            data-renderfrom="admin.tools.postgres.tables.delete"
+            data-renderas="html"
+            data-renderto="pageswap"
+            data-schema="{{ $data['schema'] }}"
+            data-table="{{ $table->table_name }}">
+              &#x2715;
+            </a>
+          </div>
         </td>
       </tr>
     @empty
