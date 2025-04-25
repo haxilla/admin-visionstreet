@@ -14,6 +14,10 @@ if (typeof window !== 'undefined') {
   };
 }
 
+window.addEventListener('popstate', function () {
+  location.reload();
+});
+
 if (document.body.classList.contains('linkcheck')) {
 
   const handlers = {
@@ -97,7 +101,7 @@ if (document.body.classList.contains('linkcheck')) {
     }
   }
 
-  function renderHTML(endpoint, postData, renderTo, csrf, newURL=null) {
+  function renderHTML(endpoint, postData, renderTo, csrf) {
     fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -112,11 +116,10 @@ if (document.body.classList.contains('linkcheck')) {
       if (target) {
         target.innerHTML = html;
         //inject for browser back history
-        if(newURL){
-          history.pushState({}, '', newUrl);}
+        history.pushState({}, '', endpoint); // 👈 just this
       } else {
         console.warn(`⚠️ Target container .${renderTo} not found`);}
-        
+
     })
     .catch(err => {
       console.error('💥 Handle request error:', err);
