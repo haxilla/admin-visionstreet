@@ -125,7 +125,7 @@
   <thead class="bg-gray-100">
     <tr>
       <th class="border px-3 py-2 text-left">Table Name</th>
-      <th class="border px-3 py-2 text-right w-12">Actions</th>
+      <th class="border px-3 py-2 text-right w-12">Column Count</th>
     </tr>
   </thead>
   <tbody>
@@ -148,6 +148,7 @@
           </div>
         </td>
         <td class="border border-gray-300 px-3 py-2 text-right">
+          <span class="inline-block w-8">{{ $table->column_count ?? '—' }}</span>
           <a href="#"
              title="Delete"
              class="text-xs text-gray-400 hover:text-red-500"
