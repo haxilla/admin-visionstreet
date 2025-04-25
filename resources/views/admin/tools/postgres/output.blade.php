@@ -1,40 +1,38 @@
 @if($data['sqltype']=='schema')
 
-  <div class="schemas">
-    <h2 class="text-xl font-semibold mb-4">Available Schemas</h2>
+<div class="schemas max-w-3xl mx-auto">
+  <h2 class="text-xl font-semibold mb-4">Available Schemas</h2>
 
-    <ul class="space-y-2 pl-4 list-disc">
+  <table class="w-full border border-collapse text-sm">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="border px-3 py-2 text-left">Schema Name</th>
+        <th class="border px-3 py-2 text-left">Owner</th>
+      </tr>
+    </thead>
+    <tbody>
       @forelse ($data['schemas'] as $schema)
-        <li class="text-gray-800">
-          <div class="flex items-center justify-between">
-            <a href="#"
-               data-isapp=1
-               data-action="handle"
-               data-value="schema:{{ $schema->schema_name }}"
-               data-task="schema.describe"
-               data-renderfrom="admin.tools.postgres"
-               data-renderto="pageswap"
-               data-renderas="html"
-               class="text-gray-800 hover:underline font-mono text-sm">
-              {{ $schema->schema_name }}
-            </a>
-
-            <div class="flex gap-2 text-xs">
-              <a href="#"
-                 title="Rename"
-                 class="text-blue-500 hover:text-blue-700"
-                 data-action="handle"
-                 data-renderfrom="admin.tools.postgres.schemas.rename"
-                 data-renderas="html"
-                 data-renderto="pageswap"
-                 data-isapp="1"
-                 data-schema="{{ $schema->schema_name }}">
-                ✏️
-              </a>
+        <tr data-schema="{{ $schema->schema_name }}">
+          <td class="border px-3 py-2">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <a href="#"
+                   title="Rename"
+                   class="text-blue-500 hover:text-blue-700"
+                   data-action="handle"
+                   data-renderfrom="admin.tools.postgres.schemas.rename"
+                   data-renderas="html"
+                   data-renderto="pageswap"
+                   data-isapp="1"
+                   data-schema="{{ $schema->schema_name }}">
+                  ✏️
+                </a>
+                <span class="font-mono truncate">{{ $schema->schema_name }}</span>
+              </div>
 
               <a href="#"
                  title="Delete"
-                 class="text-red-400 hover:text-red-600"
+                 class="text-xs text-gray-400 hover:text-red-500"
                  data-action="handle"
                  data-renderfrom="admin.tools.postgres.schemas.delete"
                  data-renderas="html"
@@ -44,13 +42,20 @@
                 &#x2715;
               </a>
             </div>
-          </div>
-        </li>
+          </td>
+          <td class="border px-3 py-2 text-gray-600">
+            {{ $schema->schema_owner ?? '—' }}
+          </td>
+        </tr>
       @empty
-        <li class="text-red-500">No schemas found.</li>
+        <tr>
+          <td colspan="2" class="border px-3 py-2 text-center text-gray-500">
+            No schemas found.
+          </td>
+        </tr>
       @endforelse
 
-      <li class="flex items-center gap-2 pt-4">
+      <tr>
         <form method="POST"
               data-action="handle"
               data-renderfrom="admin.tools.postgres.schemas.create"
@@ -58,18 +63,23 @@
               data-renderto="noop"
               data-isapp="1">
           @csrf
-          <input type="text" name="schema_name"
-                 placeholder="New schema name"
-                 class="text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
-
-          <button type="submit"
-                  class="text-xs px-3 py-1.5 text-white bg-gray-500 hover:bg-gray-600 rounded transition">
-            Create
-          </button>
+          <td class="border px-2 py-1">
+            <input type="text" name="schema_name"
+                   placeholder="New schema name"
+                   class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+          </td>
+          <td class="border px-2 py-1">
+            <button type="submit"
+                    class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-500 hover:bg-gray-600 rounded transition">
+              Create
+            </button>
+          </td>
         </form>
-      </li>
-    </ul>
-  </div>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
   <!--
   <div class="schemas">
