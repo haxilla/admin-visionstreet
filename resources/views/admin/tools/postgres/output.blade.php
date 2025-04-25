@@ -41,7 +41,7 @@
             <td class="border border-gray-300 px-3 py-2">
               <div class="flex items-center justify-between">
                 <span class="text-gray-600 text-xs italic">
-                  {{ $schema->schema_owner ?? 'unknown' }}
+                  {{ $schema->owner ?? 'unknown' }}
                 </span>
                 <a href="#"
                    title="Delete"
