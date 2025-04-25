@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\RequireRole;
+use Illuminate\Http\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,12 +31,12 @@ class AppServiceProvider extends ServiceProvider
         if ( env('FORCE_HTTPS') === 'true' &&
             app()->environment('production') &&
             !app()->runningInConsole()){
-$proto = request()->header('x-forwarded-proto');
 
-            throw new \Exception('PROTO VALUE: ' . var_export($proto, true));
+            $proto = $request->header('x-forwarded-proto');
 
-
-            $proto = request()->header('x-forwarded-proto');
+         if (is_array($proto)) {
+            $proto = $proto[0];
+        }
 
             if (is_array($proto)) {
                 $proto = $proto[0]; // grab the first value if array
