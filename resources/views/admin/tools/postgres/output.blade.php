@@ -87,7 +87,22 @@
         <th class="border px-3 py-2 text-left">Data Type</th>
       </tr>
     </thead>
-    <tbody id="column-sortable">
+    <tbody id="column-sortable"
+      x-data
+      x-init="
+       import('sortablejs').then(({ default: Sortable }) => {
+         Sortable.create($el, {
+           animation: 150,
+           handle: '.drag-handle',
+           ghostClass: 'bg-yellow-100',
+           onEnd: (evt) => {
+             // optional: console.log or save new order
+             const newOrder = [...$el.children].map(row => row.dataset.column);
+             console.log('New column order:', newOrder);
+           }
+         });
+       });
+      ">
       @forelse ($data['columns'] as $col)
         <tr data-column="{{ $col->column_name }}">
           <td class="border border-gray-300 px-3 py-2">
