@@ -52,3 +52,12 @@ Route::post('/logout', function () {
     };
 
 })->name('logout');
+
+
+Route::get('/debug-proto', function () {
+    return [
+        'proto' => request()->header('x-forwarded-proto'),
+        'secure' => request()->isSecure(),
+        'headers' => request()->headers->all(),
+    ];
+});
