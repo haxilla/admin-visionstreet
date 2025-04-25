@@ -1,3 +1,18 @@
+import Sortable from 'sortablejs/modular/sortable.core.esm.js'; // ✅ Use ESM version
+
+window.initSortableColumns = function (el) {
+  Sortable.create(el, {
+    animation: 150,
+    handle: '.drag-handle',
+    ghostClass: 'bg-yellow-100',
+    onEnd: (evt) => {
+      const newOrder = [...el.children].map(row => row.dataset.column);
+      console.log('New column order:', newOrder);
+    }
+  });
+};
+
+
 if (document.body.classList.contains('linkcheck')) {
 
   const handlers = {
