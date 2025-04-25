@@ -11,10 +11,6 @@
       </thead>
       <tbody>
         @forelse ($data['schemas'] as $schema)
-          @php
-            $name = $schema->schema_name;
-          @endphp
-          @if (!in_array($name, ['pg_catalog', 'pg_toast', 'information_schema']))
           <tr>
             <td class="border border-gray-300 px-3 py-2">
               <div class="flex items-center gap-2">
@@ -25,10 +21,21 @@
                    data-renderfrom="admin.tools.postgres.schemas.rename"
                    data-renderas="html"
                    data-renderto="pageswap"
-                   data-schema="{{ $name }}">
+                   data-schema="{{ $schema->schema_name }}">
                   ✏️
                 </a>
-                <span class="font-mono text-sm truncate">{{ $name }}</span>
+                <a href="#"
+                data-isapp=1
+                data-action="handle"
+                data-value="schema:{{$schema->schema_name}}"
+                data-task="schema.describe"
+                data-renderfrom="admin.tools.postgres"
+                data-renderto="pageswap"
+                data-renderas="html">
+                  <span class="font-mono text-sm">
+                    {{ $schema->schema_name }}
+                  </span>
+                </a>
               </div>
             </td>
             <td class="border border-gray-300 px-3 py-2 text-right">
@@ -39,7 +46,7 @@
                  data-renderfrom="admin.tools.postgres.schemas.delete"
                  data-renderas="html"
                  data-renderto="pageswap"
-                 data-schema="{{ $name }}">
+                 data-schema="{{ $schema->schema_name }}">
                 &#x2715;
               </a>
             </td>
