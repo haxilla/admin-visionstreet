@@ -163,18 +163,17 @@
         activeDropdown = activeDropdown === 'admin' ? null : 'admin';"
         class="flex items-center w-full px-4 py-2 hover:bg-white/10 rounded-md transition-all"
         :class="collapsed ? 'justify-center' : 'gap-3'">
-          <svg xmlns="http://www.w3.org/2000/svg"
-               viewBox="0 0 24 24"
-               fill="none"
-               stroke="currentColor"
-               stroke-width="1.5"
-               stroke-linecap="round"
-               stroke-linejoin="round"
-               class="w-4 h-4 mr-2 flex-shrink-0">
-            <polygon points="12 2 20 6 12 10 4 6 12 2" />
-            <polyline points="20 6 20 14 12 18 4 14 4 6" />
-            <polyline points="4 14 12 18 20 14" />
+
+          <svg xmlns="http://www.w3.org/2000/svg" 
+          class="w-4 h-4 mr-2 flex-shrink-0" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor">
+            <path stroke-linecap="round" 
+            stroke-linejoin="round" stroke-width="2" 
+            d="M3 21h18M6 21V9h3v12M15 21V9h3v12M9 9V6h6v3" />
           </svg>
+
           <span class="text-white" x-show="!collapsed || dropdownOpen">Admin</span>
           <svg x-show="!collapsed || dropdownOpen" class="ml-auto transform" :class="activeDropdown === 'admin' ? 'rotate-90' : ''" width="16" height="16" fill="none">
             <path stroke="currentColor" stroke-width="2" d="M6 4l6 6-6 6" />
