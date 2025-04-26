@@ -12,6 +12,32 @@ class DashboardController extends Controller
         $this->middleware('role:super');
     }
 
+    public function handle(Request $request){
+
+        $data=null;
+        //renderFrom
+        $renderFrom=$_POST['renderfrom'];
+
+        //if value is set - extract
+        if(isset($_POST['value'])){
+            $value=$_POST['value'];
+            include(app_path().'/code/getValue.php');}
+
+        //should it use an app file?
+        if(isset($_POST['isapp'])){
+          $renderURL = str_replace(".", "/",$renderFrom);
+          include(app_path().'/'.$renderURL.'.php');}
+
+        //IE: admin/tools/posgres
+        $html=\View::make($renderFrom)
+          ->with([
+            'data'=>$data,
+          ])->render();
+
+        echo $html;
+
+    }
+
 
     public function index()
     {
