@@ -32,7 +32,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
 			    + New SafeKey
 			</a>
 		</div>
-        @include('admin.secure.safekey-output')
+        @include('admin.secure.safekeys-output')
       </div>
     </div>
   </main>
