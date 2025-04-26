@@ -23,6 +23,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
       <div class="pageswap p-6 w-full">
       	<div class="flex justify-between items-center mb-6">
 			<a href="#"
+			data-isapp="1"
 			data-action="handle"
 			data-renderto="pageswap"
 			data-renderfrom="admin.secure.safekey"
