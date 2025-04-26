@@ -73,7 +73,6 @@ if (document.body.classList.contains('linkcheck')) {
     const renderFrom = form.dataset.renderfrom;
     const renderTo   = form.dataset.renderto;
     const renderAs   = form.dataset.renderas;
-    const isapp      = form.dataset.isapp || '0';
 
     if (!renderFrom || !renderTo || !renderAs) {
       console.error('❌ Missing render info for form');
@@ -83,11 +82,10 @@ if (document.body.classList.contains('linkcheck')) {
     formData.append('renderFrom', renderFrom);
     formData.append('renderTo', renderTo);
     formData.append('renderAs', renderAs);
-    formData.append('isapp', isapp);
 
     const postData = new URLSearchParams([...formData.entries()]);
     const csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
-    const endpoint = a.dataset.route || `/${section}/form`;
+    const endpoint = form.dataset.route || `/${section}/form`;
 
     if (renderAs === 'html') {
       renderHTML(endpoint, postData, csrf);
