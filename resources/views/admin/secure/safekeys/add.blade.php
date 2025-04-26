@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('safekeys.store') }}" 
+<form method="POST" action="" 
       class="max-w-xl mx-auto bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 p-8 rounded-xl shadow-2xl space-y-8 animate-fade-in">
     @csrf
 
