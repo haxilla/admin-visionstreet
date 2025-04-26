@@ -188,7 +188,8 @@
           <a href="/admin/safekeys"
           class="flex items-center w-full pl-10 pr-4 py-2 
           text-sm hover:bg-black/10 transition-colors space-x-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" 
+            <svg xmlns="http://www.w3.org/2000/svg" 
+            class="h-5 w-5 mr-2 flex-shrink-0" 
             fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" 
               stroke-width="2" d="M12 2l8 4v5c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12V6l8-4z" />
