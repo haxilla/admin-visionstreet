@@ -17,11 +17,11 @@ class DashboardController extends Controller
 
         $data=null;
         //renderFrom
-        $renderFrom=$_POST['renderfrom'];
-        $renderTask=$_POST['task'];
-        $value=$_POST['value'];
-        $task=$_POST['task'];
-        $isapp=$_POST['isapp'];
+        $renderFrom=$_POST['renderfrom'] ?? null;
+        $renderTask=$_POST['task'] ?? null;
+        $value=$_POST['value'] ?? null;
+        $task=$_POST['task'] ?? null;
+        $isapp=$_POST['isapp'] ?? null;
 
         //if value is set - extract
         if(!empty($value)){
