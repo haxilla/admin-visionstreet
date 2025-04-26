@@ -185,12 +185,11 @@
       <tr>
         <td colspan="2" class="border border-gray-300 px-2 py-2">
           <form method="POST"
-            data-action="handle"
-            data-renderfrom="admin.tools.postgres"
-            data-task="table.create"
-            data-renderas="html"
-            data-renderto="pageswap"
-            data-schema="{{ $data['schema'] }}">
+          data-action="handle"
+          data-renderfrom="admin.tools.postgres"
+          data-renderas="html"
+          data-renderto="pageswap"
+          data-schema="{{ $data['schema'] }}">
             @csrf
             <div class="flex flex-col md:flex-row gap-2 w-full">
               <div class="flex-1">
@@ -207,6 +206,8 @@
                 border-gray-300 rounded focus:outline-none 
                 focus:ring focus:ring-blue-200" />
               </div>
+
+              <input type="hidden" name="dataTask" value="table.create">
 
               <div class="flex-1 md:max-w-[160px]">
                 <button type="submit"
