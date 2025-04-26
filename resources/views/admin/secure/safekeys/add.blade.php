@@ -32,7 +32,7 @@
 
     <div class="pt-8">
         <button type="submit"
-            class="w-full bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-cyan-400 hover:to-blue-600 text-white font-bold text-lg py-3 rounded-md shadow-md transition transform hover:scale-105 focus:outline-none">
+            class="cursor-pointer w-full bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-cyan-400 hover:to-blue-600 text-white font-bold text-lg py-3 rounded-md shadow-md transition transform hover:scale-105 focus:outline-none">
             Save SafeKey
         </button>
     </div>
