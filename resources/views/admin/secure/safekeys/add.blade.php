@@ -1,4 +1,4 @@
-<form method="POST" action="#" class="max-w-lg mx-auto bg-[#0F172A] border border-blue-900 p-8 rounded-sm shadow-md space-y-6">
+<form method="POST" action="#" class="max-w-lg mx-auto bg-[#0F172A] border border-[#1E3A8A] p-8 rounded-sm shadow-md space-y-6">
     <!-- Add CSRF token here if using Laravel: @csrf -->
 
     <h2 class="text-2xl font-semibold text-white mb-6 tracking-wide">Create New SafeKey</h2>
