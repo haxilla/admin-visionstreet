@@ -75,8 +75,7 @@ if (document.body.classList.contains('linkcheck')) {
 
     if (!renderFrom || !renderTo || !renderAs) {
       console.error('❌ Missing render info for form');
-      return;
-    }
+      return;}
 
     const formData = new FormData(form);
     formData.append('renderFrom', renderFrom);
@@ -97,15 +96,6 @@ if (document.body.classList.contains('linkcheck')) {
     }
   }
 
-window.addEventListener('popstate', () => {
-  const url = window.location.pathname;
-  const postData = new URLSearchParams();
-  postData.append('path', url);
-
-  renderHTML(url, postData, 'pageswap', csrfToken);
-});
-
-
   function renderHTML(endpoint, postData, renderTo, csrf) {
     fetch(endpoint, {
       method: 'POST',
@@ -120,10 +110,6 @@ window.addEventListener('popstate', () => {
       const target = document.querySelector(`.${renderTo}`);
       if (target) {
         target.innerHTML = html;
-        //inject for browser back history
-        // Only push state if URL is different
-        if (window.location.pathname !== endpoint) {
-          history.pushState({}, '', endpoint);}
 
       } else {
         console.warn(`⚠️ Target container .${renderTo} not found`);}
