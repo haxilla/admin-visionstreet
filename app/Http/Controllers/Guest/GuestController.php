@@ -35,9 +35,9 @@ class GuestController extends Controller
 
         // reCAPTCHA check
         $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-            'secret' => env('RECAPTCHA_SECRET_KEY'),
-            'response' => $request->recaptcha_token,
-            'remoteip' => $request->ip(),
+            'secret'    => config('services.recaptcha.secret_key'),
+            'response'  => $request->recaptcha_token,
+            'remoteip'  => $request->ip(),
         ]);
 
         $result = $response->json();
