@@ -14,10 +14,6 @@ if (typeof window !== 'undefined') {
   };
 }
 
-window.addEventListener('popstate', function () {
-  alert('popstate!');
-});
-
 if (document.body.classList.contains('linkcheck')) {
 
   const handlers = {
@@ -101,6 +97,15 @@ if (document.body.classList.contains('linkcheck')) {
     }
   }
 
+window.addEventListener('popstate', () => {
+  const url = window.location.pathname;
+  const postData = new URLSearchParams();
+  postData.append('path', url);
+
+  renderHTML(url, postData, 'pageswap', csrfToken);
+});
+
+
   function renderHTML(endpoint, postData, renderTo, csrf) {
     fetch(endpoint, {
       method: 'POST',
@@ -116,7 +121,10 @@ if (document.body.classList.contains('linkcheck')) {
       if (target) {
         target.innerHTML = html;
         //inject for browser back history
-        history.pushState({}, '', endpoint); // 👈 just this
+        // Only push state if URL is different
+        if (window.location.pathname !== endpoint) {
+          history.pushState({}, '', endpoint);}
+
       } else {
         console.warn(`⚠️ Target container .${renderTo} not found`);}
 
