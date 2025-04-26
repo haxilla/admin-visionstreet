@@ -12,7 +12,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
 
   @include('globals.nav.admin-header')
 
-  <<main class="transition-all duration-300 min-h-screen pt-24 relative"
+  <main class="transition-all duration-300 min-h-screen pt-24 relative"
   :class="collapsed ? 'ml-20' : 'ml-64'">
     <div class="ml-8 mr-8 lg:ml-10 lg:mr-10">
       <div>
