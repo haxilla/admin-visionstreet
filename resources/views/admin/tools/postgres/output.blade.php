@@ -209,9 +209,8 @@
 
               <div class="flex-1 md:max-w-[160px]">
                 <button type="submit"
-                  class="w-full text-xs px-4 py-2 text-white 
-                  bg-gray-400 hover:bg-gray-500 rounded transition"
-                  title="Create Table">
+                  class="cursor-pointer w-full text-xs px-4 py-2 text-white 
+                  bg-gray-400 hover:bg-gray-500 rounded transition">
                   Create
                 </button>
               </div>
