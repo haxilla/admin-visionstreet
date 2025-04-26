@@ -25,6 +25,7 @@ class DashboardController extends Controller
 
     public function safekeys(){
         //sets $data
+        dd($_POST);
         $renderFrom=request('renderfrom');
 
         if(empty($renderFrom)){
