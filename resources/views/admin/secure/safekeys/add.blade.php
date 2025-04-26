@@ -20,9 +20,17 @@
 
     <div class="space-y-2">
         <label for="value_type" class="block text-sm font-medium text-blue-200">Value Type</label>
-        <input type="text" name="value_type" id="value_type" value="{{ old('value_type') }}"
+        <select name="value_type" id="value_type"
             class="w-full px-4 py-2 bg-blue-900 text-white border border-blue-700 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            <option value="">-- Select Type --</option>
+            <option value="Select" {{ old('value_type') == 'Select' ? 'selected' : '' }}>Select</option>
+            <option value="Route" {{ old('value_type') == 'Route' ? 'selected' : '' }}>Route</option>
+            <option value="Key" {{ old('value_type') == 'Key' ? 'selected' : '' }}>Key</option>
+            <option value="Action" {{ old('value_type') == 'Action' ? 'selected' : '' }}>Action</option>
+            <option value="Permission" {{ old('value_type') == 'Permission' ? 'selected' : '' }}>Permission</option>
+        </select>
     </div>
+
 
     <div class="flex items-center space-x-3 pt-2">
         <input type="checkbox" name="is_active" id="is_active" value="1" checked
