@@ -1,4 +1,7 @@
-<form method="POST" action="{{ route('safekeys.store') }}" class="bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto space-y-6">
+<form method="POST" 
+action="" 
+class="bg-white p-8 rounded-lg shadow-lg 
+max-w-2xl mx-auto space-y-6">
     @csrf
 
     <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Add a New SafeKey</h2>
