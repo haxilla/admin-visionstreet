@@ -54,24 +54,11 @@ class PostgresController extends Controller
 
         echo $html;
 
+    }
 
-        /*
-        $data = request()->only([
-            'renderfrom', 'renderto', 'renderas', 
-            'task', 'value', 'isapp','schema']);
+    public function form(Request $request){
 
-        extract($data);
-
-        if(isset($value)){
-            include(app_path().'/code/admin/getValue.php');}
-
-        if(isset($isapp)){
-            $renderPath = str_replace('.', '/', "$renderfrom/$task");
-            include(app_path($renderPath.'.php'));}
-
-        $html = view('admin.tools.postgres.index', compact('result'))->render();
-        echo $html;
-        */
+        dd("FORM PROCESS");
 
     }
 }

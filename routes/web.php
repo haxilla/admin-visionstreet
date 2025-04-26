@@ -22,8 +22,13 @@ Route::get('/super/reports', [SuperDashboard::class, 'reports'])->name('super.re
 
 /* ---------------- Admin ---------------- */
 Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
+
+/* ---------------- Postgres ---------------- */
 Route::get('/postgres', [PostgresController::class, 'index'])->name('admin.postgres');
 Route::post('/postgres/handle', [PostgresController::class, 'handle'])->name('postgres.handle');
+Route::post('/postgres/form', [PostgresController::class, 'form'])->name('postgres.form');
+
+/* ---------------- Mysql ---------------- */
 Route::get('/mysql', [MysqlController::class, 'index'])->name('admin.mysql');
 
 /* ---------------- Member ---------------- */
@@ -52,20 +57,3 @@ Route::post('/logout', function () {
     };
 
 })->name('logout');
-
-
-Route::get('/debug-proto', function () {
-    return [
-        'proto' => request()->header('x-forwarded-proto'),
-        'secure' => request()->isSecure(),
-        'headers' => request()->headers->all(),
-    ];
-});
-
-Route::get('/check-env', function () {
-    return [
-        'env_raw' => env('FORCE_HTTPS'),
-        'env_bool' => filter_var(env('FORCE_HTTPS'), FILTER_VALIDATE_BOOLEAN),
-        'config' => config('app.force_https'),
-    ];
-});
