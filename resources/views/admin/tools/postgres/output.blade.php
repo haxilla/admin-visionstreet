@@ -47,7 +47,7 @@
                 title="Delete"
                 class="text-xs text-gray-400 hover:text-red-500"
                 data-action="handle"
-                data-renderfrom="admin.tools.postgres.schemas.delete"
+                data-renderfrom="admin.tools.postgres.schema.delete"
                 data-renderas="html"
                 data-renderto="pageswap"
                 data-schema="{{ $schema->schema_name }}">
@@ -182,33 +182,41 @@
         </tr>
       @endforelse
 
-      <form method="POST"
-        data-action="handle"
-        data-renderfrom="admin.tools.postgres.table.create"
-        data-renderas="html"
-        data-renderto="pageswap"
-        data-schema="{{ $data['schema'] }}">
-        @csrf
         <tr>
           <td colspan="2" class="border border-gray-300 px-2 py-2">
             <div class="flex flex-col md:flex-row gap-2">
-              <input type="text" name="table_name"
+
+              <form method="POST"
+              data-action="handle"
+              data-renderfrom="admin.tools.postgres.table.create"
+              data-renderas="html"
+              data-renderto="pageswap"
+              data-schema="{{ $data['schema'] }}">
+                @csrf
+
+                <input type="text" name="table_name"
                 placeholder="New table name"
-                class="w-full md:w-1/3 text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+                class="w-full md:w-1/3 text-sm px-2 py-1 border
+                border-gray-300 rounded focus:outline-none
+                focus:ring focus:ring-blue-200" />
 
-              <input type="text" name="primary_key"
+                <input type="text" name="primary_key"
                 placeholder="Primary key name"
-                class="w-full md:w-1/3 text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+                class="w-full md:w-1/3 text-sm px-2 py-1 border
+                border-gray-300 rounded focus:outline-none 
+                focus:ring focus:ring-blue-200" />
 
-              <button type="submit"
-                class="w-full md:w-1/3 text-xs px-4 py-2 text-white bg-gray-400 hover:bg-gray-500 rounded transition"
-                title="Create Table">
-                Create
-              </button>
+                <button type="submit"
+                  class="w-full md:w-1/3 text-xs px-4 py-2 text-white bg-gray-400 hover:bg-gray-500 rounded transition"
+                  title="Create Table">
+                  Create
+                </button>
+
+              </form>
+
             </div>
           </td>
         </tr>
-      </form>
 
     </tbody>
   </table>
