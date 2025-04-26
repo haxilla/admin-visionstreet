@@ -4,11 +4,6 @@ from-blue-950 via-blue-900 to-blue-800 p-10
 rounded-lg shadow-xl space-y-8">
     @csrf
 
-    <h2 class="text-3xl font-bold text-center 
-    text-white mb-8 tracking-wider">
-        Add New SafeKey
-    </h2>
-
     <div class="space-y-2">
         <label for="key_name" 
         class="block text-sm font-medium text-blue-200">
