@@ -68,6 +68,7 @@ if (document.body.classList.contains('linkcheck')) {
   });
 
   function handleFormSubmission(form) {
+    console.log('handing form...');
     const renderFrom = form.dataset.renderfrom;
     const renderTo   = form.dataset.renderto;
     const renderAs   = form.dataset.renderas;
