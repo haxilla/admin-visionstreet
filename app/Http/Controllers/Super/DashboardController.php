@@ -29,7 +29,7 @@ class DashboardController extends Controller
 
         //should it use an app file?
         if(!empty($isapp) && $renderFrom && $renderTask){
-            $renderURL = str_replace(".", "/",$renderFrom.$renderTask);
+            $renderURL = str_replace(".", "/",$renderFrom.'/'.$renderTask);
             include(app_path().'/'.$renderURL.'.php');
         }elseif(!empty($isapp)){
             dd("error-line35-super/dashboard-missing");}
