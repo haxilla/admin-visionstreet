@@ -14,7 +14,7 @@ $schemas = DB::select("
 ");
 
 if(empty($schemas)){
-    dd("error-line10-postgres/schemas/show");}
+    dd("error-line17-postgres/schemas/show");}
 
 $data=[
     'sqltype'   =>'schema',
