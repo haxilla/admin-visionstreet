@@ -7,14 +7,14 @@
     </h2>
 
     <div class="space-y-2">
-        <label for="field_name" class="block text-sm font-medium text-blue-200">Field Name</label>
-        <input type="text" name="field_name" id="field_name" value="{{ old('field_name') }}"
+        <label for="field_name" class="block text-sm font-medium text-blue-200">Key Name</label>
+        <input type="text" name="key_name" id="field_name" value="{{ old('field_name') }}"
             class="w-full px-4 py-2 bg-blue-900 text-white border border-blue-700 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
     </div>
 
     <div class="space-y-2">
-        <label for="allowed_value" class="block text-sm font-medium text-blue-200">Allowed Value</label>
-        <input type="text" name="allowed_value" id="allowed_value" value="{{ old('allowed_value') }}"
+        <label for="allowed_value" class="block text-sm font-medium text-blue-200">Key Value</label>
+        <input type="text" name="key_value" id="allowed_value" value="{{ old('allowed_value') }}"
             class="w-full px-4 py-2 bg-blue-900 text-white border border-blue-700 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
     </div>
 
@@ -23,14 +23,11 @@
         <select name="value_type" id="value_type"
             class="w-full px-4 py-2 bg-blue-900 text-white border border-blue-700 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
             <option value="">-- Select Type --</option>
-            <option value="Select" {{ old('value_type') == 'Select' ? 'selected' : '' }}>Select</option>
             <option value="Route" {{ old('value_type') == 'Route' ? 'selected' : '' }}>Route</option>
             <option value="Key" {{ old('value_type') == 'Key' ? 'selected' : '' }}>Key</option>
             <option value="Action" {{ old('value_type') == 'Action' ? 'selected' : '' }}>Action</option>
-            <option value="Permission" {{ old('value_type') == 'Permission' ? 'selected' : '' }}>Permission</option>
         </select>
     </div>
-
 
     <div class="flex items-center space-x-3 pt-2">
         <input type="checkbox" name="is_active" id="is_active" value="1" checked
