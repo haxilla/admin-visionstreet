@@ -20,7 +20,7 @@ Route::post('/login', [Guest::class, 'login'])->name('login.submit');
 Route::get('/super/dashboard', [SuperDashboard::class, 'index'])->name('super.dashboard');
 Route::get('/super/reports', [SuperDashboard::class, 'reports'])->name('super.reports');
 Route::get('/super/safekeys', [SuperDashboard::class, 'safekeys'])->name('super.safekeys');
-Route::get('/super/handle', [SuperDashboard::class, 'handle'])->name('super.handle');
+Route::post('/super/handle', [SuperDashboard::class, 'handle'])->name('super.handle');
 
 
 /* ---------------- Admin ---------------- */
