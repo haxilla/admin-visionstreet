@@ -26,6 +26,7 @@ class DashboardController extends Controller
     public function safekeys(){
 
         //sets $data
+        $renderFrom=request('renderfrom');
         include(app_path().'/admin/secure/safekeys.php');
 
         return view($renderFrom,compact('data'));
