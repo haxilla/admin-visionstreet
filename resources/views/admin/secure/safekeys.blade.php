@@ -17,11 +17,11 @@ isOpen(route) { return this.activeDropdown === route; }}">
     <div class="ml-8 mr-8 lg:ml-10 lg:mr-10">
       <div>
         <h1 class="text-2xl font-bold">
-          POSTGRES
+          SAFEKEYS
         </h1>
       </div>
       <div class="pageswap p-6 w-full">
-        @include('admin.tools.postgres.output')
+        KEY INFO WILL FOLLOW HERE
       </div>
     </div>
   </main>
