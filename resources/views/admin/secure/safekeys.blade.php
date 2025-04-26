@@ -1,6 +1,6 @@
 @include('globals.doctype.admin')
 
-<body data-section="postgres" 
+<body data-section="super" 
 class="linkcheck relative bg-white min-h-screen font-sans text-gray-800 postgres" x-data="{
 collapsed: false,
 dropdownOpen: false,
