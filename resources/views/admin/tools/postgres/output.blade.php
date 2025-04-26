@@ -182,41 +182,40 @@
         </tr>
       @endforelse
 
-        <tr>
-          <td colspan="2" class="border border-gray-300 px-2 py-2">
-            <div class="flex flex-col md:flex-row gap-2">
+<tr>
+  <td colspan="2" class="border border-gray-300 px-2 py-2">
+    <form method="POST"
+      data-action="handle"
+      data-renderfrom="admin.tools.postgres.tables.create"
+      data-renderas="html"
+      data-renderto="pageswap"
+      data-schema="{{ $data['schema'] }}">
+      @csrf
+      <div class="flex flex-col md:flex-row gap-2 w-full">
+        <div class="flex-1">
+          <input type="text" name="table_name"
+            placeholder="New table name"
+            class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+        </div>
 
-              <form method="POST"
-              data-action="handle"
-              data-renderfrom="admin.tools.postgres.table.create"
-              data-renderas="html"
-              data-renderto="pageswap"
-              data-schema="{{ $data['schema'] }}">
-                @csrf
+        <div class="flex-1">
+          <input type="text" name="primary_key"
+            placeholder="Primary key name"
+            class="w-full text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+        </div>
 
-                <input type="text" name="table_name"
-                placeholder="New table name"
-                class="w-full md:w-1/3 text-sm px-2 py-1 border
-                border-gray-300 rounded focus:outline-none
-                focus:ring focus:ring-blue-200" />
+        <div class="flex-1 md:max-w-[160px]">
+          <button type="submit"
+            class="w-full text-xs px-4 py-2 text-white bg-gray-400 hover:bg-gray-500 rounded transition"
+            title="Create Table">
+            Create
+          </button>
+        </div>
+      </div>
+    </form>
+  </td>
+</tr>
 
-                <input type="text" name="primary_key"
-                placeholder="Primary key name"
-                class="w-full md:w-1/3 text-sm px-2 py-1 border
-                border-gray-300 rounded focus:outline-none 
-                focus:ring focus:ring-blue-200" />
-
-                <button type="submit"
-                  class="w-full md:w-1/3 text-xs px-4 py-2 text-white bg-gray-400 hover:bg-gray-500 rounded transition"
-                  title="Create Table">
-                  Create
-                </button>
-
-              </form>
-
-            </div>
-          </td>
-        </tr>
 
     </tbody>
   </table>
