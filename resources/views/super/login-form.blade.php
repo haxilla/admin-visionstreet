@@ -62,11 +62,11 @@
     </div>
 
     {{-- RECAPTCHA --}}
-    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }} "></script>
 
     <script>
         grecaptcha.ready(function () {
-            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {action: 'super_login'}).then(function (token) {
+            grecaptcha.execute('{{ config('services.recaptcha.site_key') }}' , {action: 'super_login'}).then(function (token) {
                 document.getElementById('recaptchaToken').value = token;
             });
         });
