@@ -34,7 +34,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
 	</div>
 
       <div class="pageswap p-6 w-full">
-        @include('admin.secure.safekeys-output')
+        @include('admin.secure.safekeys.output')
       </div>
     </div>
   </main>

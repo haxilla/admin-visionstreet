@@ -59,7 +59,7 @@ class DashboardController extends Controller
 
         include(app_path().'/admin/secure/safekeys/show.php');
 
-        return view('admin.secure.safekeys',compact('data'));
+        return view('admin.secure.safekeys.index',compact('data'));
 
     }
 }
