@@ -58,7 +58,7 @@ class PostgresController extends Controller
 
     public function form(Request $request){
 
-        dd("FORM PROCESS");
+        dd($_POST);
 
     }
 }
