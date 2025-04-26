@@ -26,7 +26,8 @@ isOpen(route) { return this.activeDropdown === route; }}">
 			data-isapp="1"
 			data-action="handle"
 			data-renderto="pageswap"
-			data-renderfrom="admin.secure.safekey"
+			data-renderfrom="admin.secure"
+			data-task="safekeys.show"
 			data-renderas="html" 
 			class="bg-blue-500 
 			hover:bg-blue-600 text-white px-4 py-2 rounded text-sm">

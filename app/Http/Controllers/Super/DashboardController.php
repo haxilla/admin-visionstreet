@@ -18,16 +18,21 @@ class DashboardController extends Controller
         $data=null;
         //renderFrom
         $renderFrom=$_POST['renderfrom'];
+        $renderTask=$_POST['task'];
+        $value=$_POST['value'];
+        $task=$_POST['task'];
+        $isapp=$_POST['isapp'];
 
         //if value is set - extract
-        if(isset($_POST['value'])){
-            $value=$_POST['value'];
+        if(!empty($value)){
             include(app_path().'/code/getValue.php');}
 
         //should it use an app file?
-        if(isset($_POST['isapp'])){
-          $renderURL = str_replace(".", "/",$renderFrom);
-          include(app_path().'/'.$renderURL.'.php');}
+        if(!empty($isapp) && $renderFrom && $renderTask){
+            $renderURL = str_replace(".", "/",$renderFrom.$renderTask);
+            include(app_path().'/'.$renderURL.'.php');
+        }elseif(!empty($isapp)){
+            dd("error-line35-super/dashboard-missing");}
 
         //IE: admin/tools/posgres
         $html=\View::make($renderFrom)
