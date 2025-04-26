@@ -58,6 +58,7 @@ if (document.body.classList.contains('linkcheck')) {
   });
 
   document.addEventListener('submit', (e) => {
+    console.log('eventListener for form');
     const form = e.target;
     if (!(form instanceof HTMLFormElement)) return;
     if (form.dataset.action !== 'handle') return;
