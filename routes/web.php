@@ -19,9 +19,12 @@ Route::post('/login', [Guest::class, 'login'])->name('login.submit');
 /* ---------------- Super ---------------- */
 Route::get('/super/dashboard', [SuperDashboard::class, 'index'])->name('super.dashboard');
 Route::get('/super/reports', [SuperDashboard::class, 'reports'])->name('super.reports');
+Route::get('/super/safekeys', [SuperDashboard::class, 'safekeys'])->name('super.safekeys');
+
 
 /* ---------------- Admin ---------------- */
-Route::get('/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
+Route::get('/admin/dashboard', [AdminDashboard::class, 'index'])->name('admin.dashboard');
+
 
 /* ---------------- Postgres ---------------- */
 Route::get('/postgres', [PostgresController::class, 'index'])->name('admin.postgres');

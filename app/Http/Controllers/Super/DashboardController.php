@@ -22,4 +22,10 @@ class DashboardController extends Controller
     {
         return view('super.reports');
     }
+
+    public function safekeys(){
+
+        dd("SAFEKEYS!!");
+
+    }
 }
