@@ -25,7 +25,7 @@ class DashboardController extends Controller
 
     public function safekeys(){
 
-        include(app_path().'/admin/secure/safekeys.php');
+        include(app_path().'/admin/secure/safekey/show.php');
 
         return view('admin.secure.safekeys',compact('data'));
 

@@ -21,6 +21,17 @@ isOpen(route) { return this.activeDropdown === route; }}">
         </h1>
       </div>
       <div class="pageswap p-6 w-full">
+      	<div class="flex justify-between items-center mb-6">
+			<a href="#"
+			data-action="handle"
+			data-renderto="pageswap"
+			data-renderfrom="admin.secure.safekey"
+			data-renderas="html" 
+			class="bg-blue-500 
+			hover:bg-blue-600 text-white px-4 py-2 rounded text-sm">
+			    + New SafeKey
+			</a>
+		</div>
         @include('admin.secure.safekey-output')
       </div>
     </div>
