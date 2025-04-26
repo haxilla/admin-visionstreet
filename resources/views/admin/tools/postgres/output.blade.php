@@ -77,10 +77,9 @@
                 placeholder="New schema name"
                 class="w-full text-sm px-2 py-1 border border-gray-300 
                 rounded focus:outline-none focus:ring focus:ring-blue-200" />
-                  <input type="submit"
-                  class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition" title="Create Schema">
-                  Create
-                </input>
+                <input type="submit"
+                class="text-xs px-4 py-1.5 text-white cursor-pointer 
+                bg-gray-400 hover:bg-gray-500 rounded transition">
               </div>
             </td>
             <td class="border border-gray-300 px-2 py-1">
