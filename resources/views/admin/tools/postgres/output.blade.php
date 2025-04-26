@@ -64,28 +64,30 @@
           </tr>
         @endforelse
 
-        <form method="POST"
-        data-action="handle"
-        data-renderfrom="admin.tools.postgres.schemas.create"
-        data-renderas="html"
-        data-renderto="pageswap">
-          @csrf
+
           <tr>
             <td class="border border-gray-300 px-2 py-1">
               <div class="flex items-center gap-2">
-                <input type="text" name="schema_name"
-                placeholder="New schema name"
-                class="w-full text-sm px-2 py-1 border border-gray-300 
-                rounded focus:outline-none focus:ring focus:ring-blue-200" />
-                <input type="submit"
-                class="text-xs px-4 py-1.5 text-white cursor-pointer 
-                bg-gray-400 hover:bg-gray-500 rounded transition">
+                <form method="POST"
+                data-action="handle"
+                data-renderfrom="admin.tools.postgres.schemas.create"
+                data-renderas="html"
+                data-renderto="pageswap">
+                  @csrf
+                  <input type="text" name="schema_name"
+                  placeholder="New schema name"
+                  class="w-full text-sm px-2 py-1 border border-gray-300 
+                  rounded focus:outline-none focus:ring focus:ring-blue-200" />
+                  <input type="submit"
+                  class="text-xs px-4 py-1.5 text-white cursor-pointer 
+                  bg-gray-400 hover:bg-gray-500 rounded transition">
+                </form>
+
               </div>
             </td>
             <td class="border border-gray-300 px-2 py-1">
             </td>
           </tr>
-        </form>
       </tbody>
     </table>
 
