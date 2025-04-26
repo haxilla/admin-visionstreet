@@ -186,7 +186,8 @@
         <td colspan="2" class="border border-gray-300 px-2 py-2">
           <form method="POST"
             data-action="handle"
-            data-renderfrom="admin.tools.postgres.tables.create"
+            data-renderfrom="admin.tools.postgres"
+            data-task="table.create"
             data-renderas="html"
             data-renderto="pageswap"
             data-schema="{{ $data['schema'] }}">
