@@ -25,7 +25,10 @@ class DashboardController extends Controller
 
     public function safekeys(){
 
-        dd("SAFEKEYS!!");
+        //sets $data
+        include(app_path().'/admin/secure/safekeys.php');
+
+        return view($renderFrom,compact('data'));
 
     }
 }
