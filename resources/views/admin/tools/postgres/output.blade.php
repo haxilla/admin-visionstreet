@@ -190,19 +190,19 @@
   @csrf
   <tr>
     <td class="border border-gray-300 px-2 py-1">
-      <div class="flex items-center gap-2">
+      <div class="flex flex-col sm:flex-row gap-2">
         <input type="text" name="table_name"
           placeholder="New table name"
-          class="w-1/2 text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+          class="w-full sm:w-1/2 text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
 
         <input type="text" name="primary_key"
           placeholder="Primary key name"
-          class="w-1/2 text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
+          class="w-full sm:w-1/2 text-sm px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200" />
       </div>
     </td>
     <td class="border border-gray-300 px-2 py-1">
       <button type="submit"
-        class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition w-full"
+        class="text-xs w-full px-4 py-1.5 text-white bg-gray-400 hover:bg-gray-500 rounded transition"
         title="Create Table">
         Create
       </button>
