@@ -1,3 +1,3 @@
 <?php
 
-dd("READY TO ADD SAFEKEY");
+$renderFrom='admin.secure.safekeys.add';
