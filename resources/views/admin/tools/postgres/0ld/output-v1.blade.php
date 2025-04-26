@@ -183,7 +183,7 @@
 
       <form method="POST"
         data-action="handle"
-        data-renderfrom="admin.tools.postgres.table.create"
+        data-renderfrom="admin.tools.postgres.tables.create"
         data-renderas="html"
         data-renderto="pageswap"
         data-schema="{{ $data['schema'] }}">
