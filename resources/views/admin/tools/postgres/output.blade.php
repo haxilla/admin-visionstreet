@@ -44,13 +44,13 @@
                   {{ $schema->owner ?? 'unknown' }}
                 </span>
                 <a href="#"
-                   title="Delete"
-                   class="text-xs text-gray-400 hover:text-red-500"
-                   data-action="handle"
-                   data-renderfrom="admin.tools.postgres.schemas.delete"
-                   data-renderas="html"
-                   data-renderto="pageswap"
-                   data-schema="{{ $schema->schema_name }}">
+                title="Delete"
+                class="text-xs text-gray-400 hover:text-red-500"
+                data-action="handle"
+                data-renderfrom="admin.tools.postgres.schemas.delete"
+                data-renderas="html"
+                data-renderto="pageswap"
+                data-schema="{{ $schema->schema_name }}">
                   &#x2715;
                 </a>
               </div>
@@ -65,10 +65,10 @@
         @endforelse
 
         <form method="POST"
-              data-action="handle"
-              data-renderfrom="admin.tools.postgres.schemas.create"
-              data-renderas="html"
-              data-renderto="pageswap">
+        data-action="handle"
+        data-renderfrom="admin.tools.postgres.schemas.create"
+        data-renderas="html"
+        data-renderto="pageswap">
           @csrf
           <tr>
             <td class="border border-gray-300 px-2 py-1">
@@ -77,10 +77,10 @@
                 placeholder="New schema name"
                 class="w-full text-sm px-2 py-1 border border-gray-300 
                 rounded focus:outline-none focus:ring focus:ring-blue-200" />
-                  <button type="submit"
+                  <input type="submit"
                   class="text-xs px-4 py-1.5 text-white cursor-pointer bg-gray-400 hover:bg-gray-500 rounded transition" title="Create Schema">
                   Create
-                </button>
+                </input>
               </div>
             </td>
             <td class="border border-gray-300 px-2 py-1">
