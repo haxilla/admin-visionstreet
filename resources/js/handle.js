@@ -85,6 +85,7 @@ if (document.body.classList.contains('linkcheck')) {
 
     const postData = new URLSearchParams([...formData.entries()]);
     const csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
+    const section = document.body.dataset.section || '';
     const endpoint = form.dataset.route || `/${section}/form`;
 
     if (renderAs === 'html') {
