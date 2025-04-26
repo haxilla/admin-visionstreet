@@ -19,14 +19,15 @@ isOpen(route) { return this.activeDropdown === route; }}">
     <h1 class="text-3xl font-semibold text-white tracking-wider">SAFEKEYS</h1>
 
     <a href="#"
-        class="inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-medium py-1.5 px-4 rounded-md shadow-sm hover:shadow-md transition-colors duration-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        class="inline-flex items-center border border-blue-700 bg-white text-blue-800 font-medium py-1.5 px-4 rounded-md shadow-sm hover:bg-blue-50 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
                 d="M12 2l8 4v6c0 5-3.8 9.4-8 10-4.2-.6-8-5-8-10V6l8-4z" />
         </svg>
-        Add
+        Add SafeKey
     </a>
 </div>
+
 
 
 
