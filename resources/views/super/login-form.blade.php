@@ -66,7 +66,8 @@
 
     <script>
         grecaptcha.ready(function () {
-            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {action: 'super_login'}).then(function (token) {
+            grecaptcha.execute('{{ config('services.recaptcha.site_key') }}'
+, {action: 'super_login'}).then(function (token) {
                 document.getElementById('recaptchaToken').value = token;
             });
         });
