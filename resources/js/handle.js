@@ -58,12 +58,12 @@ if (document.body.classList.contains('linkcheck')) {
   });
 
   document.addEventListener('submit', (e) => {
+    e.preventDefault();
     console.log('eventListener for form');
     const form = e.target;
     if (!(form instanceof HTMLFormElement)) return;
     if (form.dataset.action !== 'handle') return;
 
-    e.preventDefault();
     handleFormSubmission(form);
 
   });
