@@ -23,7 +23,14 @@ isOpen(route) { return this.activeDropdown === route; }}">
 			  		SAFEKEYS
 			  	</h1>
 
-			    <a href="#" class="group inline-flex items-center 
+			    <a href="#" 
+			    data-isapp="1"
+			    data-action="handle"
+			    data-renderto="pageswap"
+			    data-renderfrom="admin.secure"
+			    data-task="safekeys.add"
+			    data-renderas="html"
+			    class="group inline-flex items-center 
 			    border border-blue-900 bg-white text-blue-900 
 			    font-medium py-1 px-3 rounded-sm shadow-sm 
 			    transition-colors duration-200 text-sm
@@ -38,6 +45,7 @@ isOpen(route) { return this.activeDropdown === route; }}">
 			          stroke-width="1.5" 
 			          d="M12 2l8 4v6c0 5-3.8 9.4-8 10-4.2-.6-8-5-8-10V6l8-4z" />
 			        </svg>
+
 			        Add SafeKey
 			    </a>
 			</div>
