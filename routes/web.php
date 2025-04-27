@@ -21,6 +21,7 @@ Route::get('/super/dashboard', [SuperDashboard::class, 'index'])->name('super.da
 Route::get('/super/reports', [SuperDashboard::class, 'reports'])->name('super.reports');
 Route::get('/super/safekeys', [SuperDashboard::class, 'safekeys'])->name('super.safekeys');
 Route::post('/super/handle', [SuperDashboard::class, 'handle'])->name('super.handle');
+Route::post('/super/form', [SuperDashboard::class, 'form'])->name('super.form');
 
 
 /* ---------------- Admin ---------------- */
