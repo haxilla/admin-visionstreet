@@ -48,11 +48,13 @@ class DashboardController extends Controller
         }elseif(!empty($isapp)){
             dd("error-line48-super/dashboard");}
 
-        if(!View::exists($renderFrom) && $renderTask){
-            $renderFrom="$renderFrom.$renderTask";};
+        //check view - modify if possible - try again
+        if (!View::exists($renderFrom)) {
+            if ($renderTask && View::exists("$renderFrom.$renderTask")) {
+                $renderFrom = "$renderFrom.$renderTask";
+            } else {
+                dd("error-line56-super/dashboardController");}}
 
-        if(!View::exists($renderFrom)){
-            dd("error-line54-super/dashboardController");}
 
         //IE: admin/tools/postgres
         $html=\View::make($renderFrom)
