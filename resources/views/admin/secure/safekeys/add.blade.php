@@ -44,11 +44,9 @@ shadow-md space-y-6">
         <select name="value_type" id="value_type"
             class="w-full px-3 py-2 bg-[#1E293B] text-white border border-blue-700 rounded-sm focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
             <option value="">-- Select Type --</option>
-            <option value="Select">Select</option>
             <option value="Route">Route</option>
             <option value="Key">Key</option>
-            <option value="Action">Action</option>
-            <option value="Permission">Permission</option>
+            <option value="Action">Task</option>
         </select>
     </div>
 
