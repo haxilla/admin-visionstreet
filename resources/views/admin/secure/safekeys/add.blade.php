@@ -1,5 +1,8 @@
 <form method="POST" 
-data-action="handle" 
+data-action="handle"
+data-renderto="pageswap"
+data-renderfrom="admin.secure"
+data-task="safekeys.submit"
 class="max-w-lg mx-auto bg-[#0F172A] 
 border border-[#1E3A8A] p-8 rounded-sm 
 shadow-md space-y-6">
@@ -33,7 +36,10 @@ shadow-md space-y-6">
     </div>
 
     <div class="space-y-2">
-        <label for="value_type" class="block text-sm font-medium text-blue-200">Value Type</label>
+        <label for="value_type" class="block text-sm 
+        font-medium text-blue-200">
+            Value Type
+        </label>
         <select name="value_type" id="value_type"
             class="w-full px-3 py-2 bg-[#1E293B] text-white border border-blue-700 rounded-sm focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
             <option value="">-- Select Type --</option>
