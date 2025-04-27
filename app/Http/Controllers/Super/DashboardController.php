@@ -62,4 +62,10 @@ class DashboardController extends Controller
         return view('admin.secure.safekeys.index',compact('data'));
 
     }
+
+    public function form(){
+
+        dd("SUPER FORM PROCESSING");
+
+    }
 }
