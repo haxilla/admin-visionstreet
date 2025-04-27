@@ -65,7 +65,7 @@ class DashboardController extends Controller
 
     public function form(){
 
-        dd("$_POST");
+        dd($_POST);
 
     }
 }
