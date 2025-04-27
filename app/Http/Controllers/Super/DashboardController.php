@@ -13,6 +13,19 @@ class DashboardController extends Controller
         $this->middleware('role:super');
     }
 
+    public function index()
+    {
+        return view('super.dashboard');
+    }
+
+    public function safekeys(){
+
+        include(app_path().'/admin/secure/safekeys/show.php');
+
+        return view('admin.secure.safekeys.index',compact('data'));
+
+    }
+
     public function handle(Request $request){
 
         $data=null;
@@ -32,36 +45,22 @@ class DashboardController extends Controller
             $renderURL = str_replace(".", "/",$renderFrom.'/'.$renderTask);
             include(app_path().'/'.$renderURL.'.php');
         }elseif(!empty($isapp)){
-            dd("error-line35-super/dashboard-missing");}
+            dd("error-line48-super/dashboard");}
 
-        //IE: admin/tools/posgres
+        if(!View::exists($renderFrom) && $renderTask){
+            $renderFrom="$renderFrom.$renderTask";};
+
+        if(!View::exists($renderFrom)){
+            dd("error-line54-super/dashboardController");}
+
+        //IE: admin/tools/postgres
         $html=\View::make($renderFrom)
           ->with([
             'data'=>$data,
           ])->render();
 
-        echo $html;
+        echo $html;}
 
-    }
-
-
-    public function index()
-    {
-        return view('super.dashboard');
-    }
-
-    public function reports()
-    {
-        return view('super.reports');
-    }
-
-    public function safekeys(){
-
-        include(app_path().'/admin/secure/safekeys/show.php');
-
-        return view('admin.secure.safekeys.index',compact('data'));
-
-    }
 
     public function form(){
 
