@@ -27,9 +27,15 @@
                     <td class="p-3">{{ $key->first_access ?? '—' }}</td>
                     <td class="p-3">{{ $key->last_access ?? '—' }}</td>
                     <td class="p-3">
-                        <form method="POST" action="{{ route('safekeys.approve', $key->sk_id) }}" class="inline-block">
+                        <form method="POST" 
+                        action="" 
+                        class="inline-block">
                             @csrf
-                            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded">Approve</button>
+                            <button type="submit" class="bg-green-500 
+                            hover:bg-green-600 text-white text-sm 
+                            px-3 py-1 rounded">
+                                Approve
+                            </button>
                         </form>
 
                         <form method="POST" action="{{ route('safekeys.reject', $key->sk_id) }}" class="inline-block ml-2">

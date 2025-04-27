@@ -1,18 +1,35 @@
-<form method="POST" action="#" class="max-w-lg mx-auto bg-[#0F172A] border border-[#1E3A8A] p-8 rounded-sm shadow-md space-y-6">
+<form method="POST" 
+data-action="handle" 
+class="max-w-lg mx-auto bg-[#0F172A] 
+border border-[#1E3A8A] p-8 rounded-sm 
+shadow-md space-y-6">
     <!-- Add CSRF token here if using Laravel: @csrf -->
-
-    <h2 class="text-2xl font-semibold text-white mb-6 tracking-wide">Create New SafeKey</h2>
+    @csrf
+    <h2 class="text-2xl font-semibold text-white 
+    mb-6 tracking-wide">
+        Create New SafeKey
+    </h2>
 
     <div class="space-y-2">
-        <label for="field_name" class="block text-sm font-medium text-blue-200">Key Name</label>
+        <label for="field_name" class="block text-sm 
+        font-medium text-blue-200">
+            Key Name
+        </label>
         <input type="text" name="field_name" id="field_name"
-            class="w-full px-3 py-2 bg-[#1E293B] text-white border border-blue-700 rounded-sm focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
+        class="w-full px-3 py-2 bg-[#1E293B] text-white 
+        border border-blue-700 rounded-sm focus:ring-2 
+        focus:ring-blue-500 focus:outline-none text-sm">
     </div>
 
     <div class="space-y-2">
-        <label for="allowed_value" class="block text-sm font-medium text-blue-200">Key Value</label>
+        <label for="allowed_value" class="block text-sm font-medium 
+        text-blue-200">
+            Key Value
+        </label>
         <input type="text" name="allowed_value" id="allowed_value"
-            class="w-full px-3 py-2 bg-[#1E293B] text-white border border-blue-700 rounded-sm focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
+        class="w-full px-3 py-2 bg-[#1E293B] text-white 
+        border border-blue-700 rounded-sm focus:ring-2 
+        focus:ring-blue-500 focus:outline-none text-sm">
     </div>
 
     <div class="space-y-2">
