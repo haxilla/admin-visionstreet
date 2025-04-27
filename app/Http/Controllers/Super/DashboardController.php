@@ -65,7 +65,7 @@ class DashboardController extends Controller
 
     public function form(){
 
-        dd("SUPER FORM PROCESSING");
+        dd("PROCESS $_POST");
 
     }
 }

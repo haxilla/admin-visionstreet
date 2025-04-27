@@ -30,20 +30,21 @@ class GuestController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-            'recaptcha_token' => 'required',
-        ]);
+            'recaptcha_token' => 'required',]);
 
         // reCAPTCHA check
-        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+        $response = Http::asForm()
+        ->post('https://www.google.com/recaptcha/api/siteverify', [
             'secret'    => config('services.recaptcha.secret_key'),
             'response'  => $request->recaptcha_token,
-            'remoteip'  => $request->ip(),
-        ]);
+            'remoteip'  => $request->ip(),]);
 
         $result = $response->json();
 
         if (!($result['success'] ?? false) || ($result['score'] ?? 0) < 0.5) {
-            return back()->withErrors(['recaptcha' => 'Suspicious activity detected. Please try again.'])->withInput();}
+            return back()->withErrors([
+                'recaptcha' => 'Suspicious activity detected. Please try again.'
+            ])->withInput();}
 
         // Try login
         if (Auth::attempt($request->only('email', 'password'))) {
@@ -53,8 +54,7 @@ class GuestController extends Controller
             // Intercept intended URL
             $intended = session()->pull('url.intended');
 
-            return redirect("/{$role}/dashboard");
-        }
+            return redirect("/{$role}/dashboard");}
 
         return back()->withErrors(['email' => 'Invalid credentials.'])->withInput();}
 
