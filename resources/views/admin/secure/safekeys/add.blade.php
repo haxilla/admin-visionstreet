@@ -2,6 +2,7 @@
 data-action="handle"
 data-renderto="pageswap"
 data-renderfrom="admin.secure"
+data-renderas="html"
 data-task="safekeys.submit"
 class="max-w-lg mx-auto bg-[#0F172A] 
 border border-[#1E3A8A] p-8 rounded-sm 
