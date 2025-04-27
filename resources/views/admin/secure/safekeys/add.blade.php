@@ -51,9 +51,14 @@ shadow-md space-y-6">
     </div>
 
     <div class="flex items-center space-x-2">
-        <input type="checkbox" name="is_active" id="is_active" value="1" checked
-            class="h-4 w-4 text-blue-500 bg-[#1E293B] border-blue-700 rounded-sm focus:ring-blue-500">
-        <label for="is_active" class="text-blue-200 text-sm font-medium">Mark as Active</label>
+        <input type="checkbox" name="is_active" 
+        id="is_active" value="1"      
+        class="h-4 w-4 text-blue-500 bg-[#1E293B] 
+        border-blue-700 rounded-sm focus:ring-blue-500">
+        <label for="is_active" class="text-blue-200 
+        text-sm font-medium">
+            Active
+        </label>
     </div>
 
     <div class="pt-6">
