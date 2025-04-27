@@ -24,7 +24,6 @@ isOpen(route) { return this.activeDropdown === route; }}">
 			  	</h1>
 
 			    <a href="#" 
-			    data-isapp="1"
 			    data-action="handle"
 			    data-renderto="pageswap"
 			    data-renderfrom="admin.secure"
